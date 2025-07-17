@@ -774,7 +774,7 @@
             width: 100%;
             height: 500px;
             /* background: linear-gradient(45deg, #2f290a, #5f5e1a); */
-            background: url(../images/A\ sunny\,\ cinematic\ drone\ shot\ slowly\ flying\ over\ a\ well-demarcated\ residential\ layout\ with\ golden\ wire\ fencing\,\ a\ visible\ land\ well\ in\ one\ corner\,\ and\ a\ bulldozer\ clearing\ tree\ stumps\ in\ the\ background.\ In\ the\ for.png);
+            background: url(../images/Elora\ gardens-shot.png);
             background-position: left;
             background-size: cover;
             display: flex;
@@ -922,6 +922,9 @@
         .project-card:hover .project-image img {
             transform: scale(1.05);
         }
+        .project-card button{
+            margin-top: 3em;
+        }
 
         .project-status {
             position: absolute;
@@ -985,8 +988,8 @@
         }
 
         .plans-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
             gap: 30px;
         }
             .plans-container .btn-outline{
@@ -1599,7 +1602,6 @@
         .contact-section {
             background:rgb(253, 252, 244);
             padding-top: 1em;
-            border: 1px solid red;
         }
 
         .contact-container {
