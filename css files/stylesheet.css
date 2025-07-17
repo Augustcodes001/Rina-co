@@ -63,7 +63,7 @@
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            width: 100%;
+            width: 100vw;
             top: 0;
             z-index: 100;
             background: white;
@@ -191,10 +191,11 @@
         .menu-toggle span {
             display: block;
             height: 3px;
-            width: 100%;
+            width: 80%;
             background-color: var(--text);
             border-radius: 3px;
             transition: all 0.3s ease;
+            margin-right: 1em;
         }
 
         /* Mobile Dropdown Menu */
@@ -211,7 +212,7 @@
             z-index: 100;
             display: flex;
             flex-direction: column;
-            padding: 100px 30px 30px;
+            padding: 100px 0px 0px;
             transition: right 0.5s ease;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
             border-left: 1px solid var(--glass-border);
@@ -233,7 +234,7 @@
         .mobile-nav ul li a {
             color: var(--text);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             display: block;
             padding: 10px 0;
             transition: all 0.3s ease;
@@ -284,11 +285,20 @@
             }
             
         }
-
+/* @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+  
+  .mobile-menu-active .nav-links {
+    display: flex;
+  }
+} */
      /* Hero Section with Video Background */
         .hero {
             position: relative;
-           height: calc(100vh + 5em);
+           height: calc(100vh + 2em);
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -937,9 +947,11 @@
             font-size: 14px;
             font-weight: 500;
         }
-
+/* div{
+    border: 1px solid red;
+} */
         .project-content {
-            padding: 25px;
+            padding: 5px;
         }
 
         .project-content h3 {
@@ -964,7 +976,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
-            padding-top: 20px;
+            padding: 10px;
             border-top: 1px solid #eee;
         }
 
@@ -982,56 +994,56 @@
             font-size: 0.9rem;
             color: var(--gray);
         }
+
 /* Payment Plans */
         .payment-plans {
-            background-color: rgb(255, 255, 233);
+            padding: 100px 10%;
         }
 
         .plans-container {
-            /* display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
-            .plans-container .btn-outline{
-                border: 1px solid var(--secondary);
-            }
+
         .plan-card {
-            background-color: rgb(255, 255, 255);
-            border-radius: 10px;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .plan-card.featured {
-               border-color: rgb(185, 159, 7);
-            transform: scale(1.05);
-            position: relative;
-        }
-
-        .plan-card.featured::before {
-            content: 'POPULAR';
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background-color: var(--secondary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+              border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+             background-color: rgb(255, 255, 255);
         }
 
         .plan-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            background: rgba(252, 233, 173, 0.05);
+            border-color: rgba(255, 219, 100, 0.3);
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--secondary);
+            position: relative;
+        }
+
+        .plan-card.featured::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
         }
 
         .plan-icon {
             font-size: 3rem;
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 20px;
         }
 
@@ -1043,23 +1055,33 @@
         .plan-price {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: var(--secondary);
         }
 
         .plan-features {
             list-style: none;
             margin-bottom: 30px;
+            padding-left: 0;
+            margin-left: 0;
         }
 
         .plan-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--light-gray);
+            margin-bottom: 1em;
+            padding: 0px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+               /* border: 1px solid red; */
+            text-align: center;
         }
 
         .plan-features li:last-child {
             border-bottom: none;
         }
+        .plan-card .btn-outline{
+            border: 2px solid var(--secondary);
+        }
+
+
         /* Construction Excellence */
         .excellence-section {
             padding: 100px 0;
@@ -1430,6 +1452,7 @@
             padding: 20px 25px;
             background: rgb(253, 252, 244);
             border: 1px solid var(--gold-medium);
+             border-radius: 16px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -1453,10 +1476,8 @@
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
             background: rgba(236, 225, 121, 0.5);
-            border-left: 1px solid var(--glass-border);
-            border-right: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            border-radius: 0 0 16px 16px;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
         }
 
         .faq-answer p {
@@ -1646,6 +1667,10 @@
         .contact-text p {
             opacity: 0.8;
             line-height: 1.6;
+        }
+        .contact-container iframe{
+            max-width: 400px;
+            height: 400px;
         }
 
         .contact-form {
@@ -1855,4 +1880,9 @@
             .footer-container {
                 grid-template-columns: 1fr;
             }
+             .contact-container iframe{
+            max-width: 400px;
+            height: 400px;
+        }
+
         }
