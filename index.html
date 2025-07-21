@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rina & CO. Consults | Presents Elora Gardens</title>
+  <title>Rina & CO. Consults |
+    Comfortability with value</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap 5.3 CSS CDN -->
@@ -15,23 +16,48 @@
  
 </head>
 <body>
-    
+    <!-- loader -->
+ <div class="preloader ">
+        <div class="logo-container">
+            <svg class="progress-ring" viewBox="0 0 160 160">
+                <circle class="progress-ring-circle" 
+                        stroke=" #cca72c" 
+                        stroke-width="4" 
+                        fill="transparent" 
+                        r="70" 
+                        cx="80" 
+                        cy="80"/>
+            </svg>
+            <div class="logo-wrapper">
+                <!-- RINA Logo -->
+              
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="reg-num ">RC 7991137</div>
+            <div class="company-name">RINA & Co. Consults Ltd.</div>
+            <div class="tagline">...Comfortability with Value</div>
+        </div>
+        <div class="loading-text">Loading</div>
+    </div>
+
+  <!-- loader end -->
     <!-- Header -->
    <header class="glass">
         <div class="logo">
             <div class="logo-image">
                   <img src="./images/rina and co logo.png" alt="" srcset="">
             </div>
-            <span><h5>RINA & CO. CONSULTS</h5></span>
+            <span><h5>RINA & CO. CONSULTS LTD.</h5></span>
         </div>
         <nav>
              <ul>
                 <li><a href="index.html">Home</a></li>
                  <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                   <li><a href="Elora.html">Elora Gardens</a></li>
-                     <li><a href="index.html#customize">Customize</a></li>
-                <li><a href="index.html#plans">Payment Plans</a></li>
+                  <li><a href="contact.html"> Contact</a></li>
+                   <li><a href="estate.html"> Estate</a></li>
+                    <li><a href="investment.html"> Investment Hub</a></li>
+                <li><a href="construction.html"> Construction</a></li>
 
             </ul>
         </nav>
@@ -49,11 +75,11 @@
         <ul>
              <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                 <li><a href="about.html"><i class="fas fa-building"></i> About</a></li>
+                 <li><a href="about.html"><i class="fas fa-crown"></i> About</a></li>
                   <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
-                   <li><a href="Elora.html"><i class="fas fa-tree"></i> Elora Gardens</a></li>
-                     <li><a href="index.html#customize"><i class="fas fa-palette"></i> Customize</a></li>
-                <li><a href="index.html#plans"><i class="fas fa-dollar-sign"></i> Payment Plans</a></li>
+                   <li><a href="estate.html"><i class="fas fa-tree"></i> Estate</a></li>
+                    <li><a href="investment.html"><i class="fas fa-piggy-bank"></i> Investment Hub</a></li>
+                <li><a href="construction.html"><i class="fas fa-hard-hat"></i> Construction</a></li>
 
             </ul>
         </ul>
@@ -62,7 +88,11 @@
 
     <!-- Hero Section -->
     <!-- Hero Section with Video Background -->
+    
+
     <section class="hero pt-5">
+         <!-- Progress Bar -->
+   <div class="progress-bar"></div>
         <!-- Video background container -->
         <div class="hero-video-container">
             <video autoplay muted loop playsinline>
@@ -70,22 +100,87 @@
             </video>
             <div class="hero-overlay"></div>
         </div>
-        
-        <!-- Hero content -->
-        <div class="hero-content mt-5 mt-md-0 pt-5 pb-5">
-            <h3>Where Dreams Are Built, Not Just Bought</h3>
-            <p>Rina and CO. Consults Ltd. seamlessly integrates construction excellence with real estate expertise to create communities that stand the test of time. Experience the journey from blueprint to dream home.</p>
-            <div class="hero-buttons  pb-5 mb-5">
-                <a href="#" class="btn btn-primary">Explore Elora Gardens <i class="fas fa-tree"></i></a>
-                <a href="#" class="btn btn-outline">Invest Now <i class="fas fa-piggy-bank"></i>
+         <!-- Slider Container -->
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <!-- Slide 1: General Explanation -->
+            <div class="slide" >
+                <div class="slide-content ">
+                     <!-- <div class="slide-number">01 / 04</div> -->
+                    <h3 class="slide-title">Where Dreams Are Built, Not Just Bought</h3>
+                    <p class="slide-text"> We seamlessly integrate construction excellence with real estate expertise to create communities that stand the test of time. Experience the journey from blueprint to dream home with our dedicated team of professionals.</p>
+                  <div class="hero-buttons  pb-5 mb-5">
+                <a href="#story" class="btn btn-primary">Our Story <i class="fas fa-crown"></i></a>
+                
+            </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Real Estate -->
+            <div class="slide">
+                <div class="slide-content">
+                    <!-- <div class="slide-number">02 / 04</div> -->
+                    <h3 class="slide-title">Premium Real Estate Solutions</h3>
+                    <p class="slide-text">Discover exceptional properties situated in the best locations. Our portfolio includes  prime land investments,land features and mapping. We prioritize locations that enhance your lifestyle and investment potential.</p>
+                   <div class="hero-buttons  pb-5 mb-5">
+                <a href="#investment.html" class="btn btn-primary">Explore Elora Gardens <i class="fas fa-tree"></i></a>
+               
+            </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3: Investments -->
+            <div class="slide" >
+                <div class="slide-content">
+                    <!-- <div class="slide-number">03 / 04</div> -->
+                    <h3 class="slide-title">Strategic Investment Opportunities</h3>
+                    <p class="slide-text">Maximize your returns with our carefully curated investment portfolio. Benefit from our market expertise, transparent processes, and proven track record of delivering above-market returns. We offer flexible investment plans tailored to your financial goals.</p>
+                   <div class="hero-buttons  pb-5 mb-5">
+                <a href="investment.html" class="btn btn-primary">Invest Now <i class="fas fa-piggy-bank"></i></a>
+                <!-- <a href="#" class="btn btn-outline">Invest Now <i class="fas fa-piggy-bank"></i> -->
                 </a>
             </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4: Construction -->
+            <div class="slide" >
+                <div class="slide-content">
+                    <!-- <div class="slide-number">04 / 04</div> -->
+        <h3 class="slide-title">Excellence in Construction</h3>
+                    <p class="slide-text">Building communities with integrity and innovation. Our construction division combines cutting-edge technology with sustainable practices to deliver projects on time and beyond expectations. From residential complexes to commercial developments, we build with precision and passion.</p>
+                  <div class="hero-buttons  pb-5 mb-5">
+                <a href="construction.html" class="btn btn-primary">view porfolio  <i class="fas fa-hard-hat"></i></a>
+              
+            </div>
+                </div>
+            </div>
         </div>
+        
+        <!-- Navigation Arrows -->
+        <div class="nav-arrow arrow-left">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="nav-arrow arrow-right">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+        
+    </div>
+    <!-- Navigation Dots -->
+        <div class="slider-nav">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+            <div class="nav-dot" data-slide="3"></div>
+        </div>
+      
     </section>
  <!-- About Section -->
     <section class="about-section pt-md-5 pb-md-5" id="about">
         <div class="section-header">
-            <h2 class="display-4">About Rina & CO. Consults</h2>
+          <div class="reg-num-2">RC 7991137</div>
+            <h2 class="display-4">About Rina & CO. Consults LTD. </h2>  
             <p>Building communities and creating lasting value through excellence in real estate development.</p>
         </div>
         
@@ -94,25 +189,26 @@
                 <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Construction Site">
             </div>
             
-            <div class="about-content">
+            <div class="about-content " id="story">
                 <h3>Our Story & Vision</h3>
-                <p>Founded in 2010, Rina & CO. Consults has grown from a small boutique real estate agency to a leading developer of premium residential communities. Our journey began with a single vision: to create spaces that inspire, connect, and elevate quality of life.</p>
-                <p>Today, we've successfully developed over 25 communities across the region, each embodying our core values of innovation, sustainability, and community building. We believe in creating more than just buildings - we craft environments where families thrive and memories are made.</p>
-                <p>Our team of architects, engineers, and community planners work collaboratively to design spaces that harmonize with their surroundings while providing modern comforts and sustainable features.</p>
+              <p>  Rina and Co consults Limited founded in the year 2023, is a fully registered firm that operates in compliance with all applicable Nigeria kawa and regulations. The company hold valid registration with cooperate affairs commission and partners with professionals in legal, finance, construction and estate management.</p>
+                <p>We render services in real estate, investment, and building construction. As a firm, we are committed to excellence in the acquisition, development, and sales of real estate properties across Nigeria. With a track record of successful property sales and development projects. The firm offers structured real estate investment opportunities with guaranteed returns.</p>
+                <p>Rina and Co consults Limited is committed to transparency, investors safety, modern building development, and structured real estate growth.</p>
+                
                 
                 <div class="milestones">
                     <div class="glass milestone-card">
-                        <div class="milestone-number">25+</div>
+                        <div class="milestone-number">2+</div>
                         <div class="milestone-text">Completed Projects</div>
                     </div>
                     
                     <div class="glass milestone-card">
-                        <div class="milestone-number">500+</div>
+                        <div class="milestone-number">150+</div>
                         <div class="milestone-text">Happy Clients</div>
                     </div>
                     
                     <div class="glass milestone-card">
-                        <div class="milestone-number">12</div>
+                        <div class="milestone-number">2</div>
                         <div class="milestone-text">Industry Awards</div>
                     </div>
                 </div>
@@ -135,7 +231,7 @@
                     <h3>Vision</h3>
                     <p>Purchase & Planning</p>
                 </div>
-                 <div class="lifecycle-step active">
+                 <div class="lifecycle-step">
                     <i class="fas fa-line-chart"></i>
                     <h3>Pre-construction Phase</h3>
                   <p>Blueprints & Permits</p>
@@ -160,7 +256,7 @@
             <p>Witness the transformation from untouched land to architectural masterpiece. At Rina & CO. Consults, we bring visions to life through meticulous planning and expert execution.</p>
         </div>
 
-        <div class="journey-container">
+        <div class="journey-container" id="journey">
             <!-- Phase 1: Land Acquisition -->
             <div class="journey-card">
                 <div class="journey-phase">Phase 1</div>
@@ -179,10 +275,27 @@
                     <p>Each site is chosen for its potential to become a thriving neighborhood with natural beauty and strategic location.</p>
                 </div>
             </div>
-
-            <!-- Phase 2: Design & Planning -->
+ <!-- Phase 2: investment-->
             <div class="journey-card">
                 <div class="journey-phase">Phase 2</div>
+                <div class="journey-image">
+                    <img src="./images/A shiny golden piggy bank sitting on a lush green field.png" alt="investment">
+                    <div class="journey-overlay">
+                        <div class="journey-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h3>Investment</h3>
+                    </div>
+                </div>
+                <div class="journey-content">
+                    <h3>Strategic investment</h3>
+                    <p>Our expertise in choosing sites with potential gives you instant return on your money.</p>
+                    <p>Our major focus is  land security and making sure all legal documents are available so you never worry about losing out on your investment.</p>
+                </div>
+            </div>
+            <!-- Phase 2: Design & Planning -->
+            <div class="journey-card">
+                <div class="journey-phase">Phase 3</div>
                 <div class="journey-image">
                     <img src="./images/detailed close us architectural design.png" alt="Design & Planning">
                     <div class="journey-overlay">
@@ -201,7 +314,7 @@
 
             <!-- Phase 3: Construction -->
             <div class="journey-card">
-                <div class="journey-phase">Phase 3</div>
+                <div class="journey-phase">Phase 4</div>
                 <div class="journey-image">
                     <img src="./images/Active workers.png" alt="Construction">
                     <div class="journey-overlay">
@@ -217,6 +330,7 @@
                     <p>Our team oversees every detail to ensure structural integrity and design perfection.</p>
                 </div>
             </div>
+
         </div>
 
         <div class="video-section">
@@ -246,7 +360,7 @@
         </div>
     </div>
              <!--Elora gardens  -->
-    <section class="section hero-development-showcase" id="elora-progress">
+    <section class="section hero-development-showcase" id="Elora-gardens">
     <div class="section-header">
         <h2>Elora Gardens: From Vision to Reality</h2>
         <p>Witness the journey from untouched land to a thriving estate community.</p>
@@ -254,7 +368,7 @@
 
     <div class="video-wrapper glass">
         <video autoplay muted loop playsinline>
-            <source src="./videos/A selling video.mp4" type="video/mp4">
+            <source src="./videos/a selling video new.mp4" type="video/mp4">
         </video>
     </div>
        <div class="section-header">
@@ -267,11 +381,11 @@
                   <div class="col-md-6">
                <div class=" project-card">
                     <div class="project-image">
-                        <img src="./images/Flux_Dev_3D_render_of_a_Nigerian_realtors_darkskinned_hand_hol_2-removebg-preview.png" alt="Harbor View Residences">
-                        <div class="project-status"><i class="fas fa-naira-sign"></i>1,500,00</div>
+                        <img src="./images/A_3D_render_of_a_Nigerian-removebg-preview.png">
+                        <div class="project-status"><i class="fas fa-naira-sign"></i>1,500,000</div>
                     </div>
                     <div class="project-content">
-                        <h3>100 By 100ft(900SQM)</h3>
+                        <h3>100ft By 100ft(900SQM)</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
                             <span class="text-center">Evboeson Community</span>
@@ -285,19 +399,23 @@
                         <div class="project-stats">
                             <div class="stat">
                                 <div class="stat-value">100%</div>
-                                <div class="stat-label">Surveyed</div>
+                                <div class="stat-label">Root Title</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">Available</div>
-                                <div class="stat-label">Certificates</div>
+                                <div class="stat-label">Deed of transfer</div>
+                                 <div >
                             </div>
                             <div class="stat">
-                                <div class="stat-value">Now</div>
-                                <div class="stat-label">Move-in</div>
+                               Govt. registered survey & C of O</div>
                             </div>
                         </div>
-                          <button type="submit" class="btn btn-primary mt-5 mb-4">
-                        More Details  <i class="fas fa-arrow-right"></i>
+                        <button type="submit" class="btn btn-primary mt-5  mb-4">
+                            More info <i class="fab fa-whatsapp"></i>
+                       
+                    </button>
+                      <button type="submit" class="btn btn-outline mt-2 mt-md-5 mb-4">
+                        More Features  <i class="fas fa-arrow-right"></i>
                     </button>
                     </div>
                 </div>
@@ -305,11 +423,11 @@
                 <div class="col-md-6">
                   <div class=" project-card mx-md-0">
                     <div class="project-image">
-                        <img src="./images/Flux_Dev_3D_render_of_a_Nigerian_realtors_darkskinned_hand_hol_3-removebg-preview.png" alt="Pinecrest Estates">
-                       <div class="project-status"><i class="fas fa-naira-sign"></i>800,00</div>
+                        <img src="./images/A_mirrored_version-remove.png" alt="Pinecrest Estates">
+                       <div class="project-status"><i class="fas fa-naira-sign"></i>800,000</div>
                     </div>
                      <div class="project-content">
-                        <h3>50 By 100ft(450SQM)</h3>
+                        <h3>50ft By 100ft(450SQM)</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
                             <span class="text-center">Evboeson Community</span>
@@ -323,20 +441,25 @@
                         <div class="project-stats">
                             <div class="stat">
                                 <div class="stat-value">100%</div>
-                                <div class="stat-label">Surveyed</div>
+                                <div class="stat-label">Root Title</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">Available</div>
-                                <div class="stat-label">Certificates</div>
+                                <div class="stat-label">Deed of transfer</div>
+                                 <div >
                             </div>
                             <div class="stat">
-                                <div class="stat-value">Now</div>
-                                <div class="stat-label">Move-in</div>
+                               Govt. registered survey & C of O</div>
                             </div>
                         </div>
-                         <button type="submit" class="btn btn-primary mt-5 mb-4">
-                        More Details  <i class="fas fa-arrow-right"></i>
+                         <button type="submit" class="btn btn-primary mt-5  mb-4">
+                            More info <i class="fab fa-whatsapp"></i>
+                       
                     </button>
+                      <button type="submit" class="btn btn-outline mt-2 mt-md-5 mb-4">
+                        More Features  <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
                     </div>
                 </div>
                 </div>
@@ -350,7 +473,7 @@
         <div class="container-fluid">
             <div class="section-header">
                <h2>Flexible Payment Options</h2>
-                <p>Find something perfect whether is a land for sale or any other property in general.</p>
+                <p>Find something perfect whether its a land for sale or how our plans are tailored to suit you.</p>
             </div>
            
             <div class="container-fluid plans-container">
@@ -416,21 +539,59 @@
             </div>
         </div>
     </section>
+    <!-- investment plans -->
+     <section class="investment-section">
+  <div class="container">
+   <div class="section-header">
+     <h2>Strategic Investment Solutions</h2>
+    <p class="subheading">Maximize returns while minimizing risk through our tailored approach</p>
+   </div>
+    
+    <div class="investment-highlights">
+      <div class="highlight">
+        <div class="icon">
+             <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Income Optimization</h3>
+        <p>Customized investment plans aligned with your financial objectives</p>
+      </div>
+      
+      <div class="highlight">
+        <div class="icon"> <i class="fas fa-shield-alt"></i></div>
+        <h3>Risk Management</h3>
+        <p>Our team strategizes in sorting the best lands that keeps your wealth secure.</p>
+      </div>
+      
+      <div class="highlight">
+        <div class="icon">
+             <i class="fas fa-globe-americas"></i>
+        </div>
+        <h3>Global Opportunities</h3>
+        <p>Every investment is industry certified and we are open for global collaborations</p>
+      </div>
+    </div>
+    
+    <a href="/investment-services" class="btn btn-primary">
+      Explore Our Investment Approach <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+<!--  -->
     <!-- Construction Excellence -->
-    <section class="excellence-section">
+    <section class="excellence-section" id="construction">
         <div class="container">
             <div class="section-header">
                 <h2>Construction Excellence</h2>
-                <p>Discover the quality, innovation, and craftsmanship that goes into every Rina & CO. Consults property.</p>
+                <p>Discover the quality, innovation, and craftsmanship that goes into every Rina & CO. Consults Limited property.</p>
             </div>
             
             <div class="tabs-container">
                 <div class="tabs-nav">
                     <button class="tab-btn active">Craftsmanship</button>
-                    <button class="tab-btn">Tech Innovation</button>
+                    <!-- <button class="tab-btn">Tech Innovation</button> -->
                     <button class="tab-btn">Sustainability</button>
                     <button class="tab-btn">Quality Assurance</button>
-                    <button class="tab-btn">Behind the Walls</button>
+                    <!-- <button class="tab-btn">Behind the Walls</button> -->
                 </div>
                 
                 <div class="tabs-content">
@@ -449,7 +610,7 @@
                             <div class="excellence-card">
                                 <i class="fas fa-user-tie"></i>
                                 <h3>Master Craftsmen</h3>
-                                <p>Each project is built by artisans with 15+ years of specialized experience.</p>
+                                <p>Each project is built by artisans with 5+ years of specialized experience.</p>
                             </div>
                             <div class="excellence-card">
                                 <i class="fas fa-shield-alt"></i>
@@ -458,177 +619,58 @@
                             </div>
                         </div>
                     </div>
+                    <!-- sustainability -->
+                     <div class="tab-pane">
+                    <div class="excellence-grid">
+                        <div class="excellence-card">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Certified Construction</h3>
+                            <p>All projects meet Gold+ sustainability standards with industry approved materials .</p>
+                        </div>
+                        <div class="excellence-card">
+                            <i class="fas fa-solar-panel"></i>
+                            <h3>Renewable Energy Systems</h3>
+                            <p> We integrate solar roofs as required by the client .</p>
+                        </div>
+                       
+                        <div class="excellence-card">
+                            <i class="fas fa-tree"></i>
+                            <h3>Innovative Design</h3>
+                            <p>Living walls, natural ventilation, and non-toxic materials enhancing wellness.</p>
+                        </div>
+                    </div>
+                </div>
+                     <!--  -->
+                <div class="tab-pane">
+    <div class="excellence-grid">
+        <div class="excellence-card">
+            <i class="fas fa-clipboard-check"></i>
+            <h3>Triple-Phase Inspections</h3>
+            <p>Foundation, framing, and finishing is inspected for precise engineering practices.</p>
+        </div>
+        <div class="excellence-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Performance Benchmarking</h3>
+            <p>We ensure all designs pass energy efficiency and structural testing.</p>
+        </div>
+        <div class="excellence-card">
+            <i class="fas fa-hard-hat"></i>
+            <h3>Vendor Certification</h3>
+            <p>All partners undergo evaluations and ethical checks to ensure the always meet the best standards.</p>
+        </div>
+      
+    </div>
+</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Available Properties -->
-    <section class="properties-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Available Properties</h2>
-                <p>Find something perfect whether is a land for sale or any other property in general.</p>
-            </div>
-            
-            <div class="view-switcher">
-                <button class="view-btn active">List View</button>
-                <button class="view-btn">Map View</button>
-                <button class="view-btn">Lifestyle View</button>
-            </div>
-            
-            <div class="properties-container">
-                <div class="property-filters">
-                    <div class="filter-group">
-                        <h3>Property Type</h3>
-                        <div class="filter-options">
-                            <div class="filter-option active">All</div>
-                            <!-- <div class="filter-option">Condos</div> -->
-                            <div class="filter-option">Houses</div>
-                            <div class="filter-option">Land(100 By 100)ft</div>
-                               <div class="filter-option">Land(50 By 100)ft</div>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Price Range</h3>
-                        <div class="filter-options">
-                            <div class="filter-option">$300k-$500k</div>
-                            <div class="filter-option active">$500k-$800k</div>
-                            <div class="filter-option">$800k-$1.2M</div>
-                            <div class="filter-option">$1.2M+</div>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Move-in Date</h3>
-                        <div class="filter-options">
-                            <div class="filter-option">Immediate</div>
-                            <div class="filter-option active">3-6 Months</div>
-                            <div class="filter-option">6-12 Months</div>
-                            <div class="filter-option">Pre-construction</div>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Special Features</h3>
-                        <div class="filter-options">
-                            <div class="filter-option">Waterfront</div>
-                            <div class="filter-option">Smart Home</div>
-                            <div class="filter-option">Green Certified</div>
-                            <div class="filter-option">Customizable</div>
-                        </div>
-                    </div>
-                    
-                    <button class="btn btn-primary" style="width: 100%;">Apply Filters</button>
-                </div>
-                
-                <div class="property-list">
-                    <div class="property-card">
-                        <div class="property-badge">Customizable</div>
-                        <div class="property-image">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Family Home">
-                        </div>
-                        <div class="property-content">
-                            <div class="property-price">$689,900</div>
-                            <h3 class="property-title">Modern Family Home</h3>
-                            <div class="property-address">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>12 Pine Road, Northwood Hills</span>
-                            </div>
-                            <p>Spacious 4-bedroom home with open concept living, chef's kitchen, and landscaped backyard.</p>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <div class="feature-value">4</div>
-                                    <div class="feature-label">Beds</div>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <div class="feature-value">3.5</div>
-                                    <div class="feature-label">Baths</div>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <div class="feature-value">2,450</div>
-                                    <div class="feature-label">Sq Ft</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="property-card">
-                        <div class="property-badge">Smart Home</div>
-                        <div class="property-image">
-                            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="City Skyline Loft">
-                        </div>
-                        <div class="property-content">
-                            <div class="property-price">$1,225,000</div>
-                            <h3 class="property-title">City Skyline Loft</h3>
-                            <div class="property-address">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>45 Tower Ave, Downtown</span>
-                            </div>
-                            <p>Luxury penthouse with panoramic city views, smart home system, and rooftop terrace.</p>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <div class="feature-value">3</div>
-                                    <div class="feature-label">Beds</div>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <div class="feature-value">3</div>
-                                    <div class="feature-label">Baths</div>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <div class="feature-value">2,150</div>
-                                    <div class="feature-label">Sq Ft</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="property-card">
-                        <div class="property-badge">Waterfront</div>
-                        <div class="property-image">
-                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Harbor View Condo">
-                        </div>
-                        <div class="property-content">
-                            <div class="property-price">$849,500</div>
-                            <h3 class="property-title">Harbor View Condo</h3>
-                            <div class="property-address">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>8 Marina Drive, Waterfront</span>
-                            </div>
-                            <p>Stunning 2-bedroom condo with floor-to-ceiling windows and private balcony overlooking the harbor.</p>
-                            <div class="property-features">
-                                <div class="feature">
-                                    <i class="fas fa-bed"></i>
-                                    <div class="feature-value">2</div>
-                                    <div class="feature-label">Beds</div>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-bath"></i>
-                                    <div class="feature-value">2</div>
-                                    <div class="feature-label">Baths</div>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <div class="feature-value">1,450</div>
-                                    <div class="feature-label">Sq Ft</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--   -->
 
     <!-- Customization Studio -->
-    <section class="customization-section">
+    <!-- <section class="customization-section">
         <div class="container">
             <div class="section-header">
                 <h2>Customization Studio</h2>
@@ -744,7 +786,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
      <!-- FAQ Section -->
     <section class="faq-section" id="faq">
         <div class="section-header">
@@ -759,7 +801,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Our developments focus on creating complete communities rather than just building houses. We prioritize sustainable materials, smart home technology, community spaces, and long-term value. Each project undergoes meticulous planning to ensure it meets our high standards for design, functionality, and environmental responsibility.</p>
+                    <p>Our developments focus on creating complete communities rather than just building houses. We prioritize sustainable materials, community spaces, and long-term value. Each project undergoes meticulous planning to ensure it meets our high standards for design, functionality, and environmental responsibility.</p>
                 </div>
             </div>
             
@@ -769,17 +811,18 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>We offer flexible financing solutions to suit different needs, including traditional mortgages through our partner banks, in-house financing with competitive rates, and customized payment plans. Our financial advisors can help you explore options such as fixed-rate mortgages, adjustable-rate mortgages, and special first-time homebuyer programs.</p>
+                    <p>We offer flexible financing solutions to suit different needs, including a 3 tier installmental payments for lands on our estate  and customized payment plans. Our financial advisors can help you explore options that suits your budget.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Can I customize my home design?</h3>
+                    <h3>Is Rina & Co. Consults Limited CAC certified </h3>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Absolutely! Our customization studio allows you to personalize your home to match your lifestyle and preferences. You can choose from various floor plans, select finishes and materials, upgrade appliances, and even modify room layouts during the pre-construction phase. Our design consultants will guide you through the process to ensure your vision becomes reality.</p>
+                    <p>Rina and Co. consults Limited founded in the year 2023, is a fully registered firm that operates in compliance with all applicable Nigeria kawa and regulations. The company hold valid registration with cooperate affairs commission and partners with professionals in legal, finance,construction and estate management.
+</p>
                 </div>
             </div>
             
@@ -789,11 +832,11 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Construction timelines vary based on the project scale and complexity. Typically, single-family homes take 8-12 months from groundbreaking to completion, while larger multi-unit developments may take 18-24 months. We provide regular progress updates and maintain strict quality control throughout the construction process to ensure timely delivery without compromising on quality.</p>
+                    <p>Construction timelines vary based on the project scale and complexity. Typically, single-family homes take 3-6 months from groundbreaking to completion, while larger multi-unit developments may take 18-20 months. We provide regular progress updates and maintain strict quality control throughout the construction process to ensure timely delivery without compromising on quality.</p>
                 </div>
             </div>
             
-            <div class="faq-item">
+            <!-- <div class="faq-item">
                 <div class="faq-question">
                     <h3>Do you offer warranty on your properties?</h3>
                     <i class="fas fa-chevron-down"></i>
@@ -801,7 +844,7 @@
                 <div class="faq-answer">
                     <p>Yes, all our properties come with a comprehensive 10-year structural warranty and a 2-year warranty on fixtures, fittings, and appliances. Additionally, we provide a 30-day post-move-in service to address any initial adjustments you might need. Our commitment to quality extends beyond the sale, with a dedicated customer care team available throughout your ownership.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     
@@ -809,7 +852,7 @@
     <section class="testimonials-section" id="testimonials">
         <div class="section-header">
             <h2>Client Testimonials</h2>
-            <p>Hear what our homeowners have to say about their experience with Rina & CO. Consults.</p>
+            <p>Hear what our land owners have to say about their experience with Rina & CO. Consults limited.</p>
         </div>
         
         <div class="testimonials-container">
@@ -890,9 +933,9 @@
     </section>
 
      <!-- Partners Section -->
-    <section class="partners-section" id="partners">
+    <!-- <section class="partners-section" id="partners">
         <div class="section-header">
-            <h2>Our Trusted Partners</h2>
+            <h2>Our Trusted Investors</h2>
             <p>We collaborate with industry leaders to deliver exceptional quality and service.</p>
         </div>
         
@@ -902,23 +945,12 @@
                     <div class="partner-logo">
                         <img src="./images/rina and co logo.png" alt="" srcset="">
                     </div>
-                    <!-- <div class="partner-logo">
-                       <img src="./images/rina and co logo.png" alt="" srcset="">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="./images/rina and co logo.png" alt="" srcset="">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="./images/rina and co logo.png" alt="" srcset="">
-                    </div>
-                    <div class="partner-logo">
-                       <img src="./images/rina and co logo.png" alt="" srcset="">
-                    </div> -->
+              
                    
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
   <!-- Contact Section -->
    <section class="contact-section" id="contact">
         <div class="section-header pt-4">
@@ -933,14 +965,9 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-text">
-                        <h3>Our Headquarters</h3>
-                        <p>123 Innovation Drive, Tech City, TC 10001</p>
-                        <div class="contact-hours">
-                            <h4>Branch Offices</h4>
-                            <p>Lagos: 45 Marina Towers</p>
-                            <p>Abuja: 12 Capital Plaza</p>
-                            <p>Port Harcourt: 8 River View Complex</p>
-                        </div>
+                        <h3>Our Office</h3>
+                        <p>228, Upper Mission Rd.,Opp. Nation Hospital CLose To Ewah Rd.,Junction,Benin City, Edo State.</p>
+                        
                     </div>
                 </div>
                 
@@ -950,12 +977,8 @@
                     </div>
                      <div class="contact-text">
                         <h3>Phone & WhatsApp</h3>
-                        <p>+234 (0) 812 345 6789</p>
-                        <p>+234 (0) 809 876 5432</p>
-                        <div class="contact-hours">
-                            <p><span>Sales:</span> +234 (0) 803 123 4567</p>
-                            <p><span>Support:</span> +234 (0) 802 987 6543</p>
-                        </div>
+                        <p>+234 (0) 8148227087</p>
+                       
                     </div>
                 </div>
                 
@@ -964,10 +987,9 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                    <div class="contact-text">
-                        <h3>Email Addresses</h3>
-                        <p>info@rinaconsults.com</p>
-                        <p>sales@rinaconsults.com</p>
-                        <p>support@rinaconsults.com</p>
+                        <h3>Email Address</h3>
+                        <p>rinaandcoconsults@gmail.com</p>
+                      
                     </div>
                 </div>
                 
@@ -977,12 +999,14 @@
                     </div>
                     <div class="contact-text">
                         <h3>Working Hours</h3>
-                        <p>Monday - Friday: 8:30AM - 6:30PM</p>
-                        <p>Saturday: 10:00AM - 4:00PM</p>
+                        <p>Monday - Friday: 8:30AM - 4:00PM</p>
                         <div class="contact-hours">
                             <p><span>After Hours:</span> By appointment only</p>
                         </div>
                     </div>
+                </div>
+                 <div class="map-box mt-3 mx-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7930.516925539968!2d5.636370258691384!3d6.360584458639503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d35e40e20bd1%3A0xcd35bbee9c9203e5!2sEwah%20Rd%2C%20Benin%20City%2C%20Edo!5e0!3m2!1sen!2sng!4v1753119853488!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             
@@ -1016,11 +1040,10 @@
                     
                     <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
                 </form>
-                      <div class="map-box mt-3">
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3965.258462836634!2d5.641520100000008!3d6.360584449999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x1040d3680685b47f%3A0x327ae5393b0b6e6d!2sUpper%20Mission%20Rd%2C%20Benin%20City%2C%20Edo!3m2!1d6.3635646!2d5.6403085!4m5!1s0x1040d35e40e20bd1%3A0xcd35bbee9c9203e5!2sEwah%20Rd%2C%20Benin%20City%2C%20Edo!3m2!1d6.357604299999999!2d5.6427317!5e0!3m2!1sen!2sng!4v1752751680454!5m2!1sen!2sng"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-box"></iframe>
-                </div>
+                   
             </div>
         </div>
+          
     </section>
   
         
@@ -1030,13 +1053,13 @@
         <!-- <div class="container"> -->
             <div class="footer-container">
                 <div class="footer-column">
-                    <h3> Rina & Co. Consults</h3>
-                    <p style="color: #b0b0b0; margin-bottom: 20px;">Building tomorrow's communities with integrity, innovation, and excellence.</p>
+                    <h3> Rina & Co. Consults Limited</h3>
+                    <p style="color: #b0b0b0; margin-bottom: 20px;">...Comfortability with value.</p>
                     <div style="display: flex; gap: 15px;">
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                       
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+                       
                     </div>
                 </div>
                 
