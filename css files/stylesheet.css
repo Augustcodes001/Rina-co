@@ -49,7 +49,7 @@
             z-index: 9999;
             opacity: 1;
             transition: opacity 0.8s ease;
-            display:none;
+            /* display:none; */
         }
 
         .logo-container {
