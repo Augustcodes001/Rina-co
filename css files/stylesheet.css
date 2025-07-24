@@ -1995,24 +1995,25 @@
             position: relative;
         }
         
-           .team-section .stat-item {
+           .stats-container .stat-item {
             text-align: center;
             /* color: white; */
             z-index: 2;
         }
         
-          .team-section  .stat-number {
+         .stats-container .stat-number {
             font-size: 3rem;
             font-weight: 700;
             color: var(--secondary);
             margin-bottom: 10px;
         }
         
-          .team-section  .stat-label {
+         .stats-container .stat-label {
             font-size: 1.1rem;
             color: var(--text-gray);
             text-transform: uppercase;
-            letter-spacing: 1px;
+             text-align:right;
+
         }
         
         .cta-container {
@@ -2076,7 +2077,9 @@
                 flex-direction: column;
                 gap: 30px;
             }
-            
+            .stats-container .stat-label{
+                        text-align: center;
+            }
             .team-grid {
                 grid-template-columns: 1fr;
             }
@@ -2360,6 +2363,11 @@
             .footer-bottom-container {
                 flex-direction: column;
             }
+             /* .stats-container .stat-label p {
+             text-align:center;
+
+        } */
+        
         }
         
         @media (max-width: 480px) {
