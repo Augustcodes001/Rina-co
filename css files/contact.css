@@ -21,7 +21,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--dark);
-            background-color:  rgba(252, 246, 197, 0.9);
+            background-color:  rgba(252, 246, 197, 0.6);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -36,7 +36,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-             background: rgba(48, 41, 6, .7);
+              background: rgba(53, 49, 30, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
@@ -348,14 +348,18 @@
             margin-bottom: 20px;
         }
 
-        .mobile-nav ul li a {
+      .mobile-nav ul li a {
             color: var(--text);
             text-decoration: none;
             font-size: 1.05rem;
             display: block;
             padding: 10px 0;
+            padding-left: 1em;
             transition: all 0.3s ease;
-            border-bottom: 1px solid var(--secondary);
+            background:var(--glass);
+              border-top-left-radius: .3em;
+               border-bottom-left-radius: .3em;
+            /* border-bottom: 1px solid var(--secondary); */
             font-weight: 500;
         }
 
@@ -528,6 +532,7 @@
             flex: 1;
             min-width: 300px;
          background: rgba(252, 252, 164, 0.5);
+           background-color:  rgba(252, 246, 197, 0.7);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(10, 25, 47, 0.1);
@@ -544,6 +549,8 @@
             margin-bottom: 10px;
             position: relative;
             display: inline-block;
+
+            text-transform: capitalize;
         }
         
         .form-header h2::after {
@@ -604,6 +611,7 @@
         
         .info-card {
                background: rgba(252, 252, 164, 0.3);
+                 background-color:  rgba(252, 246, 197, 0.7);
             border-radius: 15px;
             padding: 40px;
             color: var(--text-light);
@@ -643,6 +651,7 @@
         
         .business-hours {
             background: rgba(252, 252, 164, 0.5);
+               background-color:  rgba(252, 246, 197, 0.5);
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
@@ -696,7 +705,7 @@
             height: 50px;
             border-radius: 50%;
             background:var(--secondary);
-            color: white;
+            color: var(--primary);
             font-size: 1.4rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 175, 55, 0.3);
