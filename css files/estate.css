@@ -349,7 +349,7 @@
             margin-bottom: 20px;
         }
 
-      .mobile-nav ul li a {
+     .mobile-nav ul li a {
             color: var(--text);
             text-decoration: none;
             font-size: 1.05rem;
@@ -357,9 +357,10 @@
             padding: 10px 0;
             padding-left: 1em;
             transition: all 0.3s ease;
-            background:rgba(119, 119, 119, 0.57);
-              border-top-left-radius: 1em;
-               border-bottom-left-radius: 1em;
+                   background:rgba(107, 94, 51, 0.57);
+                    
+              border-top-left-radius: 1.5em;
+               border-bottom-left-radius: 1.5em;
             /* border-bottom: 1px solid var(--secondary); */
             font-weight: 500;
         }
@@ -773,7 +774,7 @@
                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             position: relative;
-            height: 360px;
+            height: 460px;
             overflow: hidden;
         }
 
@@ -902,7 +903,6 @@
 
         .slider-arrow {
             background: rgba(255,255,255,0.7);
-              background: var(--glass);
             border: none;
             width: 40px;
             height: 40px;
@@ -956,10 +956,12 @@
         .property-features {
             list-style: none;
             margin: 15px 0;
+            padding:0;
         }
 
         .property-features li {
             padding: 8px 0;
+
             border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
@@ -979,7 +981,7 @@
             display: inline-block;
             margin: 10px 0;
         }
-
+ 
         /* Modal Styles */
         .modal {
             display: none;
@@ -998,12 +1000,12 @@
             margin: 5% auto;
             width: 90%;
             max-width: 1000px;
-            max-height: 90vh;
+            max-height: 100vh;
         }
 
         .modal-img {
             width: 100%;
-            max-height: 80vh;
+            max-height: 100vh;
             object-fit: contain;
         }
 

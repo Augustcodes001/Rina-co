@@ -348,7 +348,7 @@
             margin-bottom: 20px;
         }
 
-      .mobile-nav ul li a {
+     .mobile-nav ul li a {
             color: var(--text);
             text-decoration: none;
             font-size: 1.05rem;
@@ -356,12 +356,14 @@
             padding: 10px 0;
             padding-left: 1em;
             transition: all 0.3s ease;
-            background:rgba(119, 119, 119, 0.57);
-              border-top-left-radius: 1em;
-               border-bottom-left-radius: 1em;
+                   background:rgba(107, 94, 51, 0.57);
+                    
+              border-top-left-radius: 1.5em;
+               border-bottom-left-radius: 1.5em;
             /* border-bottom: 1px solid var(--secondary); */
             font-weight: 500;
         }
+
         .mobile-nav ul li a:hover {
             color: var(--secondary);
             transition: all .6s;
