@@ -356,9 +356,9 @@
             padding: 10px 0;
             padding-left: 1em;
             transition: all 0.3s ease;
-            background:var(--glass);
-              border-top-left-radius: .3em;
-               border-bottom-left-radius: .3em;
+            background:rgba(119, 119, 119, 0.57);
+              border-top-left-radius: 1em;
+               border-bottom-left-radius: 1em;
             /* border-bottom: 1px solid var(--secondary); */
             font-weight: 500;
         }
@@ -467,9 +467,10 @@
             background-size: cover;
             background-position: center;
             color: rgb(20, 19, 19);
-            padding: 100px 0;
+            padding: 150px 0;
             text-align: center;
             position: relative;
+              height: 90vh;
         }
         
        .hero-header::before {
@@ -1094,6 +1095,7 @@
         
         .benefits-list .benefit-text h3 {
                color: #ca9c02;
+               color: var(--primary);
             margin-bottom: 5px;
             font-size: 1.2rem;
         }
@@ -1215,7 +1217,7 @@
             border-radius: 50%;
             overflow: hidden;
             margin-right: 15px;
-            border: 2px solid  var(--gold-dark);
+            /* border: 2px solid  var(--gold-dark); */
         }
         
         .testimonial .author-img img {
@@ -1225,7 +1227,7 @@
         }
         
         .testimonial .author-info h4 {
-            color: var(--gold-dark);
+            color: var(--primary);
             margin-bottom: 5px;
         }
         
@@ -1429,7 +1431,7 @@
             bottom: 0;
             left: 0;
             width: 50px;
-            height: 2px;
+            height: 1px;
             background: var(--gold-medium);
         }
         
