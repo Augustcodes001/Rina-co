@@ -734,16 +734,10 @@
         }
          /* Investment Form */
         .form-section {
-            /* background: li */
             background:white;
         }
         
         .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
             background-color: white;
             border-radius: 12px;
                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -774,7 +768,19 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
-        
+         @media (max-width: 900px) {
+           .contact-method {
+            display: block;
+            align-items: center;
+         
+        }
+            .contact-method p{
+                font-size: .9em;
+            }
+         .contact-method h4 {
+            margin-top: 0.5rem;
+        }
+        }
         .contact-icon-large {
             display: flex;
             align-items: center;
@@ -818,14 +824,12 @@
         }
         
         .whatsapp-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            width: 100%;
              background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             padding: 1rem;
               box-shadow: 0 8px 25px rgba(18, 140, 126, 0.4);
+              border:none;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
@@ -837,7 +841,9 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(18, 140, 126, 0.6);
             color: white;
+            transition: .8s all;
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+                border:none;
         }
         
  /* Responsive Design */
@@ -846,9 +852,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .form-container {
-                grid-template-columns: 1fr;
-            }
+           
             
             .form-info {
                 padding: 2rem;
@@ -906,9 +910,9 @@
         }
         
         .gallery-item {
-            border-radius: var(--border-radius);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
             height: 300px;
         }
@@ -1246,7 +1250,6 @@
          
 
         }
-
 
 
 
