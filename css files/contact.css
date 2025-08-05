@@ -468,36 +468,57 @@
         }
         
         /* Hero Section */
-        .hero-header {
-            background: linear-gradient(rgba(78, 59, 2, 0.35), var(--glass)), url(../images/Flux_Dev_Aerial_drone_view_of_a_sunkissed_Nigerian_savanna_lan_3.jpg);
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 20px 80px;
-            text-align: center;
+          .hero {
             position: relative;
-            height: 90vh;
+           height:100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
         }
-        
-         .hero-header::before {
-            content: "";
+
+        .hero-video-container {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-secondary));
-        }
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
         
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
+
+        .hero-video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(179, 165, 105, 0.5) 0%, rgba(233, 198, 82, 0.1) 100%);
+             background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
+            z-index: 1;
+        }
+     
+        
+       
+       
         
       .hero-title {
-           font-size: 2.5rem;
+           font-size: 2.8rem;
             line-height: 1.2;
             background: linear-gradient(to right, var(--gold-light), var(--gold-medium));
             -webkit-background-clip: text;
@@ -505,6 +526,7 @@
             color: transparent;
             font-family: 'Playfair Display', serif;
             letter-spacing: -0.5px;
+            text-align: center;
         }
         
         .hero-text {
@@ -513,9 +535,11 @@
             opacity: 0.9;
             line-height: 1.8;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            /* margin-left: auto;
+            margin-right: auto; */
+            margin:auto;
             color: var(--text);
+               text-align: center;
         }
         
         /* Main Content */
@@ -530,79 +554,127 @@
         }
         
         /* Contact Form */
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-         background: rgba(252, 252, 164, 0.5);
-           background-color:  rgba(252, 246, 197, 0.7);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(10, 25, 47, 0.1);
+         .form-section {
+            background:white;
         }
         
-        .form-header {
-            text-align: center;
-            margin-bottom: 30px;
+        .form-container {
+            background-color: white;
+            border-radius: 12px;
+                   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         
-        .form-header h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            position: relative;
-            display: inline-block;
-
-            text-transform: capitalize;
+        .form-info {
+            background: linear-gradient(135deg, var(--primary), var(--gold-dark),var(--primary));
+            color: white;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
-        .form-header h2::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--secondary);
+        .form-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
         
-        .form-header p {
-            /* color: var(--);/ */
-            margin-top: 20px;
-            line-height: 1.7;
+        .contact-methods {
+            margin-top: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+         @media (max-width: 900px) {
+           .contact-method {
+            display: block;
+            align-items: center;
+         
+        }
+            .contact-method p{
+                font-size: .9em;
+            }
+         .contact-method h4 {
+            margin-top: 0.5rem;
+        }
+        }
+        .contact-icon-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+               border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+        
+        .form-content {
+            padding: 3rem;
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 1.5rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            color: var(--primary);
+            margin-bottom: 0.5rem;
             font-weight: 500;
         }
         
-        .form-control {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 14px 20px;
-            border: 1px solid   rgba(252, 252, 164, 0.5);;
+            padding: 0.8rem 1rem;
+            border: 1px solid #cbd5e1;
             border-radius: 8px;
             font-size: 1rem;
-            transition: all 0.3s ease;
         }
         
-        .form-control:focus {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
+            border-color: var(--primary);
         }
         
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        .whatsapp-cta {
+            width: 100%;
+             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 1rem;
+              box-shadow: 0 8px 25px rgba(18, 140, 126, 0.4);
+              border:none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s;
         }
         
+        .whatsapp-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(18, 140, 126, 0.6);
+            color: white;
+            transition: .8s all;
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+                border:none;
+        }
+        
+ /* Responsive Design */
+        @media (max-width: 992px) {
+            .form-info {
+                padding: 2rem;
+            }
+        }
+        /* Investor Relations */
        
         /* Contact Info */
         .contact-info {
@@ -652,12 +724,12 @@
         }
         
         .business-hours {
-            background: rgba(252, 252, 164, 0.5);
-               background-color:  rgba(252, 246, 197, 0.5);
-            border-radius: 10px;
+            background: rgba(172, 172, 112, 0.3);
+               box-shadow: 0 15px 40px rgba(10, 25, 47, 0.15); 
+            border-radius: 4px;
             padding: 20px;
             margin-top: 20px;
-            border: 1px solid var(--gold-dark);
+            /* border: 1px solid var(--gold-dark); */
         }
         
         .hours-item {
@@ -687,7 +759,6 @@
         }
         
         .social-media h4 {
-            color: var(--primary);
             margin-bottom: 20px;
             font-size: 1.3rem;
         }
@@ -706,8 +777,8 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background:var(--secondary);
-            color: var(--primary);
+           background-color: rgba(255, 255, 255, 0.2);
+            color: white;
             font-size: 1.4rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 175, 55, 0.3);
