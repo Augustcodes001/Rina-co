@@ -858,128 +858,106 @@
             transform: translateY(0);
         }
         
-         /* Investment Form */
-        /* .form-section {
-            background:white;
-        } */
-        
-        .form-container {
-            background-color: white;
-            border-radius: 12px;
-                   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+         /* Contact Section */
+             /* WhatsApp CTA Section */
+             .contact-section{
+                 background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
+             }
+        .whatsapp-cta {
+               background: linear-gradient(rgba(18, 18, 18, 0.35), var(--glass));
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+ .whatsapp-cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary), var(--secondary));
+              border-top-left-radius: 15px;
         }
         
-        .form-info {
-            background: linear-gradient(135deg, var(--primary), var(--gold-dark),var(--primary));
-            color: white;
-            padding: 3rem;
+        .whatsapp-icon {
+            font-size: 64px;
+            color: #25D366 ;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: rgb(0, 0, 27);
+        }
+.contact-details h4 {
+             color: rgb(0, 0, 27);
+        }
+        .whatsapp-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            /* color: var(--gray); */
+            font-size: 1.1em;
+        }
+
+        .contact-details {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-        }
-        
-        .form-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-methods {
-            margin-top: 2rem;
-        }
-        
-        .contact-method {
-            display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 15px;
+            margin-top: 30px;
         }
-         @media (max-width: 900px) {
-           .contact-method {
-            display: block;
-            align-items: center;
-         
-        }
-            .contact-method p{
-                font-size: .9em;
-            }
-         .contact-method h4 {
-            margin-top: 0.5rem;
-        }
-        }
-        .contact-icon-large {
-            display: flex;
+   .whatsapp-button {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            font-size: 1.5rem;
-        }
-        
-        .form-content {
-            padding: 3rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .whatsapp-cta {
-            width: 100%;
-             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-             
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
-            padding: 1rem;
-              box-shadow: 0 8px 25px rgba(18, 140, 126, 0.4);
-              border:none;
+            border: none;
             border-radius: 50px;
+            font-size: 1rem;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
             text-decoration: none;
-            margin-top: 1.5rem;
-            transition: background-color 0.3s;
+            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.4);
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
         }
         
-        .whatsapp-cta:hover {
+        .whatsapp-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(18, 140, 126, 0.6);
             color: white;
-            transition: .8s all;
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-                border:none;
         }
         
- /* Responsive Design */
-        @media (max-width: 992px) {
-            .form-info {
-                padding: 2rem;
-            }
+        .whatsapp-button i {
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+               background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         /* Footer */
 
           .footer {

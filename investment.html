@@ -95,7 +95,7 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Smart Investments for Sustainable Growth</h1>
-            <p>Join our portfolio of successful investors and discover opportunities that deliver exceptional returns with strategic guidance from Rina Co Consults.</p>
+            <p>Join our portfolio of successful investors and discover opportunities that deliver exceptional returns with strategic guidance from Rina Co Consults Limited.</p>
             <a href="#"class="btn btn-primary">
                 Explore Opportunities
                 <i class="fas fa-arrow-right"></i>
@@ -106,7 +106,7 @@
     <!-- Investment Opportunities -->
     <section id="opportunities" class="oppo-back">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" id="oppurtunity-section">
                 <h2>Investment Opportunities</h2>
                 <p>Diversify your portfolio with our carefully curated investment options designed for growth and stability</p>
             </div>
@@ -188,7 +188,7 @@
                     </div>
                     
                     <div class="input-group">
-                        <label for="investment-type">Investment Type</label>
+            <label for="investment-type">Investment Type</label>
                         <select id="investment-type">
                             <option value="real-estate">Real Estate Development</option>
                             <option value="green-energy">Green Energy Projects</option>
@@ -198,6 +198,7 @@
                     
                     <div class="input-group">
                         <label for="investment-term">Investment Term (Years)</label>
+                       
                         <input type="range" id="investment-term" class="range-slider" min="1" max="10" value="5">
                         <div id="term-value">5 years</div>
                     </div>
@@ -381,7 +382,7 @@
             
             <div class="card-grid">
                 <div class="card investor-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson" class="investor-avatar">
+                    <img src="./images/invest-real-2.jpg" alt="investor-image" class="investor-avatar">
                     <div class="card-body">
                         <h3>Sarah Johnson</h3>
                         <p>Investor Rina & Co. Consults Ltd</p>
@@ -401,7 +402,7 @@
                 </div>
                 
                 <div class="card investor-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Michael Chen" class="investor-avatar">
+                   <img src="./images/invest-real-3.jpg" alt="investor-image" class="investor-avatar">
                     <div class="card-body">
                         <h3>Michael Chen</h3>
                         <p>Investor Rina & Co. Consults Ltd</p>
@@ -421,7 +422,7 @@
                 </div>
                 
                 <div class="card investor-card">
-                    <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Elena Rodriguez" class="investor-avatar">
+                    <img src="./images/invest-real.jpg" alt="investor-image" class="investor-avatar">
                     <div class="card-body">
                         <h3>Elena Rodriguez</h3>
                         <p>Investor Rina & Co. Consults Ltd</p>
@@ -443,9 +444,12 @@
         </div>
     </section>
  <!-- Investment Form & Contact -->
-    <section class="form-section">
+   
+            
+               <!-- Investment Form & Contact -->
+   <section class="form-section pb-5">
         <div class="container">
-            <div class="section-header">
+          <div class="section-header">
                 <h2>Start Your Investment Journey</h2>
                 <p>Get in touch with our team to discuss investment opportunities</p>
             </div>
@@ -453,8 +457,8 @@
             <div class="form-container container-fluid">
                 <div class="row">
           <div class="form-info col-md-6">
-                    <h3>Ready to Invest?</h3>
-                    <p>Our investment specialists are available to guide you through the process and answer any questions you may have about our opportunities.</p>
+                    <h3>Contact Info</h3>
+                   
                     
                     <div class="contact-methods">
                         <div class="contact-method">
@@ -482,14 +486,42 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
+                             
                                 <h4>Visit Us</h4>
-                                <p>228, Upper Mission Rd.,<br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
+                                <p>228, Upper Mission Rd.,Opp. Nation Hospital <br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
                             </div>
                         </div>
+                         <div class="business-hours glass">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="hours">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="hours">Appointments Only</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="hours">Closed</span>
+                        </div>
+                    </div>
+                      
+                <div class="social-media">
+                    <h4>Connect with us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
+                         <a href="http://">
+                            <i class="fab fa-whatsapp"></i>
+                         </a>
+                    </div>
+                </div>
+        
                     </div>
                 </div>
                    <div class="form-content col-md-6">
-                    <form id="investment-form">
+            <form id="investment-form" action="https://formspree.io/f/mrbloeja"
+                      method="POST">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" required>
@@ -506,41 +538,44 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="interest">Investment Interest</label>
+                            <label for="interest">Subject</label>
                             <select id="interest" required>
                                 <option value="">Select an option</option>
                                 <option value="real-estate">Real Estate Development</option>
-                                <option value="green-energy">Green Energy Projects</option>
-                                <option value="tech-startups">Tech Startups</option>
-                                <option value="multiple">Multiple Opportunities</option>
-                                <option value="not-sure">Not Sure - Need Guidance</option>
+                                <option value="green-energy">Partnership Request</option>
+                                <option value="tech-startups">Investment Opportunities</option>
+                                <option value="multiple">Career Opportunities</option>
+                                <option value="not-sure">Land Inquiry</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="amount">Estimated Investment Amount</label>
                             <select id="amount" required>
                                 <option value="">Select an option</option>
-                                <option value="10k">$10,000 - $50,000</option>
-                                <option value="50k">$50,000 - $100,000</option>
-                                <option value="100k">$100,000 - $250,000</option>
-                                <option value="250k">$250,000 - $500,000</option>
-                                <option value="500k">$500,000+</option>
+                                <option value="10k">₦100,000 - ₦500,000</option>
+                                <option value="50k">₦500,000 - ₦1,000,000</option>
+                                <option value="100k">₦1,000,000 - ₦5,000,000</option>
+                                <option value="250k">₦5,000,000 - ₦10,000,000</option>
+                                <option value="500k">₦10,000,000+</option>
                             </select>
                         </div>
+                       
                         
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" rows="4"></textarea>
                         </div>
                    
-                        <a type="submit" class="btn btn-primary  mt-2" style="width: 100%;">
+                        <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;">    <i class="fas fa-paper-plane me-2"></i>
                             Submit Request
-                        </a>
+                        </button>
+                         <div id="status-message" class="status-message"></div>
                     </form>
-                    
-                    <a href="https://wa.me/18005551234" class="btn btn-primary whatsapp-cta mt-2">
-                        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+                      <div class="text-center mt-4 mb-3">
+                            <p class="text-muted">- OR -</p>
+                        </div>
+                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
+                        <i class="fab fa-whatsapp me-2"></i> Chat with us on WhatsApp
                     </a>
                 </div>
 
@@ -550,34 +585,48 @@
                 
                 
             </div>
+            
+             
         </div>
     </section>
+                    
+                  
+        
     <!-- Certificates Gallery -->
     <section id="certificates" class="certificates">
-        <div class="container">
+        <div class="container-fluid cert-background">
             <div class="section-header">
                 <h2>Our Certifications</h2>
                 <p>Be part of our league of investors join a community recognized for excellence in investment management and financial consulting</p>
             </div>
-            
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="./images/cert-1.jpg" alt="Investment Certification">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/cert-2.jpg" alt="Investment Certification">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/cert-3.jpg" alt="Investment Certification">
-                </div>
+             <section class="gallery">
                
-            </div>
+                <div class="gallery-slide">
+                  <img src="./images/cert-1.jpg" alt="Investment Certification">
+                   <img src="./images/cert-2.jpg" alt="Investment Certification">
+                    <img src="./images/cert-3.jpg" alt="Investment Certification">
+                     <img src="./images/cert-4.jpg" alt="Investment Certification">
+                </div>
+                <div class="gallery-slide">
+                 <img src="./images/cert-1.jpg" alt="Investment Certification">
+                   <img src="./images/cert-2.jpg" alt="Investment Certification">
+                    <img src="./images/cert-3.jpg" alt="Investment Certification">
+                     <img src="./images/cert-4.jpg" alt="Investment Certification">
+                </div>
+                <div class="gallery-slide">
+                   <img src="./images/cert-1.jpg" alt="Investment Certification">
+                   <img src="./images/cert-2.jpg" alt="Investment Certification">
+                    <img src="./images/cert-3.jpg" alt="Investment Certification">
+                     <img src="./images/cert-4.jpg" alt="Investment Certification">
+                </div>
+               </section> 
+           
         </div>
     </section>
 
    
 
-    <!-- Footer -->
+      <!-- Footer -->
    <footer class="footer">
         <div class="gold-decoration"></div>
         
@@ -601,12 +650,12 @@
                 <div class="col-md-4 footer-column">
                     <h3>Construction</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Construction Site</a></li>
-                        <li><a href="#">Quality Assurance</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Project Portfolio</a></li>
-                        <li><a href="#">Craftmanship</a></li>
-                        <li><a href="#">Project Journey</a></li>
+                        <li><a href="construction.html">Construction Site</a></li>
+                        <li><a href="construction.html#quality-section">Quality Assurance</a></li>
+                        <li><a href="construction.html#sustain-section">Sustainability</a></li>
+                        <li><a href="construction.html#projects">Project Portfolio</a></li>
+                        <li><a href="construction.html#craft-section">Craftmanship</a></li>
+                        <li><a href="construction.html#project-journey-section">Project Journey</a></li>
                     </ul>
                 </div>
                 
@@ -614,10 +663,13 @@
                 <div class="col-md-4 footer-column">
                     <h3>Real Estate</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Available Lands</a></li>
-                        <li><a href="#">Payment Plans</a></li>
-                        <li><a href="#">Elora Gardens</a></li>
-                        <li><a href="#">Community</a></li>
+                        <li><a href="estate.html#land-sizes-section">Available Lands</a></li>
+                  
+                        <li><a href="estate.html#landmarks-section">Landmarks</a></li>
+                         <li><a href="estate.html#gallery-section">Estate Gallery</a></li>
+                         <li><a href="estate.html#maps-section">Maps</a></li>
+                        <li><a href="estate.html#payment-section">Payment Plans</a></li>
+                       
                      
                     </ul>
                 </div>
@@ -627,11 +679,11 @@
                 <div class="col-md-4 footer-column">
                     <h3>Investment</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Investment Opportunities</a></li>
-                        <li><a href="#">ROI Calculator</a></li>
-                        <li><a href="#">Investment Guides</a></li>
-                        <li><a href="#">Current Projects</a></li>
-                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="investment.html#oppurtunity-section">Investment Opportunities</a></li>
+                        <li><a href="investment.html#calculator">ROI Calculator</a></li>
+                        <li><a href="investment.html#guides">Investment Guides</a></li>
+                        <li><a href="investment.html#projects">Current Projects</a></li>
+                        <li><a href="investment.html#investor-relations">Investor Relations</a></li>
                     </ul>
                 </div>
                 
@@ -694,14 +746,12 @@
                 <p class="copyright">
                     &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited. All rights reserved. | Comfortability with value.
                 </p>
-                <!-- <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div> -->
+                
             </div>
         </div>
     </footer>
+
+
 
 
 

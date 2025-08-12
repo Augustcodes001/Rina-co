@@ -261,3 +261,89 @@
                 faqItem.classList.toggle('active');
             });
         });
+
+     
+
+        // video player
+       
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoOverlay = document.querySelector('.video-overlay');
+            const playPauseBtn = document.getElementById('play-pause');
+            const muteBtn = document.getElementById('mute');
+            const progressBar = document.getElementById('progress-bar');
+            const progressContainer = document.querySelector('.progress-container');
+            const fullscreenBtn = document.getElementById('fullscreen');
+            const videoWrapper = document.querySelector('.video-wrapper');
+            const iframe = document.querySelector('iframe');
+            
+            // Simulated video controls functionality
+            let isPlaying = false;
+            let isMuted = false;
+            
+            // Play/Pause functionality
+            playPauseBtn.addEventListener('click', function() {
+                isPlaying = !isPlaying;
+                playPauseBtn.innerHTML = isPlaying ? 
+                    '<i class="fas fa-pause"></i>' : 
+                    '<i class="fas fa-play"></i>';
+                
+                // Simulate video progress for demo
+                if (isPlaying) {
+                    simulateProgress();
+                }
+            });
+            
+            // Mute functionality
+            muteBtn.addEventListener('click', function() {
+                isMuted = !isMuted;
+                muteBtn.innerHTML = isMuted ? 
+                    '<i class="fas fa-volume-mute"></i>' : 
+                    '<i class="fas fa-volume-up"></i>';
+            });
+            
+            // Progress bar click
+            progressContainer.addEventListener('click', function(e) {
+                const pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
+                progressBar.style.width = pos * 100 + '%';
+            });
+            
+            // Fullscreen functionality
+            fullscreenBtn.addEventListener('click', function() {
+                if (videoWrapper.requestFullscreen) {
+                    videoWrapper.requestFullscreen();
+                } else if (videoWrapper.mozRequestFullScreen) {
+                    videoWrapper.mozRequestFullScreen();
+                } else if (videoWrapper.webkitRequestFullscreen) {
+                    videoWrapper.webkitRequestFullscreen();
+                } else if (videoWrapper.msRequestFullscreen) {
+                    videoWrapper.msRequestFullscreen();
+                }
+            });
+            
+            // Remove overlay on play
+            videoOverlay.addEventListener('click', function() {
+                this.style.display = 'none';
+                isPlaying = true;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                simulateProgress();
+            });
+            
+            // Simulate progress for demo
+            function simulateProgress() {
+                if (isPlaying) {
+                    let width = 0;
+                    const interval = setInterval(function() {
+                        if (width >= 100 || !isPlaying) {
+                            clearInterval(interval);
+                            if (width >= 100) {
+                                isPlaying = false;
+                                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                            }
+                        } else {
+                            width += 0.5;
+                            progressBar.style.width = width + '%';
+                        }
+                    }, 50);
+                }
+            }
+        });

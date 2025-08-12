@@ -139,7 +139,7 @@
                     <h3 class="slide-title">Strategic Investment Opportunities</h3>
                     <p class="slide-text">Maximize your returns with our carefully curated investment portfolio. Benefit from our market expertise, transparent processes, and proven track record of delivering above-market returns. We offer flexible investment plans tailored to your financial goals.</p>
                    <div class="hero-buttons  pb-5 mb-5">
-                <a href="investment.html" class="btn btn-primary">Invest Now <i class="fas fa-piggy-bank"></i></a>
+                <a href="investment.html#invest-now" class="btn btn-primary">Invest Now <i class="fas fa-piggy-bank"></i></a>
                 <!-- <a href="#" class="btn btn-outline">Invest Now <i class="fas fa-piggy-bank"></i> -->
                 </a>
             </div>
@@ -153,7 +153,7 @@
         <h3 class="slide-title">Excellence in Construction</h3>
                     <p class="slide-text">Building communities with integrity and innovation. Our construction division combines cutting-edge technology with sustainable practices to deliver projects on time and beyond expectations. From residential complexes to commercial developments, we build with precision and passion.</p>
                   <div class="hero-buttons  pb-5 mb-5">
-                <a href="construction.html" class="btn btn-primary">view porfolio  <i class="fas fa-hard-hat"></i></a>
+                <a href="construction.html#projects" class="btn btn-primary">view porfolio  <i class="fas fa-hard-hat"></i></a>
               
             </div>
                 </div>
@@ -336,31 +336,66 @@
 
         </div>
 
-        <div class="video-section">
-            <div class="section-header">
+       
+         <!--  -->
+          <div class="container">
+        <div class="gold-accent accent-1"></div>
+        <div class="gold-accent accent-2"></div>
+        <div class="gold-accent accent-3"></div>
+        
+        <div class="particles" id="particles"></div>
+        
+       
+        <section class="video-section">
+         <div class="section-header">
                 <h2>The Journey So Far</h2>
-                <p>Experience our transformative journey in motion. This cinematic showcase captures the essence of our development process.</p>
+               <p>Experience our transformative journey in motion. This cinematic showcase captures the essence of our development process.</p>
             </div>
 
-            <div class="video-container glass">
+            <div class="video-container">
                 <div class="video-placeholder">
-                    <!-- <img src="./images/A sunny, cinematic drone shot slowly flying over a well-demarcated residential layout with golden wire fencing, a visible land well in one corner, and a bulldozer clearing tree stumps in the background. In the for.png" alt="" srcset=""> -->
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Project Journey">
                 </div>
                 <div class="video-overlay">
-                    <i class="fas fa-play-circle"></i>
-                    <!-- <h3>Project Journey Showcase</h3>
-                    <p>Click to play the transformation story</p> -->
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-
-            <p class="video-description">
-                This cinematic journey showcases our signature development process: beginning with untouched landscapes, transitioning through collaborative design sessions with our architects, and culminating in the dynamic construction phase where blueprints become tangible structures.
-            </p>
             
-            <a href="#" class="btn btn-primary" style="margin-top: 30px;">
-                Explore Our Projects <i class="fas fa-arrow-right"></i>
-            </a>
+           <p class="video-description">
+                This cinematic journey showcases our construction development process: we begin with untouched landscapes, transitioning through collaborative design sessions with our architects, and culminating in the dynamic construction phase where blueprints become tangible structures.
+            </p>
+          <div class="btn-container">
+ <a href="construction.html#projects" class="btn btn-primary">
+                    Explore Our Projects <i class="fas fa-arrow-right"></i>
+                </a>
+          </div>
+   
+        </section>
+    </div>
+
+    <!-- Glass Effect Video Popup Modal -->
+    <div class="modal-overlay" id="videoModal">
+        <div class="video-modal">
+            <div class="modal-header">
+                <h3>Construction site</h3>
+            </div>
+            <div class="modal-content">
+                 <iframe id="videoFrame" src="https://geo.dailymotion.com/player.html?video=x9odzm2"
+                    style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                    allowfullscreen
+                    title="Dailymotion Video Player"
+                    allow="autoplay; fullscreen; picture-in-picture web-share
+                   ">
+                </iframe>
+               
+            </div>
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+    </div>
     </div>
              <!--Elora gardens  -->
     <section class="section hero-development-showcase" id="Elora-gardens">
@@ -419,12 +454,12 @@
                 </div>
                 
                 <div class="btn-container">
-                    <button class="btn btn-primary">
+                    <a href="https://wa.me/+2348148227087" class="btn btn-primary">
                         More Info <i class="fab fa-whatsapp"></i>
-                    </button>
-                    <button class="btn btn-outline">
+                    </a>
+                    <a href="estate.html"  class="btn btn-outline">
                         More Features <i class="fas fa-arrow-right"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -466,13 +501,13 @@
                     </div>
                 </div>
                 
-                <div class="btn-container">
-                    <button class="btn btn-primary">
+                  <div class="btn-container">
+                    <a href="https://wa.me/+2348148227087" class="btn btn-primary">
                         More Info <i class="fab fa-whatsapp"></i>
-                    </button>
-                    <button class="btn btn-outline">
+                    </a>
+                    <a href="estate.html"  class="btn btn-outline">
                         More Features <i class="fas fa-arrow-right"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -761,8 +796,9 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
+                             
                                 <h4>Visit Us</h4>
-                                <p>228, Upper Mission Rd.,<br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
+                                <p>228, Upper Mission Rd.,Opp. Nation Hospital <br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
                             </div>
                         </div>
                          <div class="business-hours glass">
@@ -794,7 +830,8 @@
                     </div>
                 </div>
                    <div class="form-content col-md-6">
-                    <form id="investment-form">
+            <form id="investment-form" action="https://formspree.io/f/mrbloeja"
+                      method="POST">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" required>
@@ -829,13 +866,16 @@
                             <textarea id="message" rows="4"></textarea>
                         </div>
                    
-                        <a type="submit" class="btn btn-primary  mt-2" style="width: 100%;">
+                        <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;">    <i class="fas fa-paper-plane me-2"></i>
                             Submit Request
-                        </a>
+                        </button>
+                         <div id="status-message" class="status-message"></div>
                     </form>
-                    
-                    <a href="https://wa.me/18005551234" class="btn btn-primary whatsapp-cta mt-2">
-                        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+                      <div class="text-center mt-4 mb-3">
+                            <p class="text-muted">- OR -</p>
+                        </div>
+                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
+                        <i class="fab fa-whatsapp me-2"></i> Chat with us on WhatsApp
                     </a>
                 </div>
 
@@ -854,7 +894,7 @@
         <!-- Map Section -->
         <section class="map-section  pt-5">
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.845284324325!2d5.619310574756225!3d6.301192426326516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d3d1b0b589a1%3A0xec1b1c7c0f0b8b0!2sBenin%20City%2C%20Edo%20State%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1689876543210!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31722.76503557836!2d5.602639734765621!3d6.349275498268478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d35e40e20bd1%3A0xcd35bbee9c9203e5!2sEwah%20Rd%2C%20Benin%20City%2C%20Edo!5e0!3m2!1sen!2sng!4v1754565523792!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="map-overlay glass">
                     <h3>Our Location</h3>
                     <p>228, Upper Mission Rd., Opp. Nation Hospital Close To Ewah Rd,. Junction, Benin City. Edo State.</p>
@@ -1074,12 +1114,12 @@
                 <div class="col-md-4 footer-column">
                     <h3>Construction</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Construction Site</a></li>
-                        <li><a href="#">Quality Assurance</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Project Portfolio</a></li>
-                        <li><a href="#">Craftmanship</a></li>
-                        <li><a href="#">Project Journey</a></li>
+                        <li><a href="construction.html">Construction Site</a></li>
+                        <li><a href="construction.html#quality-section">Quality Assurance</a></li>
+                        <li><a href="construction.html#sustain-section">Sustainability</a></li>
+                        <li><a href="construction.html#projects">Project Portfolio</a></li>
+                        <li><a href="construction.html#craft-section">Craftmanship</a></li>
+                        <li><a href="construction.html#project-journey-section">Project Journey</a></li>
                     </ul>
                 </div>
                 
@@ -1087,10 +1127,13 @@
                 <div class="col-md-4 footer-column">
                     <h3>Real Estate</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Available Lands</a></li>
-                        <li><a href="#">Payment Plans</a></li>
-                        <li><a href="#">Elora Gardens</a></li>
-                        <li><a href="#">Community</a></li>
+                        <li><a href="estate.html#land-sizes-section">Available Lands</a></li>
+                  
+                        <li><a href="estate.html#landmarks-section">Landmarks</a></li>
+                         <li><a href="estate.html#gallery-section">Estate Gallery</a></li>
+                         <li><a href="estate.html#maps-section">Maps</a></li>
+                        <li><a href="estate.html#payment-section">Payment Plans</a></li>
+                       
                      
                     </ul>
                 </div>
@@ -1100,11 +1143,11 @@
                 <div class="col-md-4 footer-column">
                     <h3>Investment</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Investment Opportunities</a></li>
-                        <li><a href="#">ROI Calculator</a></li>
-                        <li><a href="#">Investment Guides</a></li>
-                        <li><a href="#">Current Projects</a></li>
-                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="investment.html#oppurtunity-section">Investment Opportunities</a></li>
+                        <li><a href="investment.html#calculator">ROI Calculator</a></li>
+                        <li><a href="investment.html#guides">Investment Guides</a></li>
+                        <li><a href="investment.html#projects">Current Projects</a></li>
+                        <li><a href="investment.html#investor-relations">Investor Relations</a></li>
                     </ul>
                 </div>
                 
@@ -1167,17 +1210,91 @@
                 <p class="copyright">
                     &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited. All rights reserved. | Comfortability with value.
                 </p>
-                <!-- <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div> -->
+                
             </div>
         </div>
     </footer>
-
+ <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButton = document.querySelector('.play-button');
+            const videoModal = document.getElementById('videoModal');
+            const closeModal = document.getElementById('closeModal');
+            const videoFrame = document.getElementById('videoFrame');
+            
+            // Create decorative particles
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 20 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                const opacity = Math.random() * 0.3 + 0.1;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.opacity = opacity;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Open modal when play button is clicked
+            playButton.addEventListener('click', function() {
+                // Set video source only when opening
+                videoFrame.src = "https://geo.dailymotion.com/player.html?video=x9odzm2";
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close modal and stop video
+            function closeVideoModal() {
+                videoModal.classList.remove('active');
+                // Remove video source to stop playback
+                videoFrame.src = "";
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Close modal when close button is clicked
+            closeModal.addEventListener('click', closeVideoModal);
+            
+            // Close modal when clicking outside the video
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+            
+            // Add ripple effect to play button on click
+            playButton.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const rect = playButton.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+                ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+                
+                playButton.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
 
 
     <script src="index.js"></script>
+       <script src="form.js"></script>
 </body>
 </html>
