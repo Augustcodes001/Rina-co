@@ -338,7 +338,7 @@
 
        
          <!--  -->
-          <div class="container">
+          <div class="container-fluid">
         <div class="gold-accent accent-1"></div>
         <div class="gold-accent accent-2"></div>
         <div class="gold-accent accent-3"></div>
@@ -347,7 +347,7 @@
         
        
         <section class="video-section">
-         <div class="section-header">
+         <div class="section-header pt-4">
                 <h2>The Journey So Far</h2>
                <p>Experience our transformative journey in motion. This cinematic showcase captures the essence of our development process.</p>
             </div>
@@ -386,7 +386,7 @@
                     style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
                     allowfullscreen
                     title="Dailymotion Video Player"
-                    allow="autoplay; fullscreen; picture-in-picture web-share
+                    allow="fullscreen; picture-in-picture web-share
                    ">
                 </iframe>
                
@@ -662,11 +662,11 @@
                             <h3>Certified Construction</h3>
                             <p>All projects meet Gold+ sustainability standards with industry approved materials .</p>
                         </div>
-                        <div class="excellence-card">
+                        <!-- <div class="excellence-card">
                             <i class="fas fa-solar-panel"></i>
                             <h3>Renewable Energy Systems</h3>
                             <p> We integrate solar roofs as required by the client .</p>
-                        </div>
+                        </div> -->
                        
                         <div class="excellence-card">
                             <i class="fas fa-tree"></i>
@@ -830,42 +830,36 @@
                     </div>
                 </div>
                    <div class="form-content col-md-6">
-            <form id="investment-form" action="https://formspree.io/f/mrbloeja"
-                      method="POST">
+            <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="interest">Subject</label>
-                            <select id="interest" required>
-                                <option value="">Select an option</option>
-                                <option value="real-estate">Real Estate Development</option>
-                                <option value="green-energy">Partnership Request</option>
-                                <option value="tech-startups">Investment Opportunities</option>
-                                <option value="multiple">Career Opportunities</option>
-                                <option value="not-sure">Land Inquiry</option>
-                            </select>
-                        </div>
-                        
-                       
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4"></textarea>
-                        </div>
-                   
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required> <!-- Added name -->
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required> <!-- Added name -->
+  </div>
+  
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone"> <!-- Added name -->
+  </div>
+  
+  <div class="form-group">
+    <label for="interest">Subject</label>
+    <select id="interest" name="subject" required> <!-- Added name -->
+      <option value="real-estate">Real Estate Development</option>
+      <option value="tech-startups">Investment</option>
+      <option value="multiple">Career Opportunities</option>
+      <option value="not-sure">Land Inquiry</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4"></textarea> <!-- Added name -->
+  </div>
                         <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;">    <i class="fas fa-paper-plane me-2"></i>
                             Submit Request
                         </button>
@@ -875,7 +869,7 @@
                             <p class="text-muted">- OR -</p>
                         </div>
                     <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
-                        <i class="fab fa-whatsapp me-2"></i> Chat with us on WhatsApp
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat
                     </a>
                 </div>
 
