@@ -261,8 +261,108 @@
                 faqItem.classList.toggle('active');
             });
         });
+        
+// counting animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Count-up animation function
+            function animateValue(element, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    
+                    // Check if the original element had a '+' or '%' suffix
+                    const suffixTop = element.innerHTML.includes('+') ? '+' : 
+                                   element.innerHTML.includes('%') ? '%' : '';
+                    
+                    element.innerHTML = value + suffixTop;
+                    
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // Intersection Observer for counting animation
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statItems = document.querySelectorAll('.stat-item-top');
+                        
+                        statItems.forEach(item => {
+                            const numberElement = item.querySelector('.stat-number-top');
+                            const targetValue = parseInt(numberElement.getAttribute('data-target'));
+                            
+                            // Get suffix for display
+                            const suffixTop = numberElement.innerHTML.includes('+') ? '+' : 
+                                          numberElement.innerHTML.includes('%') ? '%' : '';
+                            
+                            // Start animation
+                            animateValue(numberElement, 0, targetValue, 2000);
+                            
+                            // Add animation class
+                            numberElement.classList.add('counting');
+                        });
+                        
+                        // Stop observing after animation starts
+                        observer.disconnect();
+                    }
+                });
+            }, {
+                threshold: 0.5 // Trigger when 50% of the element is visible
+            });
+            
+            // Observe the stats container at the top
+            const statsContainerTop = document.querySelector('.stats-container-top');
+            if (statsContainerTop) {
+                observer.observe(statsContainerTop);
+            }
+        
+             // Intersection Observer for counting animation for the container at the bottom
+            const observerBottom = new IntersectionObserver((entries, observerBottom) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statItems = document.querySelectorAll('.stat-item');
+                        
+                        statItems.forEach(item => {
+                            const numberElement = item.querySelector('.stat-number');
+                            const targetValue = parseInt(numberElement.getAttribute('data-target'));
+                            
+                            // Get suffix for display
+                            const suffix = numberElement.innerHTML.includes('+') ? '+' : 
+                                          numberElement.innerHTML.includes('%') ? '%' : '';
+                            
+                            // Start animation
+                            animateValue(numberElement, 0, targetValue, 2000);
+                            
+                            // Add animation class
+                            numberElement.classList.add('counting');
+                        });
+                        
+                        // Stop observing after animation starts
+                      observerBottom.disconnect();
+                    }
+                });
+            }, {
+                threshold: 0.5 // Trigger when 50% of the element is visible
+            });
+            
+            // Observe the stats container
+            const statsContainer = document.querySelector('.stats-container');
+            if (statsContainer) {
+                observerBottom.observe(statsContainer);
+            }
+            // Video play button functionality
+            // const playBtn = document.querySelector('.play-btn');
+            // if (playBtn) {
+            //     playBtn.addEventListener('click', function() {
+            //         alert("In a real implementation, this would play the testimonial video.");
+            //     });
+            // }
+        });
 
-     
 
         // video player
        
