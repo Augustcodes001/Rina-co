@@ -464,7 +464,7 @@
         /* Hero Styles */
         .hero-header {
 
-            background: linear-gradient(rgba(10, 9, 1, 0.4), var(--glass)), url(../images/Flux_Dev_Aerial_drone_view_of_a_sunkissed_Nigerian_savanna_lan_3.jpg);
+           
             background: linear-gradient(rgba(129, 118, 13, 0.4), var(--glass)),url("https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80");
             background-size: cover;
             background-position: center;
