@@ -2396,6 +2396,7 @@
             font-size: 1.3rem;
             margin-bottom: 5px;
             font-weight: 600;
+                color: var(--primary);
         }
 
         .author-info p {
@@ -2404,7 +2405,9 @@
             opacity: 0.9;
             margin-bottom: 8px;
         }
-
+        /* .testimonial-content .btn-primary{
+            background:var(--gold-dark)
+        } */
         .rating {
             color: var(--gold-medium);
             font-size: 1rem;

@@ -569,6 +569,7 @@
         /* Quality Assurance */
         .quality-assurance{
             background: white;
+
         }
         .quality-card {
             text-align: center;
@@ -593,6 +594,8 @@
             display: flex;
             margin-bottom: 2rem;
             align-items: flex-start;
+              background-color: rgba(168, 125, 30, 0.09);
+              padding:1em 0em;
         }
         
         .eco-feature i {

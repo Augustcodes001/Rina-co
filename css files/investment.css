@@ -545,6 +545,9 @@
         .card-body {
             padding: 1.5rem;
         }
+        .opportunity-card .card-body p{
+            font-size: 1.15em;
+        }
         .card img{
             height: 300px;
             background-position: top;
@@ -565,7 +568,7 @@
             align-items: center;
             gap: 10px;
         }
-        
+     
         .opportunity-card .stats {
             display: flex;
             justify-content: space-between;
@@ -748,10 +751,29 @@
         .investor-card {
             text-align: center;
         }
-        
+      
+          #investor-1{
+            background: url(../images/invest-real-2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+          #investor-2{
+            background: url(../images/invest-real-3.jpg);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+          #investor-3{
+            background: url(../images/invest-real.jpg);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         .investor-avatar {
-            width: 220px;
-            height: 220px;
+            
+            width: 270px;
+            height: 270px;
             border-radius: 50%;
             object-fit: cover;
             margin: 1em auto 1rem;
