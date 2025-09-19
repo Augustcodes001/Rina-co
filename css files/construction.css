@@ -198,7 +198,6 @@
             color: var(--text);
             font-family: 'Playfair Display', serif;
             letter-spacing: 1px;
-                 border:1px solid red;
         }
 
         .logo i {
