@@ -10,6 +10,8 @@
             --secondary: #dfb429; /* Gold color */
             --accent: #ff6b6b;
             --glass: rgba(48, 41, 6, 0.27);
+            --glass-header:rgba(255, 255, 254, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.1);
             --text: #eef2f7;;
             --gold-light: #f9e076;
             --gold-medium: #d4af37;
@@ -21,12 +23,11 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--dark);
-            background-color:  rgba(252, 246, 197, 0.75);
+            background-color:  rgba(252, 246, 197, 0.7);
             line-height: 1.6;
             overflow-x: hidden;
-            min-height: 100vh;
         }
-
+       
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
@@ -133,7 +134,7 @@
             background: linear-gradient(90deg, transparent, #d2af64, transparent);
         }
 
-        @keyframes pulse {
+        @keyframes pulse-loading {
             0% { opacity: 0.6; }
             50% { opacity: 1; }
             100% { opacity: 0.6; }
@@ -145,7 +146,7 @@
             font-size: 12px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            animation: pulse 2s infinite;
+            animation: pulse-loading 2s infinite;
         }
 
 /* loader end */
@@ -182,7 +183,7 @@
             position: fixed;
             width: 100vw;
             top: 0;
-            z-index: 300;
+            z-index: 100;
             background: white;
             
         }
@@ -323,7 +324,6 @@
             right: -100%;
             width: 75%;
             height: 100vh;
-            background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
             background: var(--glass);
             -webkit-backdrop-filter: blur(10px);
@@ -349,7 +349,7 @@
             margin-bottom: 20px;
         }
 
-     .mobile-nav ul li a {
+        .mobile-nav ul li a {
             color: var(--text);
             text-decoration: none;
             font-size: 1.05rem;
