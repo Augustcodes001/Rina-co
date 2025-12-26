@@ -183,7 +183,7 @@
             top: 0;
             z-index: 100;
             background: white;
-            
+             
         }
 
         .logo {
@@ -195,12 +195,18 @@
             color: var(--text);
             font-family: 'Playfair Display', serif;
             letter-spacing: 1px;
+            text-decoration: none;
         }
 
+        .logo:hover{
+              color: var(--text);
+        }
         .logo i {
             color: var(--secondary);
+           
+
         }
-          .logo-image{
+        .logo-image{
             width: 2.5em;
             height: 2.3em;
             position: relative;
@@ -226,7 +232,7 @@
             width: 100%;
             z-index: 2;
         } 
-        .logo span h5{
+        .logo h5{
             font-size: 1em;
         }
         nav ul
@@ -308,7 +314,28 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
         }
-  /* Mobile Dropdown Menu */
+ /* Mobile Menu Icon */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 80%;
+            background-color: var(--text);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            margin-right: 1em;
+        }
+
+         /* Mobile Dropdown Menu */
         .mobile-nav {
             position: fixed;
             top: 0;
@@ -389,6 +416,7 @@
             color: var(--secondary);
             transform: rotate(90deg);
         }
+
   /* Responsive Design */
         @media (max-width: 992px) {
             nav ul, .auth-buttons {
@@ -412,6 +440,7 @@
         }
            
         }
+
  /* Section Styling */
         .section {
             padding: 80px 0;

@@ -310,6 +310,7 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
         }
+      
  /* Mobile Menu Icon */
         .menu-toggle {
             display: none;
