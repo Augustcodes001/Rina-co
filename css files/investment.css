@@ -767,24 +767,38 @@
         .investor-card {
             text-align: center;
         }
-      
+      .investor-card p{
+        color: var(--gold-dark);
+      }
           #investor-1{
             background: url(../images/invest-real-2.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+                 transition: all .3s ease;
         }
           #investor-2{
             background: url(../images/invest-real-3.jpg);
             background-position: top;
             background-repeat: no-repeat;
             background-size: cover;
+                 transition: all .3s ease;
         }
           #investor-3{
             background: url(../images/invest-real.jpg);
             background-position: top;
             background-repeat: no-repeat;
             background-size: cover;
+                 transition: all .3s ease;
+        }
+          #investor-4{
+            background: url(../images/rina\ and\ co\ logo.png);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: sepia(100%)hue-rotate(5deg) saturate(300%) contrast(.8);
+            opacity: .8;
+            transition: all .3s ease;
         }
         .investor-avatar {
             
@@ -793,7 +807,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin: 1em auto 1rem;
-            border: 4px solid var(--secondary);
+            border: 2px solid var(--secondary);
         }
         
         .investor-contact {
