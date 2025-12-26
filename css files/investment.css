@@ -324,13 +324,14 @@
             right: -100%;
             width: 75%;
             height: 100vh;
+            background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
             background: var(--glass);
             -webkit-backdrop-filter: blur(10px);
             z-index: 100;
             display: flex;
             flex-direction: column;
-            padding: 100px 0px 0px;
+            padding: 70px 0px 0px;
             transition: right 0.5s ease;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
             border-left: 1px solid var(--glass-border);
@@ -349,12 +350,12 @@
             margin-bottom: 20px;
         }
 
-        .mobile-nav ul li a {
+     .mobile-nav ul li a {
             color: var(--text);
             text-decoration: none;
             font-size: 1.05rem;
             display: block;
-            padding: 10px 0;
+            padding: 20px 0;
             padding-left: 1em;
             transition: all 0.3s ease;
                    background:rgba(107, 94, 51, 0.57);
