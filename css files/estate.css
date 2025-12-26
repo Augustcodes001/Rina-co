@@ -202,12 +202,26 @@
         .logo i {
             color: var(--secondary);
         }
-        .logo-image{
-            /* background: rgba(212, 175, 55, 0.1); */
-            width: 2.3em;
-            height: 2em;
+          .logo-image{
+            width: 2.5em;
+            height: 2.3em;
             position: relative;
+            border: 1.2px solid  transparent;
+          
+    }
+        .logo-image::after{
+            content: "";
+            position: absolute;
+            left: 15%;
+            top:  10%;
+            z-index: -1;
+            width: 63%;
+            height: 80%;
+            background: rgba(54, 47, 2, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
+        
         .logo-image img{
             position: absolute;
             height: 100%;
