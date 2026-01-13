@@ -214,46 +214,32 @@
             });
         });
         
-        // Option selection in customization studio
-        const optionCards = document.querySelectorAll('.option-card');
-        
-        optionCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const parent = this.parentElement;
-                const siblings = parent.querySelectorAll('.option-card');
-                
-                siblings.forEach(sibling => {
-                    if (sibling !== this) {
-                        sibling.classList.remove('active');
-                    }
-                });
-                
-                this.classList.toggle('active');
-            });
-        });
-        
+     
         // Simple animation on scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+        // const observerOptions = {
+        //     root: null,
+        //     rootMargin: '0px',
+        //     threshold: 0.1
+        // };
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+        // const observer = new IntersectionObserver((entries) => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+        //             observer.unobserve(entry.target);
+        //         }
+        //     });
+        // }, observerOptions);
         
         // Observe sections
-        document.querySelectorAll('.section-header, .lifecycle-nav, .projects-grid, .tabs-container, .properties-container, .studio-container').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            observer.observe(el);
-        });
+        // document.querySelectorAll('.section-header, .lifecycle-nav, .projects-grid, .tabs-container, .properties-container, .studio-container').forEach(el => {
+        //     el.style.opacity = '0';
+        //     el.style.transform = 'translateY(20px)';
+        //     observer.observe(el);
+        // });
+
+
+
          // FAQ Accordion Functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
@@ -292,7 +278,7 @@
                         const statItems = document.querySelectorAll('.stat-item-top');
                         
                         statItems.forEach(item => {
-                            const numberElement = item.querySelector('.stat-number-top');
+const numberElement = item.querySelector('.stat-number-top');
                             const targetValue = parseInt(numberElement.getAttribute('data-target'));
                             
                             // Get suffix for display
