@@ -241,43 +241,7 @@
             flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 12px 25px;
-            border-radius: 2.5em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            /* display: inline-block; */
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--secondary);
-            color: var(--primary);
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .hero .btn-outline {
-            background: transparent;
-            color: var(--secondary);
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
+      
       /* Slider Container */
         .slider-container {
             position: relative;
@@ -778,7 +742,6 @@ select.search-control:focus {
          /* About Section */
         .about-section {
             background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
-            /* background: var(--glass); */
         }
        
         .about-container {
@@ -997,6 +960,7 @@ select.search-control:focus {
     position: relative;
     width: 100%;
     z-index: 10; 
+       background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
 }
 
 /* --- 2. Sticky Wrapper --- */
@@ -1024,23 +988,21 @@ select.search-control:focus {
     
     /* WHITE GLASS BACKGROUND */
     background: rgba(255, 255, 255, 0.85);
-    
+         background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
     /* Glass Blur */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
-    /* Gold Border */
-    border: 1px solid rgba(223, 180, 41, 0.5); 
+    /* Gold Border */ 
     border-radius: 24px;
-    
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
     /* Layout: Image (60%) | Text (40%) */
     display: grid;
-    grid-template-columns: 60% 40%; 
-    
+    grid-template-columns: 55% 45%; 
     overflow: hidden;
-    
     /* Soft, Light Shadow */
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -1049,7 +1011,9 @@ select.search-control:focus {
     box-shadow: 0 30px 80px rgba(223, 180, 41, 0.15); /* Gold glow shadow */
     border-color: #dfb429; /* Solid Gold on hover */
 }
-
+ .card-content .section-header .btn{
+   margin: auto;
+}
 /* --- 4. Video/Image Area (Full Height) --- */
 .video-container {
     position: relative;
@@ -1059,7 +1023,9 @@ select.search-control:focus {
     /* Gold divider line */
     border-right: 1px solid rgba(223, 180, 41, 0.2); 
 }
-
+.video-placeholder{
+    height:560px;
+}
 .video-placeholder img {
     width: 100%;
     height: 100%;
@@ -1072,17 +1038,17 @@ select.search-control:focus {
 }
 
 /* Overlay (Light tint instead of dark) */
-.video-overlay {
+.video-overlay-vid {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.1); /* Very subtle white tint */
+    background: rgba(255, 255, 255, 0.1); 
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background 0.3s;
 }
 
-.card-content:hover .video-overlay {
+.card-content:hover .video-overlay-vid {
     background: rgba(255, 255, 255, 0);
 }
 
@@ -1105,7 +1071,6 @@ select.search-control:focus {
 
 .play-button:hover {
     transform: scale(1.15);
-    background: #0a192f; /* Navy on hover */
     color: #d4af37; /* Gold Icon */
 }
 
@@ -1117,7 +1082,7 @@ select.search-control:focus {
 }
 
 /* --- 5. Text Area --- */
-/* .section-header {
+.shuffle-section .section-header {
     padding: 60px;
     color: #0a192f; 
     display: flex;
@@ -1125,24 +1090,23 @@ select.search-control:focus {
     justify-content: center;
     height: 100%;
     background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
-} */
+}
 
-/* .section-header h2 {
-    font-size: 3rem;
+.shuffle-section  .section-header h2 {
+    font-size: 2.4rem;
     font-weight: 800;
-    margin-bottom: 25px;
-    background: linear-gradient(to right, #b8860b, #d4af37);
+    margin-bottom: 18px;
+    background: linear-gradient(to right, #ecb731, #d4af37);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-} */
+}
 
-/* .section-header p {
-    font-size: 1.25rem;
-    line-height: 1.8;
+.shuffle-section .section-header p {
+     font-size: 1.15rem;
+    line-height: 1.6;
     color: #4a5568; 
-    margin-bottom: 40px;
-} */
+}
 
 /* Pulse Animation */
 @keyframes pulseGold {
@@ -1173,13 +1137,11 @@ select.search-control:focus {
         height: 100%; /* Ensure it fills the 50% row */
     }
     
-    .section-header {
-        padding: 30px;
+    .shuffle-section .section-header {
+        padding: 10px;
         justify-content: flex-start; /* Align text to top */
-        
         /* ALLOW SCROLLING if text is long */
-        overflow-y: auto; 
-        
+        overflow-y: auto;    
         /* HIDE SCROLLBAR (Clean UI) */
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* IE/Edge */
@@ -1189,17 +1151,17 @@ select.search-control:focus {
     .section-header::-webkit-scrollbar {
         display: none;
     }
-/* 
-    .section-header h2 {
+
+    .shuffle-section.section-header h2 {
         font-size: 2rem;
         margin-bottom: 15px;
         margin-top: 10px;
     }
     
-    .section-header p {
+    .shuffle-section .section-header p {
         font-size: 1rem;
         margin-bottom: 20px;
-    } */
+    }
 
     /* Smaller Play Button */
     .play-button {
@@ -1212,136 +1174,54 @@ select.search-control:focus {
 }
 
         /* Glass Effect Video Popup Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(10px);
-         
-               background: rgba(109, 101, 64, 0.8);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .video-modal {
-            width: 90%;
-            max-width: 900px;
-            position: relative;
-            transform: scale(0.8);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          
-               background: rgba(247, 227, 130, 0.2);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(248, 193, 12, 0.3);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            padding: 30px;
-        }
-
-        .modal-overlay.active .video-modal {
-            transform: scale(1);
-        }
-
-        .modal-content {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .modal-content iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(212, 175, 55, 0.2);
-             border: 1px solid rgba(248, 193, 12, 0.3);
-            color: #ffffff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .close-modal:hover {
-            background: rgba(212, 175, 55, 0.3);
-            transform: rotate(90deg);
-            color: #d4af37;
-            border-color: #d4af37;
-        }
-
-        .modal-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-header h3 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-            color: white;
-        }
-
-        .modal-header h3:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background: linear-gradient(to right, #d4af37, transparent);
-            bottom: 0;
-            left: 25%;
-            border-radius: 2px;
-        }
        
-        /* Animations */
-        @keyframes btn-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(212, 175, 55, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-            }
-        }
-/*  */
 
- /*  */
-     
+        
 
+/* --- MODAL CSS --- */
+.video-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-modal-overlay.active {
+    opacity: 1; visibility: visible;
+}
+
+.video-modal-content {
+    width: 90%; max-width: 1000px;
+    background: #000;
+    border: 1px solid #dfb429;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+.video-modal-overlay.active .video-modal-content {
+    transform: scale(1);
+}
+
+.modal-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.modal-video-player {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.close-modal {
+    position: absolute; top: -40px; right: 0;
+    color: #fff; font-size: 40px; cursor: pointer;
+}
         /* Responsive adjustments */
          @media (max-width: 450px) {
               .journey-container {
@@ -1353,32 +1233,25 @@ select.search-control:focus {
         }
         @media (max-width: 768px) {
             
-            .section-header h2 {
-                font-size: 2.2rem;
+            .shuffle-section .section-header h2 {
+                font-size: 2rem;
             }
             
-            .section-header p {
-                font-size: 1.1rem;
+             .shuffle-section .section-header p {
+                font-size: 1rem;
             }
-            
+            .video-placeholder{
+                    height:360px;
+                }
             .play-button {
-                width: 90px;
-                height: 90px;
+                width: 60px;
+                height: 60px;
             }
             
             .play-button i {
-                font-size: 2.5rem;
-            }
-
-         
-            
-            .video-container {
-                height: 350px;
-            }
-            
-            .modal-header h3 {
                 font-size: 1.5rem;
             }
+           
               .video-section {
                 padding: 25px 20px;
             }
@@ -1399,21 +1272,45 @@ select.search-control:focus {
     padding: 100px 5%;
     text-align: center;
 }
-
-.video-wrapper {
+.video-wrapper-estate {
+    position: relative;
     border-radius: 20px;
     overflow: hidden;
     max-width: 1000px;
+    height: 420px;
     margin: 0 auto 40px;
       /* background: linear-gradient(45deg, #2f290a, #5f5e1a); */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
-.video-wrapper video {
+.video-placeholder-estate{
+    position: absolute;
     width: 100%;
-    height: auto;
-    border-radius: 12px;
+    height: 100%;
+          z-index: 2;
 }
+.video-placeholder-estate img{
+    width: 100%;
+    height: 100%;
+       object-fit: cover;
+       object-position: center;
+ 
+}
+.Elora-gardens-video{
+   height: 420px;
+    max-width: 1000px;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+       border: 2px solid var(--gold-dark);
+}
+.Elora-gardens-video video {
+ width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    transition: ease 0.5s;
+     
+}
+
 
 .progress-gallery {
     display: grid;
@@ -1461,7 +1358,7 @@ select.search-control:focus {
             max-width: 600px;
             margin: 0 auto;
         }
-
+ 
         .project-card {
             background: #fff;
             border-radius: 16px;
@@ -2071,7 +1968,7 @@ select.search-control:focus {
             border-radius: 15px;
             padding: 40px;
             color: var(--text-light);
-            box-shadow: 0 15px 40px rgba(10, 25, 47, 0.15);
+            box-shadow: 0 15px 40px rgba(10, 25, 47, 0.25);
             margin-bottom: 30px;
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
@@ -2207,48 +2104,7 @@ select.search-control:focus {
             to { opacity: 1; }
         }
         /* status message */
-        /* Map Section */
-        .map-section {
-            padding: 0 20px 80px;
-            /* max-width: 1200px; */
-            margin: 0 auto;
-            background: white;
-        }
         
-        .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(10, 25, 47, 0.2);
-            height: 500px;
-            position: relative;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .map-overlay {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            /* background: rgba(10, 25, 47, 0.9); */
-                background: linear-gradient(rgba(18, 18, 18, 0.3), var(--glass));
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            max-width: 300px;
-            border: 1px solid var(--gold-primary);
-            z-index: 2;
-        }
-        
-        .map-overlay h3 {
-            color: var(--gold-secondary);
-            margin-bottom: 10px;
-        }
-        
-        .map-overlay p {
-            color: var(--text-gray);
-            line-height: 1.6;
-            margin-bottom: 5px;
-        }
-        /*  */
          /* Testimonials Section */
         .testimonials-section {
             background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
@@ -2270,7 +2126,7 @@ select.search-control:focus {
         }
 
         .testimonial-card {
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.2), var(--glass));
+          
               background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
             border-radius: 16px;
             overflow: hidden;
@@ -2753,12 +2609,7 @@ select.search-control:focus {
         }
         
        /* Footer Grid */
-        /* .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        } */
+        
         .contain-decor{
               background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
               padding: 2em;
@@ -2986,9 +2837,7 @@ select.search-control:focus {
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
         
-        /* .footer-links a:hover {
-            color: var(--gold-medium);
-        } */
+        
         
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -3008,11 +2857,25 @@ select.search-control:focus {
             .footer-bottom-container {
                 flex-direction: column;
             }
-             /* .stats-container .stat-label p {
-             text-align:center;
-
-        } */
-        
+         .contact-card {
+            padding: 30px;
+            display:block;
+            align-items: flex-start;
+            gap: 20px;
+        }
+       
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .lifecycle-nav {
+                flex-wrap: wrap;
+            }
+            
+             .contact-container iframe{
+            max-width: 400px;
+            height: 400px;
+        }
         }
         
         @media (max-width: 480px) {
@@ -3020,26 +2883,7 @@ select.search-control:focus {
                 grid-template-columns: 1fr;
             }
         }
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+       
 
         /* Responsive */
         @media (max-width: 1200px) {
@@ -3064,28 +2908,6 @@ select.search-control:focus {
           
         }
          
-        @media (max-width: 768px) {
-            .contact-card {
-            padding: 30px;
-            display:block;
-            align-items: flex-start;
-            gap: 20px;
-        }
-       
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .lifecycle-nav {
-                flex-wrap: wrap;
-            }
-            
-             .contact-container iframe{
-            max-width: 400px;
-            height: 400px;
-        }
-
-        }
          @media (max-width: 540px) {
           .social-links {
             position: absolute;

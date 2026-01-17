@@ -59,7 +59,7 @@
 
         /* Header Styles */
         header {
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -75,7 +75,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size:  clamp(1rem,1.5vw,1.18rem);
+            font-size:  clamp(1rem,1.5vw,1.1rem);
             font-weight: 500;
             color: var(--text);
             /* font-family: 'Playfair Display', serif; */

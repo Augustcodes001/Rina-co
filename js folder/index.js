@@ -349,6 +349,22 @@ const numberElement = item.querySelector('.stat-number-top');
             // }
         });
 
+ 
+        //  estate player logic
+          const videoPlaceholder = document.querySelector(".video-placeholder-estate");
+             const videoOverlay = document.querySelector(".video-overlay");
+           const playButton = document.querySelector(".video-overlay .play-button");
+         const EloraVideo = document.querySelector(".Elora-gardens-video video");
+            const EloraVideoContainer = document.querySelector(".Elora-gardens-video");
+playButton.onclick = function(){
+    videoOverlay.style.display="none";
+      videoPlaceholder.style.display="none";
+      EloraVideo.play();
+          EloraVideo.muted = false;
+       EloraVideo.classList.add(".animate-slide-up")
+}
+
+
 
         // video player
        
