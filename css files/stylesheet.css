@@ -1691,14 +1691,28 @@ select.search-control:focus {
             gap: 12px;
             margin-top: 20px;
         }
-
+ 
       
 
         .btn i {
             margin-left: 8px;
             font-size: 0.9rem;
         }
-
+        .wa-me-btn{
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 1rem;
+              box-shadow: 0 8px 25px rgba(18, 140, 126, 0.4);
+              border:none;
+        }
+ .wa-me-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(18, 140, 126, 0.6);
+            color: white;
+            transition: .8s all;
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+                border:none;
+        }
         .tag {
             position: absolute;
             top: 15px;
@@ -2173,6 +2187,8 @@ select.search-control:focus {
             padding: 20px 25px;
             background: rgb(253, 252, 244);
             border: 2px solid var(--gold-medium);
+               border: 1px solid rgb(247, 232, 149);
+                box-shadow: 0px 50px 20px rgba(243, 199, 4, 0.9);
              border-radius: 16px;
             cursor: pointer;
             display: flex;
