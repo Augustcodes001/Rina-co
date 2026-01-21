@@ -215,29 +215,439 @@
         });
         
      
-        // Simple animation on scroll
-        // const observerOptions = {
-        //     root: null,
-        //     rootMargin: '0px',
-        //     threshold: 0.1
-        // };
-        
-        // const observer = new IntersectionObserver((entries) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-        //             observer.unobserve(entry.target);
-        //         }
-        //     });
-        // }, observerOptions);
-        
-        // Observe sections
-        // document.querySelectorAll('.section-header, .lifecycle-nav, .projects-grid, .tabs-container, .properties-container, .studio-container').forEach(el => {
-        //     el.style.opacity = '0';
-        //     el.style.transform = 'translateY(20px)';
-        //     observer.observe(el);
-        // });
+       // ============================================
+// Dailymotion Video System
+// Features: 
+// 1. Automatic thumbnail generation
+// 2. Lightbox video player
+// 3. Fallback to original images
+// ============================================
 
+(function() {
+    'use strict';
+    
+    // ============================================
+    // UTILITY FUNCTIONS
+    // ============================================
+    
+    /**
+     * Extract Dailymotion video ID from various URL formats
+     */
+    function getDailymotionId(url) {
+        if (!url) return null;
+        
+        // Clean URL
+        url = url.trim();
+        
+        // Case 1: Short URL (dai.ly)
+        if (url.includes('dai.ly/')) {
+            return url.split('dai.ly/')[1].split('?')[0].split('/')[0];
+        }
+        // Case 2: Full video URL
+        else if (url.includes('dailymotion.com/video/')) {
+            return url.split('/video/')[1].split('?')[0].split('/')[0];
+        }
+        // Case 3: Embed URL
+        else if (url.includes('dailymotion.com/embed/video/')) {
+            return url.split('/embed/video/')[1].split('?')[0].split('/')[0];
+        }
+        // Case 4: Already a video ID (starts with x)
+        else if (url.startsWith('x') && url.length >= 5) {
+            return url.split('?')[0];
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Generate Dailymotion thumbnail URL
+     */
+    function getDailymotionThumbnail(videoId) {
+        // Default options
+        const defaults = {
+            width: 800,
+            height: 450,
+            quality: '720x480',
+            // version: 5 // Time in seconds (optional)
+        };
+        
+        const settings = { ...defaults, ...options };
+        const baseUrl = 'https://www.dailymotion.com/thumbnail/video/';
+        
+        // Build parameters
+        const params = [];
+        if (settings.width) params.push(`width=${settings.width}`);
+        if (settings.height) params.push(`height=${settings.height}`);
+        if (settings.version) params.push(`version=${settings.version}`);
+        if (settings.quality) params.push(`quality=${settings.quality}`);
+        
+        // Construct URL
+        let thumbnailUrl = `${baseUrl}${videoId}`;
+        if (params.length > 0) {
+            thumbnailUrl += `?${params.join('&')}`;
+        }
+        
+        return thumbnailUrl;
+    }
+    
+    /**
+     * Check if a URL is a Dailymotion video
+     */
+    function isDailymotionUrl(url) {
+        if (!url) return false;
+        return url.includes('dailymotion.com') || 
+               url.includes('dai.ly') || 
+               (url.startsWith('x') && url.length >= 5);
+    }
+    
+    // ============================================
+    // THUMBNAIL GENERATION SYSTEM
+    // ============================================
+    
+    /**
+     * Load thumbnail for a single image element
+     */
+    function loadThumbnailForImage(imgElement) {
+        const videoSrc = imgElement.getAttribute('data-video-src');
+        
+        // Only process Dailymotion videos
+        if (!isDailymotionUrl(videoSrc)) {
+            console.log('Not a Dailymotion URL:', videoSrc);
+            return Promise.resolve(false);
+        }
+        
+        const videoId = getDailymotionId(videoSrc);
+        if (!videoId) {
+            console.warn('Could not extract video ID from:', videoSrc);
+            return Promise.resolve(false);
+        }
+        
+        // Store original image as fallback
+        const originalSrc = imgElement.src;
+        imgElement.setAttribute('data-original-src', originalSrc);
+        
+        // Generate thumbnail URL
+        // const thumbnailUrl = getDailymotionThumbnail(videoId, {
+        //     width: 800,
+        //     height: 450,
+        //     quality: '720x480'
+        // });
+        const thumbnailUrl = `https://www.dailymotion.com/thumbnail/video/${videoId}?quality=480x360`;
+        // Add loading class
+        imgElement.classList.add('thumbnail-loading');
+        
+        return new Promise((resolve) => {
+            // Create test image to check if thumbnail exists
+            const testImage = new Image();
+            
+            testImage.onload = function() {
+                // Thumbnail exists - update the image
+                imgElement.src = thumbnailUrl;
+                imgElement.classList.remove('thumbnail-loading');
+                imgElement.classList.add('thumbnail-loaded');
+                imgElement.setAttribute('data-thumbnail-status', 'loaded');
+                console.log(`Thumbnail loaded for video: ${videoId}`);
+                resolve(true);
+            };
+            
+            testImage.onerror = function() {
+                // Thumbnail doesn't exist - try fallback URL
+                console.warn(`Thumbnail not available for: ${videoId}, trying fallback...`);
+                
+                // Try without parameters
+                const fallbackUrl = `https://www.dailymotion.com/thumbnail/video/${videoId}`;
+                const fallbackTest = new Image();
+                
+                fallbackTest.onload = function() {
+                    imgElement.src = fallbackUrl;
+                    imgElement.classList.remove('thumbnail-loading');
+                    imgElement.classList.add('thumbnail-loaded');
+                    imgElement.setAttribute('data-thumbnail-status', 'fallback');
+                    resolve(true);
+                };
+                
+                fallbackTest.onerror = function() {
+                    // Keep original image
+                    console.warn(`No thumbnail available for video: ${videoId}`);
+                    imgElement.classList.remove('thumbnail-loading');
+                    imgElement.setAttribute('data-thumbnail-status', 'failed');
+                    resolve(false);
+                };
+                
+                fallbackTest.src = fallbackUrl;
+            };
+            
+            testImage.src = thumbnailUrl;
+        });
+    }
+    
+    /**
+     * Update all video thumbnails on the page
+     */
+    function updateAllThumbnails() {
+        console.log('Updating Dailymotion thumbnails...');
+        
+        // Find all images with video-src attribute
+        const thumbnailImages = document.querySelectorAll('.video-placeholder img[data-video-src]');
+        const total = thumbnailImages.length;
+        let loaded = 0;
+        
+        if (total === 0) {
+            console.log('No video thumbnails found to update');
+            return;
+        }
+        
+        console.log(`Found ${total} video thumbnails to update`);
+        
+        // Process each image
+        thumbnailImages.forEach((imgElement, index) => {
+            // Load thumbnail with a small delay to prevent overwhelming requests
+            setTimeout(() => {
+                loadThumbnailForImage(imgElement).then(success => {
+                    loaded++;
+                    console.log(`Thumbnail ${index + 1}/${total}: ${success ? '✓' : '✗'}`);
+                    
+                    if (loaded === total) {
+                        console.log(`Thumbnail update complete: ${loaded}/${total} successful`);
+                    }
+                });
+            }, index * 100); // Stagger requests by 100ms
+        });
+    }
+    
+    // ============================================
+    // LIGHTBOX VIDEO PLAYER SYSTEM
+    // ============================================
+    
+    /**
+     * Initialize lightbox functionality
+     */
+    function initVideoLightbox() {
+        const playButtons = document.querySelectorAll('.play-button[data-video-src]');
+        const lightbox = document.getElementById('video-lightbox');
+        const playerContainer = document.getElementById('dailymotion-player');
+        const closeBtn = document.querySelector('.close-lightbox');
+        
+        if (!playButtons.length || !lightbox) {
+            console.warn('Lightbox elements not found');
+            return;
+        }
+        
+        console.log(`Found ${playButtons.length} video play buttons`);
+        
+        // ============================================
+        // PLAY BUTTON CLICK HANDLER
+        // ============================================
+        playButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const videoSrc = this.getAttribute('data-video-src');
+                console.log('Playing video:', videoSrc);
+                
+                // Clear previous content
+                playerContainer.innerHTML = '';
+                
+                // ============================================
+                // DAILYMOTION VIDEO
+                // ============================================
+                if (isDailymotionUrl(videoSrc)) {
+                    const videoId = getDailymotionId(videoSrc);
+                    
+                    if (!videoId) {
+                        console.error('Invalid Dailymotion URL:', videoSrc);
+                        alert('Unable to play video: Invalid video URL');
+                        return;
+                    }
+                    
+                    // Get video title for accessibility
+                    const sectionHeader = this.closest('.video-section')?.querySelector('.section-header h2');
+                    const videoTitle = sectionHeader ? sectionHeader.textContent.replace(/[^\w\s]/gi, '') : 'Video Player';
+                    
+                    // Create Dailymotion iframe
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.dailymotion.com/embed/video/${videoId}?autoplay=1&queue-enable=false&sharing-enable=true&ui-logo=false`;
+                    iframe.width = '100%';
+                    iframe.height = '100%';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.title = `${videoTitle} - Dailymotion Video`;
+                    iframe.setAttribute('allowtransparency', 'true');
+                    
+                    playerContainer.appendChild(iframe);
+                    
+                // ============================================
+                // LOCAL MP4 VIDEO (FALLBACK)
+                // ============================================
+                } else if (videoSrc.endsWith('.mp4') || videoSrc.endsWith('.webm') || videoSrc.endsWith('.ogg')) {
+                    playerContainer.innerHTML = `
+                        <video controls autoplay playsinline style="width:100%;height:100%;">
+                            <source src="${videoSrc}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    `;
+                    
+                // ============================================
+                // UNSUPPORTED FORMAT
+                // ============================================
+                } else {
+                    console.error('Unsupported video format:', videoSrc);
+                    playerContainer.innerHTML = `
+                        <div style="padding: 40px; text-align: center; color: white;">
+                            <h3>Unable to play video</h3>
+                            <p>Video format not supported.</p>
+                        </div>
+                    `;
+                }
+                
+                // Show lightbox
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // ============================================
+        // CLOSE LIGHTBOX FUNCTION
+        // ============================================
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            playerContainer.innerHTML = ''; // Stop video
+            
+            // If using Dailymotion API, you might want to destroy the player here
+            console.log('Lightbox closed');
+        }
+        
+        // ============================================
+        // CLOSE BUTTON EVENT
+        // ============================================
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeLightbox);
+        }
+        
+        // ============================================
+        // BACKGROUND CLICK TO CLOSE
+        // ============================================
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // ============================================
+        // ESCAPE KEY TO CLOSE
+        // ============================================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+        
+        console.log('Lightbox initialized successfully');
+    }
+    
+    // ============================================
+    // LAZY LOAD THUMBNAILS AS THEY ENTER VIEWPORT
+    // ============================================
+    function initLazyLoading() {
+        const thumbnailImages = document.querySelectorAll('.video-placeholder img[data-video-src]');
+        
+        if (!('IntersectionObserver' in window)) {
+            // Fallback for older browsers
+            updateAllThumbnails();
+            return;
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const status = img.getAttribute('data-thumbnail-status');
+                    
+                    // Only load if not already loaded
+                    if (!status || status === 'failed') {
+                        loadThumbnailForImage(img);
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '100px', // Load 100px before entering viewport
+            threshold: 0.1
+        });
+        
+        thumbnailImages.forEach(img => {
+            observer.observe(img);
+        });
+        
+        console.log('Lazy loading initialized');
+    }
+    
+    // ============================================
+    // INITIALIZE EVERYTHING WHEN DOM IS READY
+    // ============================================
+    function initVideoSystem() {
+        console.log('Initializing Dailymotion video system...');
+        
+        // 1. Initialize lightbox first (so play buttons work immediately)
+        initVideoLightbox();
+        
+        // 2. Initialize lazy loading for thumbnails
+        initLazyLoading();
+        
+        // 3. Optional: Pre-load first 2 thumbnails immediately
+        const firstImages = document.querySelectorAll('.video-placeholder img[data-video-src]');
+        if (firstImages.length > 0) {
+            // Load first image immediately
+            setTimeout(() => loadThumbnailForImage(firstImages[0]), 500);
+            
+            // Load second image with delay
+            if (firstImages.length > 1) {
+                setTimeout(() => loadThumbnailForImage(firstImages[1]), 1000);
+            }
+        }
+        
+        console.log('Dailymotion video system initialized');
+    }
+    
+    // ============================================
+    // MANUAL CONTROL FUNCTIONS (Optional)
+    // ============================================
+    window.DailymotionVideoSystem = {
+        // Public API methods
+        refreshThumbnails: updateAllThumbnails,
+        reloadThumbnail: function(imgElement) {
+            if (typeof imgElement === 'string') {
+                imgElement = document.querySelector(imgElement);
+            }
+            if (imgElement) {
+                return loadThumbnailForImage(imgElement);
+            }
+        },
+        playVideo: function(videoSrcOrElement) {
+            // Programmatically trigger video play
+            if (typeof videoSrcOrElement === 'string') {
+                // Find play button with this video src
+                const button = document.querySelector(`.play-button[data-video-src="${videoSrcOrElement}"]`);
+                if (button) button.click();
+            } else if (videoSrcOrElement.click) {
+                videoSrcOrElement.click();
+            }
+        }
+    };
+    
+    // ============================================
+    // START THE SYSTEM
+    // ============================================
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideoSystem);
+    } else {
+        initVideoSystem();
+    }
+    
+})();
 
 
          // FAQ Accordion Functionality
@@ -449,3 +859,108 @@ playButton.onclick = function(){
                 }
             }
         });
+
+
+    // toggle for buttons
+    // Mobile Toggle Buttons Functionality
+function initMobileToggle() {
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    const toggleIndicator = document.querySelector('.toggle-indicator');
+    const formContent = document.querySelector('.form-content');
+    const formInfo = document.querySelector('.form-info');
+    
+    // Only initialize if we're on mobile or have toggle buttons
+    if (!toggleButtons.length) return;
+    
+    // Set initial state
+    let activeTab = 'form';
+    
+    // Update active tab function
+    function updateActiveTab(target) {
+        // Update active button
+        toggleButtons.forEach(btn => {
+            if (btn.dataset.target === target) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
+        // Move indicator
+        if (toggleIndicator) {
+            const activeBtn = document.querySelector(`.toggle-btn[data-target="${target}"]`);
+            if (activeBtn) {
+                const btnWidth = activeBtn.offsetWidth;
+                const btnLeft = activeBtn.offsetLeft;
+                toggleIndicator.style.transform = `translateX(${btnLeft}px)`;
+                toggleIndicator.style.width = `${btnWidth}px`;
+            }
+        }
+        
+        // Show/hide content on mobile
+        if (window.innerWidth < 768) {
+            if (target === 'form') {
+                formContent.classList.remove('mobile-hidden');
+                formInfo.classList.add('mobile-hidden');
+                formContent.classList.add('mobile-active');
+                formInfo.classList.remove('mobile-active');
+            } else {
+                formContent.classList.add('mobile-hidden');
+                formInfo.classList.remove('mobile-hidden');
+                formInfo.classList.add('mobile-active');
+                formContent.classList.remove('mobile-active');
+            }
+        }
+        
+        activeTab = target;
+        
+        // Store in sessionStorage for page refresh persistence
+        sessionStorage.setItem('activeContactTab', target);
+    }
+    
+    // Button click event
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const target = this.dataset.target;
+            updateActiveTab(target);
+        });
+    });
+    
+    // Set initial position for indicator
+    setTimeout(() => {
+        updateActiveTab(activeTab);
+    }, 100);
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth >= 768) {
+                // On desktop, show both
+                formContent.classList.remove('mobile-hidden');
+                formInfo.classList.remove('mobile-hidden');
+            } else {
+                // On mobile, show active tab
+                updateActiveTab(activeTab);
+            }
+        }, 250);
+    });
+    
+    // Load saved tab from sessionStorage
+    const savedTab = sessionStorage.getItem('activeContactTab');
+    if (savedTab) {
+        updateActiveTab(savedTab);
+    }
+    
+    // Check initial screen size
+    if (window.innerWidth >= 768) {
+        formContent.classList.remove('mobile-hidden');
+        formInfo.classList.remove('mobile-hidden');
+    } else {
+        updateActiveTab(activeTab);
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initMobileToggle);

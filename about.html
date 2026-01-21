@@ -13,19 +13,20 @@
 
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">  <link rel="stylesheet" href="./css files/header.css">
     <link rel="stylesheet" href="./css files/about.css">
+    <link rel="stylesheet" href="./css files/animation.css">
      <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.min.css">
  
 </head>
 <body>
  
-    <!-- Header -->
-   <header class="glass">
-        <div class="logo">
+   <!-- Header -->
+   <header class="glass ">
+        <a class="logo" href="./index.html">
             <div class="logo-image">
-                  <img src="./images/rina and co logo.png" alt="" srcset="">
+                  <img src="./images/rina and co logo.png" alt="rina_coconsults-logo" srcset="">
             </div>
-            <span><h5>RINA & CO. CONSULTS LTD.</h5></span>
-        </div>
+            RINA & CO. CONSULTS LTD.
+        </a>
         <nav>
              <ul>
                 <li><a href="index.html">Home</a></li>
@@ -49,8 +50,8 @@
     <div class="mobile-nav " id="mobileNav">
         <i class="fas fa-times close-icon" id="closeMenu"></i>
         <ul>
-             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+             <ul data-animation="slide-left" data-delay="100">
+                <li><a href="index.html" class="glass"><i class="fas fa-home "></i> Home</a></li>
                  <li><a href="about.html"><i class="fas fa-crown"></i> About</a></li>
                   <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
                    <li><a href="estate.html"><i class="fas fa-tree"></i> Estate</a></li>
@@ -58,14 +59,16 @@
                 <li><a href="construction.html"><i class="fas fa-hard-hat"></i> Construction</a></li>
  <p class=" text-light pb-1 text-center ">&copy;Rina & Co. Consults LTD.</p>
             </ul>
+             
         </ul>
+        
       
     </div>
 
     <!-- Header/Hero Section -->
     <section class="hero-header">
         <div class="container pt-5">
-            <div class="pt-5">
+            <div class="pt-5" data-animation="slide-up" data-delay="200">
                 <h2 class="hero-title">About Rina & Co. Consults Limited</h2>
                 <p class="hero-text">...Comfortability with value</p>
             </div>
@@ -76,20 +79,20 @@
   <div class="about-section glass">
      <div class="about-container pt-5">
     
-    <div class="about-content container " id="story">
+    <div class="about-content container section-animate" id="story">
         <div class="section-header pt-1">
                <h2>Background Story</h2>
                
             </div>
-              <div class="about-text">
+              <div class="about-text" data-animation="right" data-delay="100">
                 <p>  Rina and Co consults Limited founded in the year 2023, is a fully registered firm that operates in compliance with all applicable Nigerian laws and regulations. The company hold valid registration with cooperate affairs commission and partners with professionals in legal, finance, construction and estate management.</p>
                 <p>We render services in real estate, investment, and building construction. As a firm, we are committed to excellence in the acquisition, development, and sales of real estate across Nigeria. With a track record of successful land sales and development projects. The firm offers structured real estate investment opportunities with guaranteed returns.</p>
                 <p>Rina and Co. consults Limited is committed to transparency, investors safety, modern building development, and structured real estate growth.</p>
               </div>
                 
             </div>
-       
-                <div class="milestones stats-container-top">
+             <div class="container section-animate">
+<div class="milestones stats-container-top ">
                     <div class="glass milestone-card stat-item-top ">
                         <div class="milestone-number stat-number-top" data-target="7">0+</div>
                         <div class="milestone-text">Completed Projects</div>
@@ -105,11 +108,13 @@
                         <div class="milestone-text">Industry Awards</div>
                     </div>
                 </div>
+             </div>
+                
         </div>
   </div>
 
     <!-- Mission & Vision Section -->
-    <section class="section mission-vision">
+    <section class="section mission-vision section-animate">
         <div class="container">
             <div class="section-header">
                 <h2>Our Mission & Vision</h2>
@@ -117,13 +122,13 @@
             </div>
             
             <div class="cards-container">
-                <div class="card">
+                <div class="card" data-animation="slide-right" data-delay="200">
                     <i class="fas fa-bullseye"></i>
                     <h3>Our Mission</h3>
                     <p>To deliver excellemt services that empowers individual, families, private sector and  government entity to confidently partner and achieve assets ownership through trusted guidance, transparent process and innovative real estate solutions.</p>
                 </div>
                 
-                <div class="card">
+                <div class="card" data-animation="slide-left" data-delay="200">
                     <i class="fas fa-eye"></i>
                     <h3>Our Vision</h3>
                     <p>To become Nigeria's most trusted brand in transforming dreams and creating lasting value and sustainable investments management.</p>
@@ -136,39 +141,40 @@
     <section class="section values">
         <div class="container">
             <div class="section-header">
-                <h2>Our Core Values</h2>
-                <p>The foundation of everything we do at Rina & Co. Consults</p>
+                <h2>Our Core Values (T.I.P.S)</h2>
+                <p>The foundation of everything we do at Rina & Co. Consults LTD.</p>
             </div>
             
             <div class="values-container">
-                <div class="value-card">
-                    <i class="fas fa-medal"></i>
-                    <h3>Excellence</h3>
-                    <p>We pursue excellence in every aspect of our work, from design to construction, ensuring superior quality in all our developments.</p>
+                <div class="value-card" data-animation="slide-right" data-delay="100">
+                
+                       <i class="fas fa-eye-slash"></i>
+                    <h3>Transparency</h3>
+                    <p>We operate with honesty,integrity and accountability.</p>
                 </div>
                 
-                <div class="value-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Integrity</h3>
-                    <p>We conduct business with honesty, transparency, and ethical practices, building trust with our clients and partners.</p>
+                <div class="value-card" data-animation="slide-left" data-delay="100">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We evolve with creative solutions that enhance growth.</p>
                 </div>
                 
-                <div class="value-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Community Focus</h3>
-                    <p>We create spaces that foster community spirit, with amenities and designs that encourage connection and belonging.</p>
+                <div class="value-card" data-animation="slide-up" data-delay="100">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h3>Proftability</h3>
+                    <p>Growing profitable ideas for efficient and sustianable resource management.</p>
                 </div>
                 
-                <div class="value-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Sustainability</h3>
-                    <p>We prioritize environmentally responsible practices and designs that minimize ecological impact and promote sustainability.</p>
+                <div class="value-card" data-animation="slide-right" data-delay="100">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Strength</h3>
+                    <p>We push through difficulties with boldness and power.</p>
                 </div>
             </div>
         </div>
     </section>
 <!-- team -->
-     <section class="team-section">
+       <section class="team-section section-animate" id="team">
         <div class="gold-decoration"></div>
          <div class="section-header">
             <h2>Our Leadership Team</h2>
@@ -176,20 +182,21 @@
         </div>
        
         
-        <div class="team-grid container-fluid">
+        <div class="team-grid">
             <!-- Team Member 1 -->
-            <div class="team-member">
+            <div class="team-member" data-animation="slide-right" data-delay="200">
                 <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Victoria Reynolds">
-                    <div class="social-links">
+                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Daniel Okafor">
+                  
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                <div class="member-info">
-                    <h3 class="member-name">Victoria Reynolds</h3>
-                    <div class="member-position">Founder & CEO</div>
+                <div class="member-info" data-animation="slide-up" data-delay="300">
+                    <h3 class="member-name">Egheghere Joseph Nyerowo</h3>
+                    <div class="member-position">MD & CEO</div>
                     <p class="member-bio">With 15+ years in real estate development, Victoria leads our vision for sustainable communities and value-driven investments.</p>
                     <div class="member-contact">
                         <i class="fas fa-phone"></i> +234 (0) 814 822 7087
@@ -198,18 +205,18 @@
             </div>
             
             <!-- Team Member 2 -->
-            <div class="team-member">
+            <div class="team-member" data-animation="slide-left" data-delay="200">
                 <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Daniel Okafor">
-                    <div class="social-links">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Egheghere">
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                <div class="member-info">
+                <div class="member-info" data-animation="slide-up" data-delay="300">
                     <h3 class="member-name">Daniel Okafor</h3>
-                    <div class="member-position">Director of Construction</div>
+                    <div class="member-position">Secretary & Realtor</div>
                     <p class="member-bio">Daniel oversees all construction projects ensuring quality, sustainability, and timely delivery of our developments.</p>
                     <div class="member-contact">
                         <i class="fas fa-phone"></i> +234 (0) 812 345 6789
@@ -218,18 +225,18 @@
             </div>
             
             <!-- Team Member 3 -->
-            <div class="team-member">
+            <div class="team-member" data-animation="slide-right" data-delay="200">
                 <div class="member-image">
                     <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Amina Yusuf">
-                    <div class="social-links">
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                <div class="member-info">
-                    <h3 class="member-name">Amina Yusuf</h3>
-                    <div class="member-position">Head of Real Estate</div>
+                <div class="member-info" data-animation="slide-up" data-delay="300">
+                    <h3 class="member-name">David Ogban</h3>
+                    <div class="member-position">Personal Asst. & Realtor</div>
                     <p class="member-bio">Amina manages our property portfolio, investment opportunities, and client relationships with exceptional expertise.</p>
                     <div class="member-contact">
                         <i class="fas fa-phone"></i> +234 (0) 813 987 6543
@@ -238,8 +245,7 @@
             </div>
         </div>
         
-      
-            <div class="stats-container">
+        <div class="stats-container" data-animation="slide-up" data-delay="100">
             <div class="stat-item">
                 <div class="stat-number"  data-target="5">0+</div>
                 <div class="stat-label"><p>Years Experience</p></div>
@@ -249,16 +255,21 @@
                 <div class="stat-label"><p>Projects Completed</p>
                 </div>
             </div>
-           
+            <div class="stat-item">
+                <div class="stat-number"  data-target="98">0%</div>
+                <div class="stat-label"><p>Client Satisfaction</p></div>
+            </div>
             <div class="stat-item">
                 <div class="stat-number"  data-target="7">0+</div>
                 <div class="stat-label"><p>Team Members</p></div>
             </div>
         </div>
+        
+        
     </section>
    <!-- team end  -->
       <!-- Statistics Section -->
-    <section class="section stats-section statistics">
+    <!-- <section class="section stats-section statistics">
         <div class="container">
             <div class="section-header">
                 <h2>Our Impact in Numbers</h2>
@@ -279,13 +290,13 @@
             </div>
               
         </div>
-    </section>
+    </section> -->
 
    
 
   
     <!-- growing team start -->
-        <div class="section-header" id="career-opportunities">
+        <div class="section-header section-animate" id="career-opportunities">
             <h2 class="section-title">Our Growing Team</h2>
             <p class="section-subtitle">Meet the passionate professionals who are transforming real estate development in Nigeria with expertise, dedication, and vision</p>
         </div>
@@ -293,7 +304,7 @@
             <div class="container-fluid back-drop">
  <div class=" row">
             <div class="col-md-6">
-                <div class="team-intro">
+                <div class="team-intro" data-animation="slide-right" data-delay="100">
                 <h2>Why Join Our Team?</h2>
                 <p>At Rina & Co. Consults Limited, we're building more than properties—we're building careers. We offer a dynamic work environment where innovation is encouraged, growth is supported, and excellence is recognized.</p>
                 
@@ -321,7 +332,7 @@
                     </li>
                 </ul>
                 
-                <div class="testimonial">
+                <div class="testimonial" data-animation="slide-up" data-delay="100">
                     <p>"Joining Rina & Co. Consults was the best career decision I've made. The opportunities for growth and the supportive team environment have allowed me to thrive both professionally and personally."</p>
                     <div class="author">
                         <div class="author-img">
@@ -334,12 +345,12 @@
                     </div>
                 </div>
                    <!-- Join Our Team Section -->
-            <div class="join-team">
+            <div class="join-team" data-animation="slide-up" data-delay="100">
                 <div class="gold-decoration"></div>
                 <h2>Join Our Growing Team</h2>
                 <p>We're always looking for talented individuals who are passionate about real estate development and community building. Take the first step toward an exciting career with us.</p>
                 
-                <a href="https://wa.me/2348148227087" class="whatsapp-button">
+                <a href="https://wa.me/2348148227087" class="whatsapp-button" data-animation="slide-up" data-delay="200">
                     <i class="fab fa-whatsapp"></i> Chat with Our HR Team
                 </a>
                 
@@ -350,7 +361,7 @@
         </div>
             </div>
         <div class="col-md-6">
-<div class="positions">
+<div class="positions  section-animate">
            <div class="section-header">
              <h2>Current Open Positions</h2>
            </div>
@@ -374,7 +385,7 @@
                     </div>
                 </div> -->
                 
-                <div class="position-card">
+                <div class="position-card " data-animation="slide-right" data-delay="100">
                     <h4><i class="fas fa-chart-line"></i> Real Estate Sales Agent</h4>
                     <p>Help clients find their dream properties while building a rewarding career in real estate sales.</p>
                     <div class="position-meta">
@@ -382,7 +393,7 @@
                         <span class="remote">Remote</span>
                           
                     </div>
-                   <a href="https://wa.me/2348148227087" class="whatsapp-button">
+                   <a href="https://wa.me/2348148227087" class="whatsapp-button" data-animation="slide-up" data-delay="200">
                     <i class="fab fa-whatsapp"></i> Join
                 </a>
                 </div>
@@ -397,13 +408,13 @@
             <!-- </div> -->
             
      <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section section-animate">
         <div class="container">
-            <div class="cta-content">
+            <div class="cta-content" data-animation="slide-right" data-delay="0">
                 <h2 class="cta-title">Ready To Start Your Real Estate Journey?</h2>
                 <p class="cta-text">Join hundreds of satisfied clients, track the real estate evolution  through Rina & Co. Consults Limited. Our team is ready to guide you through every step of the way.</p>
-                <a href="estate.html" class="btn btn-primary mt-2">Explore Our Estate <i class="fas fa-tree"></i></a>
-                  <a href="investment.html" class="btn btn-outline mt-2">Invest Today <i class="fas fa-piggy-bank"></i></a>
+                <a href="estate.html" class="btn btn-primary mt-2" data-animation="slide-up" data-delay="200">Explore Our Estate <i class="fas fa-tree"></i></a>
+                  <a href="investment.html" class="btn btn-outline mt-2" data-animation="slide-up" data-delay="200">Invest Today <i class="fas fa-piggy-bank"></i></a>
             </div>
         </div>
     </section>
@@ -532,31 +543,7 @@
         </div>
     </footer>
 
-
-
-     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            // Animate cards and sections
-            const animatedElements = document.querySelectorAll('.card, .value-card, .team-member, .stat-item');
-            
-            animatedElements.forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        });
-        
-</script>
+<script src="./js folder/scroll-animation.js"></script>
     <script src="./js folder/index.js"></script>
 </body>
 </html>

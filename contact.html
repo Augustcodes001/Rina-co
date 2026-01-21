@@ -15,18 +15,18 @@
       <link rel="stylesheet" href="./css files/header.css">
     <link rel="stylesheet" href="./css files/contact.css">
      <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.min.css">
- 
+   <link rel="stylesheet" href="css files/animation.css">
 </head>
 <body>
  
-    <!-- Header -->
-   <header class="glass">
-        <div class="logo">
+   <!-- Header -->
+   <header class="glass ">
+        <a class="logo" href="./index.html">
             <div class="logo-image">
-                  <img src="./images/rina and co logo.png" alt="" srcset="">
+                  <img src="./images/rina and co logo.png" alt="rina_coconsults-logo" srcset="">
             </div>
-            <span><h5>RINA & CO. CONSULTS LTD.</h5></span>
-        </div>
+            RINA & CO. CONSULTS LTD.
+        </a>
         <nav>
              <ul>
                 <li><a href="index.html">Home</a></li>
@@ -50,8 +50,8 @@
     <div class="mobile-nav " id="mobileNav">
         <i class="fas fa-times close-icon" id="closeMenu"></i>
         <ul>
-             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+             <ul data-animation="slide-left" data-delay="100">
+                <li><a href="index.html" class="glass"><i class="fas fa-home "></i> Home</a></li>
                  <li><a href="about.html"><i class="fas fa-crown"></i> About</a></li>
                   <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
                    <li><a href="estate.html"><i class="fas fa-tree"></i> Estate</a></li>
@@ -59,7 +59,9 @@
                 <li><a href="construction.html"><i class="fas fa-hard-hat"></i> Construction</a></li>
  <p class=" text-light pb-1 text-center ">&copy;Rina & Co. Consults LTD.</p>
             </ul>
+             
         </ul>
+        
       
     </div>
        <!--  -->
@@ -72,7 +74,7 @@
             </video>
             <div class="hero-overlay"></div>
         </div>
-       <div class="container pt-0">
+       <div class="container pt-0 section-animate">
             <div class="pt-0">
                 <h2 class="hero-title">Get In Touch</h2>
                 <p class="hero-text">We're here to answer your questions and discuss how we can help you find your dream investment opportunity.</p>
@@ -81,21 +83,65 @@
     </section>
         <!-- Contact Section -->
       <!-- Investment Form & Contact -->
-   <section class="form-section pb-5">
+    <section class="form-section pb-5 section-animate">
         <div class="container">
             <div class="section-header">
-                <h2 class="mt-5 pt-5">Contact US</h2>
-               <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+                <h2 class="mt-5 pt-5">Contact Us</h2>
+               <p>Book a free consultation and our team will get back to you within 24 hours.</p>
             </div>
             
-            <div class="form-container container-fluid" id="consultation">
+            <div class="form-container container-fluid">
                 <div class="row">
-          <div class="form-info col-md-6">
+          
+                   <div class="form-content col-md-6">
+            <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST" class="section-animate">
+     <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required> <!-- Added name -->
+  </div>
+  
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required> <!-- Added name -->
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"> <!-- Added name -->
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest">Subject</label>
+                    <select id="interest" name="subject" required> <!-- Added name -->
+                    <option value="real-estate">Real Estate Development</option>
+                    <option value="tech-startups">Investment</option>
+                    <option value="multiple">Career Opportunities</option>
+                    <option value="not-sure">Land Inquiry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea> <!-- Added name -->
+                </div>
+                        <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;" data-animation="slide-right" data-delay="200">    <i class="fas fa-paper-plane me-2"></i>
+                            Submit
+                        </button>
+                         <div id="status-message" class="status-message"></div>
+                    </form>
+                      <div class="text-center mt-4 mb-3">
+                            <p class="text-muted">- OR -</p>
+                        </div>
+                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2" data-animation="slide-right" data-delay="300">
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat 
+                    </a>
+                </div>
+                  <div class="form-info col-md-6 d-none d-md-block section-animate ">
                     <h3>Contact Info</h3>
                    
                     
-                    <div class="contact-methods">
-                        <div class="contact-method">
+                    <div class="contact-methods" data-animation="slide-left" data-delay="200">
+                        <div class="contact-method" >
                             <div class="contact-icon-large">
                                 <i class="fas fa-phone"></i>
                             </div>
@@ -125,10 +171,10 @@
                                 <p>228, Upper Mission Rd.,Opp. Nation Hospital <br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
                             </div>
                         </div>
-                         <div class="business-hours glass">
+                         <div class="business-hours glass" data-animation="slide-right" data-delay="200">
                         <div class="hours-item">
                             <span class="day">Monday - Friday</span>
-                            <span class="hours">9:00 AM - 6:00 PM</span>
+                            <span class="hours">10:00 AM - 4:00 PM</span>
                         </div>
                         <div class="hours-item">
                             <span class="day">Saturday</span>
@@ -140,7 +186,7 @@
                         </div>
                     </div>
                       
-                <div class="social-media">
+                <div class="social-media" data-animation="slide-up" data-delay="200">
                     <h4>Connect with us</h4>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
@@ -153,56 +199,6 @@
         
                     </div>
                 </div>
-                   <div class="form-content col-md-6">
-            <form id="investment-form" action="https://formspree.io/f/mrbloeja"
-                      method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        
-                       <div class="form-group">
-                            <label for="interest">Subject</label>
-                            <select id="interest" required>
-                            
-                                <option value="real-estate">Real Estate Development</option>
-                               
-                                <option value="tech-startups">Investment</option>
-                                <option value="multiple">Career Opportunities</option>
-                                <option value="not-sure">Land Inquiry</option>
-                            </select>
-                        </div>
-                        
-                       
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4"></textarea>
-                        </div>
-                   
-                        <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;">    <i class="fas fa-paper-plane me-2"></i>
-                            Submit Request
-                        </button>
-                         <div id="status-message" class="status-message"></div>
-                    </form>
-                      <div class="text-center mt-4 mb-3">
-                            <p class="text-muted">- OR -</p>
-                        </div>
-                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
-                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat
-                    </a>
-                </div>
-
 
                 </div>
                 
@@ -216,10 +212,10 @@
                     
                    
         <!-- Map Section -->
-        <section class="map-section  pt-5">
+        <section class="map-section  pt-5 section-animate">
             <div class="map-container">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31722.76503557836!2d5.602639734765621!3d6.349275498268478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d35e40e20bd1%3A0xcd35bbee9c9203e5!2sEwah%20Rd%2C%20Benin%20City%2C%20Edo!5e0!3m2!1sen!2sng!4v1754565523792!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="map-overlay glass">
+                <div class="map-overlay glass" data-animation="slide-right" data-delay="200">
                     <h3>Our Location</h3>
                     <p>228, Upper Mission Rd., Opp. Nation Hospital Close To Ewah Rd,. Junction, Benin City. Edo State.</p>
                     <p><i class="fas fa-phone"></i> +234(0)8148227087</p>
@@ -228,7 +224,7 @@
         </section>
       </div>
     <!-- Footer -->
-   <footer class="footer">
+   <footer class="footer section-animate">
         <div class="gold-decoration"></div>
         
         <div class="container-fluid contain-decor">
@@ -356,5 +352,6 @@
      
      <script src="./js folder/index.js"></script>
        <script src="./js folder/form.js"></script>
+       <script src="./js folder/scroll-animation.js"></script>
 </body>
 </html>

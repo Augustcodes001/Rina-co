@@ -307,3 +307,160 @@ if (typeof module !== 'undefined' && module.exports) {
 initScrollAnimations();
 
 
+// Enhanced toggle with better animations
+function initEnhancedMobileToggle() {
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    const toggleIndicator = document.querySelector('.toggle-indicator');
+    const formContent = document.querySelector('.form-content');
+    const formInfo = document.querySelector('.form-info');
+    
+    if (!toggleButtons.length) return;
+    
+    // Set initial active state
+    let activeTab = 'form';
+    
+    function switchTab(target) {
+        // Prevent switching to same tab
+        if (target === activeTab) return;
+        
+        // Add loading animation to buttons
+        toggleButtons.forEach(btn => {
+            btn.style.pointerEvents = 'none';
+        });
+        
+        // Update UI after a brief delay for animation
+        setTimeout(() => {
+            // Update button states
+            toggleButtons.forEach(btn => {
+                if (btn.dataset.target === target) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Move indicator with bounce effect
+            if (toggleIndicator) {
+                const activeBtn = document.querySelector(`.toggle-btn[data-target="${target}"]`);
+                if (activeBtn) {
+                    const btnWidth = activeBtn.offsetWidth;
+                    const btnLeft = activeBtn.offsetLeft;
+                    
+                    // Add bounce animation
+                    toggleIndicator.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                    toggleIndicator.style.transform = `translateX(${btnLeft}px)`;
+                    toggleIndicator.style.width = `${btnWidth}px`;
+                }
+            }
+            
+            // Handle content switching on mobile
+            if (window.innerWidth < 768) {
+                // Fade out current content
+                if (target === 'form') {
+                    formInfo.classList.add('fade-out');
+                    setTimeout(() => {
+                        formInfo.classList.add('mobile-hidden');
+                        formInfo.classList.remove('fade-out');
+                        formContent.classList.remove('mobile-hidden');
+                        formContent.classList.add('fade-in');
+                        setTimeout(() => {
+                            formContent.classList.remove('fade-in');
+                        }, 300);
+                    }, 200);
+                } else {
+                    formContent.classList.add('fade-out');
+                    setTimeout(() => {
+                        formContent.classList.add('mobile-hidden');
+                        formContent.classList.remove('fade-out');
+                        formInfo.classList.remove('mobile-hidden');
+                        formInfo.classList.add('fade-in');
+                        setTimeout(() => {
+                            formInfo.classList.remove('fade-in');
+                        }, 300);
+                    }, 200);
+                }
+            }
+            
+            activeTab = target;
+            
+            // Re-enable buttons
+            toggleButtons.forEach(btn => {
+                btn.style.pointerEvents = 'auto';
+            });
+            
+            // Save to sessionStorage
+            sessionStorage.setItem('activeContactTab', target);
+        }, 100);
+    }
+    
+    // Event listeners
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            switchTab(this.dataset.target);
+        });
+    });
+    
+    // Initialize
+    setTimeout(() => {
+        const savedTab = sessionStorage.getItem('activeContactTab') || 'form';
+        switchTab(savedTab);
+    }, 100);
+    
+    // Handle responsive behavior
+    function handleResponsive() {
+        if (window.innerWidth >= 768) {
+            formContent.classList.remove('mobile-hidden', 'fade-in', 'fade-out');
+            formInfo.classList.remove('mobile-hidden', 'fade-in', 'fade-out');
+        } else {
+            switchTab(activeTab);
+        }
+    }
+    
+    window.addEventListener('resize', function() {
+        clearTimeout(this.resizeTimer);
+        this.resizeTimer = setTimeout(handleResponsive, 250);
+    });
+    
+    handleResponsive();
+}
+
+// Add fade animations to CSS
+const fadeCSS = `
+    .fade-in {
+        animation: fadeIn 0.3s ease forwards;
+    }
+    
+    .fade-out {
+        animation: fadeOut 0.3s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    }
+`;
+
+// Inject fade animations
+const styleSheet = document.createElement('style');
+styleSheet.textContent = fadeCSS;
+document.head.appendChild(styleSheet);
+
+// Initialize enhanced toggle
+document.addEventListener('DOMContentLoaded', initEnhancedMobileToggle);

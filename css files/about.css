@@ -136,12 +136,10 @@
 
         /* Hero Styles */
         .hero-header {
-/* 
-           
-            background: linear-gradient(rgba(129, 118, 13, 0.4), var(--glass)),url("https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"); */
-              background: linear-gradient(rgba(129, 118, 13, 0.4), var(--glass)),url("../images/about-rina-co-consults.jpeg");
+
+              background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass)),url("../images/about-hero.jpg");
             background-size: cover;
-            background-position: center;
+            background-position:center 38%;
             color: rgb(20, 19, 19);
             padding: 150px 0;
             text-align: center;
@@ -325,13 +323,13 @@
         
         .values-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
         
         .value-card {
             text-align: center;
-            padding: 30px;
+            padding: 30px 34px 30px 34px;
             border-radius: 15px;
             transition: all 0.3s ease;
             background: white;
@@ -640,7 +638,7 @@
 
         /* team end */
           /* Statistics */
-        .stats-section {
+        /* .stats-section {
           background: rgb(253, 252, 244);
           border-top: 1px solid  rgba(252, 246, 197, 0.7);
              border-bottom: 1px solid  rgba(252, 246, 197, 0.7);
@@ -675,7 +673,7 @@
             text-transform: uppercase;
             font-weight: 400;
             letter-spacing: 1px;
-        }
+        } */
         /*  */
         /* growing team */
 
@@ -1017,7 +1015,6 @@
         .cta-section {
             padding: 100px 0;
               background: url(../images/A\ shiny\ golden\ piggy\ bank\ sitting\ on\ a\ lush\ green\ field.png)  center/cover no-repeat;
-            /* background: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'); */
             text-align: center;
             position: relative;
             color: white;
@@ -1030,7 +1027,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-          background: linear-gradient(rgba(15, 13, 0, .8), var(--glass));
+          background:rgb(0, 0, 0,.5);
         }
         
         .cta-content {

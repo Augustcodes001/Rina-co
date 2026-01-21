@@ -25,7 +25,7 @@
 </head>
 <body>
     <!-- loader -->
- <div class="preloader d-none">
+ <div class="preloader">
         <div class="logo-container">
             <svg class="progress-ring" viewBox="0 0 160 160">
                 <circle class="progress-ring-circle" 
@@ -43,7 +43,7 @@
         </div>
         <div class="text-container">
             <div class="reg-num ">RC 7971137</div>
-            <div class="company-name">RINA & Co. Consults Ltd.</div>
+            <div class="company-name"><h4>RINA & Co. Consults Ltd.</h4></div>
             <div class="tagline">...Comfortability with Value</div>
         </div>
         <div class="loading-text">Loading</div>
@@ -211,8 +211,8 @@
                 <i class="fas fa-vector-square"></i>
                 <select class="search-control" id="plotSize">
                     <option value="all">All Sizes</option>
-                    <option value="100x100">100ft x 100ft (Full)</option>
-                    <option value="50x50">50ft x 50ft (Half)</option>
+                    <option value="100x100">100ft x 100ft </option>
+                    <option value="50x50">50ft x 100ft </option>
                 </select>
             </div>
         </div>
@@ -325,7 +325,7 @@
         <div class="journey-container" id="journey">
             <!-- Phase 1: Land Acquisition -->
             <div class="journey-card" data-animation="slide-right" data-delay="200">
-    <div class="journey-phase" data-animation="slide-up" data-delay="600">Phase 1</div>
+    <div class="journey-phase" data-animation="slide-up" data-delay="400">Phase 1</div>
                 <div class="journey-image">
                   
                     <img src="./images/visionary-beginnings.jpeg" alt="visionary beginnings image" class="lazy-image"
@@ -338,7 +338,7 @@
                         <h3>Visionary Beginnings</h3>
                     </div>
                 </div>
-                <div class="journey-content" data-animation="slide-left" data-delay="600">
+                <div class="journey-content" data-animation="slide-left" data-delay="300">
                     <h3>Land Acquisition & Assessment</h3>
                     <p>Our journey starts with carefully selected parcels of land. We assess topography, soil conditions, and environmental factors to ensure the perfect foundation for your future community.</p>
                     <p>Each site is chosen for its potential to become a thriving neighborhood with natural beauty and strategic location.</p>
@@ -346,10 +346,10 @@
             </div>
  <!-- Phase 2: investment-->
             <div class="journey-card" data-animation="slide-left" data-delay="200">
-                <div class="journey-phase" data-animation="slide-up" data-delay="600">Phase 2</div>
+                <div class="journey-phase" data-animation="slide-up" data-delay="400">Phase 2</div>
                 <div class="journey-image" >
                     <div >
-                        <img src="./images/investment-stage.jpeg" alt="investment" class="lazy-image" data-animation="zoom-in">
+                        <img src="./images/investment conference.jpg" alt="investment" >
                     </div>
                     <div class="journey-overlay">
                         <div class="journey-icon">
@@ -358,7 +358,7 @@
                         <h3>Investment</h3>
                     </div>
                 </div>
-                <div class="journey-content" data-animation="slide-left" data-delay="600">
+                <div class="journey-content" data-animation="slide-left" data-delay="300">
                     <h3>Strategic investment</h3>
                     <p>Our expertise in choosing sites with potential gives you instant return on your money.</p>
                     <p>Our major focus is  land security and making sure all legal documents are available so you never worry about losing out on your investment.</p>
@@ -366,7 +366,7 @@
             </div>
             <!-- Phase 2: Design & Planning -->
             <div class="journey-card" data-animation="slide-right" data-delay="200">
-                <div class="journey-phase"  data-animation="slide-up" data-delay="600">Phase 3</div>
+                <div class="journey-phase"  data-animation="slide-up" data-delay="400">Phase 3</div>
                 <div class="journey-image">
                     <img src="./images/construction-process-1.jpeg" alt="Design & Planning" data-animation="zoom-in"  class="lazy-image">
                     <div class="journey-overlay">
@@ -376,7 +376,7 @@
                         <h3>Precision Design</h3>
                     </div>
                 </div>
-                <div class="journey-content" data-animation="slide-right" data-delay="600">
+                <div class="journey-content" data-animation="slide-right" data-delay="300">
                     <h3>Architectural Design & Planning</h3>
                     <p>Our architects transform visions into detailed blueprints. Using cutting-edge technology and sustainable principles, we create living spaces that blend functionality with aesthetic excellence.</p>
                     <p>Every design is optimized for natural light, ventilation, and harmonious community integration.</p>
@@ -385,7 +385,7 @@
 
             <!-- Phase 3: Construction -->
             <div class="journey-card" data-animation="slide-left" data-delay="200">
-                <div class="journey-phase" data-animation="slide-up" data-delay="600">Phase 4</div>
+                <div class="journey-phase" data-animation="slide-up" data-delay="400">Phase 4</div>
                 <div class="journey-image">
                     <img src="./images/construction excellence (1).jpeg" alt="Construction" data-animation="zoom-in"  class="lazy-image">
                     <div class="journey-overlay">
@@ -395,7 +395,7 @@
                         <h3>Crafting Excellence</h3>
                     </div>
                 </div>
-                <div class="journey-content" data-animation="slide-left" data-delay="600">
+                <div class="journey-content" data-animation="slide-left" data-delay="300">
                     <h3>Construction & Execution</h3>
                     <p>With blueprints finalized, our skilled craftsmen bring designs to life. We maintain rigorous quality standards at every stage, using premium materials and innovative construction techniques.</p>
                     <p>Our team oversees every detail to ensure structural integrity and design perfection.</p>
@@ -409,84 +409,83 @@
 <div class="container-fluid shuffle-section section-animate"> 
 
     <!-- CARD 1 -->
-    <section class="video-section">
-
-        <div class="card-content">
-            <div class="video-container">
-                <div class="video-placeholder">
-                    <img src="./images/construction process-3.jpeg" alt="Phase 1">
-                </div>
-                <div class="video-overlay-vid">
-                    <!-- CHANGE video1.mp4 to your actual video file -->
-                    <div class="play-button" data-animation="slide-up" data-delay="300" data-video-src="./videos/video1.mp4">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
+    <!-- CARD 1 -->
+<section class="video-section">
+    <div class="card-content">
+        <div class="video-container">
+            <div class="video-placeholder">
+                <img src="./images/construction process-3.jpeg" alt="Phase 1">
             </div>
-            
-            <div class="section-header">
-                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-                <p>From ground work to excellence,learn about our construction process.</p>
-                <div class="btn-container mt-lg-4 mt-0 " data-animation="slide-up" data-delay="400">
-                    <a href="./construction.html" class="btn btn-primary">
-                        More Info <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>            
-            </div>
-        </div>
-    </section>
-
-    <!-- CARD 2 -->
-    <section class="video-section">
-        <div class="card-content">
-            <div class="video-container">
-                <div class="video-placeholder">
-                    <img src="./images/construction process-3.jpeg" alt="Phase 2">
-                </div>
-                <div class="video-overlay-vid">
-                    <div class="play-button" data-animation="slide-up" data-delay="300"data-video-src="./videos/video2.mp4">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-header">
-                <h2><i class="fas fa-coins"></i> Land banking</h2>
-                <p>Land is beyond a transaction it is an investment, let's guide your investment approach.</p>
-                <div class="btn-container mt-lg-4 mt-0" data-animation="slide-up" data-delay="400">
-                    <a href="construction.html" class="btn btn-primary">
-                      More Info <i class="fas fa-arrow-right"></i>
-                    </a>
+            <div class="video-overlay-vid">
+                <div class="play-button" data-animation="slide-up" data-delay="300" data-video-src="https://dai.ly/x9odzm2">
+                    <i class="fas fa-play"></i>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <div class="section-header">
+            <h2> Projects</h2>
+            <p>From ground work to excellence, learn about our construction process.</p>
+            <div class="btn-container mt-lg-4 mt-0 " data-animation="slide-up" data-delay="400">
+                <a href="./construction.html" class="btn btn-primary">
+                    More Info <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>            
+        </div>
+    </div>
+</section>
 
-    <!-- CARD 3 -->
-    <section class="video-section">
-        <div class="card-content">
-            <div class="video-container">
-                <div class="video-placeholder">
-                    <img src="./images/construction process-3.jpeg" alt="Phase 3">
-                </div>
-                <div class="video-overlay-vid">
-                    <div class="play-button" data-animation="slide-up" data-delay="300" data-video-src="./videos/video3.mp4">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
+<!-- CARD 2 -->
+<section class="video-section">
+    <div class="card-content">
+        <div class="video-container">
+            <div class="video-placeholder">
+                <img src="./images/construction process-3.jpeg" alt="Phase 2" data-video-src="https://dai.ly/x9y6lq4">
             </div>
-            
-            <div class="section-header">
-                <h2><i class="fas fa-hourglass-half"></i> Limited Plots</h2>
-                <p>Don't wait to buy, buy and wait. Join the league of land owners today.</p>
-                <div class="btn-container mt-lg-4 mt-0">
-                    <a href="construction.html" class="btn btn-primary" data-animation="slide-up" data-delay="400">
-                        Contact Us <i class="fas fa-arrow-right"></i>
-                    </a>
+            <div class="video-overlay-vid">
+                <div class="play-button" data-animation="slide-up" data-delay="300" data-video-src="https://dai.ly/x9y6lq4">
+                    <i class="fas fa-play"></i>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <div class="section-header">
+            <h2> Land banking</h2>
+            <p>Land is beyond a transaction it is an investment, let's guide your investment approach.</p>
+            <div class="btn-container mt-lg-4 mt-0" data-animation="slide-up" data-delay="300">
+                <a href="construction.html" class="btn btn-primary">
+                  More Info <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CARD 3 -->
+<section class="video-section">
+    <div class="card-content">
+        <div class="video-container">
+            <div class="video-placeholder">
+                <img src="./images/construction process-3.jpeg" alt="Phase 3" data-video-src="https://dai.ly/x9y6lx0">
+            </div>
+            <div class="video-overlay-vid">
+                <div class="play-button" data-animation="slide-up" data-delay="300" data-video-src="https://dai.ly/x9y6lx0">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-header">
+            <h2>Limited Plots</h2>
+            <p>Don't wait to buy, buy and wait. Join the league of land owners today.</p>
+            <div class="btn-container mt-lg-4 mt-0">
+                <a href="construction.html" class="btn btn-primary" data-animation="slide-up" data-delay="300">
+                    Contact Us <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 </div>
 
@@ -501,7 +500,7 @@
     <!-- <div class="video-wrapper glass"> -->
         <div class="video-wrapper-estate  glass">
                 <div class="video-placeholder-estate">
-                    <img src="./images/elora video thumbnail.jpg" alt="estate video" data-animation="zoom-in">
+                    <img src="./images/elora video thumbnail.jpg" alt="estate video" >
                 </div>
                 <div class="video-overlay ">
                     <div class="play-button" data-animation="slide-up" data-delay="600" >
@@ -527,7 +526,7 @@
             <div class="project-image " data-animation="slide-right" data-delay="100">
                 <!-- <div class="tag">HOT DEAL</div> -->
                <img src="./images/construction images-1.jpeg"  alt="100ft by 100ft land ">
-                <div class="project-status" data-animation="slide-up" data-delay="600"><i class="fas fa-naira-sign" ></i> 1,500,000</div>
+                <div class="project-status" data-animation="slide-up" data-delay="400"><i class="fas fa-naira-sign" ></i> 1,500,000</div>
             </div>
             
             <div class="project-content section-animate">
@@ -575,7 +574,7 @@
             <div class="project-image" data-animation="slide-right" data-delay="100">
                 <!-- <div class="tag">HOT DEAL</div> -->
                  <img src="./images/construction images-2.jpeg" alt="50ft by 50ft land ">
-                <div class="project-status" data-animation="slide-up" data-delay="600"><i class="fas fa-naira-sign"></i> 800,000</div>
+                <div class="project-status" data-animation="slide-up" data-delay="400"><i class="fas fa-naira-sign"></i> 800,000</div>
             </div>
             
             <div class="project-content section-animate">
@@ -624,61 +623,92 @@
 </section>
             <!-- project grid -->
      <!-- Payment Plans Section -->
-    <section class="section payment-plans section-animate">
-        <div class="container-fluid">
+   
+     <div class="container section-animate">
             <div class="section-header">
                <h2>Flexible Payment Options</h2>
                 <p>Find something perfect whether its a land for sale or how our plans are tailored to suit you.</p>
             </div>
-           
-            <div class="container-fluid plans-container">
-                <div class="row g-5">
-                    <div class=" col-md-6 col-lg-6">
-                   <div class="plan-card" data-animation="slide-right" data-delay="300">
-                    <div class="plan-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Standard Plan</h3>
-                    <div class="plan-price">40% Deposit</div>
-                  
-                    <ul class="plan-features">
-                        <li>Initial deposit of 40%</li>
-                     
-                        <li>Spread balance payment for 3 months</li>
-                       
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-2" data-animation="slide-up" data-delay="200"> More Info <i class="fab fa-whatsapp"></i></a>
-                  
-                </div>
-                    </div>
-                    <div class=" col-md-6 col-lg-6">
-                      <div class="plan-card featured " data-animation="slide-left" data-delay="300">
-                    <div class="plan-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Oxford Plan</h3>
-                    <div class="plan-price">50% Deposit</div>
-                    <ul class="plan-features">
-                        <li>Initial deposit of 50%</li>
-                     
-                       <li>Spread balance payment for 6 months</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-2" data-animation="slide-up" data-delay="200"> More Info <i class="fab fa-whatsapp"></i></a>
-                </div> 
-                    </div>
-                    <div class="col-md-6 col-lg-6">
- 
-             
+            <div class="row justify-content-center">
+                <!-- Standard Plan -->
+                <div class="col-lg-5 col-md-10 mb-4">
+                    <div class="plan-card" data-animation="slide-right" data-delay="200">
+                        <div class="payment-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="plan-name">Standard Plan</h3>
+                        <div class="deposit-badge">Initial Deposit: <span class="deposit-percentage">40%</span></div>
+                        
+                        <ul class="plan-details" data-animation="slide-up" data-delay="100">
+                            <li><i class="fas fa-check-circle"></i> Initial deposit of 40% upon signing</li>
+                            <li><i class="fas fa-calendar-alt"></i> Spread balance payment for 3 months</li>
+                            <li><i class="fas fa-clock"></i> Ideal for short-term engagements</li>
+                            <li><i class="fas fa-percentage"></i> No interest charges on balance</li>
+                            <!-- <li><i class="fas fa-file-invoice"></i> Detailed monthly invoices provided</li> -->
+                        </ul>
+                        
+                        <div class="plan-highlight" data-animation="slide-left" data-delay="0">
+                            <h5><i class="fas fa-bolt"></i> Best For</h5>
+                            <p>Clients seeking a lower upfront investment with a shorter payment timeline.</p>
+                        </div>
+                        
+                        <a href="#" class="more-info-btn btn btn-primary mt-3" id="standard-info" data-animation="slide-up" data-delay="200">
+                            More Details <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-               
                 
-                
-               
+                <!-- Oxford Plan -->
+                <div class="col-lg-5 col-md-10 mb-4">
+                    <div class="plan-card popular" data-animation="slide-left" data-delay="200">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <div class="payment-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="plan-name">Oxford Plan</h3>
+                        <div class="deposit-badge">Initial Deposit: <span class="deposit-percentage">50%</span></div>
+                        
+                        <ul class="plan-details" data-animation="slide-up" data-delay="100">
+                            <li><i class="fas fa-check-circle"></i> Initial deposit of 50% upon signing</li>
+                            <li><i class="fas fa-calendar-alt"></i> Spread balance payment for 6 months</li>
+                            <li><i class="fas fa-clock"></i> Extended payment period for flexibility</li>
+                            <li><i class="fas fa-percentage"></i> No interest charges on balance</li>
+                            <!-- <li><i class="fas fa-gift"></i> Includes one complimentary strategy session</li> -->
+                        </ul>
+                        
+                        <div class="plan-highlight" data-animation="slide-right" data-delay="0">
+                            <h5><i class="fas fa-star"></i> Best For</h5>
+                            <p>Clients who prefer lower monthly payments and extended financial flexibility.</p>
+                        </div>
+                        
+                        <a href="#" class="more-info-btn btn btn-primary mt-3" id="oxford-info" data-animation="slide-up" data-delay="200">
+                            More Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+        <!--  -->
+         <!-- Plan Details Modal -->
+    <div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 2px solid var(--primary-gold);">
+                    <h5 class="modal-title" id="planModalLabel" style="color: var(--charcoal-dark); font-weight: 700;">Plan Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be inserted here by JavaScript -->
+                </div>
+                <div class="modal-footer" style="border-top: 1px solid var(--gold-pale);">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="selectPlanBtn" >Select This Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- investment plans -->
+
      <section class="investment-section section-animate">
   <div class="container">
    <div class="section-header">
@@ -861,13 +891,26 @@
      <!-- Contact Section -->
      <!-- Contact Section -->
       <!-- Investment Form & Contact -->
-    <section class="form-section pb-5 section-animate">
+    <section class="form-section pb-5 section-animate ">
         <div class="container">
             <div class="section-header">
                 <h2 class="mt-5 pt-5">Contact Us</h2>
                <p>Book a free consultation and our team will get back to you within 24 hours.</p>
             </div>
-            
+             <!-- MOBILE TOGGLE BUTTONS (Only visible on small screens) -->
+        <div class="mobile-toggle-buttons d-md-none mb-4" data-animation="slide-up" data-delay="100">
+            <div class="toggle-container">
+                <button class="toggle-btn active" data-target="form">
+                    <i class="fas fa-envelope me-2"></i>
+                    Contact Form
+                </button>
+                <button class="toggle-btn" data-target="info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Contact Info
+                </button>
+            </div>
+            <div class="toggle-indicator"></div>
+        </div>
             <div class="form-container container-fluid">
                 <div class="row">
           
@@ -1001,7 +1044,7 @@
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card" data-animation="slide-right" data-delay="200">
                     <div class="testimonial-video">
-                        <video class="video-player" poster="./images/WhatsApp Image 2025-07-15 at 12.11.07_2cb740a6.jpg">
+                        <video class="video-player" poster="./images/official-logo of rina and co.jpg"">
                             <source src="./videos/testament-3.mp4" type="video/mp4">
                           
                         </video>
@@ -1067,7 +1110,7 @@
                     </div>
                     
                     <div class="testimonial-video">
-                        <video class="video-player" poster="./images/WhatsApp Image 2025-07-15 at 12.11.07_2cb740a6.jpg"  >
+                        <video class="video-player"poster="./images/official-logo of rina and co.jpg"   >
                             <source src="./videos/testament-1.mp4" type="video/mp4">
                            
                         </video>
@@ -1083,7 +1126,7 @@
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card " data-animation="slide-left" data-delay="200">
                     <div class="testimonial-video">
-                        <video class="video-player"  poster="./images/WhatsApp Image 2025-07-15 at 12.11.07_2cb740a6.jpg" >
+                        <video class="video-player"  poster="./images/official-logo of rina and co.jpg"  >
                             <source src="./videos/testament-2.mp4" type="video/mp4">
                           
                         </video>
@@ -1146,7 +1189,7 @@
                     </div>
                     
                     <div class="testimonial-video">
-                        <video class="video-player" poster="./images/WhatsApp Image 2025-07-15 at 12.11.07_2cb740a6.jpg"  >
+                        <video class="video-player" poster="./images/official-logo of rina and co.jpg"   >
                             <source src="./videos/testament-4.mp4" type="video/mp4">
                            
                         </video>
@@ -1161,7 +1204,7 @@
                   <!-- Testimonial 5 -->
                 <div class="testimonial-card" data-animation="slide-left" data-delay="200">
                     <div class="testimonial-video">
-                        <video class="video-player"  poster="./images/WhatsApp Image 2025-07-15 at 12.11.07_2cb740a6.jpg" >
+                        <video class="video-player"  poster="./images/official-logo of rina and co.jpg" >
                             <source src="./videos/testament-5.mp4" type="video/mp4">
                           
                         </video>
@@ -1433,18 +1476,232 @@
             </div>
         </div>
     </footer>
-    <!-- MODAL (Paste at the very bottom of your HTML body) -->
-<div id="customVideoModal" class="video-modal-overlay">
-    <div class="video-modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-video-wrapper">
-            <video controls id="modalVideoPlayer" class="modal-video-player">
-                <source src="" type="video/mp4">
-            </video>
+       <!-- MODAL (Paste at the very bottom of your HTML body) -->
+<!-- Lightbox Modal for Videos shuffle-cards -->
+<div id="video-lightbox" class="video-lightbox glass">
+    <div class="lightbox-content">
+        <span class="close-lightbox">&times;</span>
+        <div class="dailymotion-container">
+            <div id="dailymotion-player"></div>
         </div>
     </div>
 </div>
+      <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Plan details data
+        const planDetails = {
+            standard: {
+                title: "Standard Plan",
+                deposit: "40%",
+                monthlyPayments: "3 monthly payments",
+                totalDuration: "3 months",
+                description: "The Standard Plan offers a balanced approach with a moderate initial deposit and manageable monthly payments over three months. This plan is particularly suitable for clients with well-defined project scopes and shorter engagement timelines.",
+                features: [
+                    "40% deposit due upon agreement signing",
+                    "Remaining balance divided into 3 equal monthly payments",
+                    "No interest or hidden fees applied",
+                    "Ideal for projects with 3-4 month durations",
+                    "Monthly payment reminders and detailed invoices",
+                     "Full suite of consulting services included"
+                ],
+                benefits: [
+                    "Lower initial financial commitment",
+                    "Predictable monthly budgeting",
+                    "Shorter financial obligation period"
+                ]
+            },
+            oxford: {
+                title: "Oxford Plan",
+                deposit: "50%",
+                monthlyPayments: "6 monthly payments",
+                totalDuration: "6 months",
+                description: "The Oxford Plan provides extended payment flexibility with a slightly higher initial deposit, spreading the remaining balance across six months. This premium option is perfect for clients seeking maximum financial flexibility without compromising on service quality.",
+                features: [
+                    "50% deposit due upon agreement signing",
+                    "Remaining balance divided into 6 equal monthly payments",
+                    "No interest or hidden fees applied",
+                    "Ideal for comprehensive, long-term engagements",
+                    "Full suite of consulting services included",
+                    "Option to pay off balance early without penalty",
+                    "Monthly financial reports and progress updates"
+                ],
+                benefits: [
+                    "Lower monthly payment amounts",
+                    "Extended payment timeline for better cash flow management",
+                    "Added value with complimentary services"
+                ]
+            }
+        };
+        
+        // DOM elements
+        const standardInfoBtn = document.getElementById('standard-info');
+        const oxfordInfoBtn = document.getElementById('oxford-info');
+        const planModal = new bootstrap.Modal(document.getElementById('planModal'));
+        const planModalLabel = document.getElementById('planModalLabel');
+        const modalBody = document.getElementById('modalBody');
+        const selectPlanBtn = document.getElementById('selectPlanBtn');
+        
+        // Current selected plan
+        let selectedPlan = '';
+        
+        // Function to open modal with plan details
+        function openPlanModal(planType) {
+            const plan = planDetails[planType];
+            selectedPlan = planType;
+            
+            // Update modal title
+            planModalLabel.textContent = plan.title;
+            
+            // Update modal content
+            modalBody.innerHTML = `
+                <div class="mb-4">
+                    <div class="deposit-badge d-inline-block mb-3">Initial Deposit: <span class="deposit-percentage">${plan.deposit}</span></div>
+                    <p class="mb-3">${plan.description}</p>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="card border-0" style="background-color:#f9f2df;">
+                            <div class="card-body">
+                                <h6 class="card-title" style="color: var(--primary); font-weight: 600;"><i class="fas fa-calendar-check me-2" style="color: var(--secondary);"></i>Payment Structure</h6>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><strong>Initial Deposit:</strong> <span class=" fw-bold" style="color: var(--secondary);">${plan.deposit}</span></li>
+                                    <li class="mb-2"><strong>Monthly Payments:</strong> <span class="">${plan.monthlyPayments}</span></li>
+                                    <li><strong>Total Duration:</strong> <span class="">${plan.totalDuration}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0" style="background-color: #f9f2df;">
+                            <div class="card-body">
+                                <h6 class="card-title" style="color: var(--primary); font-weight: 600;"><i class="fas fa-award me-2" style="color: var(--secondary);"></i>Key Benefits</h6>
+                                <ul class="mb-0">
+                                    ${plan.benefits.map(benefit => `<li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--secondary); font-size: 0.9rem;"></i>${benefit}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h6 class="mb-3" style="color: var(--primary); font-weight: 600;"><i class="fas fa-list-check me-2" style="color: var(--secondary);"></i>Plan Features</h6>
+                <div class="row">
+                    ${plan.features.map(feature => `
+                    <div class="col-md-6 mb-2">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check" style="color: var(--secondary);"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <small>${feature}</small>
+                            </div>
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            // Update select button text
+            selectPlanBtn.textContent = `Select ${plan.title}`;
+            
+            // Show the modal
+            planModal.show();
+        }
+        
+        // Event listeners for "More Info" buttons
+        standardInfoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPlanModal('standard');
+        });
+        
+        oxfordInfoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPlanModal('oxford');
+        });
+        
+        // Event listener for select plan button
+        selectPlanBtn.addEventListener('click', function() {
+            const planName = planDetails[selectedPlan].title;
+            const depositAmount = planDetails[selectedPlan].deposit;
+            
+            // Create a custom alert with gold styling
+            const customAlert = document.createElement('div');
+            customAlert.className = 'alert alert-warning alert-dismissible fade show position-fixed';
+            customAlert.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                max-width: 400px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                border-left: 4px solid var(--secondary);
+            `;
+            customAlert.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-check-circle me-3" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                    <div>
+                        <h5 class="alert-heading mb-1" style="color: var(--primary);">Plan Selected!</h5>
+                        <p class="mb-0">You've selected the <strong>${planName}</strong>.<br> 
+                        Our team will contact you shortly to proceed with the <strong>${depositAmount}</strong> deposit.</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            
+            document.body.appendChild(customAlert);
+            
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                if (customAlert.parentNode) {
+                    customAlert.classList.remove('show');
+                    setTimeout(() => {
+                        if (customAlert.parentNode) {
+                            document.body.removeChild(customAlert);
+                        }
+                    }, 300);
+                }
+            }, 5000);
+            
+            planModal.hide();
+        });
+        
+        // Add hover effect to plan cards
+        document.querySelectorAll('.plan-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+        
+        // Animate elements on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate company header
+            const companyName = document.querySelector('.company-name');
+            companyName.style.animation = 'fadeInUp 1s ease forwards';
+            
+            // Animate section title and subtitle
+            const sectionTitle = document.querySelector('.section-title');
+            const sectionSubtitle = document.querySelector('.section-subtitle');
+            
+            setTimeout(() => {
+                sectionTitle.style.animation = 'fadeInUp 0.8s ease forwards';
+                sectionTitle.style.opacity = '0';
+            }, 300);
+            
+            setTimeout(() => {
+                sectionSubtitle.style.animation = 'fadeInUp 0.8s ease forwards';
+                sectionSubtitle.style.opacity = '0';
+            }, 500);
+        });
+    </script>
+     <!--  -->
+ 
  <script>
+    
    document.addEventListener('DOMContentLoaded', () => {
     // Select elements
     const modal = document.getElementById('customVideoModal');
