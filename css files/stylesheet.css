@@ -18,6 +18,8 @@
             --gold-dark: #b8860b;
             --dark-bg: #121212;
             --light-bg: #ffffff;
+             --whatsapp-green: #25D366;
+            --whatsapp-dark-green: #128C7E;
         }
 
         body {
@@ -2047,6 +2049,90 @@ select.search-control:focus {
             color: var(--secondary);
             font-size: 1.5rem;
         }
+        /* WhatsApp specific styles */
+        .whatsapp-redirect-modal .modal-content {
+            border: 2px solid var(--whatsapp-green);
+        }
+        
+        .whatsapp-redirect-modal .modal-header {
+            background-color: var(--whatsapp-green);
+            color: white;
+        }
+        
+        .whatsapp-redirect-modal .modal-body {
+            padding: 30px;
+        }
+        
+        .whatsapp-icon {
+            font-size: 4rem;
+            color: var(--whatsapp-green);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-redirect-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            width: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .whatsapp-redirect-btn:hover {
+            background-color: var(--whatsapp-dark-green);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-redirect-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .countdown-text {
+            font-size: 0.9rem;
+            color: #34495e;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        #redirectCountdown {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .plan-summary {
+            background-color: #f9f2df;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .plan-summary h6 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .plan-summary p {
+            margin-bottom: 5px;
+            color:  #34495e;
+        }
+        
+        .whatsapp-note {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 20px;
+        }
           /* payment plan */
           /* investment  */
           .investment-section {
@@ -2897,6 +2983,7 @@ select.search-control:focus {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* object-position: top; */
             transition: transform 0.5s ease;
         }
         

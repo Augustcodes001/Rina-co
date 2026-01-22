@@ -707,6 +707,44 @@
             </div>
         </div>
     </div>
+
+
+    <!--  -->
+      <!-- WhatsApp Redirect Modal -->
+    <div class="modal fade whatsapp-redirect-modal" id="whatsappRedirectModal" tabindex="-1" aria-labelledby="whatsappRedirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="whatsappRedirectModalLabel">Redirecting to WhatsApp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    
+                    <div class="plan-summary">
+                        <h6 id="selectedPlanTitle">Selected Plan: Oxford Plan</h6>
+                        <p id="selectedPlanDeposit">Deposit: 50%</p>
+                        <p id="selectedPlanDuration">Payment Duration: 6 months</p>
+                    </div>
+                    
+                    <p class="text-center mb-4">You've selected the <strong id="planNameText">Oxford Plan</strong>. You'll now be redirected to WhatsApp to continue the process and discuss the next steps with our team.</p>
+                    
+                    <a href="#" id="whatsappRedirectLink" class="whatsapp-redirect-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Continue to WhatsApp
+                    </a>
+                    
+                    <p class="countdown-text">Redirecting in <span id="redirectCountdown">5</span> seconds...</p>
+                    
+                    <p class="whatsapp-note">
+                        <i class="fas fa-info-circle me-1"></i> If you're not automatically redirected, please click the button above.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- investment plans -->
 
      <section class="investment-section section-animate">
@@ -890,153 +928,9 @@
     </section>
      <!-- Contact Section -->
      <!-- Contact Section -->
-      <!-- Investment Form & Contact -->
-    <section class="form-section pb-5 section-animate ">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="mt-5 pt-5">Contact Us</h2>
-               <p>Book a free consultation and our team will get back to you within 24 hours.</p>
-            </div>
-             <!-- MOBILE TOGGLE BUTTONS (Only visible on small screens) -->
-        <div class="mobile-toggle-buttons d-md-none mb-4" data-animation="slide-up" data-delay="100">
-            <div class="toggle-container">
-                <button class="toggle-btn active" data-target="form">
-                    <i class="fas fa-envelope me-2"></i>
-                    Contact Form
-                </button>
-                <button class="toggle-btn" data-target="info">
-                    <i class="fas fa-info-circle me-2"></i>
-                    Contact Info
-                </button>
-            </div>
-            <div class="toggle-indicator"></div>
-        </div>
-            <div class="form-container container-fluid">
-                <div class="row">
-          
-                   <div class="form-content col-md-6">
-            <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST" class="section-animate">
-     <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required> <!-- Added name -->
-  </div>
-  
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required> <!-- Added name -->
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone"> <!-- Added name -->
-                </div>
-                
-                <div class="form-group">
-                    <label for="interest">Subject</label>
-                    <select id="interest" name="subject" required> <!-- Added name -->
-                    <option value="real-estate">Real Estate Development</option>
-                    <option value="tech-startups">Investment</option>
-                    <option value="multiple">Career Opportunities</option>
-                    <option value="not-sure">Land Inquiry</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4"></textarea> <!-- Added name -->
-                </div>
-                        <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;" data-animation="slide-right" data-delay="200">    <i class="fas fa-paper-plane me-2"></i>
-                            Submit
-                        </button>
-                         <div id="status-message" class="status-message"></div>
-                    </form>
-                      <div class="text-center mt-4 mb-3">
-                            <p class="text-muted">- OR -</p>
-                        </div>
-                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2" data-animation="slide-right" data-delay="300">
-                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat 
-                    </a>
-                </div>
-                  <div class="form-info col-md-6 d-none d-md-block section-animate ">
-                    <h3>Contact Info</h3>
-                   
-                    
-                    <div class="contact-methods" data-animation="slide-left" data-delay="200">
-                        <div class="contact-method" >
-                            <div class="contact-icon-large">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p>+234(0)8148227087</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p>rinaandcoconsults@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                             
-                                <h4>Visit Us</h4>
-                                <p>228, Upper Mission Rd.,Opp. Nation Hospital <br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
-                            </div>
-                        </div>
-                         <div class="business-hours glass" data-animation="slide-right" data-delay="200">
-                        <div class="hours-item">
-                            <span class="day">Monday - Friday</span>
-                            <span class="hours">10:00 AM - 4:00 PM</span>
-                        </div>
-                        <div class="hours-item">
-                            <span class="day">Saturday</span>
-                            <span class="hours">Appointments Only</span>
-                        </div>
-                        <div class="hours-item">
-                            <span class="day">Sunday</span>
-                            <span class="hours">Closed</span>
-                        </div>
-                    </div>
-                      
-                <div class="social-media" data-animation="slide-up" data-delay="200">
-                    <h4>Connect with us</h4>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
-                         <a href="http://">
-                            <i class="fab fa-whatsapp"></i>
-                         </a>
-                    </div>
-                </div>
-        
-                    </div>
-                </div>
-
-                </div>
-                
-                
-                
-            </div>
-            
-             
-        </div>
-    </section>
-                    
-                   
-    
-  <!--  -->
        <section class="testimonials-section section-animate" id="testimonials">
             <div class="section-header">
-                <h2>Client Testimonials</h2>
+                <h2>Our Testimonials</h2>
                 <p>Hear what our land owners have to say about their experience with Rina & CO. Consults limited.</p>
             </div>
             
@@ -1262,18 +1156,19 @@
             <!-- Team Member 1 -->
             <div class="team-member" data-animation="slide-right" data-delay="200">
                 <div class="member-image">
-                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Daniel Okafor">
+                      <img src="./images/official-logo of rina and co.jpg" alt="Egheghere Joseph Nyerowo">
                   
                     <div class="social-links" data-animation="slide-up" data-delay="300">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.facebook.com/share/1AixpDAHtm/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/egheghere_joseph?igsh=MXAwdnJjNTNudGs5cQ=="><i class="fab fa-instagram"></i></a>
+                        <a href="mailto: eghegherejoseph1945@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/+2348148227087"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="member-info" data-animation="slide-up" data-delay="300">
+                <div class="member-info" data-animation="slide-up" data-delay="200">
                     <h3 class="member-name">Egheghere Joseph Nyerowo</h3>
                     <div class="member-position">MD & CEO</div>
-                    <p class="member-bio">With 15+ years in real estate development, Victoria leads our vision for sustainable communities and value-driven investments.</p>
+                    <p class="member-bio">Leads overall strategy, vision, and operations, driving growth, innovation, and stakeholder value in the real estate firm.</p>
                     <div class="member-contact">
                         <i class="fas fa-phone"></i> +234 (0) 814 822 7087
                     </div>
@@ -1283,19 +1178,19 @@
             <!-- Team Member 2 -->
             <div class="team-member" data-animation="slide-left" data-delay="200">
                 <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Egheghere">
+                    <img src="./images/team member 4.jpeg" alt="Egheghere">
                     <div class="social-links" data-animation="slide-up" data-delay="300">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
+                          <a href="https://www.facebook.com/profile.php?id=100081571653813"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:eghegherecatherine@gmail.com"><i class="fas fa-envelope"></i></a>
+                         <a href="https://wa.me/+2349060187560"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="member-info" data-animation="slide-up" data-delay="300">
-                    <h3 class="member-name">Daniel Okafor</h3>
-                    <div class="member-position">Secretary & Realtor</div>
-                    <p class="member-bio">Daniel oversees all construction projects ensuring quality, sustainability, and timely delivery of our developments.</p>
+                <div class="member-info" data-animation="slide-up" data-delay="200">
+                    <h3 class="member-name">Egheghere Kewe Catherine</h3>
+                    <div class="member-position">Financial Director / Accountant</div>
+                    <p class="member-bio">oversees Financial planning, budgeting,forecasting,and reporting, ensuring fiscl responsibility and informed decision-making in real estate operations.</p>
                     <div class="member-contact">
-                        <i class="fas fa-phone"></i> +234 (0) 812 345 6789
+                        <i class="fas fa-phone"></i> +234 (0) 9060187560
                     </div>
                 </div>
             </div>
@@ -1303,24 +1198,113 @@
             <!-- Team Member 3 -->
             <div class="team-member" data-animation="slide-right" data-delay="200">
                 <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Amina Yusuf">
+                    <img src="images/team member 3.jpeg" alt="Amina Yusuf">
                     <div class="social-links" data-animation="slide-up" data-delay="300">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
+                       <a href="https://www.facebook.com/share/1AWakv4Xb2/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:Ogbandavid5@gmail.com"><i class="fas fa-envelope"></i></a>
+                         <a href="https://wa.me/+2349130680829"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="member-info" data-animation="slide-up" data-delay="200">
+                    <h3 class="member-name">David Ogban</h3>
+                    <div class="member-position">Head of Real Estate (HOR)</div>
+                    <p class="member-bio"> Oversees overall real estate strategy, investments, and operations, driving business growth and portfolio optimization.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-phone"></i> +234 (0) 913 068 0829
+                    </div>
+                </div>
+            </div>
+        <!-- Team Member 4 -->
+            <div class="team-member" data-animation="slide-right" data-delay="200">
+                <div class="member-image">
+                    <img src="./images/team member 2.jpeg" alt="Eni-Solomon Breakthrough">
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
+                        <a href="https://www.linkedin.com/in/breakthrough-eni-solomon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/share/1CprG7CySS/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/earn_with_breakthrough?igsh=YWV0bThxNTA4Zml5"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto: breakthroughenisolomon@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/+2349157307231"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="member-info" data-animation="slide-up" data-delay="200">
+                    <h3 class="member-name">Eni-Solomon Breakthrough</h3>
+                    <div class="member-position">Realtor / Procurement officer</div>
+                    <p class="member-bio">Sources properties, negotiates deals, and ensures compliance, driving acquisitions and disposals for real estate investment goals efficiently.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-phone"></i> +234 (0) 915 730 7231
+                    </div>
+                </div>
+            </div>
+          <!-- Team Member 5-->
+            <div class="team-member" data-animation="slide-right" data-delay="200">
+                <div class="member-image">
+
+                    <img src="./images/team member 6.jpeg" alt="Destiny Sanubi">
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
+                       
+                       <a href="https://www.linkedin.com/in/destiny-sanubi"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:sanubidestiny@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/+2348122737313"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/@destinysanubi"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="member-info" data-animation="slide-up" data-delay="300">
-                    <h3 class="member-name">David Ogban</h3>
-                    <div class="member-position">Personal Asst. & Realtor</div>
-                    <p class="member-bio">Amina manages our property portfolio, investment opportunities, and client relationships with exceptional expertise.</p>
+                    <h3 class="member-name">Destiny Sanubi</h3>
+                    <div class="member-position">Realtor / Social media manager</div>
+                    <p class="member-bio">
+                        Manages social media presence, creates engaging content, and promotes listings to drive brand awareness and lead generation for real estate firm.
+                    </p>
                     <div class="member-contact">
-                        <i class="fas fa-phone"></i> +234 (0) 813 987 6543
+                        <i class="fas fa-phone"></i> +234 (0) 812 273 7313
+                    </div>
+                </div>
+            </div>
+            <!-- team 6 -->
+             <div class="team-member" data-animation="slide-right" data-delay="200">
+                <div class="member-image">
+                    <img src="./images/team member 1.jpeg" alt="Evidence chijioke">
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
+                        
+                         <a href=" https://www.facebook.com/profile.php?id=61586682127524"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:evidencechijioke9@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/+2347086233257"><i class="fab fa-whatsapp"></i></a>
+                      
+                    </div>
+                </div>
+                <div class="member-info" data-animation="slide-up" data-delay="300">
+                    <h3 class="member-name">Evidence Chijioke</h3>
+                    <div class="member-position">Realtor</div>
+                    <p class="member-bio">
+                       Facilitates property buying, selling, and leasing, providing expert guidance and negotiation for clients.
+                    </p>
+                    <div class="member-contact">
+                        <i class="fas fa-phone"></i> +234 (0) 708 623 3257
+                    </div>
+                </div>
+            </div>
+            <!-- team member 7 -->
+             <div class="team-member" data-animation="slide-right" data-delay="200">
+                <div class="member-image">
+                    <img src="./images/team member 5.jpeg" alt="Eni-Solomon Wisdom">
+                    <div class="social-links" data-animation="slide-up" data-delay="300">
+                       <a href="https://www.linkedin.com/in/destiny-sanubi"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:Wizzyberry668@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/+2347075056749"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://x.com/WizzyEni"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="member-info" data-animation="slide-up" data-delay="300">
+                    <h3 class="member-name">Eni-Solomon Wisdom</h3>
+                    <div class="member-position">Realtor</div>
+                    <p class="member-bio">
+                        Facilitates property buying, selling, and leasing, providing expert guidance and negotiation for clients.
+                    </p>
+                    <div class="member-contact">
+                        <i class="fas fa-phone"></i> +234 (0) 707 505 6749
                     </div>
                 </div>
             </div>
         </div>
-        
         <div class="stats-container" data-animation="slide-up" data-delay="100">
             <div class="stat-item">
                 <div class="stat-number"  data-target="5">0+</div>
@@ -1489,7 +1473,10 @@
       <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    
+    </script>
+     <!--  -->
+ <script>
         // Plan details data
         const planDetails = {
             standard: {
@@ -1534,18 +1521,38 @@
                 ]
             }
         };
-        
-        // DOM elements
+
+        // ==============================
+        // WHATSAPP REDIRECT CONFIGURATION
+        // ==============================
+        const WHATSAPP_CONFIG = {
+            whatsappNumber: "+2348148227087", // REPLACE WITH YOUR ACTUAL WHATSAPP NUMBER
+            whatsappMessage: "Hello, I just chose the {PLAN_NAME} plan. How does everything work? I'd like to proceed with the {DEPOSIT} deposit.",
+            redirectCountdown: 5, // seconds before auto-redirect
+            companyName: "RINA & CO. CONSULTS LTD."
+        };
+
+        // Global variables
+        let selectedPlan = '';
+        let countdownInterval;
+
+        // DOM elements for Plan Details Modal
         const standardInfoBtn = document.getElementById('standard-info');
         const oxfordInfoBtn = document.getElementById('oxford-info');
         const planModal = new bootstrap.Modal(document.getElementById('planModal'));
         const planModalLabel = document.getElementById('planModalLabel');
         const modalBody = document.getElementById('modalBody');
         const selectPlanBtn = document.getElementById('selectPlanBtn');
-        
-        // Current selected plan
-        let selectedPlan = '';
-        
+
+        // DOM Elements for WhatsApp Modal
+        const whatsappModal = new bootstrap.Modal(document.getElementById('whatsappRedirectModal'));
+        const whatsappRedirectLink = document.getElementById('whatsappRedirectLink');
+        const redirectCountdownEl = document.getElementById('redirectCountdown');
+        const selectedPlanTitle = document.getElementById('selectedPlanTitle');
+        const selectedPlanDeposit = document.getElementById('selectedPlanDeposit');
+        const selectedPlanDuration = document.getElementById('selectedPlanDuration');
+        const planNameText = document.getElementById('planNameText');
+
         // Function to open modal with plan details
         function openPlanModal(planType) {
             const plan = planDetails[planType];
@@ -1567,7 +1574,7 @@
                             <div class="card-body">
                                 <h6 class="card-title" style="color: var(--primary); font-weight: 600;"><i class="fas fa-calendar-check me-2" style="color: var(--secondary);"></i>Payment Structure</h6>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><strong>Initial Deposit:</strong> <span class=" fw-bold" style="color: var(--secondary);">${plan.deposit}</span></li>
+                                    <li class="mb-2"><strong>Initial Deposit:</strong> <span class="fw-bold" style="color: var(--secondary);">${plan.deposit}</span></li>
                                     <li class="mb-2"><strong>Monthly Payments:</strong> <span class="">${plan.monthlyPayments}</span></li>
                                     <li><strong>Total Duration:</strong> <span class="">${plan.totalDuration}</span></li>
                                 </ul>
@@ -1609,63 +1616,218 @@
             // Show the modal
             planModal.show();
         }
-        
-        // Event listeners for "More Info" buttons
-        standardInfoBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openPlanModal('standard');
-        });
-        
-        oxfordInfoBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openPlanModal('oxford');
-        });
-        
-        // Event listener for select plan button
-        selectPlanBtn.addEventListener('click', function() {
-            const planName = planDetails[selectedPlan].title;
-            const depositAmount = planDetails[selectedPlan].deposit;
+
+        // ==============================
+        // WHATSAPP REDIRECT FUNCTIONS
+        // ==============================
+
+        /**
+         * Generate WhatsApp URL with encoded message
+         * @param {string} planType - The plan type ('standard' or 'oxford')
+         * @returns {string} - WhatsApp URL with encoded message
+         */
+        function generateWhatsAppUrl(planType) {
+            const plan = planDetails[planType];
             
-            // Create a custom alert with gold styling
-            const customAlert = document.createElement('div');
-            customAlert.className = 'alert alert-warning alert-dismissible fade show position-fixed';
-            customAlert.style.cssText = `
-                top: 20px;
-                right: 20px;
-                z-index: 9999;
-                max-width: 400px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                border-left: 4px solid var(--secondary);
-            `;
-            customAlert.innerHTML = `
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-check-circle me-3" style="color: var(--secondary); font-size: 1.5rem;"></i>
-                    <div>
-                        <h5 class="alert-heading mb-1" style="color: var(--primary);">Plan Selected!</h5>
-                        <p class="mb-0">You've selected the <strong>${planName}</strong>.<br> 
-                        Our team will contact you shortly to proceed with the <strong>${depositAmount}</strong> deposit.</p>
-                    </div>
-                </div>
-                <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
-            `;
+            if (!plan) {
+                console.error('Invalid plan type:', planType);
+                return '';
+            }
             
-            document.body.appendChild(customAlert);
+            // Create the message with placeholders replaced
+            let message = WHATSAPP_CONFIG.whatsappMessage
+                .replace("{PLAN_NAME}", plan.title)
+                .replace("{DEPOSIT}", plan.deposit)
+                .replace("{COMPANY}", WHATSAPP_CONFIG.companyName)
+                .replace("{DURATION}", plan.totalDuration);
             
-            // Auto-dismiss after 5 seconds
-            setTimeout(() => {
-                if (customAlert.parentNode) {
-                    customAlert.classList.remove('show');
-                    setTimeout(() => {
-                        if (customAlert.parentNode) {
-                            document.body.removeChild(customAlert);
-                        }
-                    }, 300);
+            // Clean WhatsApp number (remove all non-digits)
+            const cleanNumber = WHATSAPP_CONFIG.whatsappNumber.replace(/\D/g, '');
+            
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Create the WhatsApp URL
+            return `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
+        }
+
+        /**
+         * Open WhatsApp redirect modal and start countdown
+         * @param {string} planType - The plan type ('standard' or 'oxford')
+         */
+        function openWhatsAppRedirectModal(planType) {
+            const plan = planDetails[planType];
+            
+            if (!plan) {
+                console.error('Invalid plan type:', planType);
+                return;
+            }
+            
+            selectedPlan = planType;
+            
+            // Update modal content with selected plan details
+            if (selectedPlanTitle) selectedPlanTitle.textContent = `Selected Plan: ${plan.title}`;
+            if (selectedPlanDeposit) selectedPlanDeposit.textContent = `Deposit: ${plan.deposit}`;
+            if (selectedPlanDuration) selectedPlanDuration.textContent = `Payment Duration: ${plan.totalDuration}`;
+            if (planNameText) planNameText.textContent = plan.title;
+            
+            // Generate WhatsApp URL
+            const whatsappUrl = generateWhatsAppUrl(planType);
+            
+            // Update WhatsApp redirect link
+            if (whatsappRedirectLink) {
+                whatsappRedirectLink.href = whatsappUrl;
+                whatsappRedirectLink.setAttribute('data-url', whatsappUrl);
+            }
+            
+            // Start countdown for auto-redirect
+            startRedirectCountdown(whatsappUrl);
+            
+            // Show the modal
+            if (whatsappModal) whatsappModal.show();
+            
+            // Track the selection (for analytics)
+            trackPlanSelection(planType);
+        }
+
+        /**
+         * Start countdown timer for auto-redirect
+         * @param {string} whatsappUrl - The WhatsApp URL to redirect to
+         */
+        function startRedirectCountdown(whatsappUrl) {
+            let countdown = WHATSAPP_CONFIG.redirectCountdown;
+            
+            // Update countdown display
+            if (redirectCountdownEl) {
+                redirectCountdownEl.textContent = countdown;
+            }
+            
+            // Clear any existing interval
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+            
+            // Start new countdown
+            countdownInterval = setInterval(() => {
+                countdown--;
+                
+                if (redirectCountdownEl) {
+                    redirectCountdownEl.textContent = countdown;
                 }
-            }, 5000);
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    redirectToWhatsApp(whatsappUrl);
+                }
+            }, 1000);
+        }
+
+        /**
+         * Redirect to WhatsApp and close modal
+         * @param {string} whatsappUrl - The WhatsApp URL to redirect to
+         */
+        function redirectToWhatsApp(whatsappUrl) {
+            // Close the modal
+            if (whatsappModal) {
+                whatsappModal.hide();
+            }
             
-            planModal.hide();
+            // Small delay to ensure modal is closed before redirect
+            setTimeout(() => {
+                // Open WhatsApp in new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Optional: Track successful redirect
+                trackWhatsAppRedirect(selectedPlan);
+            }, 300);
+        }
+
+        /**
+         * Handle manual WhatsApp redirect (when user clicks button)
+         */
+        function handleManualRedirect() {
+            const whatsappUrl = generateWhatsAppUrl(selectedPlan);
+            redirectToWhatsApp(whatsappUrl);
+        }
+
+        /**
+         * Track plan selection for analytics
+         */
+        function trackPlanSelection(planType) {
+            console.log(`Plan selected: ${planType}`);
+            // Add analytics tracking here if needed
+        }
+
+        /**
+         * Track WhatsApp redirect for analytics
+         */
+        function trackWhatsAppRedirect(planType) {
+            console.log(`Redirected to WhatsApp for plan: ${planType}`);
+            // Add analytics tracking here if needed
+        }
+
+        // ==============================
+        // EVENT LISTENERS
+        // ==============================
+
+        // Event listeners for "More Info" buttons
+        if (standardInfoBtn) {
+            standardInfoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openPlanModal('standard');
+            });
+        }
+
+        if (oxfordInfoBtn) {
+            oxfordInfoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openPlanModal('oxford');
+            });
+        }
+
+        // Event listener for select plan button in details modal
+        if (selectPlanBtn) {
+            selectPlanBtn.addEventListener('click', function() {
+                // Close the plan details modal
+                planModal.hide();
+                
+                // Open WhatsApp redirect modal
+                setTimeout(() => {
+                    openWhatsAppRedirectModal(selectedPlan);
+                }, 300);
+            });
+        }
+
+        // Add event listeners to plan selection buttons on cards
+        document.querySelectorAll('.select-plan-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const planType = this.getAttribute('data-plan');
+                openWhatsAppRedirectModal(planType);
+            });
         });
-        
+
+        // Add event listener for manual WhatsApp redirect button
+        if (whatsappRedirectLink) {
+            whatsappRedirectLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleManualRedirect();
+            });
+        }
+
+        // Reset countdown when WhatsApp modal is closed
+        const whatsappModalElement = document.getElementById('whatsappRedirectModal');
+        if (whatsappModalElement) {
+            whatsappModalElement.addEventListener('hidden.bs.modal', function() {
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    if (redirectCountdownEl) {
+                        redirectCountdownEl.textContent = WHATSAPP_CONFIG.redirectCountdown;
+                    }
+                }
+            });
+        }
+
         // Add hover effect to plan cards
         document.querySelectorAll('.plan-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -1676,30 +1838,51 @@
                 this.style.zIndex = '1';
             });
         });
-        
+
         // Animate elements on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Animate company header
             const companyName = document.querySelector('.company-name');
-            companyName.style.animation = 'fadeInUp 1s ease forwards';
+            if (companyName) {
+                companyName.style.animation = 'fadeInUp 1s ease forwards';
+            }
             
             // Animate section title and subtitle
             const sectionTitle = document.querySelector('.section-title');
             const sectionSubtitle = document.querySelector('.section-subtitle');
             
-            setTimeout(() => {
-                sectionTitle.style.animation = 'fadeInUp 0.8s ease forwards';
-                sectionTitle.style.opacity = '0';
-            }, 300);
+            if (sectionTitle) {
+                setTimeout(() => {
+                    sectionTitle.style.animation = 'fadeInUp 0.8s ease forwards';
+                    sectionTitle.style.opacity = '0';
+                }, 300);
+            }
             
-            setTimeout(() => {
-                sectionSubtitle.style.animation = 'fadeInUp 0.8s ease forwards';
-                sectionSubtitle.style.opacity = '0';
-            }, 500);
+            if (sectionSubtitle) {
+                setTimeout(() => {
+                    sectionSubtitle.style.animation = 'fadeInUp 0.8s ease forwards';
+                    sectionSubtitle.style.opacity = '0';
+                }, 500);
+            }
+
+            // Display setup reminder in console
+            console.log(`
+            ============================================
+            WHATSAPP REDIRECT SETUP
+            ============================================
+            IMPORTANT: Update the following in WHATSAPP_CONFIG object:
+            1. whatsappNumber: Replace with your actual number
+            2. whatsappMessage: Customize if needed
+            
+            Current Configuration:
+            - WhatsApp Number: ${WHATSAPP_CONFIG.whatsappNumber}
+            - Auto-redirect delay: ${WHATSAPP_CONFIG.redirectCountdown} seconds
+            
+            To test: Select any plan to see the WhatsApp redirect modal.
+            ============================================
+            `);
         });
     </script>
-     <!--  -->
- 
  <script>
     
    document.addEventListener('DOMContentLoaded', () => {
