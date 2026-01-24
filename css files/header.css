@@ -70,19 +70,34 @@
             background: white;
              
         }
+        /* In your header.css or within estate.css */
+header.glass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+}
+
+header.glass nav {
+    display: flex;
+    align-items: center;
+}
+
+
 
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size:  clamp(1rem,1.5vw,1.1rem);
-            font-weight: 500;
             color: var(--text);
             /* font-family: 'Playfair Display', serif; */
             /* letter-spacing: 1px; */
             text-decoration: none;
         }
-
+        .logo h6{
+  font-size:  clamp(.9rem,1.2vw,1.1rem);
+  padding-top: 10px;
+        }
         .logo:hover{
               color: var(--text);
         }
@@ -287,8 +302,9 @@
         }
             @media (max-width: 576px) {
          .menu-toggle span {
-            width: 75%;
-            margin-right: 1.3em;
+            width: 70%;
+            margin-left: .7em;
+            margin-right: .5em;
         }
            
            

@@ -214,7 +214,66 @@
             });
         });
         
-     
+    //  whatsapp button
+       document.addEventListener('DOMContentLoaded', function() {
+            const whatsappButton = document.getElementById('whatsappButton');
+            const supportBubble = document.getElementById('supportBubble');
+            const firstVisitMessage = document.getElementById('firstVisitMessage');
+            
+            // WhatsApp number - Replace with your actual support number
+            const whatsappNumber = "+2348148227087"; // Example number
+            const defaultMessage = "Hello, I need support with your services.";
+            
+            // Check if this is the user's first visit in this session
+            const hasSeenMessage = sessionStorage.getItem('whatsappWidgetSeen');
+            
+            if (hasSeenMessage) {
+                // If they've already seen the message, hide it immediately
+                supportBubble.classList.add('hidden');
+            } else {
+                // Show first visit notification
+                setTimeout(() => {
+                    firstVisitMessage.classList.add('hidden');
+                }, 3000);
+                
+                // Mark that the user has seen the message in this session
+                sessionStorage.setItem('whatsappWidgetSeen', 'true');
+                
+                // Hide the bubble after 5 seconds
+                setTimeout(() => {
+                    supportBubble.classList.add('hidden');
+                }, 5000);
+            }
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+            
+            // Set up click event for WhatsApp button
+            whatsappButton.addEventListener('click', function() {
+                window.open(whatsappUrl, '_blank');
+            });
+            
+            // Optional: Add hover effect to show bubble again
+            whatsappButton.addEventListener('mouseenter', function() {
+                if (hasSeenMessage) {
+                    supportBubble.classList.remove('hidden');
+                }
+            });
+            
+            whatsappButton.addEventListener('mouseleave', function() {
+                if (hasSeenMessage) {
+                    // Delay hiding to allow clicking on bubble if needed
+                    setTimeout(() => {
+                        supportBubble.classList.add('hidden');
+                    }, 500);
+                }
+            });
+            
+            // Allow clicking on the bubble to open WhatsApp as well
+            supportBubble.addEventListener('click', function() {
+                window.open(whatsappUrl, '_blank');
+            });
+        });
        // ============================================
 // Dailymotion Video System
 // Features: 

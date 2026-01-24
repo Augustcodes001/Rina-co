@@ -440,6 +440,182 @@
            height: calc(100vh + 3em);
         }    
         }
+         /* WhatsApp Widget Styles */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .whatsapp-bubble {
+            background-color: #fff;
+            border-radius: 24px;
+            padding: 12px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            max-width: 220px;
+            opacity: 1;
+            transition: opacity 0.8s ease, transform 0.5s ease;
+            transform: translateY(0);
+            animation: floatBubble 3s ease-in-out infinite;
+        }
+        
+        .whatsapp-bubble.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .whatsapp-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 30px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #fff;
+        }
+        
+        .whatsapp-bubble p {
+            color: #333;
+            font-weight: 500;
+            font-size: 15px;
+            margin: 0;
+        }
+        
+        .whatsapp-bubble p i {
+            color: #25D366;
+            margin-right: 5px;
+        }
+        
+        .whatsapp-button {
+            background-color: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+             overflow: visible !important;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-button:active {
+            transform: scale(0.95);
+        }
+        
+        .whatsapp-button i {
+            color: white;
+            font-size: 32px;
+        }
+        
+        .whatsapp-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            z-index: -1;
+           animation: whatsapp-pulse-fix 2s infinite !important;
+    background-color: #25D366 !important;
+    opacity: 0.7 !important;
+        }
+        
+        /* .first-visit-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1001;
+            transform: translateX(0);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        .first-visit-message.hidden {
+            transform: translateX(150%);
+            opacity: 0;
+        } */
+        
+        @keyframes floatBubble {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+     
+
+        /* FIX FOR WHATSAPP PULSE */
+
+@keyframes whatsapp-pulse-fix {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .whatsapp-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-bubble {
+                max-width: 180px;
+                font-size: 14px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .whatsapp-widget {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-button i {
+                font-size: 28px;
+            }
+            
+            .whatsapp-bubble {
+                padding: 10px 15px;
+                max-width: 160px;
+            }
+        }
+        /*  */
 /* search section */
         /* --- BRIDGE SEARCH BAR STYLING --- */
         /* 1. The Container */
@@ -482,21 +658,31 @@
         /* Gentle pulse to catch the eye */
         animation: goldPulse 3s infinite;
     }
+     .btn-search {
+        animation: gold-pulse-fixed 3s infinite !important;
+        position: relative;
+        z-index: 1;
+    }
+    
+   
+
 }
 
 /* Define the Golden Pulse */
-@keyframes goldPulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(223, 180, 41, 0.4);
+ @keyframes gold-pulse-fixed {
+        0% {
+            box-shadow: 0 0 0 0 rgba(223, 180, 41, 0.4),
+                       0 4px 8px rgba(223, 180, 41, 0.2);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(223, 180, 41, 0.1),
+                       0 6px 20px rgba(223, 180, 41, 0.3);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(223, 180, 41, 0),
+                       0 4px 8px rgba(223, 180, 41, 0.2);
+        }
     }
-    50% {
-        /* Expands the shadow using your Gold Color */
-        box-shadow: 0 0 0 10px rgba(223, 180, 41, 0); 
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(223, 180, 41, 0);
-    }
-}
         /* 2. Grid Layout for Desktop */
         .search-form {
             display: grid;
@@ -1022,7 +1208,7 @@ select.search-control:focus {
     position: relative;
     width: 100%;
     height: 100%; /* Forces fill */
-    overflow: hidden;
+      overflow: hidden;
     /* Gold divider line */
     border-right: 1px solid rgba(223, 180, 41, 0.2); 
 }
@@ -1066,7 +1252,7 @@ select.search-control:focus {
     align-items: center;
     cursor: pointer;
     box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-    animation: pulseGold 2s infinite;
+   animation: pulse-gold-fixed 2s infinite !important;
     transition: transform 0.3s;
     z-index: 5;
 }
@@ -1082,27 +1268,24 @@ select.search-control:focus {
     margin-left: 6px;
     transition: color 0.3s;
 }
-/* @keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-  }
-  70% {
-    transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-} */
+/* 1. FIX VIDEO PLAY BUTTON PULSE (Shuffle section) */
+   
 
-/* Pulse Animation */
-@keyframes pulseGold {
-    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
-    70% { box-shadow: 0 0 0 25px rgba(212, 175, 55, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+@keyframes pulse-gold-fixed {
+    0% { 
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7),
+                   0 0 0 0 rgba(212, 175, 55, 0.4); 
+    }
+    70% { 
+        box-shadow: 0 0 0 25px rgba(212, 175, 55, 0),
+                   0 0 0 15px rgba(212, 175, 55, 0); 
+    }
+    100% { 
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0),
+                   0 0 0 0 rgba(212, 175, 55, 0); 
+    }
 }
+
 
 /* video pop up player */
 /* Lightbox Styles */
@@ -1261,6 +1444,7 @@ select.search-control:focus {
         width: 45px;
         height: 45px;
     }
+   
 }
 
 @media (max-width: 480px) {
@@ -1419,6 +1603,7 @@ select.search-control:focus {
             
             .shuffle-section .section-header h2 {
                 font-size: 2rem;
+                padding-top: 1em;
             }
             
              .shuffle-section .section-header p {
@@ -2719,10 +2904,6 @@ select.search-control:focus {
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
             border-top: 2px solid var(--secondary);
         }
-
-       
-
-      
         /* Testimonial Cards */
         .testimonial-cards {
             display: flex;
@@ -2759,7 +2940,8 @@ select.search-control:focus {
             min-width: 300px;
             position: relative;
             height: 380px;
-            overflow: hidden;
+           
+            overflow: visible !important;
         }
 
         .video-player {
@@ -2771,10 +2953,10 @@ select.search-control:focus {
             transition: transform 0.4s ease;
         }
 
-        .testimonial-video:hover .video-player {
+        .testimonial-video:hover .video-player, .testimonial-video:hover .video-overlay{
             transform: scale(1.03);
         }
-
+      
         .video-overlay {
             position: absolute;
             top: 0;
@@ -2806,7 +2988,8 @@ select.search-control:focus {
             margin-bottom: 25px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-            animation: pulse 2s infinite;
+            animation: pulse-testimonial-fixed 2s infinite !important;
+        
         }
 
         .play-btn:hover {
@@ -2815,12 +2998,22 @@ select.search-control:focus {
             background: rgba(212, 175, 55, 0.95);
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-        }
+/* 2. FIX TESTIMONIAL PLAY BUTTON PULSE */
 
+@keyframes pulse-testimonial-fixed {
+    0% { 
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4),
+                   0 0 0 0 rgba(255, 255, 255, 0.3); 
+    }
+    50% { 
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0.2),
+                   0 0 0 20px rgba(212, 175, 55, 0); 
+    }
+    100% { 
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0),
+                   0 0 0 0 rgba(212, 175, 55, 0); 
+    }
+}
         .play-btn i {
             font-size: 36px;
             color: #fff;

@@ -17,8 +17,10 @@
     
   <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 </head>
-<body>
+<body class="light-theme">
 
  
   <!-- Header -->
@@ -40,7 +42,8 @@
 
             </ul>
         </nav>
-        
+        <!-- Add this after the navigation in the header -->
+
         <!-- Mobile Menu Toggle -->
         <div class="menu-toggle" id="menuToggle">
             <span></span>
@@ -67,598 +70,877 @@
       
     </div>
 <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h6><i class="fas fa-tree"></i>Elora Gardens</h6>
-            <h1>Premium Land Plots For Sale</h1>
-            <p>Discover exceptional investment opportunities in prime locations. Secure your future with our premium land offerings.</p>
-            <a href="#land-sizes" class="btn btn-primary mt-2">Explore Properties</a>
-            <a href="#contact" class="btn btn-outline mt-2">Schedule a Visit</a>
-        </div>
-    </section>
-
-    <!-- Land Sizes Section -->
-    <section class="land-sizes" id="land-sizes-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Available Land Sizes</h2>
-                <p>Explore our premium land offerings with specialized visuals for each location</p>
-            </div>
-            
-            <div class="land-nav">
-                <div class="land-nav-item active" data-target="size-100">
-                    100ft x 100ft Plots</div>
-                <div class="land-nav-item" data-target="size-50">50ft x 100ft Plots</div>
-                <!-- <div class="land-nav-item" data-target="size-custom">Custom Plots</div> -->
-            </div>
-            
-            <!-- 100x100 Land Content -->
-            <div class="land-content active" id="size-100">
-                <div class="land-details">
-                    <div class="land-description">
-                        <h3>General overview of 100ft x 100ft Plots</h3>
-                        <p>Our 100ft x 100ft plots offer ample space for your dream home with room for gardens, outdoor living areas, and future expansions. Located in prime residential zones with excellent infrastructure.</p>
-                        
-                        <ul class="land-features">
-                            <li><span>Plot Size:</span> 100ft x 100ft</li>
-                            <li><span>Area:</span>900SQM.</li>
-                            <li><span>Price:</span> <span class="price-tag"><i class="fas fa-naira-sign"></i>1,500,000</span></li>
-                            <li><span>Location:</span> Evboeson Community</li>
-                            <li><span>Zoning:</span> Residential (R-1)</li>
-                            <li><span>Utilities:</span> Water, Electricity</li>
-                            <li><span>Access:</span> Paved Road Access</li>
-                            <li><span>Development:</span> Ready to Build</li>
-                        </ul>
-                        <a href="https://wa.me/2348148227087" class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i>Inquire Now
-                </a>
-
-                        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+ <!-- Responsive Hero Section -->
+    <section class="responsive-hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-tree"></i>
+                        <span>Elora Gardens</span>
+                        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+    <span class="theme-text">Dark Mode</span>
+</button>
+                    </div>
+                    <h1>Premium Real Estate Investment Opportunities</h1>
+                    <p class="hero-subtitle">Discover exceptional land plots in prime locations. Build your dream home or make a strategic investment with guaranteed returns.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#properties" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search"></i>
+                            <span>Explore Properties</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-lg">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Schedule Visit</span>
+                        </a>
                     </div>
                     
-                    <div class="land-visual">
-               
-                        <img src="./images/Flux_Dev_Aerial_drone_photograph_taken_approximately_50_meters_2-copy.jpg" alt="100x100 Land Plot">
-                        
-                         <div class="social-media ">
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
-                         <a href="http://">
-                            <i class="fab fa-whatsapp"></i>
-                         </a>
+                    <!-- Responsive Stats -->
+                    <div class="responsive-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="150+">0+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="7+">0+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="98%">0%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="5+">0+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
                     </div>
-                     
-                </div>
-        <div class="landmarks" id="landmarks-section">
-                    <h3>Nearby Landmarks</h3>
-                     <ul class="landmark-list">
-                          <li>
-                            <i class="fas fa-building"></i>
-                            <div class="landmark-info">
-                               <h4>Macadams Publishers Limited</h4>
-                                <p>5 minutes drive - Major Publishing Company in Benin.</p>
-                            </div>
-                        </li>
-                        <li>
-                               <i class="fas fa-graduation-cap"></i>
-                            <div class="landmark-info">
-                                <h4>Shaka Polytechnic</h4>
-                                <p>12 minute drive - Educational Institute.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-umbrella"></i>
-                            <div class="landmark-info">
-                                <h4>Ramat Park</h4>
-                                <p>20 minutes drive - Top-rated educational institution</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-shopping-cart"></i>
-                            <div class="landmark-info">
-                                <h4>Evboesi Mini-Market</h4>
-                                <p>1 minute drive - Booming market close to evboeson's core</p>
-                            </div>
-                        </li>
-                      
-                    </ul>
                 </div>
             </div>
         </div>
-              
-            </div>   
- 
-  
-            
-                
-                
-                
-            <!-- 50x100 Land Content -->
-            <div class="land-content" id="size-50">
-                <div class="land-details">
-                    <div class="land-description">
-                        <h3>General overview 50ft x 100ft Plots</h3>
-                        <p>Our 50ft x 100ft plots offer an excellent opportunity for comfortable family homes in established neighborhoods. Perfect for modern designs with efficient space utilization.</p>
-                        
-                        <ul class="land-features">
-                            <li><span>Plot Size:</span> 50ft x 100ft</li>
-                            <li><span>Area:</span>450SQM.</li>
-                            <li><span>Price:</span> <span class="price-tag"><i class="fas fa-naira-sign"></i>800,000</span></li></li>
-                            <li><span>Location:</span> Evboeson Community</li>
-                            <li><span>Zoning:</span> Residential (R-2)</li>
-                            <li><span>Utilities:</span> Water, Electricity</li>
-                            <li><span>Access:</span> Paved Road Access</li>
-                            <li><span>Development:</span> Ready to Build</li>
-                        </ul>
-                        
-                        <a href="https://wa.me/2348148227087" class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i>Inquire Now
-                </a>
-                        <a href="#gallery" class="btn btn-outline">View Gallery</a>
-                    </div>
-                    
-                    <div class="land-visual">
-                        <img src="./images/Flux_Dev_Aerial_drone_photograph_taken_approximately_50_meters_2-copy.jpg" alt="100x100 Land Plot">
-                      
-                        <div class="landmarks">
-                    <h3>Nearby Landmarks</h3>
-                    <ul class="landmark-list">
-                          <li>
-                            <i class="fas fa-building"></i>
-                            <div class="landmark-info">
-                               <h4>Macadams Publishers Limited</h4>
-                                <p>5 minutes drive - Major Publishing Company in Benin.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-shopping-cart"></i>
-                            <div class="landmark-info">
-                                <h4>Shaka Polytechnic</h4>
-                                <p>12 minute drive - Educational Institute.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-graduation-cap"></i>
-                            <div class="landmark-info">
-                                <h4>Ramat Park</h4>
-                                <p>20 minutes drive - Top-rated educational institution</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-shopping-cart"></i>
-                            <div class="landmark-info">
-                                <h4>Evboesi Mini-Market</h4>
-                                <p>1 minute drive - Booming market close to evboeson's core</p>
-                            </div>
-                        </li>
-                      
-                    </ul>
-                </div>
-            </div>
-                </div>
-    
-    </section>
-
-  <!-- Property Listings with Sliders -->
-    <div class="listings-map">
-             
-    <section id="properties">
-        <div class="container">
-               <div class="section-title bord" id="gallery-section">
-                    <h2> Estate Gallery</h2>
-                    <p>Land listings of our estate in  Evboeson Community</p>
-                </div>
-            
-            <div class="properties-grid ">
-                <div class="property-card col-md-12">
-                    <div class="property-slider">
-                        <div class="slider-container">
-                            <!-- Image Slide -->
-                            <div class="slider-section">
-                                <div class="image-slide">
-                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Green Valley" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="Green Valley" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1752&q=80" alt="Green Valley" class="slider-img">
-                                </div>
-                                <div class="gallery-dots">
-                                    <button class="gallery-dot active"></button>
-                                    <button class="gallery-dot"></button>
-                                    <button class="gallery-dot"></button>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Slide -->
-                            <div class="slider-section">
-                                <div class="video-slide">
-                                    <video controls poster="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80">
-                                        <source src="#" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-controls">
-                                        <button><i class="fas fa-expand"></i></button>
-                                        <button><i class="fas fa-volume-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Potential Slide -->
-                            <div class="slider-section  ">
-                                <div class="potential-slide ">
-                                    <h4 class="pt-4">Development Potential</h4>
-                                    <ul>
-                                        <li>Prime location for residential development</li>
-                                        <li>Excellent investment opportunity with 20% annual growth</li>
-                                        <li>Zoned for mixed-use development</li>
-                                        <li>Close to upcoming infrastructure projects</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-primary mt-0 ">View Construction Portfolio</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="slider-nav">
-                            <button class="slider-nav-btn active" data-section="0">Images</button>
-                            <button class="slider-nav-btn" data-section="1">Video</button>
-                            <button class="slider-nav-btn" data-section="2">Potential</button>
-                        </div>
-                        
-                        <div class="slider-arrows">
-                            <button class="slider-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                     <div class="property-content">
-                        <h3>Elora Gardens</h3>
-                        <ul class="property-features">
-                            <li><span>Plot Size:</span> 50ft x 100ft</li>
-                            <li><span>Location:</span>Evboeson Community</li>
-                            <li><span>Price:</span> <span class="price-tag">₦800,000</span></li>
-                            <li><span>Tag:</span> plot 1</li>
-                            <li><span>Utilities:</span> Water, Electricity</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary  mt-2">Schedule Site Visit</a>
-                          <a href="#map" class="btn btn-outline mt-2">View map</a>
-                    </div>
-                </div>
-                
-               
-            </div>
-      <!-- 2nd -->
-            <div class="properties-grid">
-                            <div class="property-card col-md-12">
-                    <div class="property-slider">
-                        <div class="slider-container">
-                            <!-- Image Slide -->
-                            <div class="slider-section">
-                                <div class="image-slide">
-                                    <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Riverside" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1752&q=80" alt="Riverside" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="Riverside" class="slider-img">
-                                </div>
-                                <div class="gallery-dots">
-                                    <button class="gallery-dot active"></button>
-                                    <button class="gallery-dot"></button>
-                                    <button class="gallery-dot"></button>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Slide -->
-                            <div class="slider-section">
-                                <div class="video-slide">
-                                    <video controls poster="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80">
-                                        <source src="#" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-controls">
-                                        <button><i class="fas fa-expand"></i></button>
-                                        <button><i class="fas fa-volume-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Potential Slide -->
-                            <div class="slider-section">
-                               <div class="potential-slide ">
-                                    <h4 class="pt-4">Development Potential</h4>
-                                    <ul>
-                                        <li>Prime location for residential development</li>
-                                        <li>Excellent investment opportunity with 20% annual growth</li>
-                                        <li>Zoned for mixed-use development</li>
-                                        <li>Close to upcoming infrastructure projects</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-primary mt-0 ">View Construction Portfolio</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="slider-nav">
-                            <button class="slider-nav-btn active" data-section="0">Images</button>
-                            <button class="slider-nav-btn" data-section="1">Video</button>
-                            <button class="slider-nav-btn" data-section="2">Potential</button>
-                        </div>
-                        
-                        <div class="slider-arrows">
-                            <button class="slider-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                    
-                     <div class="property-content">
-                        <h3>Elora Gardens</h3>
-                        <ul class="property-features">
-                            <li><span>Plot Size:</span> 50ft x 100ft</li>
-                            <li><span>Location:</span>Evboeson Community</li>
-                            <li><span>Price:</span> <span class="price-tag">₦800,000</span></li>
-                            <li><span>Tag:</span> plot 2</li>
-                            <li><span>Utilities:</span> Water, Electricity</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary  mt-2">Schedule Site Visit</a>
-                          <a href="#map" class="btn btn-outline mt-2">View map</a>
-                    </div>
-                </div>
-            </div>
- 
-                <!-- 3rd -->
-                <!-- 100 by 100 -->
-                 <div class="properties-grid">
-                     <div class="property-card col-md-12">
-                    <div class="property-slider">
-                        <div class="slider-container">
-                            <!-- Image Slide -->
-                            <div class="slider-section">
-                                <div class="image-slide">
-                                    <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Riverside" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1752&q=80" alt="Riverside" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="Riverside" class="slider-img">
-                                </div>
-                                <div class="gallery-dots">
-                                    <button class="gallery-dot active"></button>
-                                    <button class="gallery-dot"></button>
-                                    <button class="gallery-dot"></button>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Slide -->
-                            <div class="slider-section">
-                                <div class="video-slide">
-                                    <video controls poster="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80">
-                                        <source src="#" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-controls">
-                                        <button><i class="fas fa-expand"></i></button>
-                                        <button><i class="fas fa-volume-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Potential Slide -->
-                            <div class="slider-section">
-                                <div class="potential-slide ">
-                                    <h4 class="pt-4">Development Potential</h4>
-                                    <ul>
-                                        <li>Prime location for residential development</li>
-                                        <li>Excellent investment opportunity with 20% annual growth</li>
-                                        <li>Zoned for mixed-use development</li>
-                                        <li>Close to upcoming infrastructure projects</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-primary mt-0 ">View Construction Portfolio</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="slider-nav">
-                            <button class="slider-nav-btn active" data-section="0">Images</button>
-                            <button class="slider-nav-btn" data-section="1">Video</button>
-                            <button class="slider-nav-btn" data-section="2">Potential</button>
-                        </div>
-                        
-                        <div class="slider-arrows">
-                            <button class="slider-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                    
-                   <div class="property-content">
-                        <h3>Elora Gardens</h3>
-                        <ul class="property-features">
-                            <li><span>Plot Size:</span> 100ft x 100ft</li>
-                            <li><span>Location:</span>Evboeson Community</li>
-                            <li><span>Price:</span> <span class="price-tag">₦1,500,000</span></li>
-                            <li><span>Tag:</span> plot 2</li>
-                            <li><span>Utilities:</span> Water, Electricity</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary  mt-2">Schedule Site Visit</a>
-                          <a href="#map" class="btn btn-outline mt-2">View map</a>
-                    </div>
-                </div>
-                 </div>
-                <!--4th  -->
-            <div class="properties-grid">
-                <div class="property-card col-md-12">
-                    <div class="property-slider">
-                        <div class="slider-container">
-                            <!-- Image Slide -->
-                            <div class="slider-section">
-                                <div class="image-slide">
-                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Green Valley" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="Green Valley" class="slider-img">
-                                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1752&q=80" alt="Green Valley" class="slider-img">
-                                </div>
-                                <div class="gallery-dots">
-                                    <button class="gallery-dot active"></button>
-                                    <button class="gallery-dot"></button>
-                                    <button class="gallery-dot"></button>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Slide -->
-                            <div class="slider-section">
-                                <div class="video-slide">
-                                    <video controls poster="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80">
-                                        <source src="#" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-controls">
-                                        <button><i class="fas fa-expand"></i></button>
-                                        <button><i class="fas fa-volume-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Potential Slide -->
-                            <div class="slider-section  ">
-                                <div class="potential-slide ">
-                                    <h4 class="pt-4">Development Potential</h4>
-                                    <ul>
-                                        <li>Prime location for residential development</li>
-                                        <li>Excellent investment opportunity with 20% annual growth</li>
-                                        <li>Zoned for mixed-use development</li>
-                                        <li>Close to upcoming infrastructure projects</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-primary mt-0 ">View Construction Portfolio</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="slider-nav">
-                            <button class="slider-nav-btn active" data-section="0">Images</button>
-                            <button class="slider-nav-btn" data-section="1">Video</button>
-                            <button class="slider-nav-btn" data-section="2">Potential</button>
-                        </div>
-                        
-                        <div class="slider-arrows">
-                            <button class="slider-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                    
-                    <div class="property-content">
-                        <h3>Elora Gardens</h3>
-                        <ul class="property-features">
-                            <li><span>Plot Size:</span> 100ft x 100ft</li>
-                            <li><span>Location:</span>Evboeson Community</li>
-                            <li><span>Price:</span> <span class="price-tag">₦1,500,000</span></li>
-                            <li><span>Tag:</span> plot 1</li>
-                            <li><span>Utilities:</span> Water, Electricity</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary  mt-2">Schedule Site Visit</a>
-                          <a href="#map" class="btn btn-outline mt-2">View map</a>
-                    </div>
-                </div>
-                
-               
-            </div>
+          <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-bubble" id="supportBubble">
+            <p><i class="fas fa-comment-dots"></i> Need support?</p>
         </div>
-    </section>
-           
-              
-             
-            <!-- land listings -->
-          <!-- map -->
-            <div class="section-title mb-5" id="maps-section">
-               <h2> Map Location</h2>
-            </div>
-                <div class="content-wrapper">
-            <div class="map-section container">
-                <div id="map"></div>
-                
-                <div class="map-controls mb-5">
-                    <button class="btn btn-primary" id="zoomIn">
-                        <i class="fas fa-search-plus"></i> Zoom
-                    </button>
-                    <button class="btn btn-outline" id="resetMap">
-                        <i class="fas fa-sync-alt"></i> Reset View
-                    </button>
-                    <button class="btn btn-primary landmark" id="showLandmarks">
-                        <i class="fas fa-map-marker-alt"></i> Landmarks
-                    </button>
-                </div>
-            </div>
-
-    <!-- Include Leaflet JS -->
+        <div class="whatsapp-button" id="whatsappButton">
+            <div class="whatsapp-pulse"></div>
+            <i class="fab fa-whatsapp"></i>
         </div>
     </div>
-    <!-- land sizes end -->
- <section class="section payment-plans " id="payment-section">
-        <div class="container-fluid">
-            <div class="section-title">
-               <h2> Payment Options</h2>
-                <p>Find something perfect whether its a land for sale or how our plans are tailored to suit you.</p>
-            </div>
-           
-            <div class="container-fluid plans-container">
-                <div class="row g-5">
-                    <div class=" col-md-6 col-lg-6">
-                   <div class="plan-card">
-                    <div class="plan-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Standard Plan</h3>
-                    <div class="plan-price">40% Deposit</div>
-                  
-                    <ul class="plan-features">
-                        <li>Initial deposit of 40%</li>
-                     
-                        <li>Spread balance payment for 3 months</li>
-                       
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-2"> More Info <i class="fab fa-whatsapp"></i></a>
-                     <!-- <a href="#" class="btn btn-outline mt-2">Learn More <i class="fas fa-arrow-right"></i></a> -->
-                </div>
-                    </div>
-                    <div class=" col-md-6 col-lg-6">
-                      <div class="plan-card featured">
-                    <div class="plan-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Oxford Plan</h3>
-                    <div class="plan-price">50% Deposit</div>
-                    <ul class="plan-features">
-                        <li>Initial deposit of 50%</li>
-                     
-                       <li>Spread balance payment for 6 months</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-2"> More Info <i class="fab fa-whatsapp"></i></a>
-                    
-                     <!-- <a href="#" class="btn btn-outline mt-2">Learn More <i class="fas fa-arrow-right"></i></a> -->
-                </div> 
-                    </div>
-                    <div class="col-md-6 col-lg-6">
- 
-             
-                    </div>
+        <!-- Responsive Quick Navigation -->
+        <div class="responsive-quick-nav">
+            <div class="container">
+                <div class="quick-nav-items">
+                    <a href="#properties" class="quick-nav-item active">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Properties</span>
+                    </a>
+                    <a href="#gallery" class="quick-nav-item">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="#location" class="quick-nav-item">
+                        <i class="fas fa-map"></i>
+                        <span>Location</span>
+                    </a>
+                    <a href="#payment" class="quick-nav-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payment Plans</span>
+                    </a>
+                    <a href="#calculator" class="quick-nav-item">
+                        <i class="fas fa-calculator"></i>
+                        <span>ROI Calculator</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-         <!-- Contact Section -->
-  <section class="contact-section" id="contact">
+
+    <!-- Property Overview -->
+    <section class="property-overview">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Contact us directly via WhatsApp for quick responses and personalized assistance</p>
+            <div class="section-header">
+                <h2>Why Choose Elora Gardens</h2>
+                <p>Premium residential community with exceptional amenities and strategic location</p>
             </div>
             
-            <div class="whatsapp-cta">
-                <div class="whatsapp-icon">
-                    <i class="fab fa-whatsapp"></i>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Prime Location</h3>
+                    <p>Strategically located in Evboeson Community with excellent road network and proximity to major landmarks</p>
                 </div>
-                <h3>Chat With Us On WhatsApp</h3>
-                <p>Have questions about our land listings? Get instant answers and personalized assistance by messaging us directly on WhatsApp. Our team is ready to provide you with all the details you need.</p>
                 
-               
-                 <a href="https://wa.me/2348148227087" class="whatsapp-button">
-                    <i class="fab fa-whatsapp"></i> Chat with Our HR Team
-                </a>
-                <!--  -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Investment</h3>
+                    <p>All properties come with proper documentation, government-approved titles, and legal verification</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Appreciation</h3>
+                    <p>Expected 20-30% annual value growth with ongoing development and infrastructure improvements</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Ready to Build</h3>
+                    <p>All plots are cleared, surveyed, and ready for immediate construction with utilities available</p>
+                </div>
             </div>
         </div>
     </section>
-    <!--  -->
 
+    <!-- Available Properties -->
+    <section class="properties-section" id="properties">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Properties</h2>
+                <p>Choose from our premium selection of land plots in Elora Gardens</p>
+            </div>
+            
+            <!-- Property Filter -->
+            <div class="property-filter">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Plots</button>
+                    <button class="filter-btn" data-filter="100x100">100×100ft Plots</button>
+                    <button class="filter-btn" data-filter="50x100">50×100ft Plots</button>
+                </div>
+                <div class="filter-info">
+                    <span class="filter-count">Showing 4 properties</span>
+                </div>
+            </div>
+            
+            <!-- Properties Grid -->
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card" data-size="100x100">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Plot 1 - 100×100ft" loading="lazy">
+                        <div class="property-badges">
+                            <span class="badge size">100×100ft</span>
+                            <span class="badge price">₦1,500,000</span>
+                        </div>
+                        <div class="property-overlay">
+                            <button class="view-details" data-property="1">
+                                <i class="fas fa-expand"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Plot 1 - Elora Gardens</h3>
+                        <div class="property-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 900 SQM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Evboeson</span>
+                            <span><i class="fas fa-check-circle"></i> Ready to Build</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%201%20(100x100ft)%20at%20Elora%20Gardens" 
+                               class="btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Inquire Now
+                            </a>
+                            <button class="btn-view" data-property="1">
+                                <i class="fas fa-eye"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="property-card" data-size="50x100">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Plot 2 - 50×100ft" loading="lazy">
+                        <div class="property-badges">
+                            <span class="badge size">50×100ft</span>
+                            <span class="badge price">₦800,000</span>
+                        </div>
+                        <div class="property-overlay">
+                            <button class="view-details" data-property="2">
+                                <i class="fas fa-expand"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Plot 2 - Elora Gardens</h3>
+                        <div class="property-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 450 SQM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Evboeson</span>
+                            <span><i class="fas fa-check-circle"></i> Ready to Build</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%202%20(50x100ft)%20at%20Elora%20Gardens" 
+                               class="btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Inquire Now
+                            </a>
+                            <button class="btn-view" data-property="2">
+                                <i class="fas fa-eye"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 3 -->
+                <div class="property-card" data-size="100x100">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Plot 3 - 100×100ft" loading="lazy">
+                        <div class="property-badges">
+                            <span class="badge size">100×100ft</span>
+                            <span class="badge price">₦1,500,000</span>
+                        </div>
+                        <div class="property-overlay">
+                            <button class="view-details" data-property="3">
+                                <i class="fas fa-expand"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Plot 3 - Elora Gardens</h3>
+                        <div class="property-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 900 SQM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Evboeson</span>
+                            <span><i class="fas fa-check-circle"></i> Ready to Build</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%203%20(100x100ft)%20at%20Elora%20Gardens" 
+                               class="btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Inquire Now
+                            </a>
+                            <button class="btn-view" data-property="3">
+                                <i class="fas fa-eye"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 4 -->
+                <div class="property-card" data-size="50x100">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Plot 4 - 50×100ft" loading="lazy">
+                        <div class="property-badges">
+                            <span class="badge size">50×100ft</span>
+                            <span class="badge price">₦800,000</span>
+                        </div>
+                        <div class="property-overlay">
+                            <button class="view-details" data-property="4">
+                                <i class="fas fa-expand"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Plot 4 - Elora Gardens</h3>
+                        <div class="property-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 450 SQM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Evboeson</span>
+                            <span><i class="fas fa-check-circle"></i> Ready to Build</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%204%20(50x100ft)%20at%20Elora%20Gardens" 
+                               class="btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Inquire Now
+                            </a>
+                            <button class="btn-view" data-property="4">
+                                <i class="fas fa-eye"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Gallery Section -->
+     <!-- Add this after the Features section in your HTML -->
+<section id="property-gallery" class="property-gallery-section">
+    <!-- Full Page Scroll Navigation for Property Showcase -->
+    <div class="gallery-intro">
+        <div class="section-header">
+            <h2>Premium Property Showcase</h2>
+            <p>Navigate through our exclusive properties with this interactive gallery</p>
+        </div>
+    </div>
+    
+    <!-- Full Page Scroll Container -->
+    <div class="fps-container">
+        <!-- Navigation Dots -->
+        <div class="fps-nav-container">
+            <button class="fps-nav-btn fps-nav-1 active" data-target="1"></button>
+            <button class="fps-nav-btn fps-nav-2" data-target="2"></button>
+            <button class="fps-nav-btn fps-nav-3" data-target="3"></button>
+            <button class="fps-nav-btn fps-nav-4" data-target="4"></button>
+            <button class="fps-nav-btn fps-nav-5" data-target="5"></button>
+        </div>
+
+        <!-- Property Pages -->
+        <div class="fps-pages-container">
+            <!-- Page 1: Luxury Villa -->
+            <div class="fps-page fps-page-1 active">
+                <div class="property-gallery-content">
+                    <div class="property-gallery-image">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Villa">
+                    </div>
+                    <div class="property-gallery-details">
+                        <span class="property-badge">Premium</span>
+                        <h3>Luxury Villa</h3>
+                        <p class="property-price">₦250,000,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 5 Bedrooms</span>
+                            <span><i class="fas fa-bath"></i> 4 Bathrooms</span>
+                            <span><i class="fas fa-ruler-combined"></i> 450 sqm</span>
+                        </div>
+                        <p class="property-description">
+                            Exclusive villa with panoramic views, infinity pool, and smart home automation.
+                        </p>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Luxury%20Villa%20property" 
+                               class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Schedule Viewing
+                            </a>
+                            <button class="btn btn-outline view-gallery-details" data-property="villa">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 2: Modern Apartment -->
+            <div class="fps-page fps-page-2">
+                <div class="property-gallery-content">
+                    <div class="property-gallery-image">
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Modern Apartment">
+                    </div>
+                    <div class="property-gallery-details">
+                        <span class="property-badge">Luxury</span>
+                        <h3>Modern Apartment</h3>
+                        <p class="property-price">₦120,000,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+                            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                            <span><i class="fas fa-ruler-combined"></i> 220 sqm</span>
+                        </div>
+                        <p class="property-description">
+                            Contemporary apartment with premium finishes, city views, and modern amenities.
+                        </p>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Modern%20Apartment%20property" 
+                               class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Schedule Viewing
+                            </a>
+                            <button class="btn btn-outline view-gallery-details" data-property="apartment">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 3: Executive Duplex -->
+            <div class="fps-page fps-page-3">
+                <div class="property-gallery-content">
+                    <div class="property-gallery-image">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Executive Duplex">
+                    </div>
+                    <div class="property-gallery-details">
+                        <span class="property-badge">Executive</span>
+                        <h3>Executive Duplex</h3>
+                        <p class="property-price">₦180,000,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 4 Bedrooms</span>
+                            <span><i class="fas fa-bath"></i> 3 Bathrooms</span>
+                            <span><i class="fas fa-ruler-combined"></i> 350 sqm</span>
+                        </div>
+                        <p class="property-description">
+                            Spacious duplex with private garden, garage, and executive finishes.
+                        </p>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Executive%20Duplex%20property" 
+                               class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Schedule Viewing
+                            </a>
+                            <button class="btn btn-outline view-gallery-details" data-property="duplex">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 4: Garden Bungalow -->
+            <div class="fps-page fps-page-4">
+                <div class="property-gallery-content">
+                    <div class="property-gallery-image">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Garden Bungalow">
+                    </div>
+                    <div class="property-gallery-details">
+                        <span class="property-badge">Family</span>
+                        <h3>Garden Bungalow</h3>
+                        <p class="property-price">₦95,000,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+                            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                            <span><i class="fas fa-ruler-combined"></i> 280 sqm</span>
+                        </div>
+                        <p class="property-description">
+                            Beautiful bungalow with extensive garden, outdoor living space, and family-friendly layout.
+                        </p>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Garden%20Bungalow%20property" 
+                               class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Schedule Viewing
+                            </a>
+                            <button class="btn btn-outline view-gallery-details" data-property="bungalow">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 5: Luxury Penthouse -->
+            <div class="fps-page fps-page-5">
+                <div class="property-gallery-content">
+                    <div class="property-gallery-image">
+                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Penthouse">
+                    </div>
+                    <div class="property-gallery-details">
+                        <span class="property-badge">Penthouse</span>
+                        <h3>Luxury Penthouse</h3>
+                        <p class="property-price">₦350,000,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 5 Bedrooms</span>
+                            <span><i class="fas fa-bath"></i> 4 Bathrooms</span>
+                            <span><i class="fas fa-ruler-combined"></i> 500 sqm</span>
+                        </div>
+                        <p class="property-description">
+                            Top-floor penthouse with panoramic city views, private terrace, and luxury amenities.
+                        </p>
+                        <div class="property-actions">
+                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Luxury%20Penthouse%20property" 
+                               class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Schedule Viewing
+                            </a>
+                            <button class="btn btn-outline view-gallery-details" data-property="penthouse">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Buttons -->
+        <div class="fps-scroll-container">
+            <button class="fps-scroll-btn up">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <button class="fps-scroll-btn down">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</section>
+  <!-- Gallery Section -->
+<section class="gallery-section" id="gallery">
+    <div class="container">
+        <div class="section-header">
+            <h2>Estate Gallery</h2>
+            <p>Explore Elora Gardens through our visual gallery</p>
+        </div>
+        
+        <!-- Updated gallery container with proper class names -->
+        <div class="gallery-container">
+            <!-- This div must have class "swiper" -->
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Aerial View of Elora Gardens" loading="lazy">
+                        <div class="slide-caption">
+                            <h4>Aerial View</h4>
+                            <p>Complete overview of Elora Gardens Estate</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Plot Layout" loading="lazy">
+                        <div class="slide-caption">
+                            <h4>Plot Layout</h4>
+                            <p>Well-planned residential plots with proper spacing</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Road Access" loading="lazy">
+                        <div class="slide-caption">
+                            <h4>Road Access</h4>
+                            <p>Paved roads for easy access to all plots</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Surroundings" loading="lazy">
+                        <div class="slide-caption">
+                            <h4>Beautiful Surroundings</h4>
+                            <p>Serene environment perfect for residential development</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next">
+                    <i class="fas fa-caret-right"></i>
+                </div>
+                <div class="swiper-button-prev">
+                        <i class="fas fa-caret-left"></i>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Location & Amenities -->
+    <section class="location-section" id="location">
+        <div class="container">
+            <div class="section-header">
+                <h2>Location & Amenities</h2>
+                <p>Prime location with access to essential services and infrastructure</p>
+            </div>
+            
+            <div class="location-grid">
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="map-controls">
+                        <button class="map-control zoom-in">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="map-control zoom-out">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button class="map-control reset">
+                            <i class="fas fa-crosshairs"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="amenities-container">
+                    <h3>Nearby Amenities</h3>
+                    <div class="amenities-list">
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="amenity-content">
+                                <h4>Macadams Publishers Limited</h4>
+                                <p>5 minutes drive - Major Publishing Company in Benin</p>
+                            </div>
+                        </div>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="amenity-content">
+                                <h4>Shaka Polytechnic</h4>
+                                <p>12 minute drive - Educational Institution</p>
+                            </div>
+                        </div>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="fas fa-umbrella"></i>
+                            </div>
+                            <div class="amenity-content">
+                                <h4>Ramat Park</h4>
+                                <p>20 minutes drive - Recreational Park</p>
+                            </div>
+                        </div>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="amenity-content">
+                                <h4>Evboesi Mini-Market</h4>
+                                <p>1 minute drive - Local market for daily needs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-info">
+                        <h4>Location Details</h4>
+                        <p><i class="fas fa-map-pin"></i> Evboeson Community, Benin City, Edo State</p>
+                        <p><i class="fas fa-road"></i> Easy access via major roads</p>
+                        <p><i class="fas fa-car"></i> 15 minutes from city center</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Plans -->
+    <section class="payment-plans-section" id="payment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Flexible Payment Plans</h2>
+                <p>Choose a payment plan that suits your financial situation</p>
+            </div>
+            
+            <div class="plans-grid">
+                <!-- Standard Plan -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Standard Plan</h3>
+                        <div class="plan-price">40% Deposit</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Initial 40% deposit payment</li>
+                        <li><i class="fas fa-check"></i> Balance spread over 3 months</li>
+                        <li><i class="fas fa-check"></i> Immediate plot allocation</li>
+                        <li><i class="fas fa-check"></i> Free site inspection</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Standard%20Payment%20Plan" 
+                           class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Choose Plan
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Oxford Plan -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Oxford Plan</h3>
+                        <div class="plan-price">50% Deposit</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Initial 50% deposit payment</li>
+                        <li><i class="fas fa-check"></i> Balance spread over 6 months</li>
+                        <li><i class="fas fa-check"></i> Free legal documentation</li>
+                        <li><i class="fas fa-check"></i> Priority plot selection</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Oxford%20Payment%20Plan" 
+                           class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Choose Plan
+                        </a>
+                    </div>
+                </div>
+                
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="calculator-section " id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Investment Calculator</h2>
+                <p>Calculate your potential return on investment</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-card">
+                    <div class="calculator-inputs">
+                        <h3>Calculate Your ROI</h3>
+                        
+                        <div class="input-group">
+                            <label for="plotSize">
+                                <i class="fas fa-ruler-combined"></i>
+                                Plot Size
+                            </label>
+                            <select id="plotSize" class="form-select">
+                                <option value="800000">50×100ft (₦800,000)</option>
+                                <option value="1500000" selected>100×100ft (₦1,500,000)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>
+                                <i class="fas fa-chart-line"></i>
+                                Annual Appreciation Rate
+                                <span id="rateValue" class="rate-value">20%</span>
+                            </label>
+                            <input type="range" id="appreciationRate" min="15" max="30" value="20" step="1" class="form-range">
+                            <div class="range-labels">
+                                <span>15%</span>
+                                <span>30%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="investmentPeriod">
+                                <i class="fas fa-calendar-alt"></i>
+                                Investment Period
+                            </label>
+                            <select id="investmentPeriod" class="form-select">
+                                <option value="3">3 Years</option>
+                                <option value="5" selected>5 Years</option>
+                                <option value="10">10 Years</option>
+                            </select>
+                        </div>
+                        
+                        <button id="calculateBtn" class="btn btn-primary btn-block">
+                            <i class="fas fa-calculator"></i> Calculate ROI
+                        </button>
+                    </div>
+                    
+                    <div class="calculator-results">
+                        <h3>Projected Returns</h3>
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Initial Investment</span>
+                            </div>
+                            <div class="result-value" id="initialInvestment">₦1,500,000</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Projected Value in 5 Years</span>
+                            </div>
+                            <div class="result-value" id="projectedValue">₦3,732,000</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Total Profit</span>
+                            </div>
+                            <div class="result-value" id="totalProfit">₦2,232,000</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-percentage"></i>
+                                <span>Annual ROI</span>
+                            </div>
+                            <div class="result-value" id="annualROI">24.8%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-note">
+                    <p><i class="fas fa-info-circle"></i> Based on historical data from similar developments in the area. Actual returns may vary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Contact us today to secure your plot at Elora Gardens</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p>+234 (0) 814 822 7087</p>
+                            <a href="tel:+2348148227087" class="contact-link">
+                                <i class="fas fa-phone"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p>rinaandcoconsults@gmail.com</p>
+                            <a href="mailto:rinaandcoconsults@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Visit Office</h4>
+                            <p>228, Upper Mission Rd., Benin City, Edo State</p>
+                            <a href="https://maps.google.com/?q=228+Upper+Mission+Road+Benin+City" 
+                               class="contact-link" target="_blank">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 4:00 PM</p>
+                            <p>Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-action">
+                    <div class="whatsapp-cta">
+                        <div class="whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>Chat With Us On WhatsApp</h3>
+                        <p>Get instant responses, property details, and personalized assistance directly on WhatsApp.</p>
+                        
+                        <div class="whatsapp-features">
+                            <p><i class="fas fa-check"></i> Instant response within minutes</p>
+                            <p><i class="fas fa-check"></i> Property details & photos</p>
+                            <p><i class="fas fa-check"></i> Payment plan discussion</p>
+                            <p><i class="fas fa-check"></i> Site visit arrangement</p>
+                        </div>
+                        
+                        <a href="https://wa.me/2348148227087" class="btn-whatsapp-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Start WhatsApp Chat</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+
+   
    
       <!-- Footer -->
    <footer class="footer">
@@ -784,206 +1066,20 @@
             </div>
         </div>
     </footer>
-
-
-
-
-    <!-- Image Modal -->
-    <!-- Image Modal -->
-     <!-- Glass Effect Video Popup Modal -->
-    <!-- <div class="modal-overlay" id="videoModal">
-        <div class="video-modal">
-            <div class="modal-header">
-                <h3>Construction site</h3>
-            </div>
-            <div class="modal-content">
-                 <iframe id="videoFrame" src="https://geo.dailymotion.com/player.html?video=x9odzm2"
-                    style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
-                    allowfullscreen
-                    title="Dailymotion Video Player"
-                    allow="autoplay; fullscreen; picture-in-picture web-share
-                   ">
-                </iframe>
-               
-            </div>
-            <button class="close-modal" id="closeModal">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    </div> -->
-    <div class="modal" id="imageModal">
-        <span class="close-modal">&times;</span>
+ <!-- Property Details Modal -->
+    <div class="modal-overlay" id="propertyModal">
         <div class="modal-content">
-            <img src="" alt="" class="modal-img" id="modalImage">
-        </div>
-        <div class="modal-nav">
-            <button class="modal-arrow prev-modal"><i class="fas fa-chevron-left"></i></button>
-            <button class="modal-arrow next-modal"><i class="fas fa-chevron-right"></i></button>
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
         </div>
     </div>
+    
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js folder/index.js"></script>
-     <script src="./js folder/estate.js"></script>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      <script>
-        // Initialize the map
-        const map = L.map('map').setView([6.333, 5.622], 15);
-        
-        // Add OpenStreetMap tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
-        }).addTo(map);
-        
-        // Create custom icons
-        const communityIcon = L.divIcon({
-            className: 'custom-icon',
-            html: '<div style="background:#3498db; width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;box-shadow:0 3px 6px rgba(0,0,0,0.2);"><i class="fas fa-home"></i></div>',
-            iconSize: [36, 36],
-            iconAnchor: [18, 36]
-        });
-        
-        const landmarkIcon = L.divIcon({
-            className: 'custom-icon',
-            html: '<div style="background:#e74c3c; width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;box-shadow:0 3px 6px rgba(0,0,0,0.2);"><i class="fas fa-map-marker-alt"></i></div>',
-            iconSize: [32, 32],
-            iconAnchor: [16, 32]
-        });
-        
-        // Add Evboeson Community Center
-        const communityMarker = L.marker([6.333, 5.622], { icon: communityIcon }).addTo(map);
-        communityMarker.bindPopup(`
-            <div class="info-window">
-                <h3>Evboeson Community Center</h3>
-                <p>Central hub of Evboeson community with cultural events and gatherings.</p>
-                <p><strong>Location:</strong> Egba Road, Benin City</p>
-                <p><strong>Coordinates:</strong> 6.333°N, 5.622°E</p>
-            </div>
-        `);
-        
-        // Add landmarks
-        const landmarks = [
-            {
-                location: [6.332, 5.620],
-                name: "Macadams Publishers Limited",
-                content: `
-                    <div class="info-window">
-                        <h3>Macadams Publishers Limited</h3>
-                        <p>Major Publishing Company in Benin</p>
-                        <p><i class="fas fa-car"></i> 1 minute drive</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM</p>
-                    </div>
-                `
-            },
-            {
-                location: [6.334, 5.624],
-                name: "Evboesi Mini-Market",
-                content: `
-                    <div class="info-window">
-                        <h3>Evboesi Mini-Market</h3>
-                        <p>Local market serving daily needs</p>
-                        <p><i class="fas fa-car"></i> 1 minute drive</p>
-                        <p><i class="fas fa-clock"></i> Daily: 7AM-9PM</p>
-                    </div>
-                `
-            },
-            {
-                location: [6.328, 5.630],
-                name: "Edo Boys High School",
-                content: `
-                    <div class="info-window">
-                        <h3>Edo Boys High School</h3>
-                        <p>Reputable educational institution</p>
-                        <p><i class="fas fa-car"></i> 4-5 minute drive</p>
-                        <p><i class="fas fa-graduation-cap"></i> Established: 1948</p>
-                    </div>
-                `
-            },
-            {
-                location: [6.342, 5.615],
-                name: "Oba Market (New Benin)",
-                content: `
-                    <div class="info-window">
-                        <h3>Oba Market (New Benin)</h3>
-                        <p>One of Benin City's biggest markets</p>
-                        <p><i class="fas fa-car"></i> 8-10 minute drive</p>
-                        <p><i class="fas fa-clock"></i> Daily: 6AM-8PM</p>
-                    </div>
-                `
-            }
-        ];
-        
-        // Add landmark markers to the map
-        const landmarkMarkers = [];
-        landmarks.forEach(landmark => {
-            const marker = L.marker(landmark.location, { icon: landmarkIcon }).addTo(map);
-            marker.bindPopup(landmark.content);
-            landmarkMarkers.push(marker);
-        });
-        
-        // Add community boundary
-        const communityBoundary = L.polygon([
-            [6.338, 5.615],
-            [6.338, 5.630],
-            [6.325, 5.630],
-            [6.325, 5.615]
-        ], {
-            color: '#3498db',
-            weight: 2,
-            fillColor: '#3498db',
-            fillOpacity: 0.1
-        }).addTo(map);
-        
-        communityBoundary.bindPopup(`
-            <div class="info-window">
-                <h3>Evboesen Community Boundary</h3>
-                <p>Approximate boundaries of Evboeson Community</p>
-                <p>Area: ~1.2 km²</p>
-            </div>
-        `);
-        
-        // FIXED LEGEND: Enhanced styling and positioning
-        const legend = L.control({position: 'bottomleft'});
-        legend.onAdd = function(map) {
-            const div = L.DomUtil.create('div', 'legend');
-            div.innerHTML = `
-                <div class="legend-title"><i class="fas fa-map-signs"></i> Map Legend</div>
-                <div class="legend-item">
-                    <div class="legend-icon" style="background:#3498db;"><i class="fas fa-home"></i></div>
-                    <span class="legend-label">Community Center</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-icon" style="background:#e74c3c;"><i class="fas fa-map-marker-alt"></i></div>
-                    <span class="legend-label">Key Landmarks</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-icon" style="background:transparent; border:2px solid #3498db;"></div>
-                    <span class="legend-label">Community Boundary</span>
-                </div>
-            `;
-            return div;
-        };
-        legend.addTo(map);
-        
-        // Add scale control
-        L.control.scale({ imperial: false }).addTo(map);
-        
-        // Map controls functionality
-        document.getElementById('zoomIn').addEventListener('click', () => {
-            map.zoomIn();
-        });
-        
-        document.getElementById('resetMap').addEventListener('click', () => {
-            map.setView([6.333, 5.622], 15);
-        });
-        
-        document.getElementById('showLandmarks').addEventListener('click', () => {
-            const bounds = new L.LatLngBounds();
-            landmarkMarkers.forEach(marker => {
-                bounds.extend(marker.getLatLng());
-            });
-            map.fitBounds(bounds, { padding: [50, 50] });
-        });
-    </script>
-
+    <script src="./js folder/estate.js"></script>
 </body>
 </html>
