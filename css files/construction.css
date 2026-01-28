@@ -33,7 +33,18 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
         }
-  
+          
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
         /* Glass Morphism Styles */
         .glass {
             background: var(--glass);
@@ -125,17 +136,17 @@
         }
         
       
-        .hero h2 {
-             font-size: 2.7rem;
+        .hero h1 {
+             /* font-size: 2.7rem; */
             margin-bottom: 1.5rem;
             line-height: 1.2;
             background: linear-gradient(to right, var(--gold-light), var(--gold-medium));
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
+            color: var(--secondary);
             font-family: 'Playfair Display', serif;
             letter-spacing: -0.5px;
-            margin-top: 1.5em;
+            margin-top: 1.3em;
         }
         
         .hero p {
@@ -329,7 +340,7 @@
         }
         
         .section-header h2 {
-            font-size: 2.5rem;
+            /* font-size: 2.5rem; */
             margin-bottom: 1rem;
             color: var(--primary);
             font-family: 'Montserrat', sans-serif;

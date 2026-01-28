@@ -464,3 +464,47 @@ document.head.appendChild(styleSheet);
 
 // Initialize enhanced toggle
 document.addEventListener('DOMContentLoaded', initEnhancedMobileToggle);
+
+// Minimal JavaScript for scroll detection (optional enhancement)
+document.addEventListener('DOMContentLoaded', function() {
+    const shuffleSection = document.querySelector('.shuffle-section');
+    const videoSections = document.querySelectorAll('.video-section');
+    
+    if (!shuffleSection || videoSections.length === 0) return;
+    
+    let hasScrolled = false;
+    
+    // Track initial scroll to hide hint
+    window.addEventListener('scroll', function() {
+        if (!hasScrolled && window.scrollY > 100) {
+            hasScrolled = true;
+            shuffleSection.classList.add('scrolled');
+        }
+    }, { passive: true });
+    
+    // Optional: Add active class based on scroll position
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const videoSection = entry.target;
+            if (entry.isIntersecting) {
+                videoSection.classList.add('active');
+                videoSections.forEach(section => {
+                    if (section !== videoSection) {
+                        section.classList.remove('active');
+                        section.classList.add('passing');
+                    }
+                });
+            } else {
+                videoSection.classList.remove('active', 'passing');
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '-20% 0px -20% 0px' // Adjust based on viewport
+    });
+    
+    // Observe each video section
+    videoSections.forEach(section => {
+        observer.observe(section);
+    });
+});

@@ -1,4 +1,3 @@
-// Responsive Estate Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded - initializing estate page');
     
@@ -17,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize stats counter
     initStatsCounter();
     
-    // Setup property filtering - Use the new bulletproof version
+    // Setup property filtering
     setTimeout(initFilters, 100);
     
     // Setup modals
     setupModals();
     
-    // Setup smooth scrolling
+    // Setup smooth scrolling (only for anchor links, not gallery)
     setupSmoothScrolling();
     
     // Setup responsive adjustments
@@ -32,8 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup quick navigation
     initQuickNavigation();
     
+    // Initialize theme toggle
+    if (typeof initThemeToggle === 'function') {
+        initThemeToggle();
+    }
+    
+    // Initialize property gallery
+    initPropertyGallery();
+     // === ADD THIS LINE ===
+    // Initialize video testimonials
+    if (typeof initVideoTestimonials === 'function') {
+        initVideoTestimonials();
+    }
+     if (typeof initTransactionsSlider === 'function') {
+        initTransactionsSlider();
+    }
     console.log('All components initialized');
 });
+
 
 function initComponents() {
     console.log('Initializing components...');
@@ -703,32 +718,7 @@ setTimeout(() => {
     const existingTest = document.querySelector('#modal-test-button');
     if (existingTest) existingTest.remove();
     
-    // Add test button
-    // const testBtn = document.createElement('button');
-    // testBtn.id = 'modal-test-button';
-    // testBtn.textContent = 'TEST MODAL';
-    // testBtn.style.cssText = `
-    //     position: fixed;
-    //     top: 70px;
-    //     left: 10px;
-    //     z-index: 99999;
-    //     padding: 10px 20px;
-    //     background: red;
-    //     color: white;
-    //     font-weight: bold;
-    //     border: none;
-    //     border-radius: 5px;
-    //     cursor: pointer;
-    //     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    // `;
-    testBtn.onclick = () => {
-        console.log('Test button clicked');
-        if (typeof window.showPropertyModal === 'function') {
-            window.showPropertyModal(1);
-        } else {
-            alert('showPropertyModal is not available');
-        }
-    };
+  
     document.body.appendChild(testBtn);
 }, 2000);
 
@@ -778,42 +768,833 @@ function initThemeToggle() {
     }
 }
 
-// Call this in your DOMContentLoaded function
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded - initializing estate page');
+
+// ===== PROPERTY GALLERY - BUTTON-ONLY NAVIGATION =====
+function initPropertyGallery() {
+    const galleryContainer = document.querySelector('.fps-container');
+    if (!galleryContainer) return;
     
-    // Initialize all components
-    initComponents();
+    const pages = document.querySelectorAll('.fps-page');
+    const totalPages = pages.length;
+    let currentPage = 1;
+    let isScrolling = false;
     
-    // Setup event listeners
-    setupEventListeners();
+    // Create progress indicator
+    const progressContainer = document.createElement('div');
+    progressContainer.className = 'gallery-progress';
+    const progressFill = document.createElement('div');
+    progressFill.className = 'gallery-progress-fill';
+    progressContainer.appendChild(progressFill);
+    galleryContainer.appendChild(progressContainer);
     
-    // Initialize map
-    initMap();
+    // Create page indicator
+    const pageIndicator = document.createElement('div');
+    pageIndicator.className = 'current-page-indicator';
+    galleryContainer.appendChild(pageIndicator);
     
-    // Initialize calculator
-    initCalculator();
+    // Initialize first page
+    updateGalleryState();
     
-    // Initialize stats counter
-    initStatsCounter();
+    function updateGalleryState() {
+        // Update page classes
+        pages.forEach((page, index) => {
+            page.classList.remove('active', 'previous', 'small');
+            
+            if (index + 1 === currentPage) {
+                page.classList.add('active');
+            } else if (index + 1 === currentPage - 1) {
+                page.classList.add('previous');
+            } else if (index + 1 < currentPage - 1) {
+                page.classList.add('small');
+            }
+        });
+        
+        // Update navigation dots
+        document.querySelectorAll('.fps-nav-btn').forEach((btn, index) => {
+            btn.classList.remove('active');
+            if (index + 1 === currentPage) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Update progress bar
+        const progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+        progressFill.style.width = `${progress}%`;
+        
+        // Update page indicator
+        pageIndicator.textContent = `Property ${currentPage} of ${totalPages}`;
+    }
     
-    // Setup property filtering
-    setTimeout(initFilters, 100);
+    function navigateToPage(pageNumber) {
+        if (isScrolling || pageNumber < 1 || pageNumber > totalPages) return;
+        
+        isScrolling = true;
+        currentPage = pageNumber;
+        
+        // Add visual feedback
+        galleryContainer.classList.add('changing');
+        
+        // Update visual state
+        updateGalleryState();
+        
+        // Allow next change after animation completes
+        setTimeout(() => {
+            isScrolling = false;
+            galleryContainer.classList.remove('changing');
+        }, 800); // Match CSS transition duration
+    }
     
-    // Setup modals
-    setupModals();
+    function navigateUp() {
+        if (currentPage > 1) {
+            navigateToPage(currentPage - 1);
+        }
+    }
     
-    // Setup smooth scrolling
-    setupSmoothScrolling();
+    function navigateDown() {
+        if (currentPage < totalPages) {
+            navigateToPage(currentPage + 1);
+        }
+    }
     
-    // Setup responsive adjustments
-    setupResponsiveAdjustments();
+    // ===== NAVIGATION DOTS =====
+    document.querySelectorAll('.fps-nav-btn').forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+            if (isScrolling || currentPage === index + 1) return;
+            navigateToPage(index + 1);
+        });
+    });
     
-    // Setup quick navigation
-    initQuickNavigation();
+    // ===== SCROLL BUTTONS =====
+    const scrollButtons = document.querySelectorAll('.fps-scroll-btn');
+    if (scrollButtons.length > 0) {
+        scrollButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (isScrolling) return;
+                if (this.classList.contains('up')) {
+                    navigateUp();
+                } else {
+                    navigateDown();
+                }
+            });
+        });
+    }
     
-    // Initialize theme toggle - ADD THIS LINE
-    initThemeToggle();
+    // ===== VIEW DETAILS BUTTONS =====
+    document.querySelectorAll('.view-gallery-details').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const propertyType = this.getAttribute('data-property');
+            const message = `Hi, I'm interested in the ${propertyType} property (Property ${currentPage}). Can you send me more details?`;
+            window.open(`https://wa.me/2348148227087?text=${encodeURIComponent(message)}`, '_blank');
+        });
+    });
     
-    console.log('All components initialized');
-});
+    // ===== ADD CSS FOR CHANGING STATE =====
+    const style = document.createElement('style');
+    style.textContent = `
+        .fps-container.changing {
+            pointer-events: none;
+        }
+        
+        .fps-container.changing .fps-scroll-btn,
+        .fps-container.changing .fps-nav-btn {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Button hover effects */
+        .fps-scroll-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .fps-scroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .fps-nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .fps-nav-btn:hover {
+            transform: scale(1.3);
+            background: var(--secondary-color);
+        }
+        
+        /* Remove any scroll hint animations */
+        .fps-container::after {
+            display: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // ===== ADD VISUAL FEEDBACK FOR BUTTON PRESSES =====
+    document.querySelectorAll('.fps-scroll-btn, .fps-nav-btn').forEach(btn => {
+        btn.addEventListener('mousedown', function() {
+            this.classList.add('pressed');
+        });
+        
+        btn.addEventListener('mouseup', function() {
+            this.classList.remove('pressed');
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.classList.remove('pressed');
+        });
+        
+        // For touch devices
+        btn.addEventListener('touchstart', function() {
+            this.classList.add('pressed');
+        }, { passive: true });
+        
+        btn.addEventListener('touchend', function() {
+            this.classList.remove('pressed');
+        }, { passive: true });
+    });
+}
+
+// Call this function in your DOMContentLoaded
+
+
+// Also update the setupSmoothScrolling function to prevent conflict with gallery:
+function setupSmoothScrolling() {
+    console.log('Setting up smooth scrolling...');
+    
+    // Smooth scroll for anchor links - exclude gallery buttons
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Don't intercept clicks on gallery buttons
+            if (this.closest('.fps-container') || 
+                this.classList.contains('fps-nav-btn') || 
+                this.classList.contains('fps-scroll-btn')) {
+                return;
+            }
+            
+            const href = this.getAttribute('href');
+            if (href === '#' || href === '#!') return;
+            
+            e.preventDefault();
+            
+            const targetElement = document.querySelector(href);
+            if (!targetElement) return;
+            
+            // Update active navigation for quick nav items
+            if (this.classList.contains('quick-nav-item')) {
+                document.querySelectorAll('.quick-nav-item.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            }
+            
+            // Calculate scroll position
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const targetPosition = targetElement.offsetTop - headerHeight - 20;
+            
+            // Smooth scroll
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+// ===== TRANSACTIONS SLIDESHOW =====
+function initTransactionsSlider() {
+    const slider = document.querySelector('.transactions-slider');
+    if (!slider) return;
+    
+    const pages = document.querySelectorAll('.transaction-page');
+    const totalPages = pages.length;
+    let currentPage = 1;
+    let isScrolling = false;
+    let autoPlayInterval;
+    let progressInterval;
+    
+    // Initialize indicators
+    const currentIndicator = document.querySelector('.current-transaction');
+    const totalIndicator = document.querySelector('.total-transactions');
+    
+    if (totalIndicator) {
+        totalIndicator.textContent = totalPages;
+    }
+    
+    // Update slider state
+    function updateSliderState() {
+        // Update page classes
+        pages.forEach((page, index) => {
+            page.classList.remove('active', 'previous', 'small');
+            
+            if (index + 1 === currentPage) {
+                page.classList.add('active');
+            } else if (index + 1 === currentPage - 1) {
+                page.classList.add('previous');
+            } else if (index + 1 < currentPage - 1) {
+                page.classList.add('small');
+            }
+        });
+        
+        // Update navigation dots
+        document.querySelectorAll('.transactions-nav-btn').forEach((btn, index) => {
+            btn.classList.remove('active');
+            if (index + 1 === currentPage) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Update current page indicator
+        if (currentIndicator) {
+            currentIndicator.textContent = currentPage;
+        }
+    }
+    
+    // Navigate to specific page
+    function navigateToPage(pageNumber) {
+        if (isScrolling || pageNumber < 1 || pageNumber > totalPages) return;
+        
+        isScrolling = true;
+        currentPage = pageNumber;
+        
+        // Reset progress bar
+        resetProgressBar();
+        
+        // Update visual state
+        updateSliderState();
+        
+        // Reset auto-play interval
+        resetAutoPlay();
+        
+        // Allow next change after animation completes
+        setTimeout(() => {
+            isScrolling = false;
+        }, 800);
+    }
+    
+    // Navigate to previous page
+    function navigateLeft() {
+        if (currentPage > 1) {
+            navigateToPage(currentPage - 1);
+        } else {
+            // Loop to last page
+            navigateToPage(totalPages);
+        }
+    }
+    
+    // Navigate to next page
+    function navigateRight() {
+        if (currentPage < totalPages) {
+            navigateToPage(currentPage + 1);
+        } else {
+            // Loop to first page
+            navigateToPage(1);
+        }
+    }
+    
+    // Auto-play functionality
+    function startAutoPlay() {
+        // Clear existing interval
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        
+        // Start progress bar animation
+        startProgressBar();
+        
+        // Set interval for auto-play (5 seconds)
+        autoPlayInterval = setInterval(() => {
+            navigateRight();
+        }, 5000);
+    }
+    
+    function resetAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+    
+    // Progress bar functionality
+    function startProgressBar() {
+        const progressFill = document.querySelector('.transactions-progress-fill');
+        if (!progressFill) return;
+        
+        // Clear existing progress interval
+        if (progressInterval) clearInterval(progressInterval);
+        
+        // Reset progress bar
+        progressFill.style.transition = 'none';
+        progressFill.style.width = '0%';
+        
+        // Force reflow
+        void progressFill.offsetWidth;
+        
+        // Animate progress bar
+        progressFill.style.transition = 'width 5s linear';
+        progressFill.style.width = '100%';
+    }
+    
+    function resetProgressBar() {
+        const progressFill = document.querySelector('.transactions-progress-fill');
+        if (progressFill) {
+            progressFill.style.transition = 'none';
+            progressFill.style.width = '0%';
+            setTimeout(() => {
+                progressFill.style.transition = 'width 5s linear';
+                progressFill.style.width = '100%';
+            }, 10);
+        }
+    }
+    
+    // Navigation dots event listeners
+    document.querySelectorAll('.transactions-nav-btn').forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+            if (isScrolling || currentPage === index + 1) return;
+            navigateToPage(index + 1);
+        });
+    });
+    
+    // Scroll buttons event listeners
+    document.querySelectorAll('.transactions-scroll-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (isScrolling) return;
+            if (this.classList.contains('left')) {
+                navigateLeft();
+            } else {
+                navigateRight();
+            }
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.target.closest('.transactions-slider') || document.activeElement.tagName === 'BODY') {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                navigateLeft();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                navigateRight();
+            }
+        }
+    });
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    slider.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    slider.addEventListener('touchend', function(e) {
+        if (isScrolling) return;
+        
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchStartX - touchEndX;
+        
+        // Minimum swipe distance
+        if (Math.abs(swipeDistance) > 50) {
+            if (swipeDistance > 0) {
+                // Swipe left - go right
+                navigateRight();
+            } else {
+                // Swipe right - go left
+                navigateLeft();
+            }
+        }
+    }, { passive: true });
+    
+    // Pause auto-play on hover
+    slider.addEventListener('mouseenter', function() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+        
+        // Pause progress bar
+        const progressFill = document.querySelector('.transactions-progress-fill');
+        if (progressFill) {
+            progressFill.style.animationPlayState = 'paused';
+            progressFill.style.transition = 'none';
+        }
+    });
+    
+    slider.addEventListener('mouseleave', function() {
+        startAutoPlay();
+    });
+    
+    // Initialize
+    updateSliderState();
+    startAutoPlay();
+    
+    // Handle page visibility change
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        } else {
+            startAutoPlay();
+        }
+    });
+    
+    console.log('✅ Transactions slider initialized with auto-play');
+}
+// testimonials
+// ===== VIDEO TESTIMONIALS FUNCTIONALITY =====
+function initVideoTestimonials() {
+    console.log('🎬 Initializing video testimonials...');
+    
+    const videoPlaceholder = document.getElementById('videoPlaceholder');
+    const youtubeEmbed = document.getElementById('youtubeEmbed');
+    const playButton = document.getElementById('playButton');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const muteBtn = document.getElementById('muteBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    const thumbnailItems = document.querySelectorAll('.thumbnail-item');
+    const currentTestimonialSpan = document.querySelector('.current-testimonial');
+    const totalTestimonialsSpan = document.querySelector('.total-testimonials');
+    
+    // Check if required elements exist
+    if (!videoPlaceholder || !youtubeEmbed) {
+        console.warn('Video testimonial elements not found');
+        return;
+    }
+    
+    // Testimonial data
+    const testimonials = [
+        {
+            id: 1,
+            name: "James Wilson",
+            title: "Property Investor",
+            rating: 4.8,
+            quote: "Working with Rina & Co. was an exceptional experience. The transparency throughout the land purchase process at Elora Gardens was remarkable. All documents were readily available and verified. Highly recommended!",
+            date: "January 2024",
+            plot: "100×100ft",
+            youtubeId: "dQw4w9WgXcQ",
+            thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 2,
+            name: "Sarah Johnson",
+            title: "First-time Home Buyer",
+            rating: 5.0,
+            quote: "As a first-time buyer, I was nervous about the process. Rina & Co. guided me through every step. The document verification gave me complete peace of mind. Truly professional service!",
+            date: "March 2024",
+            plot: "50×100ft",
+            youtubeId: "L_jWHffIx5E",
+            thumbnail: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 3,
+            name: "Michael Chen",
+            title: "Real Estate Developer",
+            rating: 4.9,
+            quote: "I've purchased multiple plots through Rina & Co. Their attention to detail and commitment to transparency is unmatched. The C of O and other documents were flawless.",
+            date: "December 2023",
+            plot: "Multiple Plots",
+            youtubeId: "9bZkp7q19f0",
+            thumbnail: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 4,
+            name: "Amina Balogun",
+            title: "Family Investor",
+            rating: 4.7,
+            quote: "Purchasing land for our family home was made easy by Rina & Co. The deed of transfer process was smooth, and they answered all our questions promptly. Excellent service!",
+            date: "February 2024",
+            plot: "100×100ft",
+            youtubeId: "CduA0TULnow",
+            thumbnail: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 5,
+            name: "David Okafor",
+            title: "Business Owner",
+            rating: 4.8,
+            quote: "The root title verification gave me confidence in my investment. Rina & Co.'s professionalism and transparency are why I recommend them to all my business partners.",
+            date: "November 2023",
+            plot: "Commercial Plot",
+            youtubeId: "JGwWNGJdvx8",
+            thumbnail: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        }
+    ];
+    
+    let currentTestimonial = 1;
+    let isPlaying = false;
+    let videoInterval;
+    
+    // Update total testimonials count
+    if (totalTestimonialsSpan) {
+        totalTestimonialsSpan.textContent = testimonials.length;
+    }
+    
+    // Load testimonial data
+    function loadTestimonial(testimonialId) {
+        const testimonial = testimonials.find(t => t.id === testimonialId);
+        if (!testimonial) return;
+        
+        // Clear any existing interval
+        if (videoInterval) {
+            clearInterval(videoInterval);
+            videoInterval = null;
+        }
+        
+        // Update UI elements if they exist
+        const clientName = document.querySelector('.client-details h4');
+        const clientTitle = document.querySelector('.client-title');
+        const testimonialQuote = document.querySelector('.testimonial-quote p');
+        const dateMeta = document.querySelector('.meta-item:nth-child(1) span');
+        const plotMeta = document.querySelector('.meta-item:nth-child(2) span');
+        const avatarImg = document.querySelector('.client-avatar img');
+        const thumbnailImg = document.querySelector('.video-thumbnail');
+        const videoTitle = document.querySelector('.video-title');
+        
+        if (clientName) clientName.textContent = testimonial.name;
+        if (clientTitle) clientTitle.textContent = testimonial.title;
+        if (testimonialQuote) testimonialQuote.textContent = testimonial.quote;
+        if (dateMeta) dateMeta.textContent = `Purchased: ${testimonial.date}`;
+        if (plotMeta) plotMeta.textContent = `Plot: ${testimonial.plot}`;
+        if (avatarImg) avatarImg.src = testimonial.avatar;
+        if (thumbnailImg) thumbnailImg.src = testimonial.thumbnail;
+        if (videoTitle) videoTitle.textContent = `Client Testimonial - ${testimonial.name}`;
+        
+        // Update rating stars
+        updateRatingStars(testimonial.rating);
+        
+        // Update YouTube embed
+        const iframe = youtubeEmbed.querySelector('iframe');
+        if (iframe) {
+            iframe.src = `https://www.youtube.com/embed/${testimonial.youtubeId}?autoplay=0&rel=0&modestbranding=1`;
+        }
+        
+        // Update current testimonial indicator
+        if (currentTestimonialSpan) {
+            currentTestimonialSpan.textContent = testimonialId;
+        }
+        
+        // Update active thumbnail
+        thumbnailItems.forEach(item => {
+            item.classList.remove('active');
+            if (parseInt(item.dataset.testimonial) === testimonialId) {
+                item.classList.add('active');
+            }
+        });
+        
+        // Reset video state
+        resetVideo();
+    }
+    
+    // Update rating stars
+    function updateRatingStars(rating) {
+        const starsContainer = document.querySelector('.client-rating');
+        if (!starsContainer) return;
+        
+        let starsHTML = '';
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+        
+        for (let i = 1; i <= 5; i++) {
+            if (i <= fullStars) {
+                starsHTML += '<i class="fas fa-star"></i>';
+            } else if (i === fullStars + 1 && hasHalfStar) {
+                starsHTML += '<i class="fas fa-star-half-alt"></i>';
+            } else {
+                starsHTML += '<i class="far fa-star"></i>';
+            }
+        }
+        
+        starsHTML += `<span>${rating}/5</span>`;
+        starsContainer.innerHTML = starsHTML;
+    }
+    
+    // Play video
+    function playVideo() {
+        if (videoPlaceholder) videoPlaceholder.style.display = 'none';
+        if (youtubeEmbed) youtubeEmbed.style.display = 'block';
+        isPlaying = true;
+        if (playPauseBtn) playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        
+        // Simulate playing state for demo
+        simulateVideoPlayback();
+    }
+    
+    // Pause video
+    function pauseVideo() {
+        isPlaying = false;
+        if (playPauseBtn) playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        
+        // Clear simulation interval
+        if (videoInterval) {
+            clearInterval(videoInterval);
+            videoInterval = null;
+        }
+    }
+    
+    // Reset video to initial state
+    function resetVideo() {
+        if (videoPlaceholder) videoPlaceholder.style.display = 'block';
+        if (youtubeEmbed) youtubeEmbed.style.display = 'none';
+        isPlaying = false;
+        if (playPauseBtn) playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        
+        // Reset time display
+        const currentTimeSpan = document.getElementById('currentTime');
+        const durationSpan = document.getElementById('duration');
+        if (currentTimeSpan) currentTimeSpan.textContent = '0:00';
+        if (durationSpan) durationSpan.textContent = '3:45';
+        
+        // Clear interval
+        if (videoInterval) {
+            clearInterval(videoInterval);
+            videoInterval = null;
+        }
+    }
+    
+    // Simulate video playback (for demo purposes)
+    function simulateVideoPlayback() {
+        const currentTimeSpan = document.getElementById('currentTime');
+        const durationSpan = document.getElementById('duration');
+        
+        if (!currentTimeSpan || !durationSpan) return;
+        
+        // Set random duration between 2-5 minutes
+        const totalSeconds = Math.floor(Math.random() * 180) + 120;
+        const durationMinutes = Math.floor(totalSeconds / 60);
+        const durationSeconds = totalSeconds % 60;
+        
+        durationSpan.textContent = `${durationMinutes}:${durationSeconds.toString().padStart(2, '0')}`;
+        
+        if (isPlaying) {
+            let currentSeconds = 0;
+            
+            // Clear any existing interval
+            if (videoInterval) clearInterval(videoInterval);
+            
+            videoInterval = setInterval(() => {
+                if (!isPlaying) {
+                    clearInterval(videoInterval);
+                    return;
+                }
+                
+                currentSeconds++;
+                if (currentSeconds > totalSeconds) {
+                    clearInterval(videoInterval);
+                    resetVideo();
+                    return;
+                }
+                
+                const minutes = Math.floor(currentSeconds / 60);
+                const seconds = currentSeconds % 60;
+                currentTimeSpan.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+    }
+    
+    // Event Listeners
+    if (playButton) {
+        playButton.addEventListener('click', playVideo);
+    }
+    
+    if (videoPlaceholder) {
+        videoPlaceholder.addEventListener('click', playVideo);
+    }
+    
+    if (playPauseBtn) {
+        playPauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                pauseVideo();
+            } else {
+                playVideo();
+            }
+        });
+    }
+    
+    if (muteBtn) {
+        muteBtn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (!icon) return;
+            
+            if (icon.classList.contains('fa-volume-up')) {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+                if (volumeSlider) volumeSlider.value = 0;
+            } else {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+                if (volumeSlider) volumeSlider.value = 80;
+            }
+        });
+    }
+    
+    if (volumeSlider) {
+        volumeSlider.addEventListener('input', function() {
+            const volume = this.value;
+            const icon = muteBtn ? muteBtn.querySelector('i') : null;
+            
+            if (icon) {
+                if (volume == 0) {
+                    icon.classList.remove('fa-volume-up');
+                    icon.classList.add('fa-volume-mute');
+                } else {
+                    icon.classList.remove('fa-volume-mute');
+                    icon.classList.add('fa-volume-up');
+                }
+            }
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            currentTestimonial = currentTestimonial > 1 ? currentTestimonial - 1 : testimonials.length;
+            loadTestimonial(currentTestimonial);
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            currentTestimonial = currentTestimonial < testimonials.length ? currentTestimonial + 1 : 1;
+            loadTestimonial(currentTestimonial);
+        });
+    }
+    
+    // Thumbnail click events
+    thumbnailItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const testimonialId = parseInt(this.dataset.testimonial);
+            currentTestimonial = testimonialId;
+            loadTestimonial(testimonialId);
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.target.closest('.video-player-container') || document.activeElement.tagName === 'BODY') {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                currentTestimonial = currentTestimonial > 1 ? currentTestimonial - 1 : testimonials.length;
+                loadTestimonial(currentTestimonial);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                currentTestimonial = currentTestimonial < testimonials.length ? currentTestimonial + 1 : 1;
+                loadTestimonial(currentTestimonial);
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                if (isPlaying) {
+                    pauseVideo();
+                } else {
+                    playVideo();
+                }
+            }
+        }
+    });
+    
+    // Initialize first testimonial
+    loadTestimonial(currentTestimonial);
+    
+    console.log('✅ Video testimonials initialized');
+}

@@ -30,7 +30,18 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
         }
-   
+           
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
         /* Glass Morphism Styles */
         .glass {
             background: var(--glass);
@@ -103,7 +114,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            /* font-size: 2.8rem; */
             position: relative;
             display: inline-block;
             margin-bottom: 0px;
@@ -137,14 +148,14 @@
         /* Hero Styles */
         .hero-header {
 
-              background: linear-gradient(rgba(18, 18, 18, 0.6)),url("../images/about-hero.jpg");
+              background: linear-gradient(rgba(18, 18, 18, 0.5)),url("../images/about-hero.jpg");
             background-size: cover;
             background-position:center 38%;
             color: rgb(20, 19, 19);
             padding: 150px 0;
             text-align: center;
             position: relative;
-              height: 90vh;
+              height: 95vh;
         }
         
        .hero-header::before {
@@ -157,7 +168,7 @@
           
         }
        .hero-title {
-           font-size: 2.5rem;
+           /* font-size: 2.5rem; */
             line-height: 1.2;
             background: linear-gradient(to right, var(--gold-light), var(--gold-medium));
             -webkit-background-clip: text;
@@ -409,9 +420,9 @@
             section {
                 padding: 80px 5%;
             }
-              .about-section .section-header{
+              /* .about-section .section-header{
         text-align: left;
-       }
+       } */
 
             .milestones {
                 grid-template-columns: 1fr;

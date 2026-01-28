@@ -142,6 +142,10 @@
                         <i class="fas fa-images"></i>
                         <span>Gallery</span>
                     </a>
+                     <a href="#testimonials" class="quick-nav-item">
+                        <i class="fas fa-video"></i>
+                        <span>Testimonials</span>
+                    </a>
                     <a href="#location" class="quick-nav-item">
                         <i class="fas fa-map"></i>
                         <span>Location</span>
@@ -366,255 +370,499 @@
 
     <!-- Gallery Section -->
      <!-- Add this after the Features section in your HTML -->
-<section id="property-gallery" class="property-gallery-section">
-    <!-- Full Page Scroll Navigation for Property Showcase -->
-    <div class="gallery-intro">
-        <div class="section-header">
-            <h2>Premium Property Showcase</h2>
-            <p>Navigate through our exclusive properties with this interactive gallery</p>
-        </div>
-    </div>
-    
-    <!-- Full Page Scroll Container -->
-    <div class="fps-container">
-        <!-- Navigation Dots -->
-        <div class="fps-nav-container">
-            <button class="fps-nav-btn fps-nav-1 active" data-target="1"></button>
-            <button class="fps-nav-btn fps-nav-2" data-target="2"></button>
-            <button class="fps-nav-btn fps-nav-3" data-target="3"></button>
-            <button class="fps-nav-btn fps-nav-4" data-target="4"></button>
-            <button class="fps-nav-btn fps-nav-5" data-target="5"></button>
-        </div>
-
-        <!-- Property Pages -->
-        <div class="fps-pages-container">
-            <!-- Page 1: Luxury Villa -->
-            <div class="fps-page fps-page-1 active">
-                <div class="property-gallery-content">
-                    <div class="property-gallery-image">
-                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Villa">
-                    </div>
-                    <div class="property-gallery-details">
-                        <span class="property-badge">Premium</span>
-                        <h3>Luxury Villa</h3>
-                        <p class="property-price">₦250,000,000</p>
-                        <div class="property-features">
-                            <span><i class="fas fa-bed"></i> 5 Bedrooms</span>
-                            <span><i class="fas fa-bath"></i> 4 Bathrooms</span>
-                            <span><i class="fas fa-ruler-combined"></i> 450 sqm</span>
-                        </div>
-                        <p class="property-description">
-                            Exclusive villa with panoramic views, infinity pool, and smart home automation.
-                        </p>
-                        <div class="property-actions">
-                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Luxury%20Villa%20property" 
-                               class="btn btn-primary">
-                                <i class="fab fa-whatsapp"></i> Schedule Viewing
-                            </a>
-                            <button class="btn btn-outline view-gallery-details" data-property="villa">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Page 2: Modern Apartment -->
-            <div class="fps-page fps-page-2">
-                <div class="property-gallery-content">
-                    <div class="property-gallery-image">
-                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Modern Apartment">
-                    </div>
-                    <div class="property-gallery-details">
-                        <span class="property-badge">Luxury</span>
-                        <h3>Modern Apartment</h3>
-                        <p class="property-price">₦120,000,000</p>
-                        <div class="property-features">
-                            <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
-                            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
-                            <span><i class="fas fa-ruler-combined"></i> 220 sqm</span>
-                        </div>
-                        <p class="property-description">
-                            Contemporary apartment with premium finishes, city views, and modern amenities.
-                        </p>
-                        <div class="property-actions">
-                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Modern%20Apartment%20property" 
-                               class="btn btn-primary">
-                                <i class="fab fa-whatsapp"></i> Schedule Viewing
-                            </a>
-                            <button class="btn btn-outline view-gallery-details" data-property="apartment">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Page 3: Executive Duplex -->
-            <div class="fps-page fps-page-3">
-                <div class="property-gallery-content">
-                    <div class="property-gallery-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Executive Duplex">
-                    </div>
-                    <div class="property-gallery-details">
-                        <span class="property-badge">Executive</span>
-                        <h3>Executive Duplex</h3>
-                        <p class="property-price">₦180,000,000</p>
-                        <div class="property-features">
-                            <span><i class="fas fa-bed"></i> 4 Bedrooms</span>
-                            <span><i class="fas fa-bath"></i> 3 Bathrooms</span>
-                            <span><i class="fas fa-ruler-combined"></i> 350 sqm</span>
-                        </div>
-                        <p class="property-description">
-                            Spacious duplex with private garden, garage, and executive finishes.
-                        </p>
-                        <div class="property-actions">
-                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Executive%20Duplex%20property" 
-                               class="btn btn-primary">
-                                <i class="fab fa-whatsapp"></i> Schedule Viewing
-                            </a>
-                            <button class="btn btn-outline view-gallery-details" data-property="duplex">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Page 4: Garden Bungalow -->
-            <div class="fps-page fps-page-4">
-                <div class="property-gallery-content">
-                    <div class="property-gallery-image">
-                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Garden Bungalow">
-                    </div>
-                    <div class="property-gallery-details">
-                        <span class="property-badge">Family</span>
-                        <h3>Garden Bungalow</h3>
-                        <p class="property-price">₦95,000,000</p>
-                        <div class="property-features">
-                            <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
-                            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
-                            <span><i class="fas fa-ruler-combined"></i> 280 sqm</span>
-                        </div>
-                        <p class="property-description">
-                            Beautiful bungalow with extensive garden, outdoor living space, and family-friendly layout.
-                        </p>
-                        <div class="property-actions">
-                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Garden%20Bungalow%20property" 
-                               class="btn btn-primary">
-                                <i class="fab fa-whatsapp"></i> Schedule Viewing
-                            </a>
-                            <button class="btn btn-outline view-gallery-details" data-property="bungalow">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Page 5: Luxury Penthouse -->
-            <div class="fps-page fps-page-5">
-                <div class="property-gallery-content">
-                    <div class="property-gallery-image">
-                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Penthouse">
-                    </div>
-                    <div class="property-gallery-details">
-                        <span class="property-badge">Penthouse</span>
-                        <h3>Luxury Penthouse</h3>
-                        <p class="property-price">₦350,000,000</p>
-                        <div class="property-features">
-                            <span><i class="fas fa-bed"></i> 5 Bedrooms</span>
-                            <span><i class="fas fa-bath"></i> 4 Bathrooms</span>
-                            <span><i class="fas fa-ruler-combined"></i> 500 sqm</span>
-                        </div>
-                        <p class="property-description">
-                            Top-floor penthouse with panoramic city views, private terrace, and luxury amenities.
-                        </p>
-                        <div class="property-actions">
-                            <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Luxury%20Penthouse%20property" 
-                               class="btn btn-primary">
-                                <i class="fab fa-whatsapp"></i> Schedule Viewing
-                            </a>
-                            <button class="btn btn-outline view-gallery-details" data-property="penthouse">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Buttons -->
-        <div class="fps-scroll-container">
-            <button class="fps-scroll-btn up">
-                <i class="fas fa-chevron-up"></i>
-            </button>
-            <button class="fps-scroll-btn down">
-                <i class="fas fa-chevron-down"></i>
-            </button>
-        </div>
-    </div>
-</section>
-  <!-- Gallery Section -->
-<section class="gallery-section" id="gallery">
+<!-- ===== PROPERTY GALLERY SECTION ===== -->
+<section class="property-gallery-section" id="gallery">
     <div class="container">
         <div class="section-header">
             <h2>Estate Gallery</h2>
             <p>Explore Elora Gardens through our visual gallery</p>
         </div>
         
-        <!-- Updated gallery container with proper class names -->
-        <div class="gallery-container">
-            <!-- This div must have class "swiper" -->
-            <div class="swiper gallery-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Aerial View of Elora Gardens" loading="lazy">
-                        <div class="slide-caption">
-                            <h4>Aerial View</h4>
-                            <p>Complete overview of Elora Gardens Estate</p>
+        <!-- Gallery Container -->
+        <div class="fps-container" id="propertyGallery">
+            <!-- Pages Container -->
+            <div class="fps-pages-container">
+                <!-- Page 1 -->
+                <div class="fps-page active" data-page="1">
+                    <div class="property-gallery-content">
+                        <div class="property-gallery-image">
+                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Villa 1">
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Plot Layout" loading="lazy">
-                        <div class="slide-caption">
-                            <h4>Plot Layout</h4>
-                            <p>Well-planned residential plots with proper spacing</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Road Access" loading="lazy">
-                        <div class="slide-caption">
-                            <h4>Road Access</h4>
-                            <p>Paved roads for easy access to all plots</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Surroundings" loading="lazy">
-                        <div class="slide-caption">
-                            <h4>Beautiful Surroundings</h4>
-                            <p>Serene environment perfect for residential development</p>
+                        <div class="property-gallery-details">
+                            <span class="property-badge">Featured</span>
+                            <h3>Modern Villa - 100×100ft</h3>
+                            <div class="property-price">₦1,500,000</div>
+                            <div class="property-features">
+                                <span><i class="fas fa-ruler-combined"></i> 100×100ft Plot</span>
+                                <span><i class="fas fa-bed"></i> 4 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 3 Bathrooms</span>
+                            </div>
+                            <p class="property-description">
+                                A stunning modern villa with panoramic views, premium finishes, and smart home technology. Perfect for luxury living with all amenities included.
+                            </p>
+                            <div class="property-actions">
+                                <button class="btn btn-primary view-gallery-details" data-property="Modern Villa">
+                                    <i class="fas fa-info-circle"></i> View Details
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next">
-                    <i class="fas fa-caret-right"></i>
+                
+                <!-- Page 2 -->
+                <div class="fps-page" data-page="2">
+                    <div class="property-gallery-content">
+                        <div class="property-gallery-image">
+                            <img src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Villa 2">
+                        </div>
+                        <div class="property-gallery-details">
+                            <span class="property-badge">Best Value</span>
+                            <h3>Family Home - 50×100ft</h3>
+                            <div class="property-price">₦800,000</div>
+                            <div class="property-features">
+                                <span><i class="fas fa-ruler-combined"></i> 50×100ft Plot</span>
+                                <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                            </div>
+                            <p class="property-description">
+                                Perfect family home with spacious rooms, garden area, and modern kitchen. Great for growing families with secure compound and parking.
+                            </p>
+                            <div class="property-actions">
+                                <button class="btn btn-primary view-gallery-details" data-property="Family Home">
+                                    <i class="fas fa-info-circle"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-button-prev">
-                        <i class="fas fa-caret-left"></i>
+                
+                <!-- Page 3 -->
+                <div class="fps-page" data-page="3">
+                    <div class="property-gallery-content">
+                        <div class="property-gallery-image">
+                            <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Villa 3">
+                        </div>
+                        <div class="property-gallery-details">
+                            <span class="property-badge">Luxury</span>
+                            <h3>Executive Duplex - 100×100ft</h3>
+                            <div class="property-price">₦2,500,000</div>
+                            <div class="property-features">
+                                <span><i class="fas fa-ruler-combined"></i> 100×100ft Plot</span>
+                                <span><i class="fas fa-bed"></i> 5 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 4 Bathrooms</span>
+                            </div>
+                            <p class="property-description">
+                                Executive duplex with pool, gym, and home theater. Features smart home automation, security system, and premium finishes throughout.
+                            </p>
+                            <div class="property-actions">
+                                <button class="btn btn-primary view-gallery-details" data-property="Executive Duplex">
+                                    <i class="fas fa-info-circle"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
+                
+                <!-- Page 4 -->
+                <div class="fps-page" data-page="4">
+                    <div class="property-gallery-content">
+                        <div class="property-gallery-image">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Villa 4">
+                        </div>
+                        <div class="property-gallery-details">
+                            <span class="property-badge">Budget</span>
+                            <h3>Starter Home - 50×100ft</h3>
+                            <div class="property-price">₦650,000</div>
+                            <div class="property-features">
+                                <span><i class="fas fa-ruler-combined"></i> 50×100ft Plot</span>
+                                <span><i class="fas fa-bed"></i> 2 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                            </div>
+                            <p class="property-description">
+                                Affordable starter home perfect for young professionals or small families. Well-designed spaces with modern amenities at an affordable price.
+                            </p>
+                            <div class="property-actions">
+                                <button class="btn btn-primary view-gallery-details" data-property="Starter Home">
+                                    <i class="fas fa-info-circle"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Dots Container -->
+            <div class="fps-nav-container">
+                <button class="fps-nav-btn active" data-target="1"></button>
+                <button class="fps-nav-btn" data-target="2"></button>
+                <button class="fps-nav-btn" data-target="3"></button>
+                <button class="fps-nav-btn" data-target="4"></button>
+            </div>
+            
+            <!-- Scroll Buttons Container -->
+            <div class="fps-scroll-container">
+                <button class="fps-scroll-btn up">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <button class="fps-scroll-btn down">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            
+            <!-- Progress Indicator -->
+            <div class="gallery-progress">
+                <div class="gallery-progress-fill"></div>
+            </div>
+            
+            <!-- Page Indicator -->
+            <div class="current-page-indicator">Property 1 of 4</div>
+        </div>
+    </div>
+</section>
+  <!-- Gallery Section -->
+<!-- ===== RECENT TRANSACTIONS SECTION ===== -->
+<section class="transactions-section" id="transactions">
+    <div class="container">
+        <div class="section-header">
+            <h2>Recent Transactions</h2>
+            <p>See our latest property transactions and investment milestones</p>
+        </div>
+        
+        <div class="transactions-slider">
+            <!-- Progress Bar -->
+            <div class="transactions-progress">
+                <div class="transactions-progress-fill"></div>
+            </div>
+            
+            <!-- Auto-play Indicator -->
+            <div class="auto-play-indicator">
+                <i class="fas fa-play-circle"></i>
+                <span>Auto-playing</span>
+            </div>
+            
+            <!-- Current Slide Indicator -->
+            <div class="current-slide-indicator">
+                <span class="current-transaction">1</span> of <span class="total-transactions">5</span>
+            </div>
+            
+            <!-- Transactions Pages Container -->
+            <div class="transactions-pages-container">
+                <!-- Transaction 1 -->
+                <div class="transaction-page active">
+                    <div class="transaction-content">
+                        <div class="transaction-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="transaction-title">Plot Purchase - 100×100ft</h3>
+                        <div class="transaction-amount">₦1,500,000</div>
+                        
+                        <div class="transaction-details">
+                            <div class="transaction-detail">
+                                <span class="detail-label">Client</span>
+                                <span class="detail-value">James Wilson</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value">Jan 15, 2024</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Plot 1, Elora</span>
+                            </div>
+                        </div>
+                        
+                        <p class="transaction-description">
+                            Mr. Wilson purchased a premium corner plot in Elora Gardens Estate. 
+                            Transaction completed within 48 hours with full documentation.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Transaction 2 -->
+                <div class="transaction-page">
+                    <div class="transaction-content">
+                        <div class="transaction-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="transaction-title">Plot Purchase - 50×100ft</h3>
+                        <div class="transaction-amount">₦800,000</div>
+                        
+                        <div class="transaction-details">
+                            <div class="transaction-detail">
+                                <span class="detail-label">Client</span>
+                                <span class="detail-value">Sarah Johnson</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value">Feb 28, 2024</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Plot 4, Elora</span>
+                            </div>
+                        </div>
+                        
+                        <p class="transaction-description">
+                            First-time home buyer Sarah completed her purchase with flexible payment plan. 
+                            Perfect for building her dream family home.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Transaction 3 -->
+                <div class="transaction-page">
+                    <div class="transaction-content">
+                        <div class="transaction-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="transaction-title">Bulk Purchase</h3>
+                        <div class="transaction-amount">₦4,800,000</div>
+                        
+                        <div class="transaction-details">
+                            <div class="transaction-detail">
+                                <span class="detail-label">Client</span>
+                                <span class="detail-value">Michael Chen</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value">Mar 10, 2024</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Plots</span>
+                                <span class="detail-value">3 × 100×100ft</span>
+                            </div>
+                        </div>
+                        
+                        <p class="transaction-description">
+                            Real estate developer Michael purchased multiple plots for investment portfolio. 
+                            Bulk discount applied with extended payment terms.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Transaction 4 -->
+                <div class="transaction-page">
+                    <div class="transaction-content">
+                        <div class="transaction-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="transaction-title">Family Investment</h3>
+                        <div class="transaction-amount">₦2,300,000</div>
+                        
+                        <div class="transaction-details">
+                            <div class="transaction-detail">
+                                <span class="detail-label">Client</span>
+                                <span class="detail-value">Amina Balogun</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value">Apr 5, 2024</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Plots 2 & 3</span>
+                            </div>
+                        </div>
+                        
+                        <p class="transaction-description">
+                            Family investment for generational wealth. Purchased two adjacent plots 
+                            for extended family compound development.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Transaction 5 -->
+                <div class="transaction-page">
+                    <div class="transaction-content">
+                        <div class="transaction-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="transaction-title">Corporate Purchase</h3>
+                        <div class="transaction-amount">₦3,200,000</div>
+                        
+                        <div class="transaction-details">
+                            <div class="transaction-detail">
+                                <span class="detail-label">Client</span>
+                                <span class="detail-value">David Okafor</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value">May 20, 2024</span>
+                            </div>
+                            <div class="transaction-detail">
+                                <span class="detail-label">Plots</span>
+                                <span class="detail-value">2 Commercial</span>
+                            </div>
+                        </div>
+                        
+                        <p class="transaction-description">
+                            Business owner David purchased commercial plots for office complex development. 
+                            Strategic location near main road access.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Dots -->
+            <div class="transactions-nav-container">
+                <button class="transactions-nav-btn active" data-target="1"></button>
+                <button class="transactions-nav-btn" data-target="2"></button>
+                <button class="transactions-nav-btn" data-target="3"></button>
+                <button class="transactions-nav-btn" data-target="4"></button>
+                <button class="transactions-nav-btn" data-target="5"></button>
+            </div>
+            
+            <!-- Scroll Buttons -->
+            <div class="transactions-scroll-container">
+                <button class="transactions-scroll-btn left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="transactions-scroll-btn right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
 </section>
+<!-- ===== VIDEO TESTIMONIALS SECTION ===== -->
+    <section class="video-testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Hear from our satisfied clients about their experience</p>
+            </div>
+            
+            <!-- Testimonial Intro -->
+            
+            <!-- Video Testimonial Container -->
+            <div class="video-testimonial-container">
+                <!-- Video Player -->
+                <div class="video-player-container glass">
+                    <div class="video-wrapper">
+                        <!-- YouTube embed or custom video player -->
+                        <div class="video-placeholder" id="videoPlaceholder">
+                            <div class="play-button-overlay">
+                                <div class="play-button" id="playButton">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <p>Click to play testimonial video</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Client testimonial" class="video-thumbnail">
+                        </div>
+                        <div class="youtube-embed" id="youtubeEmbed" style="display: none;">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                    title="Client Testimonial" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Controls -->
+                    <div class="video-controls">
+                        <div class="control-group">
+                            <button class="control-btn" id="playPauseBtn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn" id="muteBtn">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <div class="volume-slider-container">
+                                <input type="range" min="0" max="100" value="80" class="volume-slider" id="volumeSlider">
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Client Testimonial - Elora Gardens Estate</div>
+                            <div class="video-time">
+                                <span id="currentTime">0:00</span> / <span id="duration">3:45</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial Details -->
+                    <div class="testimonial-details">
+                       
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Working with Rina & Co. was an exceptional experience. The transparency throughout the land purchase process at Elora Gardens was remarkable. All documents were readily available and verified. Highly recommended!"</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        
+                        <div class="testimonial-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Purchased: January 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Plot: 100×100ft</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Documents Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Navigation -->
+                <div class="testimonial-navigation">
+                    <button class="nav-btn prev-btn" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </button>
+                    
+                    <div class="testimonial-counter">
+                        <span class="current-testimonial">1</span> / <span class="total-testimonials">5</span>
+                    </div>
+                    
+                    <button class="nav-btn next-btn" id="nextTestimonial">
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Testimonial Thumbnails -->
+                <div class="testimonial-thumbnails">
+                    <div class="thumbnail-item active" data-testimonial="1">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 1">
+                        <div class="thumbnail-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item" data-testimonial="2">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 2">
+                        <div class="thumbnail-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item" data-testimonial="3">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 3">
+                        <div class="thumbnail-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item" data-testimonial="4">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 4">
+                        <div class="thumbnail-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item" data-testimonial="5">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 5">
+                        <div class="thumbnail-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </div>
+    </section>
 
+    <!-- Demo Footer -->
+    
     <!-- Location & Amenities -->
     <section class="location-section" id="location">
         <div class="container">
@@ -658,7 +906,7 @@
                             </div>
                             <div class="amenity-content">
                                 <h4>Shaka Polytechnic</h4>
-                                <p>12 minute drive - Educational Institution</p>
+                                <p>15 minute drive - Educational Institution</p>
                             </div>
                         </div>
                         
@@ -668,7 +916,7 @@
                             </div>
                             <div class="amenity-content">
                                 <h4>Ramat Park</h4>
-                                <p>20 minutes drive - Recreational Park</p>
+                                <p>35 minutes drive - Bus /Transport Park</p>
                             </div>
                         </div>
                         
@@ -685,7 +933,7 @@
                     
                     <div class="location-info">
                         <h4>Location Details</h4>
-                        <p><i class="fas fa-map-pin"></i> Evboeson Community, Benin City, Edo State</p>
+                        <p><i class="fas fa-map-pin"></i> Evboeson Community,off Egba road,off Benin-Auchi Benin City, Edo State.</p>
                         <p><i class="fas fa-road"></i> Easy access via major roads</p>
                         <p><i class="fas fa-car"></i> 15 minutes from city center</p>
                     </div>
@@ -757,23 +1005,23 @@
 
     <!-- ROI Calculator -->
     <section class="calculator-section " id="calculator">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-header">
                 <h2>Investment Calculator</h2>
                 <p>Calculate your potential return on investment</p>
             </div>
             
-            <div class="calculator-container">
-                <div class="calculator-card">
-                    <div class="calculator-inputs">
+            <div class="calculator-container container">
+                <div class="calculator-card row">
+                    <div class="calculator-inputs col-md-6">
                         <h3>Calculate Your ROI</h3>
                         
-                        <div class="input-group">
+                        <div class="input-group input-dropdown">
                             <label for="plotSize">
                                 <i class="fas fa-ruler-combined"></i>
                                 Plot Size
                             </label>
-                            <select id="plotSize" class="form-select">
+                            <select id="plotSize" class="form-select ">
                                 <option value="800000">50×100ft (₦800,000)</option>
                                 <option value="1500000" selected>100×100ft (₦1,500,000)</option>
                             </select>
@@ -787,7 +1035,7 @@
                             </label>
                             <input type="range" id="appreciationRate" min="15" max="30" value="20" step="1" class="form-range">
                             <div class="range-labels">
-                                <span>15%</span>
+                                <span>15%</span> 
                                 <span>30%</span>
                             </div>
                         </div>
@@ -809,7 +1057,7 @@
                         </button>
                     </div>
                     
-                    <div class="calculator-results">
+                    <div class="calculator-results col-md-6">
                         <h3>Projected Returns</h3>
                         <div class="result-item">
                             <div class="result-label">
@@ -908,8 +1156,8 @@
                         </div>
                         <div class="contact-details">
                             <h4>Business Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 4:00 PM</p>
-                            <p>Saturday: 10:00 AM - 2:00 PM</p>
+                            <p>Monday - Friday: 10:00 AM - 4:00 PM</p>
+                            <p>Saturday: Appointments only</p>
                         </div>
                     </div>
                 </div>
@@ -942,8 +1190,8 @@
 
    
    
-      <!-- Footer -->
-   <footer class="footer">
+     <!-- Footer -->
+   <footer class="footer section-animate" >
         <div class="gold-decoration"></div>
         
         <div class="container-fluid contain-decor">
@@ -1018,7 +1266,7 @@
                 <!-- Contact Column -->
                 <div class="col-md-4 footer-column">
                     <h3>Contact Us</h3>
-                    <ul class="contact-info">
+                    <ul class="contact-info-footer">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             228, Upper Mission Rd., Opp. Nation Hospital Close To Ewah Rd,. Junction, Benin City. Edo State.
@@ -1033,7 +1281,7 @@
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            Mon-Fri: 9AM - 4PM
+                            Mon-Fri: 10AM - 4PM
                         </li>
                     </ul>
                 </div>
@@ -1045,10 +1293,10 @@
                         <h4>Subscribe to Our Newsletter</h4>
                         <p>Get the latest investment opportunities and project updates</p>
                     </div>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address" class="newsletter-input">
+                    <form class="newsletter-form" id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
+                        <input type="email" placeholder="Your email address" name= "email"  class="newsletter-input">
                         <button class="newsletter-button">Subscribe</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             </div>
@@ -1060,9 +1308,9 @@
         <div class="footer-bottom">
             <div class="footer-bottom-container">
                 <p class="copyright">
-                    &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited. All rights reserved. | Comfortability with value.
+                    &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited | Comfortability with value. All rights reserved.
                 </p>
-                
+                <!-- <p>Deigned by <a href="#"></a></p> -->
             </div>
         </div>
     </footer>
@@ -1078,8 +1326,9 @@
     
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <script src="./js folder/index.js"></script>
     <script src="./js folder/estate.js"></script>
+    
 </body>
 </html>
