@@ -918,7 +918,7 @@ playButton.onclick = function(){
                 }
             }
         });
-
+// 
 
     // toggle for buttons
     // Mobile Toggle Buttons Functionality
@@ -1023,3 +1023,4 @@ function initMobileToggle() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initMobileToggle);
+

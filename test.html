@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Gallery - Complete Solution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+       /* ===== RESET & BASE ===== */
+/* ===== VIDEO TESTIMONIALS SECTION ===== */
+
+.video-testimonials-section {
+    padding: var(--space-xxl) 0;
+    background: var(--bg-gray);
+    position: relative;
+}
+
+.testimonial-intro {
+    background: var(--bg-light);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.company-brand {
+    text-align: center;
+}
+
+.company-brand h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+    font-family: 'Playfair Display', serif;
+}
+
+.brand-highlight {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.brand-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    position: relative;
+    padding: var(--space-md) 0;
+}
+
+.brand-subtitle::before,
+.brand-subtitle::after {
+    content: '"';
+    color: var(--secondary-color);
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.testimonial-highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(223, 180, 41, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(223, 180, 41, 0.2);
+}
+
+.highlight-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.highlight-item h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.highlight-item p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Video Container */
+.video-testimonial-container {
+    margin-bottom: var(--space-xl);
+}
+
+.video-player-container {
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 2;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background: var(--gold-light);
+    color: var(--primary-color);
+}
+
+.play-button-overlay p {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.youtube-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Video Controls */
+.video-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.volume-slider-container {
+    width: 100px;
+}
+
+.volume-slider {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    border: none;
+}
+
+.video-info {
+    text-align: right;
+}
+
+.video-title {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+.video-time {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Testimonial Details */
+.testimonial-details {
+    padding: var(--space-xl);
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.client-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.client-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-details h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.client-title {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
+}
+
+.client-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.client-rating i {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.client-rating span {
+    margin-left: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.testimonial-quote {
+    position: relative;
+    padding: 0 var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.testimonial-quote i.fa-quote-left {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-size: 2rem;
+    color: rgba(223, 180, 41, 0.2);
+}
+
+.testimonial-quote i.fa-quote-right {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 2rem;
+    color: rgba(223, 180, 41, 0.2);
+}
+
+.testimonial-quote p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+.testimonial-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.meta-item i {
+    color: var(--secondary-color);
+}
+
+/* Testimonial Navigation */
+.testimonial-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding: 0 var(--space-md);
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.nav-btn:hover {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-btn i {
+    font-size: 0.9rem;
+}
+
+.prev-btn i {
+    margin-right: 4px;
+}
+
+.next-btn i {
+    margin-left: 4px;
+}
+
+.testimonial-counter {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.current-testimonial {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+/* Testimonial Thumbnails */
+.testimonial-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.thumbnail-item {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.thumbnail-item.active {
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.thumbnail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-item:hover .thumbnail-overlay,
+.thumbnail-item.active .thumbnail-overlay {
+    opacity: 1;
+}
+
+/* Testimonial Stats */
+.testimonial-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .testimonial-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .testimonial-intro {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .company-brand {
+        text-align: left;
+        flex: 1;
+    }
+    
+    .testimonial-highlights {
+        justify-content: flex-end;
+    }
+}
+
+.stat-item {
+    padding: var(--space-lg);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* ===== DARK THEME ADJUSTMENTS ===== */
+body.dark-theme .video-testimonials-section {
+    background: var(--bg-light);
+}
+
+body.dark-theme .testimonial-intro,
+body.dark-theme .video-player-container,
+body.dark-theme .testimonial-stats {
+    background: var(--bg-gray);
+    border-color: var(--border-color);
+}
+
+body.dark-theme .company-brand h3 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .brand-subtitle {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .highlight-item {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+body.dark-theme .client-details h4 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .nav-btn {
+    background: var(--bg-gray);
+    border-color: var(--border-color);
+}
+
+body.dark-theme .nav-btn:hover {
+    border-color: var(--secondary-color);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+body.dark-theme .testimonial-quote p {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .client-rating span {
+    color: var(--text-primary);
+}
+
+body.dark-theme .thumbnail-item.active {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .video-wrapper {
+        height: 400px;
+    }
+    
+    .testimonial-details {
+        padding: var(--space-lg);
+    }
+    
+    .client-info {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+    
+    .testimonial-meta {
+        gap: var(--space-lg);
+    }
+    
+    .meta-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-xs);
+    }
+    
+    .testimonial-thumbnails {
+        gap: var(--space-sm);
+    }
+    
+    .thumbnail-item {
+        width: 100px;
+        height: 70px;
+    }
+    
+    .video-controls {
+        flex-direction: column;
+        gap: var(--space-md);
+        padding: var(--space-md);
+    }
+    
+    .control-group {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .video-info {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-wrapper {
+        height: 300px;
+    }
+    
+    .testimonial-intro {
+        padding: var(--space-lg);
+    }
+    
+    .company-brand h3 {
+        font-size: 1.5rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+    
+    .testimonial-quote {
+        padding: 0 var(--space-md);
+    }
+    
+    .testimonial-quote p {
+        font-size: 1rem;
+    }
+    
+    .testimonial-navigation {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+    </style>
+</head>
+<body>
+  <!-- ===== VIDEO TESTIMONIALS SECTION ===== -->
+<section class="video-testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Client Testimonials</h2>
+            <p>Hear from our satisfied clients about their experience</p>
+        </div>
+        
+        <!-- Testimonial Intro -->
+        <div class="testimonial-intro glass">
+            <div class="company-brand">
+                <h3><span class="brand-highlight">RINA & CO.</span> CONSULTS LTD.</h3>
+                <div class="brand-subtitle">"The highlight shows that the whole journey is well documented, C of O, Root title and Deed of transfer are readily available. At Rina and co. consults ltd we prioritize transparency."</div>
+            </div>
+            
+            <div class="testimonial-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-home"></i>
+                    <div>
+                        <h4>Land purchase</h4>
+                        <p>Estate: Elora Gardens</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video Testimonial Container -->
+        <div class="video-testimonial-container">
+            <!-- Video Player -->
+            <div class="video-player-container glass">
+                <div class="video-wrapper">
+                    <!-- YouTube embed or custom video player -->
+                    <div class="video-placeholder" id="videoPlaceholder">
+                        <div class="play-button-overlay">
+                            <div class="play-button" id="playButton">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p>Click to play testimonial video</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Client testimonial" class="video-thumbnail">
+                    </div>
+                    <div class="youtube-embed" id="youtubeEmbed" style="display: none;">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                title="Client Testimonial" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Video Controls -->
+                <div class="video-controls">
+                    <div class="control-group">
+                        <button class="control-btn" id="playPauseBtn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="control-btn" id="muteBtn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <div class="volume-slider-container">
+                            <input type="range" min="0" max="100" value="80" class="volume-slider" id="volumeSlider">
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Client Testimonial - Elora Gardens Estate</div>
+                        <div class="video-time">
+                            <span id="currentTime">0:00</span> / <span id="duration">3:45</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Details -->
+                <div class="testimonial-details">
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client">
+                        </div>
+                        <div class="client-details">
+                            <h4>James Wilson</h4>
+                            <p class="client-title">Property Investor</p>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.8/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Working with Rina & Co. was an exceptional experience. The transparency throughout the land purchase process at Elora Gardens was remarkable. All documents were readily available and verified. Highly recommended!"</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    
+                    <div class="testimonial-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Purchased: January 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot: 100×100ft</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Documents Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial Navigation -->
+            <div class="testimonial-navigation">
+                <button class="nav-btn prev-btn" id="prevTestimonial">
+                    <i class="fas fa-chevron-left"></i>
+                    Previous
+                </button>
+                
+                <div class="testimonial-counter">
+                    <span class="current-testimonial">1</span> / <span class="total-testimonials">5</span>
+                </div>
+                
+                <button class="nav-btn next-btn" id="nextTestimonial">
+                    Next
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Testimonial Thumbnails -->
+            <div class="testimonial-thumbnails">
+                <div class="thumbnail-item active" data-testimonial="1">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 1">
+                    <div class="thumbnail-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="thumbnail-item" data-testimonial="2">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 2">
+                    <div class="thumbnail-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="thumbnail-item" data-testimonial="3">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 3">
+                    <div class="thumbnail-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="thumbnail-item" data-testimonial="4">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 4">
+                    <div class="thumbnail-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                <div class="thumbnail-item" data-testimonial="5">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Testimonial 5">
+                    <div class="thumbnail-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonial Stats -->
+        <div class="testimonial-stats glass">
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Document Transparency</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.9/5</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">48</div>
+                <div class="stat-label">Properties Sold</div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- JavaScript -->
+    <script>
+     // ===== VIDEO TESTIMONIALS FUNCTIONALITY =====
+function initVideoTestimonials() {
+    console.log('🎬 Initializing video testimonials...');
+    
+    const videoPlaceholder = document.getElementById('videoPlaceholder');
+    const youtubeEmbed = document.getElementById('youtubeEmbed');
+    const playButton = document.getElementById('playButton');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const muteBtn = document.getElementById('muteBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    const thumbnailItems = document.querySelectorAll('.thumbnail-item');
+    const currentTestimonialSpan = document.querySelector('.current-testimonial');
+    const totalTestimonialsSpan = document.querySelector('.total-testimonials');
+    
+    // Testimonial data
+    const testimonials = [
+        {
+            id: 1,
+            name: "James Wilson",
+            title: "Property Investor",
+            rating: 4.8,
+            quote: "Working with Rina & Co. was an exceptional experience. The transparency throughout the land purchase process at Elora Gardens was remarkable. All documents were readily available and verified. Highly recommended!",
+            date: "January 2024",
+            plot: "100×100ft",
+            youtubeId: "dQw4w9WgXcQ",
+            thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 2,
+            name: "Sarah Johnson",
+            title: "First-time Home Buyer",
+            rating: 5.0,
+            quote: "As a first-time buyer, I was nervous about the process. Rina & Co. guided me through every step. The document verification gave me complete peace of mind. Truly professional service!",
+            date: "March 2024",
+            plot: "50×100ft",
+            youtubeId: "L_jWHffIx5E",
+            thumbnail: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 3,
+            name: "Michael Chen",
+            title: "Real Estate Developer",
+            rating: 4.9,
+            quote: "I've purchased multiple plots through Rina & Co. Their attention to detail and commitment to transparency is unmatched. The C of O and other documents were flawless.",
+            date: "December 2023",
+            plot: "Multiple Plots",
+            youtubeId: "9bZkp7q19f0",
+            thumbnail: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 4,
+            name: "Amina Balogun",
+            title: "Family Investor",
+            rating: 4.7,
+            quote: "Purchasing land for our family home was made easy by Rina & Co. The deed of transfer process was smooth, and they answered all our questions promptly. Excellent service!",
+            date: "February 2024",
+            plot: "100×100ft",
+            youtubeId: "CduA0TULnow",
+            thumbnail: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        },
+        {
+            id: 5,
+            name: "David Okafor",
+            title: "Business Owner",
+            rating: 4.8,
+            quote: "The root title verification gave me confidence in my investment. Rina & Co.'s professionalism and transparency are why I recommend them to all my business partners.",
+            date: "November 2023",
+            plot: "Commercial Plot",
+            youtubeId: "JGwWNGJdvx8",
+            thumbnail: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+        }
+    ];
+    
+    let currentTestimonial = 1;
+    let isPlaying = false;
+    
+    // Update total testimonials count
+    if (totalTestimonialsSpan) {
+        totalTestimonialsSpan.textContent = testimonials.length;
+    }
+    
+    // Load testimonial data
+    function loadTestimonial(testimonialId) {
+        const testimonial = testimonials.find(t => t.id === testimonialId);
+        if (!testimonial) return;
+        
+        // Update UI
+        document.querySelector('.client-details h4').textContent = testimonial.name;
+        document.querySelector('.client-title').textContent = testimonial.title;
+        document.querySelector('.testimonial-quote p').textContent = testimonial.quote;
+        document.querySelector('.meta-item:nth-child(1) span').textContent = `Purchased: ${testimonial.date}`;
+        document.querySelector('.meta-item:nth-child(2) span').textContent = `Plot: ${testimonial.plot}`;
+        document.querySelector('.client-avatar img').src = testimonial.avatar;
+        document.querySelector('.video-thumbnail').src = testimonial.thumbnail;
+        
+        // Update rating stars
+        updateRatingStars(testimonial.rating);
+        
+        // Update YouTube embed
+        const iframe = youtubeEmbed.querySelector('iframe');
+        iframe.src = `https://www.youtube.com/embed/${testimonial.youtubeId}?autoplay=0`;
+        
+        // Update current testimonial indicator
+        if (currentTestimonialSpan) {
+            currentTestimonialSpan.textContent = testimonialId;
+        }
+        
+        // Update active thumbnail
+        thumbnailItems.forEach(item => {
+            item.classList.remove('active');
+            if (parseInt(item.dataset.testimonial) === testimonialId) {
+                item.classList.add('active');
+            }
+        });
+        
+        // Reset video state
+        resetVideo();
+    }
+    
+    // Update rating stars
+    function updateRatingStars(rating) {
+        const starsContainer = document.querySelector('.client-rating');
+        let starsHTML = '';
+        
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+        
+        for (let i = 1; i <= 5; i++) {
+            if (i <= fullStars) {
+                starsHTML += '<i class="fas fa-star"></i>';
+            } else if (i === fullStars + 1 && hasHalfStar) {
+                starsHTML += '<i class="fas fa-star-half-alt"></i>';
+            } else {
+                starsHTML += '<i class="far fa-star"></i>';
+            }
+        }
+        
+        starsHTML += `<span>${rating}/5</span>`;
+        starsContainer.innerHTML = starsHTML;
+    }
+    
+    // Play video
+    function playVideo() {
+        videoPlaceholder.style.display = 'none';
+        youtubeEmbed.style.display = 'block';
+        isPlaying = true;
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        
+        // Simulate playing state for demo
+        simulateVideoPlayback();
+    }
+    
+    // Pause video
+    function pauseVideo() {
+        isPlaying = false;
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+    
+    // Reset video to initial state
+    function resetVideo() {
+        videoPlaceholder.style.display = 'block';
+        youtubeEmbed.style.display = 'none';
+        isPlaying = false;
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+    
+    // Simulate video playback (for demo purposes)
+    function simulateVideoPlayback() {
+        const currentTimeSpan = document.getElementById('currentTime');
+        const durationSpan = document.getElementById('duration');
+        
+        // Set random duration between 2-5 minutes
+        const totalSeconds = Math.floor(Math.random() * 180) + 120;
+        const durationMinutes = Math.floor(totalSeconds / 60);
+        const durationSeconds = totalSeconds % 60;
+        
+        durationSpan.textContent = `${durationMinutes}:${durationSeconds.toString().padStart(2, '0')}`;
+        
+        if (isPlaying) {
+            let currentSeconds = 0;
+            const interval = setInterval(() => {
+                if (!isPlaying) {
+                    clearInterval(interval);
+                    return;
+                }
+                
+                currentSeconds++;
+                if (currentSeconds > totalSeconds) {
+                    clearInterval(interval);
+                    resetVideo();
+                    return;
+                }
+                
+                const minutes = Math.floor(currentSeconds / 60);
+                const seconds = currentSeconds % 60;
+                currentTimeSpan.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+    }
+    
+    // Event Listeners
+    if (playButton) {
+        playButton.addEventListener('click', playVideo);
+    }
+    
+    if (videoPlaceholder) {
+        videoPlaceholder.addEventListener('click', playVideo);
+    }
+    
+    if (playPauseBtn) {
+        playPauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                pauseVideo();
+            } else {
+                playVideo();
+            }
+        });
+    }
+    
+    if (muteBtn) {
+        muteBtn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-volume-up')) {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+                volumeSlider.value = 0;
+            } else {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+                volumeSlider.value = 80;
+            }
+        });
+    }
+    
+    if (volumeSlider) {
+        volumeSlider.addEventListener('input', function() {
+            const volume = this.value;
+            const icon = muteBtn.querySelector('i');
+            
+            if (volume == 0) {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            } else {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            }
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            currentTestimonial = currentTestimonial > 1 ? currentTestimonial - 1 : testimonials.length;
+            loadTestimonial(currentTestimonial);
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            currentTestimonial = currentTestimonial < testimonials.length ? currentTestimonial + 1 : 1;
+            loadTestimonial(currentTestimonial);
+        });
+    }
+    
+    // Thumbnail click events
+    thumbnailItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const testimonialId = parseInt(this.dataset.testimonial);
+            currentTestimonial = testimonialId;
+            loadTestimonial(testimonialId);
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            currentTestimonial = currentTestimonial > 1 ? currentTestimonial - 1 : testimonials.length;
+            loadTestimonial(currentTestimonial);
+        } else if (e.key === 'ArrowRight') {
+            currentTestimonial = currentTestimonial < testimonials.length ? currentTestimonial + 1 : 1;
+            loadTestimonial(currentTestimonial);
+        } else if (e.key === ' ') {
+            e.preventDefault();
+            if (isPlaying) {
+                pauseVideo();
+            } else {
+                playVideo();
+            }
+        }
+    });
+    
+    // Initialize first testimonial
+    loadTestimonial(currentTestimonial);
+    
+    console.log('✅ Video testimonials initialized');
+}
+    </script>
+</body>

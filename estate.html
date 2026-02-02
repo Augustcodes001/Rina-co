@@ -804,24 +804,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Testimonial Navigation -->
-                <div class="testimonial-navigation">
-                    <button class="nav-btn prev-btn" id="prevTestimonial">
-                        <i class="fas fa-chevron-left"></i>
-                        Previous
-                    </button>
-                    
-                    <div class="testimonial-counter">
-                        <span class="current-testimonial">1</span> / <span class="total-testimonials">5</span>
-                    </div>
-                    
-                    <button class="nav-btn next-btn" id="nextTestimonial">
-                        Next
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
                 <!-- Testimonial Thumbnails -->
                 <div class="testimonial-thumbnails">
                     <div class="thumbnail-item active" data-testimonial="1">
@@ -855,6 +837,24 @@
                         </div>
                     </div>
                 </div>
+                <!-- Testimonial Navigation -->
+                <div class="testimonial-navigation">
+                    <button class="nav-btn prev-btn" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </button>
+                    
+                    <div class="testimonial-counter">
+                        <span class="current-testimonial">1</span> / <span class="total-testimonials">5</span>
+                    </div>
+                    
+                    <button class="nav-btn next-btn" id="nextTestimonial">
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                
             </div>
             
           
@@ -864,83 +864,175 @@
     <!-- Demo Footer -->
     
     <!-- Location & Amenities -->
-    <section class="location-section" id="location">
-        <div class="container">
-            <div class="section-header">
-                <h2>Location & Amenities</h2>
-                <p>Prime location with access to essential services and infrastructure</p>
+   <!-- Location Section -->
+<section class="location-section" id="location">
+    <div class="container">
+        <div class="section-header">
+            <h2>Location & Amenities</h2>
+            <p>Prime location with access to essential services and infrastructure</p>
+        </div>
+        
+        <div class="location-grid">
+            <!-- Map Container -->
+            <div class="map-container">
+                <div id="map"></div>
+                
+                <!-- Map Controls -->
+                <div class="map-controls">
+                    <button class="map-control zoom-in" aria-label="Zoom in">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button class="map-control zoom-out" aria-label="Zoom out">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="map-control reset" aria-label="Reset to estate view">
+                        <i class="fas fa-crosshairs"></i>
+                    </button>
+                </div>
             </div>
             
-            <div class="location-grid">
-                <div class="map-container">
-                    <div id="map"></div>
-                    <div class="map-controls">
-                        <button class="map-control zoom-in">
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <button class="map-control zoom-out">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button class="map-control reset">
-                            <i class="fas fa-crosshairs"></i>
+            <!-- Map Legend Container -->
+            <div class="map-legend-container">
+                <div class="map-legend">
+                    <div class="map-legend-header">
+                        <h3><i class="fas fa-map-signs"></i> Map Legend</h3>
+                        <button class="legend-toggle" aria-label="Toggle legend">
+                            <i class="fas fa-chevron-up"></i>
                         </button>
                     </div>
+                    
+                    <div class="legend-content">
+                        <!-- Location Types -->
+                        <div class="legend-section">
+                            <h4>Location Types</h4>
+                            <div class="legend-items">
+                                <div class="legend-item">
+                                    <span class="legend-icon estate">
+                                        <i class="fas fa-home"></i>
+                                    </span>
+                                    <span class="legend-text">Elora Gardens Estate</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon building">
+                                        <i class="fas fa-building"></i>
+                                    </span>
+                                    <span class="legend-text">Businesses</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon school">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </span>
+                                    <span class="legend-text">Educational</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon transport">
+                                        <i class="fas fa-umbrella"></i>
+                                    </span>
+                                    <span class="legend-text">Transport</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon market">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                    <span class="legend-text">Markets</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Driving Times -->
+                        <div class="legend-section">
+                            <h4>Driving Times from Estate</h4>
+                            <div class="legend-items">
+                                <div class="legend-item">
+                                    <span class="legend-icon building">
+                                        <i class="fas fa-building"></i>
+                                    </span>
+                                    <span class="legend-text">Macadams Publishers</span>
+                                    <span class="legend-time">5 min</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon school">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </span>
+                                    <span class="legend-text">Shaka Polytechnic</span>
+                                    <span class="legend-time">15 min</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon transport">
+                                        <i class="fas fa-umbrella"></i>
+                                    </span>
+                                    <span class="legend-text">Ramat Park</span>
+                                    <span class="legend-time">35 min</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-icon market">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                    <span class="legend-text">Evboesi Market</span>
+                                    <span class="legend-time">1 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="amenities-container">
-                    <h3>Nearby Amenities</h3>
-                    <div class="amenities-list">
-                        <div class="amenity-item">
-                            <div class="amenity-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="amenity-content">
-                                <h4>Macadams Publishers Limited</h4>
-                                <p>5 minutes drive - Major Publishing Company in Benin</p>
-                            </div>
+            </div>
+            
+            <!-- Amenities Container -->
+            <div class="amenities-container">
+                <h3>Nearby Landmarks</h3>
+                <div class="amenities-list">
+                    <div class="amenity-item" data-marker="macadams">
+                        <div class="amenity-icon">
+                            <i class="fas fa-building"></i>
                         </div>
-                        
-                        <div class="amenity-item">
-                            <div class="amenity-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="amenity-content">
-                                <h4>Shaka Polytechnic</h4>
-                                <p>15 minute drive - Educational Institution</p>
-                            </div>
-                        </div>
-                        
-                        <div class="amenity-item">
-                            <div class="amenity-icon">
-                                <i class="fas fa-umbrella"></i>
-                            </div>
-                            <div class="amenity-content">
-                                <h4>Ramat Park</h4>
-                                <p>35 minutes drive - Bus /Transport Park</p>
-                            </div>
-                        </div>
-                        
-                        <div class="amenity-item">
-                            <div class="amenity-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="amenity-content">
-                                <h4>Evboesi Mini-Market</h4>
-                                <p>1 minute drive - Local market for daily needs</p>
-                            </div>
+                        <div class="amenity-content">
+                            <h4>Macadams Publishers Limited</h4>
+                            <p>5 minutes drive - Major Publishing Company in Benin</p>
                         </div>
                     </div>
                     
-                    <div class="location-info">
-                        <h4>Location Details</h4>
-                        <p><i class="fas fa-map-pin"></i> Evboeson Community,off Egba road,off Benin-Auchi Benin City, Edo State.</p>
-                        <p><i class="fas fa-road"></i> Easy access via major roads</p>
-                        <p><i class="fas fa-car"></i> 15 minutes from city center</p>
+                    <div class="amenity-item" data-marker="shaka">
+                        <div class="amenity-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Shaka Polytechnic</h4>
+                            <p>15 minute drive - Educational Institution</p>
+                        </div>
                     </div>
+                    
+                    <div class="amenity-item" data-marker="ramat">
+                        <div class="amenity-icon">
+                            <i class="fas fa-umbrella"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Ramat Park</h4>
+                            <p>35 minutes drive - Bus & Transport Park</p>
+                        </div>
+                    </div>
+                    
+                    <div class="amenity-item" data-marker="market">
+                        <div class="amenity-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Evboesi Mini-Market</h4>
+                            <p>1 minute drive - Local market for daily needs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-info">
+                    <h4><i class="fas fa-map-marker-alt"></i> Location Details</h4>
+                    <p><i class="fas fa-map-pin"></i> Evboeson Community, Off Egba Road, Off Benin-Auchi Road, Benin City, Edo State.</p>
+                    <p><i class="fas fa-road"></i> Easy access via major roads</p>
+                    <p><i class="fas fa-car"></i> 15 minutes from city center</p>
+                    <p><i class="fas fa-shield-alt"></i> Secure, gated community</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Payment Plans -->
     <section class="payment-plans-section" id="payment">
@@ -1033,10 +1125,10 @@
                                 Annual Appreciation Rate
                                 <span id="rateValue" class="rate-value">20%</span>
                             </label>
-                            <input type="range" id="appreciationRate" min="15" max="30" value="20" step="1" class="form-range">
+                            <input type="range" id="appreciationRate" min="15" max="35" value="20" step="1" class="form-range">
                             <div class="range-labels">
-                                <span>15%</span> 
-                                <span>30%</span>
+                                <span>15%</span>  -
+                                <span>35%</span>
                             </div>
                         </div>
                         
@@ -1047,14 +1139,14 @@
                             </label>
                             <select id="investmentPeriod" class="form-select">
                                 <option value="3">3 Years</option>
-                                <option value="5" selected>5 Years</option>
-                                <option value="10">10 Years</option>
+                                <option value="4" selected>4 Years</option>
+                                <option value="5">5 Years</option>
                             </select>
                         </div>
                         
-                        <button id="calculateBtn" class="btn btn-primary btn-block">
+                        <a  href="#calculatedresults"     id="calculateBtn" class="btn btn-primary btn-block">
                             <i class="fas fa-calculator"></i> Calculate ROI
-                        </button>
+                        </a>
                     </div>
                     
                     <div class="calculator-results col-md-6">
@@ -1075,7 +1167,7 @@
                             <div class="result-value" id="projectedValue">₦3,732,000</div>
                         </div>
                         
-                        <div class="result-item">
+                        <div class="result-item"  id="calculatedresults">
                             <div class="result-label">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <span>Total Profit</span>
@@ -1158,6 +1250,7 @@
                             <h4>Business Hours</h4>
                             <p>Monday - Friday: 10:00 AM - 4:00 PM</p>
                             <p>Saturday: Appointments only</p>
+                             <p>Sunday: Closed</p>
                         </div>
                     </div>
                 </div>

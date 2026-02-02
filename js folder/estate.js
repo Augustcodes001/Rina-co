@@ -276,23 +276,72 @@ function setupEventListeners() {
     }
     
     // Map controls
-    document.querySelector('.zoom-in')?.addEventListener('click', () => {
-        if (window.estateMap) window.estateMap.zoomIn();
-    });
+   
     
-    document.querySelector('.zoom-out')?.addEventListener('click', () => {
-        if (window.estateMap) window.estateMap.zoomOut();
-    });
     
-    document.querySelector('.reset')?.addEventListener('click', () => {
-        if (window.estateMap) window.estateMap.setView([6.333, 5.622], 15);
-    });
+}
+function setupDarkModeMapStyles() {
+    const styleId = 'dark-mode-map-styles';
+    
+    // Remove existing style if it exists
+    const existingStyle = document.getElementById(styleId);
+    if (existingStyle) existingStyle.remove();
+    
+    // Create new style for dark mode
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.textContent = `
+        .dark-theme .leaflet-popup-content-wrapper {
+            background-color: #1a1a1a !important;
+            color: #f0f0f0 !important;
+            border: 1px solid #333 !important;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4) !important;
+        }
+        
+        .dark-theme .leaflet-popup-tip {
+            background-color: #1a1a1a !important;
+        }
+        
+        .dark-theme .map-popup {
+            color: #f0f0f0 !important;
+        }
+        
+        .dark-theme .map-popup h4 {
+            color: #ffd700 !important;
+        }
+        
+        .dark-theme .map-popup hr {
+            border-color: #333 !important;
+            opacity: 0.3;
+        }
+        
+        .dark-theme .leaflet-container a.leaflet-popup-close-button {
+            color: #f0f0f0 !important;
+        }
+        
+        .dark-theme .leaflet-container a.leaflet-popup-close-button:hover {
+            color: #ffd700 !important;
+        }
+        
+        /* Also fix map tiles for dark mode */
+        .dark-theme .leaflet-tile {
+            filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+        }
+    `;
+    
+    document.head.appendChild(style);
 }
 
+// ===== MAP VARIABLES (Global scope) =====
+let estateMap = null;
+let markers = [];
+let routes = [];
+
+// ===== MAP FUNCTIONS (Global scope) =====
 function initMap() {
     console.log('Initializing map...');
+     setupDarkModeMapStyles();
     const mapElement = document.getElementById('map');
-    
     if (!mapElement) {
         console.warn('Map element not found');
         return;
@@ -300,40 +349,429 @@ function initMap() {
     
     if (typeof L === 'undefined') {
         console.warn('Leaflet library not loaded');
+        showMapError();
         return;
     }
     
     try {
+        // Center coordinates for Evboeson Community
+        const estateCoords = [6.339879, 5.652190];
+        
         // Initialize map
-        window.estateMap = L.map('map').setView([6.333, 5.622], 15);
+        estateMap = L.map('map', {
+            zoomControl: false,          // Disable default zoom control
+            attributionControl: false,
+            scrollWheelZoom: true,
+            touchZoom: true,
+            doubleClickZoom: true,
+            boxZoom: true,
+            keyboard: true,
+            dragging: true,
+            attributionControl: true,
+            fadeAnimation: true,
+            zoomAnimation: true,
+            markerZoomAnimation: true
+        }).setView(estateCoords, 15);
         
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
-        }).addTo(window.estateMap);
+            attribution: '',
+            maxZoom: 19,
+            detectRetina: true
+        }).addTo(estateMap);
         
-        // Estate location marker
-        const estateIcon = L.divIcon({
-            className: 'custom-marker estate-marker',
-            html: '<div><i class="fas fa-home"></i></div>',
-            iconSize: [50, 50],
-            iconAnchor: [25, 50]
-        });
+        // ===== CUSTOM ICONS =====
+        const icons = {
+            estate: L.divIcon({
+                className: 'custom-marker estate-marker',
+                html: '<div><i class="fas fa-home"></i></div>',
+                iconSize: [60, 60],
+                iconAnchor: [30, 60],
+                popupAnchor: [0, -60]
+            }),
+            building: L.divIcon({
+                className: 'custom-marker building-marker',
+                html: '<div><i class="fas fa-building"></i></div>',
+                iconSize: [45, 45],
+                iconAnchor: [22, 45],
+                popupAnchor: [0, -45]
+            }),
+            school: L.divIcon({
+                className: 'custom-marker school-marker',
+                html: '<div><i class="fas fa-graduation-cap"></i></div>',
+                iconSize: [45, 45],
+                iconAnchor: [22, 45],
+                popupAnchor: [0, -45]
+            }),
+            park: L.divIcon({
+                className: 'custom-marker park-marker',
+                html: '<div><i class="fas fa-umbrella"></i></div>',
+                iconSize: [45, 45],
+                iconAnchor: [22, 45],
+                popupAnchor: [0, -45]
+            }),
+            market: L.divIcon({
+                className: 'custom-marker market-marker',
+                html: '<div><i class="fas fa-shopping-cart"></i></div>',
+                iconSize: [45, 45],
+                iconAnchor: [22, 45],
+                popupAnchor: [0, -45]
+            })
+        };
         
-        const estateMarker = L.marker([6.333, 5.622], { icon: estateIcon }).addTo(window.estateMap);
+        // ===== CREATE MARKERS =====
+        
+        // Main Estate Marker
+        const estateMarker = L.marker([6.339879, 5.652190], {
+            icon: icons.estate,
+            title: 'Elora Gardens Estate'
+        }).addTo(estateMap);
+        
+        markers.push(estateMarker);
+        
         estateMarker.bindPopup(`
             <div class="map-popup">
-                <h4>Elora Gardens Estate</h4>
-                <p>Premium residential community in Evboeson</p>
-                <p><i class="fas fa-map-marker-alt"></i> Evboeson Community, Benin City</p>
+                <h4><i class="fas fa-home"></i> Elora Gardens Estate</h4>
+                <p><strong>Premium Residential Community</strong></p>
+                <p><i class="fas fa-map-marker-alt"></i> Evboeson Community</p>
+                <p><i class="fas fa-road"></i> Off Egba Road, Benin-Auchi Road</p>
+                <p><i class="fas fa-car"></i> 15 minutes from Benin City center</p>
+                <hr>
+                <small>Premium living with modern amenities</small>
             </div>
         `);
         
-        console.log('Map initialized successfully');
+        // Macadams Publishers (Southwest)
+        const macadamsMarker = L.marker([6.3388, 5.6515], {
+            icon: icons.building,
+            title: 'Macadams Publishers Limited'
+        }).addTo(estateMap);
+        
+        markers.push(macadamsMarker);
+        
+        macadamsMarker.bindPopup(`
+            <div class="map-popup">
+                <h4><i class="fas fa-building"></i> Macadams Publishers Limited</h4>
+                <p><i class="fas fa-clock"></i> <strong>5 minutes drive</strong></p>
+                <p><i class="fas fa-industry"></i> Major Publishing Company</p>
+                <p><i class="fas fa-briefcase"></i> Business opportunities nearby</p>
+                <hr>
+                <small>Established publishing company in Benin</small>
+            </div>
+        `);
+        
+        // Shaka Polytechnic (Northeast)
+        const shakaMarker = L.marker([6.3415, 5.6545], {
+            icon: icons.school,
+            title: 'Shaka Polytechnic'
+        }).addTo(estateMap);
+        
+        markers.push(shakaMarker);
+        
+        shakaMarker.bindPopup(`
+            <div class="map-popup">
+                <h4><i class="fas fa-graduation-cap"></i> Shaka Polytechnic</h4>
+                <p><i class="fas fa-clock"></i> <strong>15 minutes drive</strong></p>
+                <p><i class="fas fa-road"></i> Accessible via main road</p>
+                <p><i class="fas fa-graduation-cap"></i> Technical education institution</p>
+                <hr>
+                <small>Quality technical education nearby</small>
+            </div>
+        `);
+        
+        // Ramat Park (Southeast)
+        const ramatMarker = L.marker([6.3380, 5.6555], {
+            icon: icons.park,
+            title: 'Ramat Park'
+        }).addTo(estateMap);
+        
+        markers.push(ramatMarker);
+        
+        ramatMarker.bindPopup(`
+            <div class="map-popup">
+                <h4><i class="fas fa-umbrella"></i> Ramat Park</h4>
+                <p><i class="fas fa-clock"></i> <strong>35 minutes drive</strong> (traffic)</p>
+                <p><i class="fas fa-bus"></i> Main transportation hub</p>
+                <p><i class="fas fa-map-signs"></i> Multiple bus routes available</p>
+                <hr>
+                <small>Best visited during off-peak hours</small>
+            </div>
+        `);
+        
+        // Evboesi Market (Northwest)
+        const marketMarker = L.marker([6.3408, 5.6510], {
+            icon: icons.market,
+            title: 'Evboesi Mini-Market'
+        }).addTo(estateMap);
+        
+        markers.push(marketMarker);
+        
+        marketMarker.bindPopup(`
+            <div class="map-popup">
+                <h4><i class="fas fa-shopping-cart"></i> Evboesi Mini-Market</h4>
+                <p><i class="fas fa-clock"></i> <strong>1 minute drive / 5 min walk</strong></p>
+                <p><i class="fas fa-utensils"></i> Fresh produce & daily essentials</p>
+                <p><i class="fas fa-walking"></i> Walking distance from estate</p>
+                <hr>
+                <small>Convenient for daily shopping needs</small>
+            </div>
+        `);
+        
+        // ===== CREATE DRIVING ROUTES =====
+        
+        // To Macadams (Yellow route - 5 min)
+        const routeToMacadams = L.polyline([
+            [6.339879, 5.652190],
+            [6.3392, 5.6518],
+            [6.3388, 5.6515]
+        ], {
+            color: '#f39c12',
+            weight: 4,
+            opacity: 0.7,
+            dashArray: '10, 10',
+            className: 'driving-route'
+        }).addTo(estateMap);
+        
+        routes.push(routeToMacadams);
+        
+        // To Shaka (Blue route - 15 min)
+        const routeToShaka = L.polyline([
+            [6.339879, 5.652190],
+            [6.3405, 5.6532],
+            [6.3415, 5.6545]
+        ], {
+            color: '#3498db',
+            weight: 4,
+            opacity: 0.7,
+            dashArray: '15, 10',
+            className: 'driving-route'
+        }).addTo(estateMap);
+        
+        routes.push(routeToShaka);
+        
+        // To Ramat (Red route - 35 min)
+        const routeToRamat = L.polyline([
+            [6.339879, 5.652190],
+            [6.3390, 5.6535],
+            [6.3380, 5.6555]
+        ], {
+            color: '#e74c3c',
+            weight: 4,
+            opacity: 0.7,
+            dashArray: '20, 15',
+            className: 'driving-route'
+        }).addTo(estateMap);
+        
+        routes.push(routeToRamat);
+        
+        // To Market (Green route - 1 min)
+        const routeToMarket = L.polyline([
+            [6.339879, 5.652190],
+            [6.3402, 5.6518],
+            [6.3408, 5.6510]
+        ], {
+            color: '#2ecc71',
+            weight: 4,
+            opacity: 0.7,
+            dashArray: '5, 5',
+            className: 'driving-route'
+        }).addTo(estateMap);
+        
+        routes.push(routeToMarket);
+        
+        // ===== SETUP CONTROLS =====
+        
+        // Add zoom control
+        L.control.zoom({
+            position: 'topleft'
+        }).addTo(estateMap);
+        
+        // Fit bounds to show all markers
+        const bounds = L.latLngBounds([
+            [6.3375, 5.6505], // Southwest
+            [6.3420, 5.6560]  // Northeast
+        ]);
+        
+        estateMap.fitBounds(bounds, {
+            padding: [50, 50],
+            maxZoom: 16
+        });
+        
+        // ===== SETUP MAP CONTROL BUTTONS =====
+        
+        document.querySelector('.map-control.zoom-in')?.addEventListener('click', zoomInMap);
+        document.querySelector('.map-control.zoom-out')?.addEventListener('click', zoomOutMap);
+        document.querySelector('.map-control.reset')?.addEventListener('click', resetMapView);
+        
+        // ===== LEGEND TOGGLE =====
+        
+        const legendToggle = document.querySelector('.legend-toggle');
+        const legendContent = document.querySelector('.legend-content');
+        
+        if (legendToggle && legendContent) {
+            legendToggle.addEventListener('click', () => {
+                legendContent.classList.toggle('collapsed');
+                const icon = legendToggle.querySelector('i');
+                if (legendContent.classList.contains('collapsed')) {
+                    icon.className = 'fas fa-chevron-down';
+                    legendToggle.setAttribute('aria-label', 'Expand legend');
+                } else {
+                    icon.className = 'fas fa-chevron-up';
+                    legendToggle.setAttribute('aria-label', 'Collapse legend');
+                }
+            });
+        }
+        
+        // ===== AMENITY ITEM CLICK =====
+        
+        document.querySelectorAll('.amenity-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('h4').textContent;
+                let marker = null;
+                
+                // Find corresponding marker
+                if (title.includes('Macadams')) marker = macadamsMarker;
+                else if (title.includes('Shaka')) marker = shakaMarker;
+                else if (title.includes('Ramat')) marker = ramatMarker;
+                else if (title.includes('Market')) marker = marketMarker;
+                
+                if (marker) {
+                    // Fly to marker
+                    estateMap.flyTo(marker.getLatLng(), 16, {
+                        duration: 1,
+                        easeLinearity: 0.25
+                    });
+                    
+                    // Open popup after animation
+                    setTimeout(() => {
+                        marker.openPopup();
+                    }, 1000);
+                    
+                    // Highlight the clicked amenity
+                    document.querySelectorAll('.amenity-item').forEach(i => {
+                        i.style.borderLeft = '';
+                    });
+                    this.style.borderLeft = '4px solid var(--secondary-color)';
+                }
+            });
+        });
+        
+        // Auto-open estate popup on load
+        setTimeout(() => {
+            estateMarker.openPopup();
+        }, 1500);
+        
+        console.log('Map initialized successfully!');
         
     } catch (error) {
         console.error('Error initializing map:', error);
+        showMapError();
+    }
+}
+
+// ===== MAP CONTROL FUNCTIONS =====
+function zoomInMap() {
+    if (estateMap) {
+        estateMap.zoomIn();
+    }
+}
+
+function zoomOutMap() {
+    if (estateMap) {
+        estateMap.zoomOut();
+    }
+}
+
+function resetMapView() {
+    if (estateMap) {
+        estateMap.flyTo([6.339879, 5.652190], 15, {
+            duration: 1,
+            easeLinearity: 0.25
+        });
+        
+        // Close all popups
+        markers.forEach(marker => {
+            marker.closePopup();
+        });
+        
+        // Highlight estate marker
+        setTimeout(() => {
+            markers[0].openPopup();
+        }, 1000);
+    }
+}
+
+// ===== ERROR HANDLING =====
+function showMapError() {
+    const mapElement = document.getElementById('map');
+    if (!mapElement) return;
+    
+    mapElement.innerHTML = `
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            z-index: 1000;
+        ">
+            <div style="
+                width: 80px;
+                height: 80px;
+                background: rgba(223, 180, 41, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                font-size: 2rem;
+                color: var(--secondary-color);
+            ">
+                <i class="fas fa-map"></i>
+            </div>
+            <h3 style="color: var(--primary-color); margin-bottom: 10px;">
+                Map Unavailable
+            </h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                We're unable to load the map at the moment. 
+                Please check your internet connection and try again.
+            </p>
+            <button onclick="initMap()" style="
+                background: var(--secondary-color);
+                color: var(--primary-color);
+                border: none;
+                padding: 12px 24px;
+                border-radius: var(--radius-lg);
+                font-weight: 600;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                transition: all var(--transition-normal);
+            " onmouseover="this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.transform='translateY(0)'">
+                <i class="fas fa-redo"></i>
+                Retry Loading Map
+            </button>
+        </div>
+    `;
+}
+
+// ===== RESPONSIVE MAP RESIZE =====
+function handleMapResize() {
+    if (estateMap) {
+        setTimeout(() => {
+            estateMap.invalidateSize();
+        }, 300);
     }
 }
 
