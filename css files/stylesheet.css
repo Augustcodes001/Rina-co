@@ -3084,16 +3084,97 @@ select.search-control:focus {
             box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
         }
 
-        .testimonial-card:nth-child(even) .testimonial-video {
+        /* .testimonial-card:nth-child(even) .testimonial-video {
             order: 2;
+        } */
+/* Mobile specific */
+
+/* Mobile text truncation */
+@media (max-width: 768px) {
+    .testimonial-content {
+            min-width: 350px;
+            padding: 0px;
+           
         }
 
+    /* Force video to top on mobile */
+    .testimonial-card .testimonial-video {
+        order: -1; /* Negative order places it first */
+    }
+    
+    .testimonial-card .testimonial-content {
+        order: 0;
+    }
+
+    .testimonial-text.truncated {
+        max-height: calc(1.7em * 4); /* 4 lines of text */
+        overflow: hidden;
+        position: relative;
+        transition: max-height 0.3s ease;
+    }
+    
+    .testimonial-text.truncated::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    .testimonial-text.expanded {
+        max-height: 1000px !important;
+        overflow: visible;
+    }
+    
+    .testimonial-text.expanded::after {
+        opacity: 0;
+    }
+    
+    .read-more-btn {
+        background: transparent;
+        border: none;
+        color: var(--secondary);
+        font-weight: 600;
+        margin-top: -8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.9rem;
+        padding: 5px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .read-more-btn:hover {
+        color: var(--gold-dark);
+        transform: translateY(-1px);
+    }
+    
+    .read-more-btn i {
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .read-more-btn:hover i {
+        transform: translateY(1px);
+    }
+}
+
+/* For desktop: ensure no truncation */
+@media (min-width: 769px) {
+  
+}
         /* Video Section */
         .testimonial-video {
             flex: 1;
             min-width: 300px;
             position: relative;
-            height: 380px;
+            height: 420px;
            
             overflow: visible !important;
         }
@@ -3117,7 +3198,7 @@ select.search-control:focus {
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(49, 45, 6, 0.85), rgba(212, 175, 55, 0.25));
+            background: linear-gradient(45deg, rgba(49, 45, 6, 0.35), rgba(212, 175, 55, 0.25));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -3253,7 +3334,8 @@ select.search-control:focus {
         }
 
         .author-info p {
-             color: var(--gold-light);
+             /* color: var(--gold-medium); */
+             font-weight: 450;
             font-size: 1rem;
             opacity: 0.9;
             margin-bottom: 8px;
@@ -3309,9 +3391,16 @@ select.search-control:focus {
     margin-right: 8px;
 }
 
-/* Smooth animation for showing/hiding testimonials */
-.testimonial-cards {
-    transition: all 0.5s ease;
+
+.testimonials-hidden .testimonial-card {
+    opacity: 0;
+    transform: translateY(-20px); /* Changed from positive to negative */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.testimonials-hidden.show .testimonial-card {
+    opacity: 1;
+    transform: translateY(0);
 }
         /* Testimonials Section */
         
@@ -3377,10 +3466,10 @@ select.search-control:focus {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* object-position: top; */
+          object-position: center 30%;
             transition: transform 0.5s ease;
         }
-        
+      
         .team-member:hover .member-image img {
             transform: scale(1.05);
         }
