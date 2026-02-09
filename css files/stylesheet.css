@@ -3175,7 +3175,7 @@ select.search-control:focus {
             min-width: 300px;
             position: relative;
             height: 420px;
-           
+              min-height: 460px;
             overflow: visible !important;
         }
 

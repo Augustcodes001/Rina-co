@@ -967,7 +967,7 @@ function setupModals() {
             
             <div class="modal-content-grid">
                 <div class="modal-image">
-                    <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    <img src="images/${property.title}.jpg" 
                          alt="${property.title}" loading="lazy">
                 </div>
                 
@@ -1260,7 +1260,7 @@ function initPropertyGallery() {
         progressFill.style.width = `${progress}%`;
         
         // Update page indicator
-        pageIndicator.textContent = `Property ${currentPage} of ${totalPages}`;
+        pageIndicator.textContent = `Item ${currentPage} of ${totalPages}`;
     }
     
     function navigateToPage(pageNumber) {
@@ -1322,7 +1322,7 @@ function initPropertyGallery() {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             const propertyType = this.getAttribute('data-property');
-            const message = `Hi, I'm interested in the ${propertyType} property (Property ${currentPage}). Can you send me more details?`;
+            const message = `Hi, I'm interested in the ${propertyType} on your estate page (Item ${currentPage}). Can you send me more details?`;
             window.open(`https://wa.me/2348148227087?text=${encodeURIComponent(message)}`, '_blank');
         });
     });
