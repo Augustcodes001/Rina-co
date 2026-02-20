@@ -489,120 +489,136 @@
    
             
     <!-- Investment Form & Contact -->
-<section class="form-section">
+<!-- Investment Form & Contact -->
+<section class="form-section pb-5">
     <div class="container">
         <div class="section-header">
             <h2>Start Your Investment Journey</h2>
             <p>Get in touch with our team to discuss investment opportunities</p>
         </div>
 
-        <div class="form-wrapper">
-            <!-- Left: Contact Info -->
-            <div class="contact-info-card">
-                <h3>Contact Information</h3>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p>+234(0)8148227087</p>
+        <div class="form-container container-fluid">
+            <div class="row">
+                <!-- Left: Contact Info -->
+                <div class="form-info col-md-6">
+                    <h3>Contact Info</h3>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon-large">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+234(0)8148227087</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon-large">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>rinaandcoconsults@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon-large">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>228, Upper Mission Rd., Opp. Nation Hospital <br>Close To Ewah Rd. Junction,<br> Benin City. Edo State.</p>
+                            </div>
+                        </div>
+
+                        <div class="business-hours glass">
+                            <div class="hours-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="hours">10:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Saturday</span>
+                                <span class="hours">Appointments Only</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday</span>
+                                <span class="hours">Closed</span>
+                            </div>
+                        </div>
+
+                        <div class="social-media">
+                            <h4>Connect with us</h4>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Us</h4>
-                            <p>rinaandcoconsults@gmail.com</p>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="form-content col-md-6">
+                    <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Visit Us</h4>
-                            <p>228, Upper Mission Rd., Opp. Nation Hospital<br>Close To Ewah Rd. Junction, Benin City, Edo State.</p>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">Subject</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option</option>
+                                <option value="real-estate">Real Estate Development</option>
+                                <option value="partnership">Partnership Request</option>
+                                <option value="investment">Investment Opportunities</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount">Estimated Investment Amount</label>
+                            <select id="amount" name="amount" required>
+                                <option value="">Select an option</option>
+                                <option value="500k-1m">#500,000 - #1,000,000</option>
+                                <option value="1m-5m">#1,000,000 - #5,000,000</option>
+                                <option value="5m-10m">#5,000,000 - #10,000,000</option>
+                                <option value="10m-50m">#10,000,000 - #50,000,000</option>
+                                <option value="50m+">#50,000,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-warning mt-2" style="width: 100%;">
+                            <i class="fas fa-paper-plane me-2"></i> Submit Request
+                        </button>
+                        <div id="status-message" class="status-message"></div>
+                    </form>
+
+                    <div class="text-center mt-4 mb-3">
+                        <p class="text-muted">- OR -</p>
                     </div>
+
+                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat
+                    </a>
                 </div>
-
-                <div class="business-hours">
-                    <h4>Business Hours</h4>
-                    <div class="hours-item">
-                        <span>Monday - Friday</span>
-                        <span>10:00 AM - 3:00 PM</span>
-                    </div>
-                    <div class="hours-item">
-                        <span>Saturday</span>
-                        <span>Appointments Only</span>
-                    </div>
-                    <div class="hours-item">
-                        <span>Sunday</span>
-                        <span>Closed</span>
-                    </div>
-                </div>
-
-                <div class="social-media">
-                    <h4>Connect With Us</h4>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Form -->
-            <div class="form-card">
-                <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="interest">Subject</label>
-                        <select id="interest" name="interest" required>
-                            <option value="">Select an option</option>
-                            <option value="real-estate">Real Estate Development</option>
-                            <option value="partnership">Partnership Request</option>
-                            <option value="investment">Investment Opportunities</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Estimated Investment Amount</label>
-                        <select id="amount" name="amount" required>
-                            <option value="">Select an option</option>
-                            <option value="500k-1m">#500,000 - #1,000,000</option>
-                            <option value="1m-5m">#1,000,000 - #5,000,000</option>
-                            <option value="5m-10m">#5,000,000 - #10,000,000</option>
-                            <option value="10m-50m">#10,000,000 - #50,000,000</option>
-                            <option value="50m+">#50,000,000+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-gold submit-btn">
-                        <i class="fas fa-paper-plane"></i> Submit Request
-                    </button>
-                    <div id="status-message" class="status-message"></div>
-                </form>
-
-                <div class="divider">
-                    <span>OR</span>
-                </div>
-
-                <a href="https://wa.me/+2348148227087" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
             </div>
         </div>
     </div>
