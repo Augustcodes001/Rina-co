@@ -193,7 +193,7 @@
 
    <!-- Investment Guides -->
 <!-- Investment Guides -->
-<section id="guides">
+<section id="guides" class="section-animate">
     <div class="container">
         <div class="section-header">
             <h2>Investment Guides</h2>
@@ -202,7 +202,7 @@
 
         <div class="card-grid">
             <!-- GUIDE 1 – ACTIVE (PDF available) -->
-            <div class="card guide-card" id="guide-1">
+            <div class="card guide-card " id="guide-1"  data-animation="slide-left" data-delay="100">
                 <div class="card-header">
                     <div class="guide-icon">
                         <i class="fas fa-file-alt"></i>
@@ -229,7 +229,7 @@
             </div>
 
             <!-- GUIDE 2 – COMING SOON (disabled) -->
-            <div class="card guide-card disabled-card">
+            <div class="card guide-card disabled-card"  data-animation="slide-right" data-delay="100">
                 <div class="card-header">
                     <div class="guide-icon disabled">
                         <i class="fas fa-lock"></i>
@@ -251,7 +251,7 @@
             </div>
 
             <!-- GUIDE 3 – COMING SOON (disabled) -->
-            <div class="card guide-card disabled-card">
+            <div class="card guide-card disabled-card"  data-animation="slide-left" data-delay="100">
                 <div class="card-header">
                     <div class="guide-icon disabled">
                         <i class="fas fa-lock"></i>
@@ -273,9 +273,9 @@
             </div>
         </div>
 
-        <div class="section-cta">
+        <div class="section-cta"  data-animation="slide-up" data-delay="100">
             <p>Need a personalized investment strategy?</p>
-            <a href="#contact" class="btn btn-gold">
+            <a href="./contact.html#investment-form" class="btn btn-gold-guide">
                 <i class="fas fa-calendar-check"></i> Book a Consultation
             </a>
         </div>
@@ -335,272 +335,278 @@
     </div>
 </div>
 
-    <!-- Current Projects -->
-    <section id="projects" class="invest-projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Current Investment Projects</h2>
-                <p>Explore our actively funded projects with available investment opportunities</p>
+  <!-- Current Projects -->
+<section id="projects" class="invest-projects">
+    <div class="container">
+       <div class="section-header">
+    <h2>Current Investment Projects</h2>
+    <p>Explore our actively funded projects with available investment opportunities.</p>
+    <span class="funding-badge">Quarterly & Annual Funding Windows</span>
+</div>
+        
+        <div class="card-grid">
+            <!-- Active Project Card -->
+          <!-- Active Project Card -->
+<div class="card project-card">
+    <div class="project-img">
+        <img src="./images/construction images-1.jpeg" alt="Elora Gardens Estate">
+    </div>
+    <div class="card-body">
+        <h3>Elora Gardens Estate</h3>
+        <p>Open for development – well mapped layout with popular landmarks.</p>
+        
+        <div class="project-tags">
+            <span class="tag">Real Estate</span>
+            <span class="tag">Land Purchase</span>
+            <span class="tag">Surveyed</span>
+        </div>
+        
+        <div class="progress-section">
+            <div class="progress-info">
+                <span class="progress-label">Funding Progress</span>
+                <span class="progress-percent">75%</span>
             </div>
-            
-            <div class="card-grid">
-                <div class="card project-card">
-                    <img src="./images/Flux_Dev_Photorealistic_undeveloped_bushy_landscape_with_golde_0.jpg" alt="Elora garden">
-                    <div class="card-body">
-                        <h3>Elora Gardens Estate</h3>
-                        <p>Open for  development well mapped layout with popular landmarks.</p>
-                        
-                        <div class="project-tags">
-                            <span class="tag">Real Estate</span>
-                            <span class="tag">land purchase</span>
-                            <span class="tag">Surveyed</span>
-                        </div>
-                        
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 75%;"></div>
-                        </div>
-                        
-                        <div class="stats">
-                            <div class="stat">
-                                <div class="stat-value">75%</div>
-                                <div class="stat-label">Funded</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value"><i class="fas fa-naira-sign"></i>30M</div>
-                                <div class="stat-label"></div> Open Till January 31st 2026</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card project-card">
-                   <img src="./images/ChatGPT Image Jul 17, 2025, 07_30_35 AM.png" alt="Upcoming estate">
-                    <div class="card-body">
-                        <h3>Upcoming Estate</h3>
-                        <p>Be the first to join our league of investors, take advantage of 15-35% ROI.</p>
-                        
-                        <div class="project-tags">
-                            <span class="tag">coming soon</span>
-                        </div>
-                        
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 1%;"></div>
-                        </div>
-                        
-                        <div class="stats">
-                            <div class="stat">
-                                <div class="stat-value">0%</div>
-                                <div class="stat-label">Funded</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value"><i class="fas fa-naira-sign"></i>0</div>
-                                <div class="stat-label">Available</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%;"></div>
             </div>
         </div>
-    </section>
+        
+        <div class="project-stats">
+            <div class="stat">
+                <span class="stat-value">75%</span>
+                <span class="stat-label">Funded</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value"><i class="fas fa-naira-sign"></i>30M</span>
+                <span class="stat-label">Target</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">Q2 2026</span>
+                <span class="stat-label">Next Round</span>
+            </div>
+        </div>
+
+        <!-- New: Quarterly Funding Note -->
+        <div class="funding-note">
+            <i class="fas fa-calendar-alt"></i> Funding opens every quarter – next window: <strong>April 2026</strong>
+        </div>
+    </div>
+</div>
+            <!-- Upcoming Project Card -->
+            <div class="card project-card coming-soon">
+                <div class="project-img">
+                    <img src="./images/ChatGPT Image Jul 17, 2025, 07_30_35 AM.png" alt="Upcoming Estate">
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+                <div class="card-body">
+                    <h3>Upcoming Estate</h3>
+                    <p>Be the first to join our league of investors – take advantage of 15-35% ROI.</p>
+                    
+                    <div class="project-tags">
+                        <span class="tag">Coming Soon</span>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-info">
+                            <span class="progress-label">Funding Progress</span>
+                            <span class="progress-percent">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 1%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-value">0%</span>
+                            <span class="stat-label">Funded</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value"><i class="fas fa-naira-sign"></i>0</span>
+                            <span class="stat-label">Available</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">TBA</span>
+                            <span class="stat-label">Opens</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Investor Relations -->
-    <section id="investor-relations">
-        <div class="container">
-            <div class="section-header">
-                <h2>Investors</h2>
-                <p>Connect with our investment programs and learn more about our investment opportunities.</p>
+   <!-- Investor Relations -->
+<section id="investor-relations" class="investors-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Investors</h2>
+            <p>Meet the visionary partners who trust Rina & Co. Consults for sustainable growth.</p>
+        </div>
+
+        <div class="card-grid">
+            <!-- Investor 1 -->
+            <div class="card investor-card">
+                <div class="investor-avatar" id="investor-1"></div>
+                <div class="card-body">
+                    <h3>Ogbuji Faith Njideka</h3>
+                    <p class="investor-title">Investor / Partner</p>
+                </div>
             </div>
-            
-            <div class="card-grid">
-                <div class="card investor-card">
-                    <div class="investor-avatar" id="investor-1"></div>
-                    <div class="card-body">
-                        <h3>Ogbuji Faith Njideka</h3>
-                        <p>Investor / Partner</p>
-                       
-                
-                    </div>
+
+            <!-- Investor 2 -->
+            <div class="card investor-card">
+                <div class="investor-avatar" id="investor-2"></div>
+                <div class="card-body">
+                    <h3>Odia Christian</h3>
+                    <p class="investor-title">Investor / Partner</p>
                 </div>
-                
-                <div class="card investor-card">
-                    <div class="investor-avatar" id="investor-2"></div>
-                    <div class="card-body">
-                        <h3>Odia Christian</h3>
-                        <p>Investor / Partner</p>
-            
-                    </div>
+            </div>
+
+            <!-- Investor 3 -->
+            <div class="card investor-card">
+                <div class="investor-avatar" id="investor-3"></div>
+                <div class="card-body">
+                    <h3>Ejiro Peter Mimije</h3>
+                    <p class="investor-title">Investor / Partner</p>
                 </div>
-                
-                <div class="card investor-card">
-                    <div class="investor-avatar" id="investor-3"></div>
-                   
-                    <div class="card-body">
-                        <h3>Ejiro Peter Mimije</h3>
-                       <p>Investor / Partner</p>
-                
-                    </div>
-                </div>
-                <div class="card investor-card">
-                    <div class="investor-avatar" id="investor-4"></div>
-                   
-                    <div class="card-body">
-                        <h3>Ebuka Gabriel Egwu</h3>
-                       <p>Investor / Partner</p>
-                
-                    
-                    </div>
+            </div>
+
+            <!-- Investor 4 -->
+            <div class="card investor-card">
+                <!-- <div class="investor-avatar" id="investor-4"></div> -->
+                <div class="investor-avatar placeholder">EG</div>
+                <div class="card-body">
+                    <h3>Ebuka Gabriel Egwu</h3>
+                    <p class="investor-title">Investor / Partner</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
  <!-- Investment Form & Contact -->
    
             
-               <!-- Investment Form & Contact -->
-   <section class="form-section pb-5">
-        <div class="container">
-          <div class="section-header">
-                <h2>Start Your Investment Journey</h2>
-                <p>Get in touch with our team to discuss investment opportunities</p>
-            </div>
-            
-            <div class="form-container container-fluid">
-                <div class="row">
-          <div class="form-info col-md-6">
-                    <h3>Contact Info</h3>
-                   
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p>+234(0)8148227087</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p>rinaandcoconsults@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                             
-                                <h4>Visit Us</h4>
-                                <p>228, Upper Mission Rd.,Opp. Nation Hospital <br>Close To Ewah Rd,. Junction,<br> Benin City. Edo State.</p>
-                            </div>
-                        </div>
-                         <div class="business-hours glass">
-                        <div class="hours-item">
-                            <span class="day">Monday - Friday</span>
-                            <span class="hours">10:00 AM - 3:00 PM</span>
-                        </div>
-                        <div class="hours-item">
-                            <span class="day">Saturday</span>
-                            <span class="hours">Appointments Only</span>
-                        </div>
-                        <div class="hours-item">
-                            <span class="day">Sunday</span>
-                            <span class="hours">Closed</span>
+    <!-- Investment Form & Contact -->
+<section class="form-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Start Your Investment Journey</h2>
+            <p>Get in touch with our team to discuss investment opportunities</p>
+        </div>
+
+        <div class="form-wrapper">
+            <!-- Left: Contact Info -->
+            <div class="contact-info-card">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+234(0)8148227087</p>
                         </div>
                     </div>
-                      
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>rinaandcoconsults@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>228, Upper Mission Rd., Opp. Nation Hospital<br>Close To Ewah Rd. Junction, Benin City, Edo State.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-hours">
+                    <h4>Business Hours</h4>
+                    <div class="hours-item">
+                        <span>Monday - Friday</span>
+                        <span>10:00 AM - 3:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Saturday</span>
+                        <span>Appointments Only</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Sunday</span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+
                 <div class="social-media">
-                    <h4>Connect with us</h4>
+                    <h4>Connect With Us</h4>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
-                         <a href="http://">
-                            <i class="fab fa-whatsapp"></i>
-                         </a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-        
-                    </div>
-                </div>
-                   <div class="form-content col-md-6">
-            <form id="investment-form" action="https://formspree.io/f/mrbloeja"
-                      method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="interest">Subject</label>
-                            <select id="interest" required>
-                                <option value="">Select an option</option>
-                                <option value="real-estate">Real Estate Development</option>
-                                <option value="green-energy">Partnership Request</option>
-                                <option value="tech-startups">Investment Opportunities</option>
-                                <!-- <option value="multiple">Career Opportunities</option>
-                                <option value="not-sure">Land Inquiry</option> -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="amount">Estimated Investment Amount</label>
-                            <select id="amount" required>
-                                <option value="">Select an option</option>
-                                <option value="10k">#500,000 - #1,000,000</option>
-                               
-                                <option value="100k">#1,000,000 - #5,000,000</option>
-                                <option value="250k">#5,000,000 - #10,000,000</option>
-                                <option value="250k">#10,000,000 - #50,000,000</option>
-                                <option value="500k">#50,000,000+</option>
-                            </select>
-                        </div>
-                       
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4"></textarea>
-                        </div>
-                   
-                        <button type="submit" class="btn btn-primary btn-warning  mt-2" style="width: 100%;">    <i class="fas fa-paper-plane me-2"></i>
-                            Submit Request
-                        </button>
-                         <div id="status-message" class="status-message"></div>
-                    </form>
-                      <div class="text-center mt-4 mb-3">
-                            <p class="text-muted">- OR -</p>
-                        </div>
-                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
-                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat
-                    </a>
-                </div>
-
-
-                </div>
-                
-                
-                
             </div>
-            
-             
+
+            <!-- Right: Form -->
+            <div class="form-card">
+                <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Subject</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an option</option>
+                            <option value="real-estate">Real Estate Development</option>
+                            <option value="partnership">Partnership Request</option>
+                            <option value="investment">Investment Opportunities</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Estimated Investment Amount</label>
+                        <select id="amount" name="amount" required>
+                            <option value="">Select an option</option>
+                            <option value="500k-1m">#500,000 - #1,000,000</option>
+                            <option value="1m-5m">#1,000,000 - #5,000,000</option>
+                            <option value="5m-10m">#5,000,000 - #10,000,000</option>
+                            <option value="10m-50m">#10,000,000 - #50,000,000</option>
+                            <option value="50m+">#50,000,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-gold submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Request
+                    </button>
+                    <div id="status-message" class="status-message"></div>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <a href="https://wa.me/+2348148227087" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
                     
                   
         <!--  -->
