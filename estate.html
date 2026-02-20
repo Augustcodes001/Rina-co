@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="./css files/header.css">
     <link rel="stylesheet" href="./css files/estate.css">
-    
+     <link rel="stylesheet" href="./css files/animation.css">
   <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- swiper -->
@@ -62,7 +62,7 @@
                    <li><a href="estate.html"><i class="fas fa-tree"></i> Estate</a></li>
                     <li><a href="investment.html"><i class="fas fa-piggy-bank"></i> Investment Hub</a></li>
                 <li><a href="construction.html"><i class="fas fa-hard-hat"></i> Construction</a></li>
- <p class=" text-light pb-1 text-center ">&copy;Rina & Co. Consults LTD.</p>
+
             </ul>
              
         </ul>
@@ -75,8 +75,8 @@
         <div class="hero-background"></div>
         <div class="hero-overlay">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
+                <div class="hero-content animate-fade-in">
+                    <div class="hero-badge" >
                         <i class="fas fa-tree"></i>
                         <span>Elora Gardens</span>
                         <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
@@ -87,19 +87,19 @@
                     <h1>Premium Real Estate Investment Opportunities</h1>
                     <p class="hero-subtitle">Discover exceptional land plots in prime locations. Build your dream home or make a strategic investment with guaranteed returns.</p>
                     
-                    <div class="hero-actions">
+                    <div class="hero-actions animate-slide-left">
                         <a href="#properties" class="btn btn-primary btn-lg">
                             <i class="fas fa-search"></i>
                             <span>Explore Properties</span>
                         </a>
-                        <a href="#contact" class="btn btn-outline btn-lg">
+                        <a href="#contact" class="btn btn-outline btn-lg animate-slide-right">
                             <i class="fas fa-calendar-alt"></i>
                             <span>Schedule Visit</span>
                         </a>
                     </div>
                     
                     <!-- Responsive Stats -->
-                    <div class="responsive-stats">
+                    <div class="responsive-stats animate-slide-up">
                         <div class="stat-item">
                             <div class="stat-value" data-count="150+">0+</div>
                             <div class="stat-label">Happy Clients</div>
@@ -131,7 +131,7 @@
         </div>
     </div>
         <!-- Responsive Quick Navigation -->
-        <div class="responsive-quick-nav">
+        <div class="responsive-quick-nav section-animate">
             <div class="container">
                 <div class="quick-nav-items">
                     <a href="#properties" class="quick-nav-item active">
@@ -166,13 +166,13 @@
     <!-- Property Overview -->
     <section class="property-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header section-animate">
                 <h2>Why Choose Elora Gardens</h2>
                 <p>Premium residential community with exceptional amenities and strategic location</p>
             </div>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card animate-slide-left">
                     <div class="feature-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
@@ -180,7 +180,7 @@
                     <p>Strategically located in Evboeson Community with excellent road network and proximity to major landmarks</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card animate-slide-right">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -188,7 +188,7 @@
                     <p>All properties come with proper documentation, government-approved titles, and legal verification</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card animate-slide-left">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -196,7 +196,7 @@
                     <p>Expected 20-30% annual value growth with ongoing development and infrastructure improvements</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card animate-slide-right">
                     <div class="feature-icon">
                         <i class="fas fa-hard-hat"></i>
                     </div>
@@ -210,13 +210,13 @@
     <!-- Available Properties -->
     <section class="properties-section" id="properties">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header section-animate">
                 <h2>Available Properties</h2>
                 <p>Choose from our premium selection of land plots in Elora Gardens</p>
             </div>
             
             <!-- Property Filter -->
-            <div class="property-filter">
+            <div class="property-filter animate-slide-up">
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all">All Plots</button>
                     <button class="filter-btn" data-filter="100x100">100×100ft Plots</button>
@@ -230,7 +230,7 @@
             <!-- Properties Grid -->
             <div class="properties-grid" id="listing">
                 <!-- Property 1 -->
-                <div class="property-card" data-size="100x100" >
+                <div class="property-card animate-slide-right" data-size="100x100"  >
                     <div class="property-image">
                         <img src="./images/Plot 1 - Elora Gardens (100×100ft).jpg" 
                              alt="Plot 1 - 100×100ft" loading="lazy">
@@ -253,10 +253,10 @@
                         </div>
                         <div class="property-actions">
                             <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%201%20(100x100ft)%20at%20Elora%20Gardens" 
-                               class="btn-whatsapp">
+                               class="btn-whatsapp animate-slide-right">
                                 <i class="fab fa-whatsapp"></i> Inquire Now
                             </a>
-                            <button class="btn-view" data-property="1">
+                            <button class="btn-view animate-slide-right" data-property="1">
                                 <i class="fas fa-eye"></i> Details
                             </button>
                         </div>
@@ -264,7 +264,7 @@
                 </div>
                 
                 <!-- Property 2 -->
-                <div class="property-card" data-size="50x100">
+                <div class="property-card animate-slide-left" data-size="50x100">
                     <div class="property-image">
                         <img src="./images/Plot 2 - Elora Gardens (50×100ft).jpg" 
                              alt="Plot 2 - 50×100ft" loading="lazy">
@@ -287,10 +287,10 @@
                         </div>
                         <div class="property-actions">
                             <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%202%20(50x100ft)%20at%20Elora%20Gardens" 
-                               class="btn-whatsapp">
+                               class="btn-whatsapp animate-slide-right">
                                 <i class="fab fa-whatsapp"></i> Inquire Now
                             </a>
-                            <button class="btn-view" data-property="2">
+                            <button class="btn-view animate-slide-right" data-property="2">
                                 <i class="fas fa-eye"></i> Details
                             </button>
                         </div>
@@ -298,7 +298,7 @@
                 </div>
                 
                 <!-- Property 3 -->
-                <div class="property-card" data-size="100x100">
+                <div class="property-card animate-slide-right" data-size="100x100">
                     <div class="property-image">
                         <img src="./images/Plot 3 - Elora Gardens (100×100ft).jpg" 
                              alt="Plot 3 - 100×100ft" loading="lazy">
@@ -321,10 +321,10 @@
                         </div>
                         <div class="property-actions">
                             <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%203%20(100x100ft)%20at%20Elora%20Gardens" 
-                               class="btn-whatsapp">
+                               class="btn-whatsapp animate-slide-right">
                                 <i class="fab fa-whatsapp"></i> Inquire Now
                             </a>
-                            <button class="btn-view" data-property="3">
+                            <button class="btn-view animate-slide-right" data-property="3">
                                 <i class="fas fa-eye"></i> Details
                             </button>
                         </div>
@@ -332,7 +332,7 @@
                 </div>
                 
                 <!-- Property 4 -->
-                <div class="property-card" data-size="50x100">
+                <div class="property-card animate-slide-left" data-size="50x100">
                     <div class="property-image">
                         <img src="./images/Plot 4 - Elora Gardens (50×100ft).jpg" 
                              alt="Plot 4 - 50×100ft" loading="lazy">
@@ -355,10 +355,10 @@
                         </div>
                         <div class="property-actions">
                             <a href="https://wa.me/2348148227087?text=Hi,%20I'm%20interested%20in%20Plot%204%20(50x100ft)%20at%20Elora%20Gardens" 
-                               class="btn-whatsapp">
+                               class="btn-whatsapp animate-slide-right">
                                 <i class="fab fa-whatsapp"></i> Inquire Now
                             </a>
-                            <button class="btn-view" data-property="4">
+                            <button class="btn-view animate-slide-right" data-property="4">
                                 <i class="fas fa-eye"></i> Details
                             </button>
                         </div>
@@ -373,13 +373,13 @@
 <!-- ===== PROPERTY GALLERY SECTION ===== -->
 <section class="property-gallery-section" id="gallery">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header section-animate">
             <h2>Estate Gallery</h2>
             <p>Explore Elora Gardens through our visual gallery</p>
         </div>
         
         <!-- Gallery Container -->
-        <div class="fps-container" id="propertyGallery">
+        <div class="fps-container animate-slide-right" id="propertyGallery">
             <!-- Pages Container -->
             <div class="fps-pages-container">
                 <!-- Page 1 -->
@@ -594,7 +594,7 @@
 <!-- ===== RECENT TRANSACTIONS SECTION ===== -->
 <section class="transactions-section" id="transactions">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header section-animate">
             <h2>Recent Transactions</h2>
             <p>See our latest property transactions and investment milestones</p>
         </div>
@@ -917,7 +917,7 @@
    <!-- Location Section -->
 <section class="location-section" id="location">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header section-animate" >
             <h2>Location & Amenities</h2>
             <p>Prime location with access to essential services and infrastructure</p>
         </div>
@@ -1087,7 +1087,7 @@
     <!-- Payment Plans -->
     <section class="payment-plans-section" id="payment">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header section-animate">
                 <h2>Flexible Payment Plans</h2>
                 <p>Choose a payment plan that suits your financial situation</p>
             </div>
@@ -1097,7 +1097,7 @@
                 <div class="plan-card">
                     <div class="plan-header">
                         <div class="plan-icon">
-                            <i class="fas fa-home"></i>
+                            <i class="fas fa-dollar-sign"></i>
                         </div>
                         <h3>Standard Plan</h3>
                         <div class="plan-price">40% Deposit</div>
@@ -1121,7 +1121,7 @@
                     <div class="plan-badge">Most Popular</div>
                     <div class="plan-header">
                         <div class="plan-icon">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Oxford Plan</h3>
                         <div class="plan-price">50% Deposit</div>
@@ -1245,7 +1245,7 @@
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header section-animate">
                 <h2>Get In Touch</h2>
                 <p>Contact us today to secure your plot at Elora Gardens</p>
             </div>
@@ -1322,7 +1322,7 @@
                         
                         <a href="https://wa.me/2348148227087" class="btn-whatsapp-cta">
                             <i class="fab fa-whatsapp"></i>
-                            <span>Start WhatsApp Chat</span>
+                            <span> WhatsApp Chat</span>
                         </a>
                     </div>
                 </div>
@@ -1367,15 +1367,16 @@
                 </div>
                 
                 <!-- Real Estate Column -->
+                <!-- Real Estate Column -->
                 <div class="col-md-4 footer-column">
                     <h3>Real Estate</h3>
                     <ul class="footer-list">
-                        <li><a href="estate.html#land-sizes-section">Available Lands</a></li>
-                  
-                        <li><a href="estate.html#landmarks-section">Landmarks</a></li>
-                         <li><a href="estate.html#gallery-section">Estate Gallery</a></li>
-                         <li><a href="estate.html#maps-section">Maps</a></li>
-                        <li><a href="estate.html#payment-section">Payment Plans</a></li>
+                        <li><a href="estate.html#properties">Available Lands</a></li>
+                      <li><a href="estate.html#gallery">Estate Gallery</a></li>
+                        <li><a href="estate.html#transactions">Transactions</a></li>
+                      <li><a href="estate.html#testimonials">Testimonials</a></li>
+                         <li><a href="estate.html#map">Maps</a></li>
+                        <li><a href="estate.html#payment">Payment Plans</a></li>
                        
                      
                     </ul>
@@ -1390,7 +1391,7 @@
                         <li><a href="investment.html#calculator">ROI Calculator</a></li>
                         <li><a href="investment.html#guides">Investment Guides</a></li>
                         <li><a href="investment.html#projects">Current Projects</a></li>
-                        <li><a href="investment.html#investor-relations">Investor Relations</a></li>
+                        <li><a href="investment.html#certificates">Certifications</a></li>
                     </ul>
                 </div>
                 
@@ -1399,7 +1400,7 @@
                     <h3>Our Team</h3>
                     <ul class="footer-list">
                         <li><a href="index.html#team">Meet The Team</a></li>
-                        <li><a href="#about.html#career-opportunities">Job positions</a></li>
+                        <li><a href="./about.html#career-opportunities">Job positions</a></li>
                      
                           <li><a href="./about.html#career-opportunities">Career Opportunities</a></li>
                        
@@ -1448,14 +1449,18 @@
         </div>
         
         <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="footer-bottom-container">
-                <p class="copyright">
-                    &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited | Comfortability with value. All rights reserved.
-                </p>
-                <!-- <p>Deigned by <a href="#"></a></p> -->
-            </div>
+             <div class="footer-bottom">
+    <div class="footer-bottom-container">
+        <p class="copyright">
+            &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited | Comfortability with value. All rights reserved.
+        </p>
+        <div class="footer-legal">
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="./terms-use.html">Terms of Use</a>
         </div>
+    </div>
+</div>
     </footer>
  <!-- Property Details Modal -->
     <div class="modal-overlay" id="propertyModal">
@@ -1505,6 +1510,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script src="./js folder/index.js"></script>
+     <script src="./js folder/scroll-animation.js"></script>
     <script src="./js folder/estate.js"></script>
       <script>
         // Mobile Testimonials Text Truncation

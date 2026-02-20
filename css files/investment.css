@@ -545,26 +545,440 @@ h3 {
         }
         
         /* Investment Guides */
-        .guide-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+       /* Investment Guides Section */
+#guides {
+    background: linear-gradient(135deg, #fce5a6 0%, #fce5a6 100%);
+      background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
+    color: var(--text);
+    padding: 5rem 2rem;
+}
+
+#guides .section-header p{
+    color: var(--primary);
+}
+
+
+
+/* Guide Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.guide-card .card-body{
+    background: rgb(32, 32, 32);
+}
+.guide-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.guide-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary);
+    box-shadow: 0 20px 40px rgba(223, 180, 41, 0.15);
+}
+
+.guide-card .card-header {
+    padding: 1.5rem;
+    background: rgba(223, 180, 41, 0.1);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guide-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.guide-badge {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.guide-badge.premium {
+    background: linear-gradient(45deg, var(--gold-medium), var(--gold-dark));
+    color: white;
+}
+
+.guide-card .card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.guide-card .card-body h3 {
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.guide-card .card-body p {
+    color: rgba(238, 242, 247, 0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.guide-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+}
+
+.guide-features li {
+    color: var(--text);
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.guide-features li i {
+    color: var(--secondary);
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.guide-card .card-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    background: rgba(10, 25, 47, 0.5);
+    background: rgb(32, 32, 32);
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-guide{
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.btn-guide .btn-primary {
+    background: var(--secondary);
+    color: var(--primary);
+}
+.btn-guide .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+.btn-guide .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--glass-border);
+}
+
+ .btn-guide .btn-secondary:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-gold {
+    background: linear-gradient(45deg, var(--gold-medium), var(--gold-dark));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(223, 180, 41, 0.3);
+}
+
+/* Section CTA */
+.section-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.section-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--gold-light);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 1.5rem 2rem;
+    background: rgba(223, 180, 41, 0.1);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: var(--gold-light);
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary);
+}
+
+.modal-body {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.pdf-viewer-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#guideFrame {
+    display: block;
+    background: white;
+}
+
+.viewer-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(223, 180, 41, 0.3);
+    border-top-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.preview-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(223, 180, 41, 0.1);
+    border-radius: 8px;
+    color: var(--gold-light);
+}
+
+.preview-info i {
+    margin-right: 0.5rem;
+}
+
+.modal-footer {
+    padding: 1.5rem 2rem;
+    background: rgba(10, 25, 47, 0.5);
+    border-top: 1px solid var(--glass-border);
+}
+
+.email-capture {
+    display: flex;
+    gap: 1rem;
+}
+
+#guideEmail {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+#guideEmail:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.download-success {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 8px;
+    color: #2ecc71;
+}
+
+.download-success i {
+    margin-right: 0.5rem;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toast-icon {
+    color: var(--secondary);
+    font-size: 1.5rem;
+}
+
+.toast-message strong {
+    color: var(--gold-light);
+    display: block;
+    font-size: 0.9rem;
+}
+
+.toast-message p {
+    color: var(--text);
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
     
-        .guide-card .card-body {
-            flex-grow: 1;
-            background: white;
-            
-        }
-        .card-body h3{
-            color: var(--primary);
-        }
-        .guide-card .card-footer {
-            padding: 1.5rem;
-             background-color: rgba(235, 172, 37, 0.05);
-            border-top: 1px solid var(--secondary);
-          
-        }
+    .modal-content {
+        max-height: 80vh;
+    }
+    
+    .email-capture {
+        flex-direction: column;
+    }
+    
+    .guide-card .card-footer {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
         
         /* Current Projects */
         .invest-projects{

@@ -980,6 +980,7 @@ select.search-control:focus {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
             transition: transform 0.5s ease;
         }
 
@@ -1053,11 +1054,12 @@ select.search-control:focus {
             .contact-container {
                 grid-template-columns: 1fr;
             }
-               /* .about-content h3, .about-content p {
-         text-align: center;
-        } */
+          .about-content p {
+               text-align: justify;  
+        text-align-last: auto;   
+    }
         }
-        /* journey */
+    /* journey */
          .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -3888,7 +3890,43 @@ select.search-control:focus {
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+        /* Footer Legal Links */
+.footer-legal {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    color: #cacaca;                /* matches other footer link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.footer-legal a:hover {
+    color: var(--secondary);       /* gold – #dfb429 */
+}
+
+.footer-legal .separator {
+    color: #cacaca;
+    opacity: 0.5;
+    font-weight: 300;
+    display: inline-block;
+}
+
+/* Mobile adjustment: stack links if needed */
+@media (max-width: 480px) {
+    .footer-legal {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .footer-legal .separator {
+        display: none;              /* hide separator on mobile */
+    }
+}
         /* Hover Effects */
         .footer-list a:hover,
         .footer-list a:focus {

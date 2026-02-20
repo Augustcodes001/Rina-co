@@ -183,111 +183,157 @@ header.glass nav {
 
        
  /* Mobile Menu Icon */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 40px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 101;
-        }
+      /* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+    display: none;
+    width: 50px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 101;
+}
 
-        .menu-toggle span {
-            display: block;
-            height: 3px;
-            width: 90%;
-            background-color: var(--text);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            margin-right: 1em;
-        }
+.menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--text);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+}
 
+.menu-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+/* Animation when menu is open */
+.menu-toggle.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+    background: var(--secondary);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+    background: var(--secondary);
+}
          /* Mobile Dropdown Menu */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            height: 100vh;
-            backdrop-filter: blur(10px);
-            background: var(--glass);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            padding: 70px 0px 0px;
-            transition: right .9s ease;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-            border-left: 1px solid var(--glass-border);
-        }
-       .mobile-nav p{
-        font-size: .9em;
-          font-weight: 400;
-       }
-        .mobile-nav.active {
-            right: 0;
-        }
+      /* ===== MOBILE NAVIGATION ===== */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.15); /* Very light white – almost transparent */
+    backdrop-filter: blur(20px) brightness(1.1);
+    -webkit-backdrop-filter: blur(20px) brightness(1.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 30px;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    border-left: 2px solid var(--secondary);
+}
 
-        .mobile-nav ul {
-            list-style: none;
-            margin-bottom: 30px;
-        }
 
-        .mobile-nav ul li {
-            margin-bottom: 20px;
-        }
+.mobile-nav.active {
+    right: 0;
+}
 
-     .mobile-nav ul li a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 1.05rem;
-            display: block;
-            padding: 17px 0;
-            padding-left: 1em;
-            transition: all 0.3s ease;
-                   background:rgba(107, 94, 51, 0.57);
-                    
-              border-top-left-radius: 1.5em;
-               border-bottom-left-radius: 1.5em;
-               border: 1px solid rgba(146, 123, 46, 0.49);
-            /* border-bottom: 1px solid var(--secondary); */
-            font-weight: 500;
-        }
+.mobile-nav ul {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+}
 
-        .mobile-nav ul li a:hover {
-            color: var(--secondary);
-            transition:right all .8s;
-              border: 1px solid rgba(184, 155, 59, 0.69);
-            padding-left: 10px;
-        }
+.mobile-nav ul li {
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s ease;
+    transition-delay: calc(0.1s * var(--item-index));
+}
 
-        .mobile-auth {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: auto;
-        }
+.mobile-nav.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-        .mobile-auth .btn {
-            width: 100%;
-            text-align: center;
-        }
+.mobile-nav ul li a {
+    color: var(--primary); /* Dark text for better readability on light glass */
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.25); /* Semi‑opaque white background for links */
+    border-radius: 12px;
+    border: 1px solid rgba(223, 180, 41, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    backdrop-filter: blur(5px); /* Extra blur on links themselves */
+    -webkit-backdrop-filter: blur(5px);
+}
+.mobile-nav ul li a i {
+    margin-right: 15px;
+    color: var(--secondary);
+    width: 24px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.mobile-nav ul li a:hover {
+    background: rgba(223, 180, 41, 0.2);
+    border-color: var(--secondary);
+    transform: translateX(5px);
+    color: var(--secondary);
+}
+/* Close icon */
+/* Close icon – now visible on light background */
+.close-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2rem;
+    color: var(--primary); /* Dark icon */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1010;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(223, 180, 41, 0.3);
+}
 
-        .close-icon {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 1.5rem;
-            color: var(--text);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .close-icon:hover {
-            color: var(--secondary);
-            transform: rotate(90deg);
-        }
+.close-icon:hover {
+    color: var(--secondary);
+    transform: rotate(90deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.8);
+}
 
   /* Responsive Design */
         @media (max-width: 992px) {

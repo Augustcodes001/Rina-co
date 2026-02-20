@@ -60,7 +60,7 @@
                    <li><a href="estate.html"><i class="fas fa-tree"></i> Estate</a></li>
                     <li><a href="investment.html"><i class="fas fa-piggy-bank"></i> Investment Hub</a></li>
                 <li><a href="construction.html"><i class="fas fa-hard-hat"></i> Construction</a></li>
- <p class=" text-light pb-1 text-center ">&copy;Rina & Co. Consults LTD.</p>
+ 
             </ul>
              
         </ul>
@@ -191,56 +191,149 @@
         </div>
     </section>
 
-    <!-- Investment Guides -->
-    <section id="guides">
-        <div class="container">
-            <div class="section-header">
-                <h2>Investment Guides</h2>
-                <p>Educational resources to help you make informed investment decisions</p>
+   <!-- Investment Guides -->
+<section id="guides">
+    <div class="container">
+        <div class="section-header">
+            <h2>Investment Guides</h2>
+            <p>Expert resources to help you make confident, informed investment decisions</p>
+        </div>
+        
+        <div class="card-grid">
+            <!-- Guide 1 -->
+            <div class="card guide-card">
+                <div class="card-header">
+                    <div class="guide-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <span class="guide-badge">Essential</span>
+                </div>
+                <div class="card-body">
+                    <h3>Beginner's Guide to Real Estate Investing</h3>
+                    <p>Master the fundamentals of property investment, from market analysis to managing your portfolio.</p>
+                    <ul class="guide-features">
+                        <li><i class="fas fa-check-circle"></i> 5-Step Market Analysis</li>
+                        <li><i class="fas fa-check-circle"></i> Risk Assessment Framework</li>
+                        <li><i class="fas fa-check-circle"></i> Due Diligence Checklist</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary view-guide-btn" data-guide="1">
+                        <i class="fas fa-eye"></i> Preview Guide
+                    </button>
+                    <button class="btn btn-secondary download-guide-btn" data-guide="1" data-title="Beginner's Guide to Real Estate Investing">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
             </div>
             
-            <div class="card-grid">
-                <div class="card guide-card">
-                    <div class="card-body">
-                        <h3>Beginner's Guide to Real Estate Investing</h3>
-                        <p>Learn the fundamentals of property investment, from market analysis to property management.</p>
+            <!-- Guide 2 -->
+            <div class="card guide-card">
+                <div class="card-header">
+                    <div class="guide-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary" >
-                            Download Guide
-                            <i class="fas fa-download"></i>
-                        </button>
-                    </div>
+                    <span class="guide-badge premium">Premium</span>
                 </div>
-                
-                <div class="card guide-card">
-                    <div class="card-body">
-                        <h3>Understanding Risk in High-Growth Investments</h3>
-                        <p>Strategies to balance your portfolio and mitigate risks while pursuing higher returns.</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary">
-                            Download Guide
-                            <i class="fas fa-download"></i>
-                        </button>
-                    </div>
+                <div class="card-body">
+                    <h3>High-Growth Investment Strategies</h3>
+                    <p>Advanced strategies to balance your portfolio and maximize returns in emerging markets.</p>
+                    <ul class="guide-features">
+                        <li><i class="fas fa-check-circle"></i> ROI Projection Models</li>
+                        <li><i class="fas fa-check-circle"></i> Portfolio Diversification</li>
+                        <li><i class="fas fa-check-circle"></i> Exit Strategy Planning</li>
+                    </ul>
                 </div>
-                
-                <div class="card guide-card">
-                    <div class="card-body">
-                        <h3>Tax Benefits for Sustainable Investments</h3>
-                        <p>Maximize your returns by understanding tax incentives for green energy and ESG investments.</p>
+                <div class="card-footer">
+                    <button class="btn-guide btn-primary view-guide-btn" data-guide="2">
+                        <i class="fas fa-eye"></i> Preview Guide
+                    </button>
+                    <button class="btn-guide btn-secondary download-guide-btn" data-guide="2" data-title="High-Growth Investment Strategies">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Guide 3 -->
+            <div class="card guide-card">
+                <div class="card-header">
+                    <div class="guide-icon">
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary">
-                            Download Guide
-                            <i class="fas fa-download"></i>
-                        </button>
-                    </div>
+                    <span class="guide-badge">New</span>
+                </div>
+                <div class="card-body">
+                    <h3>Tax & Sustainable Investment Benefits</h3>
+                    <p>Maximize returns through tax incentives and ESG-compliant investment opportunities.</p>
+                    <ul class="guide-features">
+                        <li><i class="fas fa-check-circle"></i> Green Energy Tax Credits</li>
+                        <li><i class="fas fa-check-circle"></i> ESG Compliance Framework</li>
+                        <li><i class="fas fa-check-circle"></i> Long-Term Value Assessment</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary view-guide-btn" data-guide="3">
+                        <i class="fas fa-eye"></i> Preview Guide
+                    </button>
+                    <button class="btn btn-secondary download-guide-btn" data-guide="3" data-title="Tax & Sustainable Investment Benefits">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <div class="section-cta">
+            <p>Need a personalized investment strategy?</p>
+            <a href="#contact" class="btn btn-gold">
+                <i class="fas fa-calendar-check"></i> Book a Consultation
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Guide Preview Modal -->
+<div id="guideModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Guide Preview</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="pdf-viewer-container">
+                <iframe id="guideFrame" width="100%" height="450" frameborder="0"></iframe>
+                <div class="viewer-loading">
+                    <div class="spinner"></div>
+                    <p>Loading guide preview...</p>
+                </div>
+            </div>
+            <div class="preview-info">
+                <p><i class="fas fa-info-circle"></i> This is a preview. Enter your email below to download the full guide.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="email-capture">
+                <input type="email" id="guideEmail" placeholder="Enter your email to download" required>
+                <button id="sendGuideBtn" class="btn btn-gold">
+                    <i class="fas fa-paper-plane"></i> Get Full Guide
+                </button>
+            </div>
+            <div class="download-success" style="display: none;">
+                <p><i class="fas fa-check-circle"></i> Guide sent to your email! Check your inbox.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Download Success Toast -->
+<div id="downloadToast" class="toast">
+    <div class="toast-content">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <div class="toast-message">
+            <strong>Download Started</strong>
+            <p>Your guide is being downloaded</p>
+        </div>
+    </div>
+</div>
 
     <!-- Current Projects -->
     <section id="projects" class="invest-projects">
@@ -615,15 +708,16 @@
                 </div>
                 
                 <!-- Real Estate Column -->
+                <!-- Real Estate Column -->
                 <div class="col-md-4 footer-column">
                     <h3>Real Estate</h3>
                     <ul class="footer-list">
-                        <li><a href="estate.html#land-sizes-section">Available Lands</a></li>
-                  
-                        <li><a href="estate.html#landmarks-section">Landmarks</a></li>
-                         <li><a href="estate.html#gallery-section">Estate Gallery</a></li>
-                         <li><a href="estate.html#maps-section">Maps</a></li>
-                        <li><a href="estate.html#payment-section">Payment Plans</a></li>
+                        <li><a href="estate.html#properties">Available Lands</a></li>
+                      <li><a href="estate.html#gallery">Estate Gallery</a></li>
+                        <li><a href="estate.html#transactions">Transactions</a></li>
+                      <li><a href="estate.html#testimonials">Testimonials</a></li>
+                         <li><a href="estate.html#map">Maps</a></li>
+                        <li><a href="estate.html#payment">Payment Plans</a></li>
                        
                      
                     </ul>
@@ -638,7 +732,7 @@
                         <li><a href="investment.html#calculator">ROI Calculator</a></li>
                         <li><a href="investment.html#guides">Investment Guides</a></li>
                         <li><a href="investment.html#projects">Current Projects</a></li>
-                        <li><a href="investment.html#investor-relations">Investor Relations</a></li>
+                        <li><a href="investment.html#certificates">Certifications</a></li>
                     </ul>
                 </div>
                 
@@ -647,7 +741,7 @@
                     <h3>Our Team</h3>
                     <ul class="footer-list">
                         <li><a href="index.html#team">Meet The Team</a></li>
-                        <li><a href="#about.html#career-opportunities">Job positions</a></li>
+                        <li><a href="./about.html#career-opportunities">Job positions</a></li>
                      
                           <li><a href="./about.html#career-opportunities">Career Opportunities</a></li>
                        
@@ -672,7 +766,7 @@
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            Mon-Fri: 9AM - 4PM
+                            Mon-Fri: 10AM - 4PM
                         </li>
                     </ul>
                 </div>
@@ -696,14 +790,18 @@
         </div>
         
         <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="footer-bottom-container">
-                <p class="copyright">
-                    &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited. All rights reserved. | Comfortability with value.
-                </p>
-                
-            </div>
+           <div class="footer-bottom">
+    <div class="footer-bottom-container">
+        <p class="copyright">
+            &copy; <script>document.write(new Date().getFullYear());</script> Rina & Co. Consults Limited | Comfortability with value. All rights reserved.
+        </p>
+        <div class="footer-legal">
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="./terms-use.html">Terms of Use</a>
         </div>
+    </div>
+</div>
     </footer>
 
 
@@ -757,6 +855,192 @@
                 this.reset();
             });
         });
+    </script>
+    <script>
+        // Investment Guides Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('guideModal');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const viewGuideBtns = document.querySelectorAll('.view-guide-btn');
+    const downloadGuideBtns = document.querySelectorAll('.download-guide-btn');
+    const guideFrame = document.getElementById('guideFrame');
+    const modalTitle = document.getElementById('modalTitle');
+    const guideEmail = document.getElementById('guideEmail');
+    const sendGuideBtn = document.getElementById('sendGuideBtn');
+    const downloadToast = document.getElementById('downloadToast');
+    const viewerLoading = document.querySelector('.viewer-loading');
+    const downloadSuccess = document.querySelector('.download-success');
+    
+    // Guide data - Update these paths to your actual PDF files
+    const guides = {
+        1: {
+            title: "Beginner's Guide to Real Estate Investing",
+            pdf: "documents/beginners-guide-real-estate.pdf",
+            preview: "documents/previews/beginners-preview.pdf"
+        },
+        2: {
+            title: "High-Growth Investment Strategies",
+            pdf: "documents/high-growth-strategies.pdf",
+            preview: "documents/previews/high-growth-preview.pdf"
+        },
+        3: {
+            title: "Tax & Sustainable Investment Benefits",
+            pdf: "documents/tax-sustainable-investment.pdf",
+            preview: "documents/previews/tax-preview.pdf"
+        }
+    };
+    
+    // Open modal for guide preview
+    viewGuideBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const guideId = this.getAttribute('data-guide');
+            const guide = guides[guideId];
+            
+            if (guide) {
+                modalTitle.textContent = guide.title;
+                viewerLoading.style.display = 'flex';
+                guideFrame.style.display = 'none';
+                
+                // Reset form
+                downloadSuccess.style.display = 'none';
+                guideEmail.value = '';
+                
+                // Use Google Docs Viewer for reliable PDF embedding
+                guideFrame.src = `https://docs.google.com/viewer?url=${encodeURIComponent(window.location.origin + '/' + guide.preview)}&embedded=true`;
+                
+                // Show loading for 2 seconds, then show iframe
+                setTimeout(() => {
+                    viewerLoading.style.display = 'none';
+                    guideFrame.style.display = 'block';
+                }, 2000);
+                
+                // Update send button data
+                sendGuideBtn.setAttribute('data-guide', guideId);
+                
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Direct download (simulated - for direct download links)
+    downloadGuideBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const guideId = this.getAttribute('data-guide');
+            const guideTitle = this.getAttribute('data-title');
+            
+            // Show email capture modal instead of direct download
+            // For direct download, uncomment the next line and remove the modal open code
+            // window.location.href = guides[guideId].pdf;
+            
+            // Instead, show modal for email capture
+            modalTitle.textContent = `Download ${guideTitle}`;
+            guideFrame.style.display = 'none';
+            viewerLoading.style.display = 'none';
+            downloadSuccess.style.display = 'none';
+            guideEmail.value = '';
+            sendGuideBtn.setAttribute('data-guide', guideId);
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal
+    closeModalBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Handle email submission for guide download
+    sendGuideBtn.addEventListener('click', function() {
+        const email = guideEmail.value.trim();
+        const guideId = this.getAttribute('data-guide');
+        
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email address');
+            guideEmail.focus();
+            return;
+        }
+        
+        // Here you would typically send the email to your server
+        // For now, we'll simulate the process
+        
+        // Show success message
+        downloadSuccess.style.display = 'block';
+        
+        // Simulate sending to server (remove in production)
+        setTimeout(() => {
+            // In production: Send email to your backend
+            // fetch('/api/send-guide', {
+            //     method: 'POST',
+            //     headers: {'Content-Type': 'application/json'},
+            //     body: JSON.stringify({email: email, guideId: guideId})
+            // });
+            
+            // Simulate download
+            const guide = guides[guideId];
+            if (guide) {
+                const link = document.createElement('a');
+                link.href = guide.pdf;
+                link.download = guide.title + '.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Show download toast
+                showToast('Download started! Check your downloads folder.');
+                
+                // Close modal after download
+                setTimeout(closeModal, 2000);
+            }
+        }, 1500);
+    });
+    
+    // Email validation
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Close modal function
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        guideFrame.src = ''; // Stop loading iframe
+    }
+    
+    // Show toast notification
+    function showToast(message) {
+        const toastMessage = downloadToast.querySelector('.toast-message p');
+        toastMessage.textContent = message;
+        
+        downloadToast.classList.add('show');
+        
+        setTimeout(() => {
+            downloadToast.classList.remove('show');
+        }, 3000);
+    }
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+    
+    // Form submission on enter key
+    guideEmail.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            sendGuideBtn.click();
+        }
+    });
+});
     </script>
     <script src="./js folder/scroll-animation.js"></script>
 </body>

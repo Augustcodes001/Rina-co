@@ -467,27 +467,7 @@ h3 {
     z-index: 0;
 }
 
-/* Form content containers for mobile */
-@media (max-width: 767.98px) {
-    .form-content,
-    .form-info {
-        transition: all 0.5s ease;
-    }
-    
-    /* Hide/show states for mobile */
-    .form-content.mobile-hidden {
-        display: none !important;
-    }
-    
-    .form-info.mobile-hidden {
-        display: none !important;
-    }
-    
-    /* Ensure both are visible on desktop */
-    .d-md-block {
-        display: block !important;
-    }
-}
+
 
 /* Optional: Add some animations */
 @keyframes fadeInUp {
@@ -565,6 +545,8 @@ h3 {
             margin-top: 0.5rem;
         }
         }
+        /* Form content containers for mobile */
+
         .contact-icon-large {
             display: flex;
             align-items: center;
@@ -632,6 +614,26 @@ h3 {
         }
         
  /* Responsive Design */
+ @media (max-width: 768px) {
+    .form-content,
+    .form-info {
+        transition: all 0.5s ease;
+    }
+   
+    /* Hide/show states for mobile */
+    .form-content.mobile-hidden {
+        display: none !important;
+    }
+    
+    .form-info .mobile-hidden {
+        display: none !important;
+    }
+
+    /* Ensure both are visible on desktop */
+    .d-md-block {
+        display: block !important;
+    }
+}
         @media (max-width: 992px) {
             .form-info {
                 padding: 2rem;

@@ -924,12 +924,14 @@ playButton.onclick = function(){
     // Mobile Toggle Buttons Functionality
 function initMobileToggle() {
     const toggleButtons = document.querySelectorAll('.toggle-btn');
+      const toggleButtonsContianer = document.querySelector('.mobile-toggle-buttons');
     const toggleIndicator = document.querySelector('.toggle-indicator');
     const formContent = document.querySelector('.form-content');
     const formInfo = document.querySelector('.form-info');
     
     // Only initialize if we're on mobile or have toggle buttons
-    if (!toggleButtons.length) return;
+    if (!toggleButtons.length)return
+
     
     // Set initial state
     let activeTab = 'form';
@@ -937,6 +939,7 @@ function initMobileToggle() {
     // Update active tab function
     function updateActiveTab(target) {
         // Update active button
+     
         toggleButtons.forEach(btn => {
             if (btn.dataset.target === target) {
                 btn.classList.add('active');
@@ -955,9 +958,11 @@ function initMobileToggle() {
                 toggleIndicator.style.width = `${btnWidth}px`;
             }
         }
-        
+   
         // Show/hide content on mobile
+      
         if (window.innerWidth < 768) {
+             
             if (target === 'form') {
                 formContent.classList.remove('mobile-hidden');
                 formInfo.classList.add('mobile-hidden');
@@ -970,7 +975,7 @@ function initMobileToggle() {
                 formContent.classList.remove('mobile-active');
             }
         }
-        
+     
         activeTab = target;
         
         // Store in sessionStorage for page refresh persistence
@@ -995,7 +1000,7 @@ function initMobileToggle() {
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            if (window.innerWidth >= 768) {
+            if (window.innerWidth >=768) {
                 // On desktop, show both
                 formContent.classList.remove('mobile-hidden');
                 formInfo.classList.remove('mobile-hidden');
@@ -1024,3 +1029,53 @@ function initMobileToggle() {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initMobileToggle);
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeIcon = document.getElementById('closeMenu');
+    const menuItems = document.querySelectorAll('.mobile-nav ul li');
+
+    // Set staggered animation delay via CSS custom properties
+    menuItems.forEach((item, index) => {
+        item.style.setProperty('--item-index', index);
+    });
+
+    function openMenu() {
+        mobileNav.classList.add('active');
+        menuToggle.classList.add('open');
+    }
+
+    function closeMenu() {
+        mobileNav.classList.remove('active');
+        menuToggle.classList.remove('open');
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (mobileNav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+    }
+
+    if (closeIcon) {
+        closeIcon.addEventListener('click', closeMenu);
+    }
+
+    // Close menu when clicking outside (optional)
+    document.addEventListener('click', function(e) {
+        if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target) && mobileNav.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+});

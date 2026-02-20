@@ -3244,6 +3244,10 @@ body.dark-theme .transactions-nav-btn:hover {
         top: var(--space-md);
         left: var(--space-md);
     }
+    .transaction-content img{
+      background-image: cover;
+}
+
 }
 
 @media (max-width: 480px) {
@@ -3722,7 +3726,7 @@ body.dark-theme .transactions-nav-btn:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .map-control {
@@ -3983,6 +3987,7 @@ body.dark-theme .transactions-nav-btn:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 1.25rem;
     flex-shrink: 0;
     transition: all var(--transition-normal);
@@ -4309,6 +4314,7 @@ body.dark-theme .location-info p {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
+        margin: auto;
     }
 }
 
@@ -4470,10 +4476,12 @@ body.dark-theme .location-info p {
 .plan-features i {
     color: var(--secondary-color);
     margin-top: 2px;
+      font-size: 1.1em;
 }
 
 .plan-actions .btn {
     width: 100%;
+    font-size: 1.1em;
 }
 
 /* Calculator Section */
@@ -4795,8 +4803,8 @@ body.dark-theme .location-info p {
 }
 
 .btn-whatsapp-cta:hover {
-    background: var(--text-white);
-    color: #25D366;
+    background:  #25D366;
+    color: var(--text);
     /* background: #075E54;
     color: var(--text-white); */
     transform: translateY(-3px);
