@@ -1068,10 +1068,32 @@ h3 {
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
         
-        /* .footer-links a:hover {
-            color: var(--gold-medium);
-        } */
-        
+              /* Footer Legal Links */
+.footer-legal {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    color: #cacaca;                /* matches other footer link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.footer-legal a:hover {
+    color: var(--secondary);       /* gold – #dfb429 */
+}
+
+.footer-legal .separator {
+    color: #cacaca;
+    opacity: 0.5;
+    font-weight: 300;
+    display: inline-block;
+}
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .footer-grid {

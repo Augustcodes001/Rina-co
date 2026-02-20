@@ -567,8 +567,32 @@
                 </div>
             </div>
         </section>
+<!-- CARD 3 -->
+  <section class="video-section">
+        <div class="card-content">
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <!-- different placeholder image: allocation concept (using same filename pattern) -->
+                    <img src="./images/plot-allocation-thumbnail.jpg" alt="Allocation started – survey markers">
+                </div>
+                <div class="video-overlay-vid">
+                    <!-- distinct video-index to keep it unique (index 3) -->
+                    <div class="play-button" data-video-index="2">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <!-- NEW COMPELLING HEADING & COPY about plot allocation -->
+                <h2>Plot Allocation Underway</h2>
+                <p>⚡ Allocation has begun — secure your plot now. Walk the land, choose your view, and turn your vision into foundation.</p>
+                <!-- the copy above triggers urgency and clarity: "allocation begun", direct call to future owners -->
+            </div>
+        </div>
+    </section>
 
-        <!-- CARD 3 -->
+        <!-- CARD 4 -->
         <section class="video-section">
             <div class="card-content">
                 <div class="video-container">
@@ -576,7 +600,7 @@
                         <img src="./images/vision to action.png" alt="Limited Plots">
                     </div>
                     <div class="video-overlay-vid">
-                        <div class="play-button" data-video-index="2">
+                        <div class="play-button" data-video-index="3">
                             <i class="fas fa-play"></i>
                         </div>
                     </div>
@@ -1809,8 +1833,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 description: "Before you build, buy, or develop, Our professional estate land inspection provides a clear, expert assessment of your property's condition & potential.",
                 thumbnail: './images/site-inspection-thumbnail.png'
             },
+             {
+                src: './videos/Elora-gardens-plot allocation.mp4', // Path to video 3
+                title: 'Plot Allocation Underway ',
+                description: "⚡ Allocation has begun — secure your plot now. Walk the land, choose your view, and turn your vision into foundation.",
+                thumbnail: './images/plot-allocation-thumbnail.jpg'
+            },
             {
-                src: './videos/Converting Vision into Action.mp4', // Path to video 3
+                src: './videos/Converting Vision into Action.mp4', // Path to video 4
                 title: 'Real Estate Marketing ',
                 description: "The question isn't just about having lands to sell, It's how to guide someone from uncertainty to confident decision.",
                 thumbnail: './images/vision to action.png'

@@ -3916,17 +3916,7 @@ select.search-control:focus {
     display: inline-block;
 }
 
-/* Mobile adjustment: stack links if needed */
-@media (max-width: 480px) {
-    .footer-legal {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-    .footer-legal .separator {
-        display: none;              /* hide separator on mobile */
-    }
-}
+
         /* Hover Effects */
         .footer-list a:hover,
         .footer-list a:focus {

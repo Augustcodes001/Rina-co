@@ -4,8 +4,10 @@
        ============================================ */
 
     /* 1. MAIN CONTAINER – Accounts for fixed header */
+  
     .legal-page {
         background: linear-gradient(135deg, rgba(252, 246, 197, 0.7) 0%, #fff 100%);
+         
         padding: 120px 0 4rem;  /* top padding = header height + extra space */
         min-height: 100vh;
     }
