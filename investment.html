@@ -340,7 +340,7 @@
 </div>
 
   <!-- Current Projects -->
-<section id="projects" class="invest-projects">
+<section id="projects" class="invest-projects section-animate">
     <div class="container">
        <div class="section-header">
     <h2>Current Investment Projects</h2>
@@ -351,7 +351,7 @@
         <div class="card-grid">
             <!-- Active Project Card -->
           <!-- Active Project Card -->
-<div class="card project-card">
+<div class="card project-card" data-animation="slide-left" data-delay="100">
     <div class="project-img">
         <img src="./images/construction images-1.jpeg" alt="Elora Gardens Estate">
     </div>
@@ -397,7 +397,7 @@
     </div>
 </div>
             <!-- Upcoming Project Card -->
-            <div class="card project-card coming-soon">
+            <div class="card project-card coming-soon" data-animation="slide-right" data-delay="100">
                 <div class="project-img">
                     <img src="./images/ChatGPT Image Jul 17, 2025, 07_30_35 AM.png" alt="Upcoming Estate">
                     <div class="coming-soon-badge">Coming Soon</div>
@@ -660,36 +660,82 @@
 </div>
     <!-- Certificates Gallery -->
      
-    <section id="certificates" class="certificates">
-        <div class="container-fluid cert-background">
-            <div class="section-header">
-                <h2>Our Certifications</h2>
-                <p>Be part of our league of investors join a community recognized for excellence in investment management and financial consulting</p>
-            </div>
-             <section class="gallery">
-               
-                <div class="gallery-slide">
-                  <img src="./images/cert-1.jpg" alt="Investment Certification">
-                   <img src="./images/cert-2.jpg" alt="Investment Certification">
-                    <img src="./images/cert-3.jpg" alt="Investment Certification">
-                     <img src="./images/cert-4.jpg" alt="Investment Certification">
-                </div>
-                <div class="gallery-slide">
-                 <img src="./images/cert-1.jpg" alt="Investment Certification">
-                   <img src="./images/cert-2.jpg" alt="Investment Certification">
-                    <img src="./images/cert-3.jpg" alt="Investment Certification">
-                     <img src="./images/cert-4.jpg" alt="Investment Certification">
-                </div>
-                <div class="gallery-slide">
-                   <img src="./images/cert-1.jpg" alt="Investment Certification">
-                   <img src="./images/cert-2.jpg" alt="Investment Certification">
-                    <img src="./images/cert-3.jpg" alt="Investment Certification">
-                     <img src="./images/cert-4.jpg" alt="Investment Certification">
-                </div>
-               </section> 
-           
+  <!-- Investor Certificates -->
+<section id="certificates" class="certificates-section section-animate">
+    <div class="container">
+        <div class="section-header">
+            <h2>Investor Certificates</h2>
+            <p>Every investment is backed by an official certificate – proof of your stake in our growing portfolio.</p>
         </div>
-    </section>
+
+        <div class="cert-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card" onclick="openModal('./images/cert-1.jpg', 'Investment Certificate – Ogbuji Faith Njideka')" data-animation="slide-left" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-1.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Ogbuji Faith Njideka</p>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="cert-card" onclick="openModal('./images/cert-2.jpg', 'Investment Certificate – Odia Christian')" data-animation="slide-right" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-2.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Odia Christian</p>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card" onclick="openModal('./images/cert-3.jpg', 'Investment Certificate – Ejiro Peter Mimije')" data-animation="slide-left" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-3.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Ejiro Peter Mimije</p>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="cert-card" onclick="openModal('./images/cert-4.jpg', 'Investment Certificate – Ebuka Gabriel Egwu')" data-animation="slide-right" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-4.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Ebuka Gabriel Egwu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="certModal" class="cert-modal">
+    <span class="cert-modal-close" onclick="closeModal()">&times;</span>
+    <div class="cert-modal-content">
+        <img id="modalImage" src="" alt="Certificate">
+        <div id="modalCaption" class="cert-modal-caption"></div>
+    </div>
+</div>
 
    
 
@@ -822,11 +868,6 @@
     </div>
 </div>
     </footer>
-
-
-
-
-
     <script src="./js folder/index.js"></script>
 
     <script>
@@ -1083,6 +1124,40 @@
         }, 150);
     });
 })();
+</script>
+<script>
+    // Get modal elements
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+
+    // Open modal function
+    function openModal(imgSrc, caption) {
+        modal.style.display = 'flex';
+        modalImg.src = imgSrc;
+        modalCaption.innerHTML = caption;
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal function
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close when clicking outside image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
 </script>
     <script src="./js folder/scroll-animation.js"></script>
 </body>
