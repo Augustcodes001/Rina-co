@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="./css files/investment.css">
      <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.min.css">
      <link rel="stylesheet" href="./css files/animation.css">
- 
+ <style>
+    @media (max-width: 768px) {
+        .form-info { display: none; }
+    }
+</style>
 </head>
 <body>
  
@@ -438,7 +442,7 @@
 
     <!-- Investor Relations -->
    <!-- Investor Relations -->
-<section id="investor-relations" class="investors-section">
+<section id="investor-relations" class="investors-section section-animate" >
     <div class="container">
         <div class="section-header">
             <h2>Our Investors</h2>
@@ -447,7 +451,7 @@
 
         <div class="card-grid">
             <!-- Investor 1 -->
-            <div class="card investor-card">
+            <div class="card investor-card" data-animation="slide-left" data-delay="100">
                 <div class="investor-avatar" id="investor-1"></div>
                 <div class="card-body">
                     <h3>Ogbuji Faith Njideka</h3>
@@ -456,7 +460,7 @@
             </div>
 
             <!-- Investor 2 -->
-            <div class="card investor-card">
+            <div class="card investor-card " data-animation="slide-right" data-delay="100">
                 <div class="investor-avatar" id="investor-2"></div>
                 <div class="card-body">
                     <h3>Odia Christian</h3>
@@ -465,7 +469,7 @@
             </div>
 
             <!-- Investor 3 -->
-            <div class="card investor-card">
+            <div class="card investor-card" data-animation="slide-left" data-delay="100">
                 <div class="investor-avatar" id="investor-3"></div>
                 <div class="card-body">
                     <h3>Ejiro Peter Mimije</h3>
@@ -474,7 +478,7 @@
             </div>
 
             <!-- Investor 4 -->
-            <div class="card investor-card">
+            <div class="card investor-card" data-animation="slide-right" data-delay="100">
                 <!-- <div class="investor-avatar" id="investor-4"></div> -->
                 <div class="investor-avatar placeholder">EG</div>
                 <div class="card-body">
@@ -490,76 +494,30 @@
             
     <!-- Investment Form & Contact -->
 <!-- Investment Form & Contact -->
-<section class="form-section pb-5">
+<section class="form-section pb-5 section-animate" >
     <div class="container">
         <div class="section-header">
             <h2>Start Your Investment Journey</h2>
             <p>Get in touch with our team to discuss investment opportunities</p>
         </div>
-
+    <!-- MOBILE TOGGLE BUTTONS (Only visible on small screens) -->
+        <div class="mobile-toggle-buttons d-md-none mb-4" data-animation="slide-up" data-delay="100">
+            <div class="toggle-container">
+                <button class="toggle-btn active" data-target="form">
+                    <i class="fas fa-envelope me-2"></i>
+                    Contact Form
+                </button>
+                <button class="toggle-btn" data-target="info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Contact Info
+                </button>
+            </div>
+            <div class="toggle-indicator"></div>
+        </div>
         <div class="form-container container-fluid">
             <div class="row">
                 <!-- Left: Contact Info -->
-                <div class="form-info col-md-6">
-                    <h3>Contact Info</h3>
-
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p>+234(0)8148227087</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p>rinaandcoconsults@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon-large">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Visit Us</h4>
-                                <p>228, Upper Mission Rd., Opp. Nation Hospital <br>Close To Ewah Rd. Junction,<br> Benin City. Edo State.</p>
-                            </div>
-                        </div>
-
-                        <div class="business-hours glass">
-                            <div class="hours-item">
-                                <span class="day">Monday - Friday</span>
-                                <span class="hours">10:00 AM - 3:00 PM</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Saturday</span>
-                                <span class="hours">Appointments Only</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Sunday</span>
-                                <span class="hours">Closed</span>
-                            </div>
-                        </div>
-
-                        <div class="social-media">
-                            <h4>Connect with us</h4>
-                            <div class="social-icons">
-                                <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
                 <!-- Right: Form -->
                 <div class="form-content col-md-6">
                     <form id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
@@ -615,10 +573,71 @@
                         <p class="text-muted">- OR -</p>
                     </div>
 
-                    <a href="https://wa.me/+2348148227087" class="btn btn-primary whatsapp-cta mt-2">
+                    <a href="https://wa.me/+2348148227087" class="btn  whatsapp-cta mt-2">
                         <i class="fab fa-whatsapp me-2"></i> WhatsApp Chat
                     </a>
                 </div>
+                <!--  -->
+                <div class="form-info col-md-6">
+                    <h3>Contact Info</h3>
+
+                    <div class="contact-methods"  data-animation="slide-left" data-delay="200">
+                        <div class="contact-method">
+                            <div class="contact-icon-large">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+234(0)8148227087</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon-large">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>rinaandcoconsults@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon-large">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>228, Upper Mission Rd., Opp. Nation Hospital <br>Close To Ewah Rd. Junction,<br> Benin City. Edo State.</p>
+                            </div>
+                        </div>
+
+                        <div class="business-hours glass" data-animation="slide-right" data-delay="200">
+                            <div class="hours-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="hours">10:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Saturday</span>
+                                <span class="hours">Appointments Only</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday</span>
+                                <span class="hours">Closed</span>
+                            </div>
+                        </div>
+
+                        <div class="social-media">
+                            <h4>Connect with us</h4>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/profile.php?id=61575841754956&name=xhp_nt_"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/rina_coconsults/"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -626,29 +645,7 @@
                     
                   
         <!--  -->
-    <section class="container my-5">
-  <div class="row g-4">
-    
-    <!-- Certificate Card 1 -->
-    <div class="col-md-4">
-      <div class="cert-card text-center" data-bs-toggle="modal" data-bs-target="#certModal1">
-        <!-- The Image -->
-        <div class="cert-image-wrapper">
-          <img src="path/to/cac-cert.jpg" alt="CAC Certificate" class="img-fluid">
-          <div class="overlay">
-            <i class="bi bi-zoom-in"></i> <!-- Zoom Icon -->
-          </div>
-        </div>
-        <!-- The Caption -->
-        <div class="cert-info mt-3">
-          <h5 class="fw-bold" style="color: #d4af37;">CAC Registration</h5>
-          <p class="small text-muted">Rc 7971137 - Corporate Affairs Commission</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+ 
 
 <!-- The Lightbox (Modal) for Card 1 -->
 <div class="modal fade" id="certModal1" tabindex="-1">
@@ -1027,6 +1024,65 @@
             }
         });
     })();
+</script>
+    <script>
+(function() {
+    const formContent = document.querySelector('.form-content');
+    const formInfo = document.querySelector('.form-info');
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const toggleIndicator = document.querySelector('.toggle-indicator');
+
+    if (!formContent || !formInfo || !toggleBtns.length) return;
+
+    const STORAGE_KEY = 'activeContactTab';
+
+    function setActiveTab(target) {
+        // Update buttons
+        toggleBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.target === target);
+        });
+
+        // Move indicator
+        if (toggleIndicator) {
+            const activeBtn = document.querySelector(`.toggle-btn[data-target="${target}"]`);
+            if (activeBtn) {
+                toggleIndicator.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
+                toggleIndicator.style.width = `${activeBtn.offsetWidth}px`;
+            }
+        }
+
+        // Direct style manipulation – overrides all CSS except !important
+        if (window.innerWidth < 768) {
+            formContent.style.display = (target === 'form') ? 'block' : 'none';
+            formInfo.style.display = (target === 'info') ? 'block' : 'none';
+        } else {
+            formContent.style.display = 'block';
+            formInfo.style.display = 'block';
+        }
+
+        sessionStorage.setItem(STORAGE_KEY, target);
+    }
+
+    // Load saved tab
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    const initial = (saved === 'info') ? 'info' : 'form';
+    setActiveTab(initial);
+
+    // Add click listeners
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => setActiveTab(btn.dataset.target));
+    });
+
+    // Debounced resize
+    let timer;
+    window.addEventListener('resize', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            const current = sessionStorage.getItem(STORAGE_KEY) || 'form';
+            setActiveTab(current);
+        }, 150);
+    });
+})();
 </script>
     <script src="./js folder/scroll-animation.js"></script>
 </body>
