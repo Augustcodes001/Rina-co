@@ -17,6 +17,7 @@
       <link rel="stylesheet" href="./css files/header.css">
     <link rel="stylesheet" href="./css files/construction.css">
      <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.min.css">
+        <link rel="stylesheet" href="css files/animation.css">
  <!-- Immediately set initial mobile toggle state -->
 
 </head>
@@ -73,7 +74,7 @@
             <h1>Building Excellence, Crafting Legacies</h1>
             <p>Rina & Co. Consults limited deals with several aspects of construction and renovation.Our services are provided for both residential and commercial purposes.</p>
     
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" data-animation="slide-up" data-delay="200">
                 Explore Our Projects
                 <i class="fas fa-arrow-right"></i>
             </button>
@@ -98,7 +99,7 @@
                 <p>Our construction sites are models of efficiency, safety, and organization</p>
             </div>
             
-            <div class="site-feature">
+            <div class="site-feature" data-animation="slide-right" data-delay="100">
                 <i class="fas fa-hard-hat"></i>
                 <div>
                     <h3>Rigorous Safety Standards</h3>
@@ -106,7 +107,7 @@
                 </div>
             </div>
             
-            <div class="site-feature">
+            <div class="site-feature" data-animation="slide-left" data-delay="100">
                 <i class="fas fa-tasks"></i>
                 <div>
                     <h3>Precision Project Management</h3>
@@ -114,7 +115,7 @@
                 </div>
             </div>
             
-            <div class="site-feature">
+            <div class="site-feature" data-animation="slide-right" data-delay="100">
                 <i class="fas fa-users-cog"></i>
                 <div>
                     <h3>Skilled Workforce</h3>
@@ -125,7 +126,7 @@
     </section>
 
     <!-- Quality Assurance Section -->
-    <section class="quality-assurance" id="quality-section">
+    <section class="quality-assurance section-animate" id="quality-section">
         <div class="container">
             <div class="section-header">
                 <h2>Quality Assurance</h2>
@@ -133,19 +134,19 @@
             </div>
             
             <div class="card-grid">
-                <div class="card quality-card">
+                <div class="card quality-card" data-animation="slide-right" data-delay="100">
                     <i class="fas fa-clipboard-check"></i>
                     <h3>Multi-Stage Inspections</h3>
                     <p>Comprehensive quality checks at 7 critical phases throughout the construction process ensure nothing is overlooked.</p>
                 </div>
                 
-                <div class="card quality-card">
+                <div class="card quality-card" data-animation="slide-right" data-delay="100">
                     <i class="fas fa-certificate"></i>
                     <h3>Material Certification</h3>
                     <p>All building materials undergo rigorous testing and come with full traceability documentation.</p>
                 </div>
                 
-                <div class="card quality-card">
+                <div class="card quality-card" data-animation="slide-right" data-delay="100">
                     <i class="fas fa-award"></i>
                     <h3>Industry Certifications</h3>
                     <p>Industry certified with additional recognition for excellence in construction quality management.</p>
@@ -155,14 +156,14 @@
     </section>
 
     <!-- Sustainability Section -->
-    <section class="sustainability" id="sustain-section">
+    <section class="sustainability section-animate" id="sustain-section">
         <div class="container">
             <div class="section-header">
                 <h2>Sustainable Construction</h2>
                 <p>Building for the future with environmentally responsible practices</p>
             </div>
             
-            <div class="eco-feature">
+            <div class="eco-feature"data-animation="slide-right" data-delay="100" >
                 <i class="fas fa-leaf"></i>
                 <div>
                     <h3>Green Building Materials</h3>
@@ -170,7 +171,7 @@
                 </div>
             </div>
             
-            <div class="eco-feature">
+            <div class="eco-feature" data-animation="slide-left" data-delay="100">
                 <i class="fas fa-solar-panel"></i>
                 <div>
                     <h3>Energy Efficient Solutions</h3>
@@ -178,7 +179,7 @@
                 </div>
             </div>
             
-            <div class="eco-feature">
+            <div class="eco-feature" data-animation="slide-right" data-delay="100">
                 <i class="fas fa-recycle"></i>
                 <div>
                     <h3>Waste Reduction</h3>
@@ -189,50 +190,121 @@
     </section>
 
     <!-- Project Portfolio Section -->
-    <section class="portfolio-section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Project Portfolio</h2>
-                <p>Explore our completed projects and ongoing developments</p>
-            </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Office Complex">
-                    <div class="portfolio-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <h3>Century Office Tower</h3>
-                        <p>32-story commercial building with LEED Platinum certification</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Residential">
-                    <div class="portfolio-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <h3>Harborview Residences</h3>
-                        <p>Waterfront luxury condominiums with premium amenities</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hospital Project">
-                    <div class="portfolio-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <h3>City Medical Center</h3>
-                        <p>State-of-the-art healthcare facility with 300+ beds</p>
-                    </div>
-                </div>
-            </div>
+  <!-- Project Portfolio Section -->
+<section class="portfolio-section" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2>Project Portfolio</h2>
+            <p>Explore our completed projects and ongoing developments</p>
         </div>
-    </section>
 
+        <div class="portfolio-grid">
+            <!-- Video 1 -->
+            <div class="portfolio-card" data-video="x9odzm2">
+                <div class="card-media">
+                    <img src="./images/construction process-3.jpeg" alt="Hotel Building Construction">
+                    <div class="play-overlay">
+                        <div class="play-btn-card">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Hotel Building Construction Isiohor</h3>
+                    <p>Delivering top-notch constructions with best Architectural design and town planning</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="portfolio-card" data-video="x9y6lq6">
+                <div class="card-media">
+                    <img src="./images/school-construction-preview-image.jpg" alt="school-construction image">
+                    <div class="play-overlay">
+                        <div class="play-btn-card">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>School Building Constrution</h3>
+                    <p>From idea and imaginations we bring clarity to your thoughts and satisfaction beyond any doubt.</p>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="portfolio-card" data-video="xa0hd1c">
+                <div class="card-media">
+                    <img src="./images/5-bedroom duplex preview image.jpg" alt="Five-Bedroom Duplex">
+                    <div class="play-overlay">
+                        <div class="play-btn-card">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Five-Bedroom Duplex Construction</h3>
+                    <p>All types of residential buildings can be developed from design to reality.</p>
+                </div>
+            </div>
+  <!-- Video 4 -->
+            <div class="portfolio-card" data-video="xa0heyg">
+                <div class="card-media">
+                    <img src="./images/residential-building-preview.jpg" alt="Building construction">
+                    <div class="play-overlay">
+                        <div class="play-btn-card">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Five-Bedroom Duplex Construction</h3>
+                    <p>All types of residential buildings can be developed from design to reality.</p>
+                </div>
+            </div>
+          
+         
+        </div>
+    </div>
+</section>
+ <!-- Video Lightbox Modal -->
+<div id="video-lightbox" class="video-lightbox glass">
+    <div class="lightbox-content">
+        <span class="close-lightbox">&times;</span>
+        <div class="dailymotion-container">
+            <div id="dailymotion-player"></div>
+        </div>
+    </div>
+</div>
+<!-- Image Gallery Section -->
+<!-- Project Image Gallery -->
+<section class="project-gallery-section" id="project-gallery">
+    <div class="container">
+        <div class="section-header">
+            <h2>Project Snapshots</h2>
+            <p>Explore image collections from our featured construction projects</p>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+            <!-- Project cards will be generated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Image Carousel Modal -->
+<div id="projectModal" class="project-modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3 id="modalProjectTitle">Project Title</h3>
+        <p id="modalProjectDesc" class="modal-desc">Project description</p>
+        <div class="carousel-container">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-slides" id="carouselSlides"></div>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="image-counter" id="imageCounter"></div>
+    </div>
+</div>
     <!-- Craftsmanship Section -->
     <section class="craftsmanship-section" id="craft-section">
         <div class="container craftsmanship-content">
@@ -581,12 +653,262 @@
     </div>
 </div>
     </footer>
-
-
-
-
-
+  <script src="./js folder/scroll-animation.js"></script>
     <script src="./js folder/index.js"></script>
+    <script>
+    (function() {
+        // Get modal elements
+        const lightbox = document.getElementById('video-lightbox');
+        const playerDiv = document.getElementById('dailymotion-player');
+        const closeBtn = document.querySelector('.close-lightbox');
+
+        // Function to load Dailymotion video
+        function loadVideo(videoId) {
+            // Clear previous player
+            playerDiv.innerHTML = '';
+
+            // Create iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.dailymotion.com/embed/video/${videoId}?autoplay=1`;
+            iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            playerDiv.appendChild(iframe);
+        }
+
+        // Open lightbox
+        function openLightbox(videoId) {
+            loadVideo(videoId);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            playerDiv.innerHTML = ''; // stop video
+            document.body.style.overflow = '';
+        }
+
+        // Attach click to all portfolio cards
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Prevent if clicking on a link inside (if any)
+                if (e.target.closest('a')) return;
+                const videoId = this.getAttribute('data-video');
+                if (videoId) openLightbox(videoId);
+            });
+        });
+
+        // Close on X click
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeLightbox);
+        }
+
+        // Close on outside click
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    })();
+</script>
+<script>
+    // Project data: each project has an id, title, description, cover image, and array of images.
+    const projects = [
+        {
+            id: 'century-office',
+            title: 'Hotel buiding construction',
+            description: 'Well p',
+            cover: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            images: [
+                { src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Exterior view' },
+                { src: 'https://images.unsplash.com/photo-1497366811353-6870744d9b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Lobby interior' },
+                { src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Office space' },
+                { src: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Rooftop terrace' }
+            ]
+        },
+        {
+            id: 'harborview',
+            title: 'Harborview Residences',
+            description: 'Waterfront luxury condominiums with premium amenities.',
+            cover: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            images: [
+                { src: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Building facade' },
+                { src: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Living room' },
+                { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Balcony view' },
+                { src: 'https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Pool area' }
+            ]
+        },
+        {
+            id: 'medical-center',
+            title: 'City Medical Center',
+            description: 'State‑of‑the‑art healthcare facility with 300+ beds.',
+            cover: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            images: [
+                { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Main entrance' },
+                { src: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Operating room' },
+                { src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Patient room' },
+                { src: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Waiting area' }
+            ]
+        },
+        {
+            id: 'corporate-hq',
+            title: 'Corporate Headquarters',
+            description: 'Contemporary design with open workspaces.',
+            cover: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            images: [
+                { src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Exterior' },
+                { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Open office' },
+                { src: 'https://images.unsplash.com/photo-1497366811353-6870744d9b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Meeting room' },
+                { src: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', caption: 'Cafeteria' }
+            ]
+        }
+    ];
+
+    // Render project cards
+    const grid = document.getElementById('projectGrid');
+    projects.forEach(proj => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.setAttribute('data-project', proj.id);
+        card.innerHTML = `
+            <div class="project-image">
+                <img src="${proj.cover}" alt="${proj.title}">
+                <span class="image-count-badge"><i class="fas fa-images"></i> ${proj.images.length}</span>
+            </div>
+            <div class="project-info">
+                <h3>${proj.title}</h3>
+                <p>${proj.description}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    // Modal elements
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalProjectTitle');
+    const modalDesc = document.getElementById('modalProjectDesc');
+    const carouselSlides = document.getElementById('carouselSlides');
+    const carouselDots = document.getElementById('carouselDots');
+    const imageCounter = document.getElementById('imageCounter');
+    const closeBtn = document.querySelector('.modal-close');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+
+    let currentProject = null;
+    let currentIndex = 0;
+
+    // Open modal for a project
+    function openProjectModal(projectId) {
+        const project = projects.find(p => p.id === projectId);
+        if (!project) return;
+
+        currentProject = project;
+        currentIndex = 0;
+
+        modalTitle.textContent = project.title;
+        modalDesc.textContent = project.description;
+
+        // Build slides
+        carouselSlides.innerHTML = '';
+        project.images.forEach((img, idx) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            slide.innerHTML = `
+                <img src="${img.src}" alt="${img.caption}">
+                <div class="slide-caption">${img.caption}</div>
+            `;
+            carouselSlides.appendChild(slide);
+        });
+
+        // Build dots
+        carouselDots.innerHTML = '';
+        project.images.forEach((_, idx) => {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (idx === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(idx));
+            carouselDots.appendChild(dot);
+        });
+
+        updateCounter();
+        goToSlide(0);
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Go to specific slide
+    function goToSlide(index) {
+        if (!currentProject) return;
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        currentIndex = index;
+
+        const offset = -index * 100;
+        carouselSlides.style.transform = `translateX(${offset}%)`;
+
+        // Update dots
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+
+        updateCounter();
+    }
+
+    function updateCounter() {
+        if (!currentProject) return;
+        imageCounter.textContent = `${currentIndex + 1} / ${currentProject.images.length}`;
+    }
+
+    // Next slide
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+
+    // Prev slide
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+
+    // Close modal
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const projectId = card.getAttribute('data-project');
+            openProjectModal(projectId);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display !== 'flex') return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+</script>
  <script>
         // Gallery filter functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -626,6 +948,6 @@
             window.addEventListener('scroll', checkScroll);
         });
     </script>
-  
+ 
 </body>
 </html>
