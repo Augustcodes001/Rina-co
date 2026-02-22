@@ -870,15 +870,13 @@ function setupModals() {
             features: [
                 "Prime corner plot with excellent road frontage",
                 "Ready for immediate construction",
-                "All utilities available (water, electricity)",
                 "Government approved layout plan",
                 "Perfect for duplex or mansion",
-                "High appreciation potential - expected 25% annual growth"
+                "High appreciation potential"
             ],
             amenities: [
                 "Paved road access",
                 "Security perimeter",
-                "Drainage system",
                 "Surveyed and beaconed"
             ],
             whatsappMessage: "Hi, I'm interested in Plot 1 (100x100ft) at Elora Gardens. Can you provide more details?"
@@ -889,17 +887,15 @@ function setupModals() {
             size: "50ft × 100ft (450 SQM)",
             location: "Evboeson Community, Benin City",
             features: [
-                "Affordable premium plot in prime location",
-                "Perfect for family home construction",
-                "Easy access to main road",
-                "All utilities available",
-                "Secure and serene environment",
-                "Excellent investment opportunity"
+                "Prime corner plot with excellent road frontage",
+                "Ready for immediate construction",
+                "Government approved layout plan",
+                "Perfect for duplex or mansion",
+                "High appreciation potential"
             ],
             amenities: [
                 "Paved road access",
                 "Security perimeter",
-                "Drainage system",
                 "Surveyed and beaconed"
             ],
             whatsappMessage: "Hi, I'm interested in Plot 2 (50x100ft) at Elora Gardens. Can you provide more details?"
@@ -909,18 +905,16 @@ function setupModals() {
             price: "₦1,500,000",
             size: "100ft × 100ft (900 SQM)",
             location: "Evboeson Community, Benin City",
-            features: [
-                "Strategic location near estate entrance",
-                "Beautiful landscape view",
-                "Suitable for luxury duplex",
-                "All documentation complete",
-                "Best investment value in estate",
-                "Ready for immediate development"
+          features: [
+                "Prime corner plot with excellent road frontage",
+                "Ready for immediate construction",
+                "Government approved layout plan",
+                "Perfect for duplex or mansion",
+                "High appreciation potential"
             ],
             amenities: [
                 "Paved road access",
                 "Security perimeter",
-                "Drainage system",
                 "Surveyed and beaconed"
             ],
             whatsappMessage: "Hi, I'm interested in Plot 3 (100x100ft) at Elora Gardens. Can you provide more details?"
@@ -930,18 +924,16 @@ function setupModals() {
             price: "₦800,000",
             size: "50ft × 100ft (450 SQM)",
             location: "Evboeson Community, Benin City",
-            features: [
-                "Budget-friendly investment opportunity",
-                "Close to community amenities",
-                "Ideal for starter home",
-                "High appreciation potential",
-                "Flexible payment plans available",
-                "Perfect for young families"
+           features: [
+                "Prime corner plot with excellent road frontage",
+                "Ready for immediate construction",
+                "Government approved layout plan",
+                "Perfect for duplex or mansion",
+                "High appreciation potential"
             ],
             amenities: [
                 "Paved road access",
                 "Security perimeter",
-                "Drainage system",
                 "Surveyed and beaconed"
             ],
             whatsappMessage: "Hi, I'm interested in Plot 4 (50x100ft) at Elora Gardens. Can you provide more details?"

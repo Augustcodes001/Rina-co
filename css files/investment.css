@@ -1238,12 +1238,10 @@ h3 {
                  transition: all .3s ease;
         }
           #investor-4{
-            background: url(../images/rina\ and\ co\ logo.png);
+            background:url(../images/invest-real-4.jpeg);
             background-position: top;
             background-repeat: no-repeat;
             background-size: cover;
-            filter: sepia(100%)hue-rotate(5deg) saturate(300%) contrast(.8);
-            opacity: .8;
             transition: all .3s ease;
         }
        

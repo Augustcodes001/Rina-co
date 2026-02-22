@@ -841,7 +841,9 @@ select.search-control:focus {
         }
 
         .section-header {
-            text-align: center;
+           
+            text-align: justify;
+             text-align: center;
             margin-bottom: 70px;
         }
 
@@ -2168,6 +2170,136 @@ select.search-control:focus {
 
         }
          } 
+         /*  */
+         /* --------------------------------------------- */
+/* FUTURISTIC PLOT LAYOUT SECTION */
+/* --------------------------------------------- */
+.plot-layout-section {
+    padding: 80px 0;
+    background: linear-gradient(rgba(18, 18, 18, 0.02), var(--glass));
+    position: relative;
+}
+
+.layout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.layout-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.layout-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
+}
+
+.layout-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.layout-image:hover img {
+    transform: scale(1.03);
+}
+
+.image-overlay-gold {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 60%, rgba(212, 175, 55, 0.1));
+    pointer-events: none;
+}
+
+.layout-content {
+    padding: 20px;
+}
+
+.layout-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--secondary), var(--gold-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: 'Playfair Display', serif;
+}
+
+.layout-content p {
+    color: var(--primary);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    text-align: justify;
+}
+
+.layout-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.feature-item i {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .layout-image {
+        max-height: 400px;
+    }
+    
+    .layout-content h3 {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .plot-layout-section {
+        padding: 60px 20px;
+    }
+    
+    .layout-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-item {
+        padding: 10px 15px;
+    }
+}
 /* Payment Plans */
        .payment-section {
             max-width: 1200px;
