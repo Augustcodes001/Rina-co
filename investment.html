@@ -182,13 +182,13 @@
                     </div>
                 </div>
                 
-                <button class="btn btn-primary calc-btn"  data-animation="slide-up" data-delay="200">
+                <a href="./investment.html#calc" class="btn btn-primary"  data-animation="slide-up" data-delay="200">
                     Calculate Projected Returns
-                </button>
+                </a>
                 
-                <div class="calculator-results">
+                <div class="calculator-results" id="calc">
                     <h3>Projected Investment Growth</h3>
-                    <div class="result-value">#102,443</div>
+                    <div class="result-value" >#102,443</div>
                     <p>Based on your inputs, your investment could grow to this amount in <span id="result-term">3</span> years</p>
                 </div>
             </div>
@@ -223,10 +223,10 @@
                     </ul>
                 </div>
                 <div class="card-footer">
-                    <button class="btn-guide btn-primary action-btn" data-action="preview" data-pdf="documents/rina-investment-framework.pdf">
+                    <button class="btn btn-primary action-btn" data-action="preview" data-pdf="documents/rina-investment-framework.pdf">
                         <i class="fas fa-eye"></i> Preview
                     </button>
-                    <button class="btn-guide btn-secondary action-btn" data-action="download" data-pdf="documents/rina-investment-framework.pdf">
+                    <button class="btn btn-outline action-btn" data-action="download" data-pdf="documents/rina-investment-framework.pdf">
                         <i class="fas fa-download"></i> Download PDF
                     </button>
                 </div>
@@ -279,7 +279,7 @@
 
         <div class="section-cta"  data-animation="slide-up" data-delay="100">
             <p>Need a personalized investment strategy?</p>
-            <a href="./contact.html#investment-form" class="btn btn-gold-guide">
+            <a href="./contact.html#investment-form" class="btn btn-primary">
                 <i class="fas fa-calendar-check"></i> Book a Consultation
             </a>
         </div>
@@ -302,7 +302,7 @@
                 </div>
                 <input type="hidden" id="pdfAction" name="action">
                 <input type="hidden" id="pdfUrl" name="pdfUrl">
-                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
                     <i class="fas fa-paper-plane"></i> Submit & Continue
                 </button>
             </form>
@@ -677,9 +677,9 @@
 
         <div class="cert-grid">
             <!-- Certificate 1 -->
-            <div class="cert-card" onclick="openModal('./images/cert-1.jpg', 'Investment Certificate – Ogbuji Faith Njideka')" data-animation="slide-left" data-delay="100">
+            <div class="cert-card" onclick="openModal('./images/cert-3.jpg', 'Investment Certificate – Ogbuji Faith Njideka')" data-animation="slide-left" data-delay="100">
                 <div class="cert-image-wrapper">
-                    <img src="./images/cert-1.jpg" alt="Investment Certificate">
+                    <img src="./images/cert-3.jpg" alt="Investment Certificate">
                     <div class="cert-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -691,9 +691,9 @@
             </div>
 
             <!-- Certificate 2 -->
-            <div class="cert-card" onclick="openModal('./images/cert-2.jpg', 'Investment Certificate – Odia Christian')" data-animation="slide-right" data-delay="100">
+            <div class="cert-card" onclick="openModal('./images/cert-4.jpg', 'Investment Certificate – Odia Christian')" data-animation="slide-right" data-delay="100">
                 <div class="cert-image-wrapper">
-                    <img src="./images/cert-2.jpg" alt="Investment Certificate">
+                    <img src="./images/cert-4.jpg" alt="Investment Certificate">
                     <div class="cert-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -705,9 +705,9 @@
             </div>
 
             <!-- Certificate 3 -->
-            <div class="cert-card" onclick="openModal('./images/cert-3.jpg', 'Investment Certificate – Ejiro Peter Mimije')" data-animation="slide-left" data-delay="100">
+            <div class="cert-card" onclick="openModal('./images/cert-2.jpg', 'Investment Certificate – Ejiro Peter Mimije')" data-animation="slide-left" data-delay="100">
                 <div class="cert-image-wrapper">
-                    <img src="./images/cert-3.jpg" alt="Investment Certificate">
+                    <img src="./images/cert-2.jpg" alt="Investment Certificate">
                     <div class="cert-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -719,9 +719,9 @@
             </div>
 
             <!-- Certificate 4 -->
-            <div class="cert-card" onclick="openModal('./images/cert-4.jpg', 'Investment Certificate – Ebuka Gabriel Egwu')" data-animation="slide-right" data-delay="100">
+            <div class="cert-card" onclick="openModal('./images/cert-1.jpg', 'Investment Certificate – Ebuka Gabriel Egwu')" data-animation="slide-right" data-delay="100">
                 <div class="cert-image-wrapper">
-                    <img src="./images/cert-4.jpg" alt="Investment Certificate">
+                    <img src="./images/cert-1.jpg" alt="Investment Certificate">
                     <div class="cert-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -729,6 +729,18 @@
                 <div class="cert-info">
                     <h3>Investment Certificate</h3>
                     <p>Issued to Ebuka Gabriel Egwu</p>
+                </div>
+            </div>
+             <div class="cert-card" onclick="openModal('./images/cert-5.jpg', 'Investment Certificate – Okafor Jeremiah Nzubechi')" data-animation="slide-right" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-5.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Okafor Jeremiah Nzubechi</p>
                 </div>
             </div>
         </div>

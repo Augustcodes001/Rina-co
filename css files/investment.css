@@ -543,6 +543,15 @@ h3 {
             color: var(--secondary);
             margin: 1rem 0;
         }
+        .calculator .btn{
+            padding:1em;
+              display: flex;
+            margin: auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+          
+        }
         
         /* Investment Guides */
        /* Investment Guides Section */
@@ -683,30 +692,6 @@ h3 {
     flex: 1;
 }
 
-.btn-guide.btn-primary {
-    background: #d4af37;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-.btn-guide.btn-primary:hover {
-    background: #b38f2c;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(180, 130, 30, 0.35);
-}
-
-.btn-guide.btn-secondary {
-    background: transparent;
-    color: #5a4a2a;
-    border: 1.5px solid #d4af37;
-}
-
-.btn-guide.btn-secondary:hover {
-    background: #fef3d1;
-    border-color: #b38f2c;
-    color: #2d2a1c;
-    transform: translateY(-2px);
-}
 
 /* Section CTA stays consistent */
 .section-cta {
@@ -720,27 +705,7 @@ h3 {
     margin-bottom: 1.5rem;
 }
 
-.btn-gold-guide {
-    background: linear-gradient(135deg, #d4af37, #b8860b);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 60px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 600;
-    /* display: inline-flex;
-    align-items: center;
-    gap: 0.75rem; */
-    transition: all 0.3s ease;
-    border: none;
-    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
-}
 
-.btn-gold-guide:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(184, 134, 11, 0.4);
-    background: linear-gradient(135deg, #b8860b, #9e7012);
-}
 /* disabled cards */
 /* Disabled guide cards */
 .guide-card.disabled-card {
@@ -1771,6 +1736,10 @@ h3 {
         right: 20px;
         font-size: 2.5rem;
     }
+    .cert-overlay {
+    opacity: 1;
+}
+
 }
     /* logos */
 
