@@ -3634,7 +3634,7 @@ select.search-control:focus {
             position: relative;
              background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
             overflow: hidden;
-            
+            min-height: 400px;
         }
    
         .team-section::before {
@@ -3884,11 +3884,15 @@ select.search-control:focus {
         }
         
         @media (max-width: 768px) {
-            .team-section {
-                margin-top: 1em;
-        min-height: 400px;          /* prevent collapse */
-        padding: 20px;              /* adjust if needed */
+         .team-section {
+        min-height: 400px;               /* prevent height collapse */
+        opacity: 1 !important;            /* override any animation opacity */
     }
+
+    .team-section .gold-decoration {
+        display: none;                   /* remove the problematic decoration */
+    }
+
             .section-title {
                 font-size: 2.2rem;
             }
