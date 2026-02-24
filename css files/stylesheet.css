@@ -1056,10 +1056,10 @@ select.search-control:focus {
             .contact-container {
                 grid-template-columns: 1fr;
             }
-          .about-content p {
+          /* .about-content p {
                text-align: justify;  
         text-align-last: auto;   
-    }
+    } */
         }
     /* journey */
          .container {
@@ -3619,6 +3619,7 @@ select.search-control:focus {
         /* Testimonials Section */
         
         /* team members */
+        /* team members */
       
         
     
@@ -3633,8 +3634,9 @@ select.search-control:focus {
             position: relative;
              background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
             overflow: hidden;
+            
         }
-        
+   
         .team-section::before {
             content: "";
             position: absolute;
@@ -3680,10 +3682,10 @@ select.search-control:focus {
             width: 100%;
             height: 100%;
             object-fit: cover;
-          object-position: center 30%;
+               object-position: center 30%;
             transition: transform 0.5s ease;
         }
-      
+        
         .team-member:hover .member-image img {
             transform: scale(1.05);
         }
@@ -3710,7 +3712,7 @@ select.search-control:focus {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-           background: rgba(241, 240, 240);
+            background: rgba(241, 240, 240);
             color: #d4af37;
             display: flex;
             text-decoration: none;
@@ -3752,7 +3754,7 @@ select.search-control:focus {
         }
         
         .member-position {
-           color: rgba(241, 240, 240);
+            color:rgb(241, 240, 240);
             font-weight: 600;
             margin-bottom: 15px;
             font-size: 1.1rem;
@@ -3769,9 +3771,8 @@ select.search-control:focus {
             display: flex;
             align-items: center;
             justify-content: center;
-        /* color: rgba(250, 250, 220, 0.9); */
+              font-weight: 500;
             font-size: .95rem;
-            font-weight: 500;
             gap: 8px;
         }
         
@@ -3790,6 +3791,25 @@ select.search-control:focus {
             position: relative;
         }
         
+           .team-section .stat-item {
+            text-align: center;
+            /* color: white; */
+            z-index: 2;
+        }
+        
+          .team-section  .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+          .team-section  .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
            .stats-container .stat-item {
             text-align: center;
             /* color: white; */
@@ -3864,6 +3884,11 @@ select.search-control:focus {
         }
         
         @media (max-width: 768px) {
+            .team-section {
+                margin-top: 1em;
+        min-height: 400px;          /* prevent collapse */
+        padding: 20px;              /* adjust if needed */
+    }
             .section-title {
                 font-size: 2.2rem;
             }

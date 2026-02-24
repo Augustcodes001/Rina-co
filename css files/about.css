@@ -380,7 +380,7 @@ h3 {
             margin: 0px auto 0;
             font-size: 1.1rem;
             line-height: 1.7;
-            text-align: justify;
+            /* text-align: justify; */
         }
            
     
@@ -423,7 +423,9 @@ h3 {
             }
               /* .about-section .section-header{
         text-align: left;
-       } */
+        margin-bottom: 40px;
+       }
+  */
 
             .milestones {
                 grid-template-columns: 1fr;
