@@ -1289,6 +1289,85 @@ h3 {
     background: rgba(10, 25, 47, 0.9) !important; /* Deep Navy transparent */
     backdrop-filter: blur(8px);
 }
+/* --- Architectural Modal Fixes --- */
+
+/* 1. Icon Styling */
+.arch-features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.arch-features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.arch-features-list li i {
+    color: var(--secondary) !important; /* Gold Icons */
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 25px;
+    text-align: center;
+}
+
+/* 2. Equal Height Image Fix */
+.arch-modal-gallery {
+    width: 65%;
+    background: #000;
+    height: 500px; /* Set a fixed height for the desktop view */
+    position: relative;
+}
+
+.arch-swiper {
+    width: 100%;
+    height: 100%; /* Force swiper to fill the 500px height */
+}
+
+.arch-swiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.arch-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Forces image to fill the height without stretching */
+    object-position: center;
+}
+
+/* 3. Navigation Aesthetic Fixes */
+.arch-swiper .swiper-button-next,
+.arch-swiper .swiper-button-prev {
+    color: var(--secondary) !important; /* Gold Arrows */
+    background: rgba(255, 255, 255, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+}
+
+.arch-swiper .swiper-button-next::after,
+.arch-swiper .swiper-button-prev::after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.arch-swiper .swiper-pagination-bullet-active {
+    background: var(--secondary) !important;
+}
+
+/* Responsive height adjustment */
+@media (max-width: 992px) {
+    .arch-modal-gallery {
+        height: 350px; /* Shorter height for mobile */
+        width: 100%;
+    }
+}
          /* Contact Section */
              /* WhatsApp CTA Section */
              .contact-section{
