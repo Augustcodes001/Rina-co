@@ -217,7 +217,7 @@
                     <h3>Rina & Co. Consults LTD Investment Framework</h3>
                     <p>Complete overview of our real estate investment model, including ROI structure, investor rights, and project lifecycle.</p>
                     <ul class="guide-features">
-                        <li><i class="fas fa-check-circle"></i> Investment terms & ROI (35% / 32%)</li>
+                        <li><i class="fas fa-check-circle"></i> Investment terms & ROI (32% / 30%)</li>
                         <li><i class="fas fa-check-circle"></i> Property development model</li>
                         <li><i class="fas fa-check-circle"></i> Legal & dispute resolution clauses</li>
                     </ul>
@@ -486,6 +486,14 @@
             </div>
             <!-- Investor 5 -->
             <div class="card investor-card" data-animation="slide-left" data-delay="100">
+                <div class="investor-avatar" id="investor-5"></div>
+                <div class="card-body">
+                    <h3>Mene-Okotie Omasan </h3>
+                    <p class="investor-title">Investor / Partner</p>
+                </div>
+            </div>
+             <!-- Investor 6 -->
+            <div class="card investor-card" data-animation="slide-right" data-delay="100">
                 <!-- <div class="investor-avatar" id="investor-4"></div> -->
                 <div class="investor-avatar placeholder">EG</div>
                 <div class="card-body">
@@ -717,8 +725,33 @@
                     <p>Issued to Ejiro Peter Mimije</p>
                 </div>
             </div>
-
-            <!-- Certificate 4 -->
+                <!-- Certificate 4 -->
+<div class="cert-card" onclick="openModal('./images/cert-5.jpg', 'Investment Certificate – Okafor Jeremiah Nzubechi')" data-animation="slide-right" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-5.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Okafor Jeremiah Nzubechi</p>
+                </div>
+            </div>
+                <!-- Certificate 5 -->
+            <div class="cert-card" onclick="openModal('./images/cert-6.jpg', 'Investment Certificate – Mene-Okotie Omasan')" data-animation="slide-right" data-delay="100">
+                <div class="cert-image-wrapper">
+                    <img src="./images/cert-6.jpg" alt="Investment Certificate">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Investment Certificate</h3>
+                    <p>Issued to Mene-Okotie Omasan</p>
+                </div>
+            </div>
+            <!-- Certificate 6 -->
             <div class="cert-card" onclick="openModal('./images/cert-1.jpg', 'Investment Certificate – Ebuka Gabriel Egwu')" data-animation="slide-right" data-delay="100">
                 <div class="cert-image-wrapper">
                     <img src="./images/cert-1.jpg" alt="Investment Certificate">
@@ -731,18 +764,7 @@
                     <p>Issued to Ebuka Gabriel Egwu</p>
                 </div>
             </div>
-             <div class="cert-card" onclick="openModal('./images/cert-5.jpg', 'Investment Certificate – Okafor Jeremiah Nzubechi')" data-animation="slide-right" data-delay="100">
-                <div class="cert-image-wrapper">
-                    <img src="./images/cert-5.jpg" alt="Investment Certificate">
-                    <div class="cert-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="cert-info">
-                    <h3>Investment Certificate</h3>
-                    <p>Issued to Okafor Jeremiah Nzubechi</p>
-                </div>
-            </div>
+             
         </div>
     </div>
 </section>
@@ -887,8 +909,39 @@
     </div>
 </div>
     </footer>
+    <!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top-btn" aria-label="Back to top">
+    <i class="far fa-arrow-alt-circle-up"></i>
+</button>
     <script src="./js folder/index.js"></script>
-
+  <script>
+    // back-to-top
+(function() {
+    'use strict';
+    
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    if (!backToTopBtn) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) { // Show after scrolling 400px
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Smooth scroll to top on click
+    backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+   </script>
     <script>
         // ROI Calculator functionality
         document.addEventListener('DOMContentLoaded', function() {

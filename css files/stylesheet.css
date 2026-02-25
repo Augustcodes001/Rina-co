@@ -3889,9 +3889,7 @@ select.search-control:focus {
         opacity: 1 !important;            /* override any animation opacity */
     }
 
-    .team-section .gold-decoration {
-        display: none;                   /* remove the problematic decoration */
-    }
+   
 
             .section-title {
                 font-size: 2.2rem;

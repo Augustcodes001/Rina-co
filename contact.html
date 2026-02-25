@@ -388,12 +388,43 @@
     </div>
 </div>
     </footer>
-
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top-btn" aria-label="Back to top">
+    <i class="far fa-arrow-alt-circle-up"></i>
+</button>
 
      
      <!-- <script src="./js folder/index.js"></script> -->
        <script src="./js folder/form.js"></script>
        <script src="./js folder/scroll-animation.js"></script>
+         <script>
+    // back-to-top
+(function() {
+    'use strict';
+    
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    if (!backToTopBtn) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) { // Show after scrolling 400px
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Smooth scroll to top on click
+    backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+   </script>
        <script>
 (function() {
     const formContent = document.querySelector('.form-content');
