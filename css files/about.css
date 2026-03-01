@@ -994,19 +994,47 @@ h3 {
         }
         
         @media (max-width: 768px) {
+             .team-section {
+        min-height: 400px;               /* prevent height collapse */
+        opacity: 1 !important;            /* override any animation opacity */
+    }
+
             .section-title {
                 font-size: 2.2rem;
             }
             
-            .stats-container {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .team-grid {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;       /* center all stat items */
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .stats-container .stat-item {
+        text-align: center;        /* center number and label */
+        width: 100%;
+        max-width: 280px;          /* optional – limits width for better appearance */
+    }
+
+    .stats-container .stat-number {
+        margin-bottom: 4px;        /* space between number and label */
+    }
+
+    .stats-container .stat-label {
+        padding-left: 0 !important; /* remove the previous offset */
+        margin-top: 0;
+    }
+
+    .stats-container .stat-label p {
+        margin: 0;                 /* remove default paragraph margins */
+        line-height: 1.4;
+    }
+   .team-grid {
                 grid-template-columns: 1fr;
             }
         }
+     
+     
    @media (max-width: 540px) {
           .social-links {
             position: absolute;
@@ -1021,45 +1049,13 @@ h3 {
             
         }
 
-        /* team end */
-          /* Statistics */
-        /* .stats-section {
-          background: rgb(253, 252, 244);
-          border-top: 1px solid  rgba(252, 246, 197, 0.7);
-             border-bottom: 1px solid  rgba(252, 246, 197, 0.7);
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 0px;
-            margin-top: 30px;
-        }
-        
-        .statistics .stat-item {
-            min-width: 200px;
-              box-shadow: 0 10px 25px rgba(180, 180, 179, 0.4);
-              padding: 2em;
-              border-radius: 10px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 1px;
-        } */
-        /*  */
+     /* Optional: even narrower screens */
+@media (max-width: 480px) {
+    .stats-container .stat-item {
+        max-width: 100%;           /* full width on very small devices */
+    }
+}
+       
         /* growing team */
 
         .section-title {
@@ -1660,7 +1656,31 @@ h3 {
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+         /* Footer Legal Links */
+.footer-legal {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    color: #cacaca;                /* matches other footer link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.footer-legal a:hover {
+    color: var(--secondary);       /* gold – #dfb429 */
+}
+
+.footer-legal .separator {
+    color: #cacaca;
+    opacity: 0.5;
+    font-weight: 300;
+    display: inline-block;
+}
         /* Hover Effects */
         .footer-list a:hover,
         .footer-list a:focus {

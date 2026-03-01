@@ -3634,9 +3634,8 @@ select.search-control:focus {
             position: relative;
              background: linear-gradient(rgba(18, 18, 18, 0.1), var(--glass));
             overflow: hidden;
-            min-height: 400px;
         }
-   
+        
         .team-section::before {
             content: "";
             position: absolute;
@@ -3810,26 +3809,6 @@ select.search-control:focus {
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-           .stats-container .stat-item {
-            text-align: center;
-            /* color: white; */
-            z-index: 2;
-        }
-        
-         .stats-container .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-        
-         .stats-container .stat-label {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            text-transform: uppercase;
-             /* text-align:right; */
-
-        }
         
         .cta-container {
             text-align: center;
@@ -3884,37 +3863,74 @@ select.search-control:focus {
         }
         
         @media (max-width: 768px) {
-         .team-section {
+             .team-section {
         min-height: 400px;               /* prevent height collapse */
         opacity: 1 !important;            /* override any animation opacity */
     }
-
-   
 
             .section-title {
                 font-size: 2.2rem;
             }
             
-            .stats-container {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .stats-container .stat-label {
-           
-             padding-left: calc(40% - 1.1rem);
-        }
-        
-            .team-grid {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;       /* center all stat items */
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .stats-container .stat-item {
+        text-align: center !important;        /* center number and label */
+        width: 100%;
+        max-width: 280px;   
+      /* optional – limits width for better appearance */
+    }
+
+    .stats-container .stat-number {
+        margin-bottom: 4px;    
+            text-align: center;       /* space between number and label */
+    }
+
+   .stats-container .stat-label {
+    margin-top: 0;
+    padding-left: 0 !important;   /* ← this kills the old calc() padding */
+    text-align: center !important;
+}
+    .stats-container .stat-label p {
+        margin: 0;                 /* remove default paragraph margins */
+        line-height: 1.4;
+         text-align: center;
+         border: 1px solid red;
+    }
+   .team-grid {
                 grid-template-columns: 1fr;
             }
         }
+     
+     
+   @media (max-width: 540px) {
+          .social-links {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+           
+            opacity: 1;
+          
+        }
+        
+            
+        }
+
+     /* Optional: even narrower screens */
+@media (max-width: 480px) {
+    .stats-container .stat-item {
+        max-width: 100%;           /* full width on very small devices */
+    }
+}
+         
   
-        @media (max-width: 560px) {
-             .stats-container .stat-label {
-               font-size: 1em;
-             padding-left: calc(30% - 1.1rem);
-        }
-        }
+       
  
         /* Footer */
 
