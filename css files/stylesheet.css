@@ -3645,10 +3645,7 @@ select.search-control:focus {
             height: 4px;
             background: linear-gradient(90deg, var(--secondary), var(--secondary), var(--secondary));
             
-        }
-        
-       
-        
+        } 
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -3888,19 +3885,15 @@ select.search-control:focus {
 
     .stats-container .stat-number {
         margin-bottom: 4px;    
-            text-align: center;       /* space between number and label */
     }
 
    .stats-container .stat-label {
-    margin-top: 0;
-    padding-left: 0 !important;   /* ← this kills the old calc() padding */
-    text-align: center !important;
+   padding-left: 0 !important; /* remove the previous offset */
+        margin-top: 0;
 }
     .stats-container .stat-label p {
-        margin: 0;                 /* remove default paragraph margins */
+        margin: auto;                 /* remove default paragraph margins */
         line-height: 1.4;
-         text-align: center;
-         border: 1px solid red;
     }
    .team-grid {
                 grid-template-columns: 1fr;
