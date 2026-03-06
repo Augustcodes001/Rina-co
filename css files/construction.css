@@ -118,7 +118,7 @@ h3 {
         }
   /* Hero Section */
         .hero {
-            background:linear-gradient(rgba(66, 60, 0, 0.7), var(--glass)), url('../images/visionary-beginnings.jpeg');
+            background:linear-gradient(rgba(27, 25, 2, 0.7), var(--glass)), url('../images/visionary-beginnings.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
