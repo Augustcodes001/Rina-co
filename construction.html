@@ -174,7 +174,7 @@
     </section>
 
     <!-- Project Portfolio Section (video cards - unchanged) -->
-    <section class="portfolio-section" id="projects">
+    <section class="portfolio-section section-animate" id="projects">
         <div class="container">
             <div class="section-header">
                 <h2>Project Portfolio</h2>
@@ -182,11 +182,11 @@
             </div>
             <div class="portfolio-grid">
                 <!-- Video 1 -->
-                <div class="portfolio-card" data-video="x9odzm2">
+                <div class="portfolio-card" data-video="x9odzm2" data-animation="slide-left" data-delay="100">
                     <div class="card-media">
                         <img src="./images/construction process-3.jpeg" alt="Hotel Building Construction">
                         <div class="play-overlay">
-                            <div class="play-btn-card"><i class="fas fa-play"></i></div>
+                            <div class="play-btn-card" data-animation="slide-up" data-delay="100"><i class="fas fa-play"></i></div>
                         </div>
                     </div>
                     <div class="card-info">
@@ -195,11 +195,11 @@
                     </div>
                 </div>
                 <!-- Video 2 -->
-                <div class="portfolio-card" data-video="x9y6lq6">
+                <div class="portfolio-card" data-video="x9y6lq6" data-animation="slide-right" data-delay="100">
                     <div class="card-media">
                         <img src="./images/school-construction-preview-image.jpg" alt="school-construction image">
                         <div class="play-overlay">
-                            <div class="play-btn-card"><i class="fas fa-play"></i></div>
+                            <div class="play-btn-card " data-animation="slide-up" data-delay="100"><i class="fas fa-play"></i></div>
                         </div>
                     </div>
                     <div class="card-info">
@@ -208,11 +208,11 @@
                     </div>
                 </div>
                 <!-- Video 3 -->
-                <div class="portfolio-card" data-video="xa0heyg">
+                <div class="portfolio-card" data-video="xa0heyg" data-animation="slide-left" data-delay="100">
                     <div class="card-media">
                         <img src="./images/residential-building-preview.jpg" alt="Building construction">
                         <div class="play-overlay">
-                            <div class="play-btn-card"><i class="fas fa-play"></i></div>
+                            <div class="play-btn-card" data-animation="slide-up" data-delay="100"><i class="fas fa-play"></i></div>
                         </div>
                     </div>
                     <div class="card-info">
@@ -221,11 +221,11 @@
                     </div>
                 </div>
                 <!-- Video 4 -->
-                <div class="portfolio-card" data-video="xa0hd1c">
+                <div class="portfolio-card" data-video="xa0hd1c" data-animation="slide-right" data-delay="100">
                     <div class="card-media">
                         <img src="./images/crafting-excellence-duplex-2.jpg" alt="Five-Bedroom Duplex">
                         <div class="play-overlay">
-                            <div class="play-btn-card"><i class="fas fa-play"></i></div>
+                            <div class="play-btn-card" data-animation="slide-up" data-delay="100"><i class="fas fa-play"></i></div>
                         </div>
                     </div>
                     <div class="card-info">
@@ -248,14 +248,14 @@
     </div>
 
     <!-- ===== PROJECT SNAPSHOTS SECTION ===== -->
-<section class="elegant-snapshots-section" id="project-gallery">
+<section class="elegant-snapshots-section section-animate" id="project-gallery">
     <div class="container">
         <div class="section-header">
             <h2 class="blue-heading">Featured Snapshots</h2>
             <p>A closer look at the intricate details and milestones of our premier constructions.</p>
         </div>
         
-        <div class="elegant-grid" id="elegantProjectGrid">
+        <div class="elegant-grid" id="elegantProjectGrid" data-animation="slide-up" data-delay="100">
             </div>
     </div>
 </section>
@@ -265,7 +265,7 @@
         <span class="elegant-modal-close" id="closeSnapModal">&times;</span>
         
         <div class="elegant-modal-layout">
-            <div class="elegant-modal-slider">
+            <div class="elegant-modal-slider" data-animation="slide-up" data-delay="100">
                 <div class="swiper snap-swiper">
                     <div class="swiper-wrapper" id="snapSwiperWrapper">
                         </div>
@@ -275,7 +275,7 @@
                 </div>
             </div>
             
-            <div class="elegant-modal-info">
+            <div class="elegant-modal-info" data-animation="slide-right" data-delay="100">
                 <span class="elegant-modal-badge">Project Details</span>
                 <h3 id="snapModalTitle" class="blue-heading">Project Title</h3>
                 <div class="gold-divider-small"></div>
@@ -291,42 +291,66 @@
     </div>
 </div>
     <!-- Craftsmanship Section (unchanged) -->
-    <section class="craftsmanship-section" id="craft-section">
+    <section class="craftsmanship-section section-animate" id="craft-section">
         <div class="container craftsmanship-content">
             <div class="section-header">
                 <h2 style="color: white;">Uncompromising Craftsmanship</h2>
                 <p>Where precision meets passion in every detail</p>
             </div>
             <div class="craftsmanship-grid">
-                <div class="craft-item"><i class="fas fa-ruler-combined"></i><h3>Precision Engineering</h3><p>Millimeter-perfect execution of complex structural elements</p></div>
-                <div class="craft-item"><i class="fas fa-drafting-compass"></i><h3>Architectural Detailing</h3><p>Meticulous attention to design specifications and finishes</p></div>
-                <div class="craft-item"><i class="fas fa-paint-roller"></i><h3>Finishing Excellence</h3><p>Flawless surfaces and seamless transitions between materials</p></div>
-                <div class="craft-item"><i class="fas fa-tools"></i><h3>Custom Fabrication</h3><p>Specialized workshops for bespoke architectural elements</p></div>
+                <div class="craft-item" data-animation="slide-right" data-delay="100"><i class="fas fa-ruler-combined"></i><h3>Precision Engineering</h3><p>Millimeter-perfect execution of complex structural elements</p></div>
+                <div class="craft-item" data-animation="slide-up" data-delay="100"><i class="fas fa-drafting-compass"></i><h3>Architectural Detailing</h3><p>Meticulous attention to design specifications and finishes</p></div>
+                <div class="craft-item" data-animation="slide-up" data-delay="100"><i class="fas fa-paint-roller"></i><h3>Finishing Excellence</h3><p>Flawless surfaces and seamless transitions between materials</p></div>
+                <div class="craft-item" data-animation="slide-left" data-delay="100"><i class="fas fa-tools"></i><h3>Custom Fabrication</h3><p>Specialized workshops for bespoke architectural elements</p></div>
             </div>
         </div>
     </section>
 
     <!-- Project Journey Section (unchanged) -->
     <section id="project-journey-section">
-        <div class="container">
+        <div class="container section-animate">
             <div class="section-header">
                 <h2>Project Journey</h2>
                 <p>From vision to reality: Our comprehensive construction process</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-icon"><i class="fas fa-lightbulb"></i></div><h3>Concept Development</h3><p>Collaborative design workshops with architects and clients to define project vision and requirements.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-icon"><i class="fas fa-drafting-compass"></i></div><h3>Design & Engineering</h3><p>Detailed architectural planning, structural engineering, and systems integration.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-icon"><i class="fas fa-file-contract"></i></div><h3>Preconstruction</h3><p>Permitting, budget finalization, schedule development, and subcontractor selection.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-icon"><i class="fas fa-hard-hat"></i></div><h3>Construction Phase</h3><p>Site preparation, foundation work, structural framing, systems installation, and finishing.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-icon"><i class="fas fa-clipboard-check"></i></div><h3>Quality Assurance</h3><p>Comprehensive inspections at critical milestones to ensure adherence to specifications.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-icon"><i class="fas fa-key"></i></div><h3>Project Delivery</h3><p>Final walkthrough, documentation handover, and client orientation.</p></div></div>
+                <div class="timeline-item"  data-animation="slide-right" data-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon " data-animation="slide-up" data-delay="100"><i class="fas fa-lightbulb"></i></div><h3>Concept Development</h3><p>Collaborative design workshops with architects and clients to define project vision and requirements.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="slide-right" data-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon" data-animation="slide-up" data-delay="100"><i class="fas fa-drafting-compass"></i></div><h3>Design & Engineering</h3><p>Detailed architectural planning, structural engineering, and systems integration.</p>
+                    </div>
+                </div>   
+                <div class="timeline-item" data-animation="slide-up" data-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon" data-animation="slide-up" data-delay="100"><i class="fas fa-file-contract"></i></div><h3>Preconstruction</h3><p>Permitting, budget finalization, schedule development, and subcontractor selection.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="slide-up" data-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon" data-animation="slide-up" data-delay="100"><i class="fas fa-hard-hat"></i></div><h3>Construction Phase</h3><p>Site preparation, foundation work, structural framing, systems installation, and finishing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="slide-left" data-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon" data-animation="slide-up" data-delay="100"><i class="fas fa-clipboard-check"></i></div><h3>Quality Assurance</h3><p>Comprehensive inspections at critical milestones to ensure adherence to specifications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="slide-left" data-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon" data-animation="slide-up" data-delay="100"><i class="fas fa-key"></i></div><h3>Project Delivery</h3><p>Final walkthrough, documentation handover, and client orientation.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Architectural Gallery Section (unchanged) -->
    <section class="arch-design-section py-6">
-    <div class="container">
+    <div class="container section-animate">
         <div class="section-header text-center mb-5">
             <h2 class="blue-heading">Architectural Design Portfolio</h2>
             <p class="text-muted">Contemporary concepts and 3D visualizations</p>
@@ -335,25 +359,25 @@
 
         <div class="row g-4">
             <div class="col-lg-7">
-                <div class="arch-category-card" onclick="openArchModal('townhome')">
+                <div class="arch-category-card" onclick="openArchModal('townhome')" data-animation="slide-right" data-delay="100">
                     <div class="arch-badge">Contemporary Townhomes</div>
                     <div class="arch-main-img">
                         <img src="./images/town-home-hero.jpg" alt="Townhomes">
                     </div>
-                    <div class="arch-info-overlay">
+                    <div class="arch-info-overlay" data-animation="slide-up" data-delay="100">
                         <span>View Project Details <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-5">
-                <div class="arch-category-card" onclick="openArchModal('single-family')">
+                <div class="arch-category-card" onclick="openArchModal('single-family')" data-animation="slide-up" data-delay="100">
                     <div class="arch-badge">Single-Family Residences</div>
                     <div class="arch-sub-grid">
                         <img src="./images/sf-1.jpg" alt="Residence 1">
                         <img src="./images/sf-2.jpg" alt="Residence 2">
                     </div>
-                    <div class="arch-info-overlay">
+                    <div class="arch-info-overlay" data-animation="slide-up" data-delay="100">
                         <span>View Collection <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
@@ -362,14 +386,14 @@
 
         <div class="row mt-4">
             <div class="col-12">
-                <div class="arch-category-card multi-story-card" onclick="openArchModal('multi-story')">
+                <div class="arch-category-card multi-story-card" onclick="openArchModal('multi-story')" data-animation="slide-left" data-delay="100">
                     <div class="arch-badge">Multi-Story Developments</div>
                     <div class="arch-flex-row">
                         <img src="./images/ms-1.jpg" alt="Building 1">
                         <img src="./images/ms-2.jpg" alt="Building 2">
                         <img src="./images/ms-3.jpg" alt="Building 3">
                     </div>
-                    <div class="arch-info-overlay">
+                    <div class="arch-info-overlay" data-animation="slide-up" data-delay="100">
                         <span>Explore All Designs <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
@@ -382,7 +406,7 @@
     <div class="elegant-modal-content arch-modal-wide">
         <span class="close-arch" onclick="closeArchModal()">&times;</span>
         <div class="arch-modal-body">
-            <div class="arch-modal-gallery">
+            <div class="arch-modal-gallery " data-animation="slide-up" data-delay="100">
                 <div class="swiper arch-swiper">
                     <div class="swiper-wrapper" id="archSwiperWrapper">
                         </div>
@@ -391,7 +415,7 @@
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="arch-modal-text">
+            <div class="arch-modal-text" data-animation="slide-right" data-delay="100">
                 <h3 id="archTitle" class="blue-heading"></h3>
                 <div class="gold-divider-small"></div>
                 <p id="archDesc"></p>
@@ -406,7 +430,7 @@
 </div>
 
     <!-- Footer (unchanged) -->
-    <footer class="footer">
+    <footer class="footer section-animate">
         <div class="gold-decoration"></div>
         <div class="container-fluid contain-decor">
             <div class="row">
@@ -478,10 +502,10 @@
                         <h4>Subscribe to Our Newsletter</h4>
                         <p>Get the latest investment opportunities and project updates</p>
                     </div>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address" class="newsletter-input">
+                    <form class="newsletter-form" id="investment-form" action="https://formspree.io/f/mrbloeja" method="POST">
+                        <input type="email" placeholder="Your email address" name= "email"  class="newsletter-input">
                         <button class="newsletter-button">Subscribe</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
