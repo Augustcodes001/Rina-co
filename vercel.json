@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://rinaandconconsultsltd.com/$1",
+      "destination": "https://rinaandcoconsultsltd.com/$1",
       "permanent": true
     }
   ]
