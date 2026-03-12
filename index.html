@@ -201,7 +201,23 @@
             <div class="nav-dot" data-slide="2"></div>
             <div class="nav-dot" data-slide="3"></div>
         </div>
-      
+     <!-- Cookie Consent Popup - Rina & Co. Style -->
+<div id="cookieConsent" class="cookie-consent glass" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-content">
+        <div class="cookie-icon">
+            <i class="fas fa-cookie-bite"></i>
+        </div>
+        <div class="cookie-text">
+            <h4>🍪 Your Privacy Matters</h4>
+            <p>We use cookies to enhance your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. You can learn more in our <a href="./privacy-policy.html">Privacy Policy</a>.</p>
+            <p class="email-note"><i class="fas fa-envelope-open-text"></i> We only collect your email if you subscribe to our updates – no spam, just value.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn btn-outline" id="cookieDecline">Decline</button>
+            <button class="btn btn-primary" id="cookieAccept">Accept</button>
+        </div>
+    </div>
+</div>
     </section>
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
@@ -1833,7 +1849,83 @@
       <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-    
+<script>
+   // Cookie Consent Logic
+(function() {
+    const COOKIE_NAME = 'rina_cookie_consent';
+    const COOKIE_VALUE_ACCEPTED = 'accepted';
+    const COOKIE_VALUE_DECLINED = 'declined';
+    const EXPIRY_DAYS = 365;
+
+    // Helper to set cookie
+    function setCookie(name, value, days) {
+        let expires = '';
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = '; expires=' + date.toUTCString();
+        }
+        document.cookie = name + '=' + (value || '') + expires + '; path=/; SameSite=Lax';
+    }
+
+    // Helper to get cookie
+    function getCookie(name) {
+        const nameEQ = name + '=';
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Check if consent already given
+    const consent = getCookie(COOKIE_NAME);
+    const cookieBanner = document.getElementById('cookieConsent');
+
+    if (!consent) {
+        // Show banner after a short delay (for better UX)
+        setTimeout(() => {
+            if (cookieBanner) cookieBanner.classList.add('show');
+        }, 1000);
+    } else {
+        // If already set, hide banner (it's hidden by default)
+        if (cookieBanner) cookieBanner.style.display = 'none';
+    }
+
+    // Accept button
+    const acceptBtn = document.getElementById('cookieAccept');
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            setCookie(COOKIE_NAME, COOKIE_VALUE_ACCEPTED, EXPIRY_DAYS);
+            if (cookieBanner) {
+                cookieBanner.classList.remove('show');
+                // Optionally remove from DOM after animation
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 500);
+            }
+            // You could enable analytics here if needed
+        });
+    }
+
+    // Decline button
+    const declineBtn = document.getElementById('cookieDecline');
+    if (declineBtn) {
+        declineBtn.addEventListener('click', function() {
+            setCookie(COOKIE_NAME, COOKIE_VALUE_DECLINED, EXPIRY_DAYS);
+            if (cookieBanner) {
+                cookieBanner.classList.remove('show');
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 500);
+            }
+            // Disable any non-essential cookies here
+        });
+    }
+})();
+</script>
    <script>
     // back-to-top
 (function() {
